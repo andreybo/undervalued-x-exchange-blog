@@ -38,12 +38,10 @@ export default function BlogPost({ data }) {
                 </p>
               </div>
               <div className="post__content">
-                {typeof window != 'undefined'&&
                 <div
                   className="blog-post-content"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 ></div>
-                }
               </div>
               <div className="post__border post__border--first emptytag">
                 <StaticImage
