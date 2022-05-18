@@ -82,7 +82,20 @@ module.exports = {
       }
     },
   },
-  "gatsby-plugin-image",
+  {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      "name": `images`,
+      "path": `${__dirname}/src/images/`
+    }
+  },
+  {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      "name": `pages`,
+      "path": `${__dirname}/src/pages/`
+    }
+  },
   {
     resolve: 'gatsby-transformer-remark',
     options: {
@@ -110,20 +123,7 @@ module.exports = {
     },
   },
   `gatsby-transformer-sharp`,
-  {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": `images`,
-      "path": `${__dirname}/src/images/`
-    }
-  },
-  {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": `pages`,
-      "path": `${__dirname}/src/pages/`
-    }
-  },
+  "gatsby-plugin-image",
   {
     resolve: "gatsby-plugin-robots-txt",
     options: {
