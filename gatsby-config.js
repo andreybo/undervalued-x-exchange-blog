@@ -82,6 +82,7 @@ module.exports = {
       }
     },
   },
+  "gatsby-plugin-image",
   {
     resolve: 'gatsby-transformer-remark',
     options: {
@@ -101,7 +102,6 @@ module.exports = {
       ],
     },
   },
-  "gatsby-plugin-image",
   {
     resolve: `gatsby-plugin-sharp`,
     options: {
