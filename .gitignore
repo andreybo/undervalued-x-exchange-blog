@@ -1,0 +1,17 @@
+# Build output
+.cache
+public
+
+# Environment variables
+.env.development
+.env.production
+
+# Dependency directories
+node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.wordpress-cache
