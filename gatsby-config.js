@@ -69,8 +69,10 @@ module.exports = {
   {
     resolve: `gatsby-source-wordpress`,
     options: {
+      html: {
+        useGatsbyImage: true,
+      },
       url: process.env.WPGRAPHQL_URL || `https://cms.udonis.co/graphql`,
-      useGatsbyImage: false,
       develop: {
         hardCacheMediaFiles: true,
         hardCacheData: true,
