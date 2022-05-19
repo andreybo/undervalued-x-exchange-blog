@@ -36,7 +36,10 @@ module.exports = {
           },
           query: `
             {
-              allWpPost(sort: {order: DESC, fields: date}) {
+              allWpPost(
+                sort: {order: DESC, fields: date}
+                limit: 40
+                ) {
                 edges {
                   node {
                     date
