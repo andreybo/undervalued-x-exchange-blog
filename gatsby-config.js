@@ -26,11 +26,11 @@ module.exports = {
           serialize: ({ query: { site, allWpPost } }) => {
             return allWpPost.edges.map(edge => {
               return Object.assign({}, edge.node, {
+                title: edge.node.title,
                 description: edge.node.excerpt,
                 date: edge.node.date,
                 url: site.siteMetadata.siteUrl + edge.node.uri,
                 guid: site.siteMetadata.siteUrl + edge.node.uri,
-                custom_elements: [{ "content:encoded": edge.node.content }],
               })
             })
           },
