@@ -8,6 +8,54 @@ module.exports = {
   },
   plugins: [
   {
+    resolve: `gatsby-plugin-feed`,
+    options: {
+      query: `
+        {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+            }
+          }
+        }
+      `,
+      feeds: [
+        {
+          serialize: ({ query: { site, allWpPost } }) => {
+            return allWpPost.edges.map(edge => {
+              return Object.assign({}, edge.node, {
+                description: edge.node.excerpt,
+                date: edge.node.date,
+                url: site.siteMetadata.siteUrl + edge.node.uri,
+                guid: site.siteMetadata.siteUrl + edge.node.uri,
+                custom_elements: [{ "content:encoded": edge.node.content }],
+              })
+            })
+          },
+          query: `
+            {
+              allWpPost(sort: {order: DESC, fields: date}) {
+                edges {
+                  node {
+                    date
+                    title
+                    content
+                    excerpt
+                    uri
+                  }
+                }
+              }
+            }
+          `,
+          output: "/rss.xml",
+          title: `RSS Feed`,
+        },
+      ],
+    },
+  },
+  {
       resolve: 'gatsby-plugin-local-search',
       options: {
         // A unique name for the search index. This should be descriptive of

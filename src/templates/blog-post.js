@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
