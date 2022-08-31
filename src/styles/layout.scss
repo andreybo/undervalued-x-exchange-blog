@@ -1586,9 +1586,11 @@ img{
       line-height: 1.5;
     }
     figure, img{
-      max-width: 100%;
-      margin: 0 auto;
       height: auto;
+      margin: 0 auto;
+      max-width: 100%;
+      display: block;
+      width: 100%;
     }
     .gatsby-resp-image-wrapper{
       border-radius: 12px;
