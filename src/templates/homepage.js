@@ -28,7 +28,7 @@ function IndexPage({
   return (
     <Layout>
       <Seo
-        title='Smart advertising'
+        title='Smart advertising | Udonis Mobile Marketing Agency '
         metaDesciption='Udonis Blog is your go-to place for all the news related to mobile games & apps, offering a variety of content available to everyone.'
         />
         <Blur/>
