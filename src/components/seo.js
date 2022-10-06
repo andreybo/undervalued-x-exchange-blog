@@ -27,7 +27,7 @@ function SEO({ title, seo }) {
     <Helmet
       htmlAttributes={{ lang: "en" }}
       defaultTitle={defaultTitle}
-      titleTemplate={`%s | ${defaultTitle}`}
+      titleTemplate={`%s`}
     >
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
@@ -44,7 +44,7 @@ function SEO({ title, seo }) {
 
       </meta>
       <meta name="twitter:site" content="@GraphCMS" />
-      <meta name="twitter:title" content={`${pageTitle} | ${defaultTitle}`} />
+      <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:card" content="summary_large_image" />
       {seo?.opengraphImage && <meta name="twitter:image:src" content={seo.opengraphImage.sourceUrl} />}
     </Helmet>

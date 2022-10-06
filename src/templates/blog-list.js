@@ -18,7 +18,7 @@ const BlogList = ({ pageContext, data:{postdata, hotImage} }) => {
   const nextPage = '/latest/' + (currentPage + 1).toString()
   return (
     <Layout>
-      <Seo title='Latest Posts' />
+      <Seo title='Latest Posts | Udonis' />
       <Blur/>
       <div className="category container">
         <div className="category__title-container">

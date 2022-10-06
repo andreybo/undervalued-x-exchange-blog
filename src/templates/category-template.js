@@ -23,7 +23,7 @@ const Category = ({ pageContext, data:{catName, postdata, hotImage} }) => {
   const nextPage = uri + '/' + (currentPage + 1).toString()
   return (
     <Layout>
-      <Seo title={catName.name} metaDesciption={catHeader} />
+      <Seo title={`${catName.name} | Udonis`} metaDesciption={catHeader} />
       <Blur/>
       <div className="category container">
         <div className="category__title-container">
