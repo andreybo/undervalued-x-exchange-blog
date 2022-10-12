@@ -12,12 +12,13 @@ const Header = () => {
         setScrolled(!scrolled);
       }
     };
+    if(window !== "undefined"){
+      document.addEventListener('scroll', handleScroll, { passive: true });
 
-    document.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      document.removeEventListener('scroll', handleScroll);
-    };
+      return () => {
+        document.removeEventListener('scroll', handleScroll);
+      };
+    }
   }, [scrolled, setScrolled]);
 
   const [isActive, setActive] = useState(false);

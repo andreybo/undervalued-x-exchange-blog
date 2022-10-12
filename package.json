@@ -21,7 +21,6 @@
     "caniuse-lite": "^1.0.30001418",
     "dotenv": "^16.0.3",
     "flexsearch": "^0.7.31",
-    "formik": "^2.2.9",
     "gatsby": "^4.20.0",
     "gatsby-plugin-disqus": "^1.2.4",
     "gatsby-plugin-feed": "^4.24.0",
