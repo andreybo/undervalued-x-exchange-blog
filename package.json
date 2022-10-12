@@ -22,6 +22,7 @@
     "dotenv": "^16.0.3",
     "flexsearch": "^0.7.31",
     "gatsby": "^4.24.4",
+    "gatsby-link": "^4.24.1",
     "gatsby-plugin-disqus": "^1.2.4",
     "gatsby-plugin-feed": "^4.24.0",
     "gatsby-plugin-gatsby-cloud": "^4.24.0",
