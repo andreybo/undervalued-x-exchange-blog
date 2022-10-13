@@ -53,7 +53,7 @@ exports.createPages = async function ({ actions, graphql }) {
         const posts = cat.sum
         const postsPerPage = 12
         const numPages = Math.ceil(posts / postsPerPage)
-        Array.from({ length: numPages > 1 ? numPages : "1"}).forEach((_, i) => {
+        Array.from({ length: numPages }).forEach((_, i) => {
           actions.createPage({
             path: i === 0 ? `${catSlug}` : `${catSlug}/${i + 1}`,
             component: require.resolve(`./src/templates/category-template.js`),
