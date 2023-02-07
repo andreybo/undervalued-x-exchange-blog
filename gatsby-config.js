@@ -8,29 +8,6 @@ module.exports = {
   },
   plugins: [
   {
-    resolve: 'gatsby-plugin-htaccess',
-    options: {
-      RewriteBase: '/404',
-      https: true,
-      host: 'blog.udonis.co',
-      ErrorDocument: `
-        ErrorDocument 410 /tiktok-updates/new-tiktok-feature-shared-audience
-        ErrorDocument 410 /tiktok-updates/tiktok-data-display-method-changes
-        ErrorDocument 410 /tiktok-updates/new-tiktok-feature-lookalike-audience
-        ErrorDocument 410 /tiktok-app-events-upgrade-notification
-        ErrorDocument 410 /tiktok-released-pixel-update
-        ErrorDocument 410 /new-tiktok-tool-smart-video
-        ErrorDocument 410 /tiktok-campaign-budget-feature-changed
-        ErrorDocument 410 /tiktok-feature-update-new-events-in-custom-audience
-        ErrorDocument 410 /new-tiktok-feature-suggested-bid-beta-version
-        ErrorDocument 410 /new-tiktok-feature-helo-and-vigo-support-interest-targeting
-        ErrorDocument 410 /tiktok-tool-update-smart-video-feature-update
-        ErrorDocument 410 /tiktok-update-editing-ads-in-a-bulk
-        ErrorDocument 410 /optimization-preference
-      `,
-    },
-  },
-  {
     resolve: `gatsby-plugin-feed`,
     options: {
       query: `
