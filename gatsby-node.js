@@ -2,14 +2,9 @@ const _ = require("lodash")
 const fetch = require('node-fetch');
 
 exports.createPages = async function ({ actions, graphql }) {
+  const { createRedirect } = actions
 
-    const { createRedirect } = actions
-
-    createRedirect({
-      fromPath: "/tiktok-updates/new-tiktok-feature-shared-audience2",
-      toPath: "/404",
-      statusCode: 410,
-    })
+  createRedirect({ fromPath: '/not_so-pretty_url/', toPath: '/', statusCode: 200 })
 
     const { data } = await graphql(`
       query {
