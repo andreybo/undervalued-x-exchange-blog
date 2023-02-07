@@ -1,10 +1,17 @@
 const _ = require("lodash")
 const fetch = require('node-fetch');
+const redirects = require("./redirects.json");
 
 exports.createPages = async function ({ actions, graphql }) {
   const { createRedirect } = actions
 
-  createRedirect({ fromPath: '/not_so-pretty_url/', toPath: '/', statusCode: 200 })
+  redirects.forEach(redirect => 
+    createRedirect({
+      fromPath: redirect.fromPath,
+      toPath: "/",
+      statusCode: 410,
+    })
+  )
 
     const { data } = await graphql(`
       query {
