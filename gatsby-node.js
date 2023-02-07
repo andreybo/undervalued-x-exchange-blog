@@ -2,6 +2,13 @@ const _ = require("lodash")
 const fetch = require('node-fetch');
 
 exports.createPages = async function ({ actions, graphql }) {
+  const { createRedirect } = actions
+
+  createRedirect({
+    fromPath: "/tiktok-updates/new-tiktok-feature-shared-audience",
+    toPath: "/404",
+    statusCode: 404,
+  })
 
     const { data } = await graphql(`
       query {
@@ -93,20 +100,6 @@ exports.createPages = async function ({ actions, graphql }) {
         component: require.resolve(`./src/templates/homepage.js`),
         context: { slug: '/' },
       })
-
-    const redirects = [
-      { fromPath: "/tiktok-updates/new-tiktok-feature-shared-audience", toPath: "/new-page-1", statusCode: 410 },
-      { fromPath: "/tiktok-updates/tiktok-data-display-method-changes", toPath: "/new-page-2", statusCode: 410 },
-      { fromPath: "/tiktok-updates/new-tiktok-feature-lookalike-audience", toPath: "/new-page-3", statusCode: 410 },
-    ];
-
-    redirects.forEach(redirect => {
-      actions.createRedirect({
-        fromPath: redirect.fromPath,
-        toPath: redirect.toPath,
-        statusCode: redirect.statusCode,
-      });
-    });
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
