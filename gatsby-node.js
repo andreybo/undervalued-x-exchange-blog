@@ -3,18 +3,7 @@ const fetch = require('node-fetch');
 const redirects = require("./redirects.json");
 
 exports.createPages = async function ({ actions, graphql }) {
-  const { createRedirect } = actions
-
-  redirects.forEach(redirect => 
-    createRedirect({
-      fromPath: redirect.fromPath,
-      toPath: "/",
-      statusCode: 410,
-    })
-  )
-
-  createRedirect({ fromPath: '/tiktok-updates/new-tiktok-feature-shared-audience', toPath: '/', statusCode: 410 })
-  createRedirect({ fromPath: '/tiktok-updates/tiktok-data-display-method-changes', toPath: '/', statusCode: 200 })
+    const { createRedirect } = actions
 
     const { data } = await graphql(`
       query {
@@ -59,53 +48,61 @@ exports.createPages = async function ({ actions, graphql }) {
     })
 
     // Make category pages
-      data.catGroup.group.forEach(cat => {
-        const catSlug = cat.fieldValue
-        const catName = cat.fieldValue
+    data.catGroup.group.forEach(cat => {
+      const catSlug = cat.fieldValue
+      const catName = cat.fieldValue
 
-        const posts = cat.sum
-        const postsPerPage = 12
-        const numPages = Math.ceil(posts / postsPerPage)
-        Array.from({ length: numPages > 1 ? numPages : "1" }).forEach((_, i) => {
-          actions.createPage({
-            path: i === 0 ? `${catSlug}` : `${catSlug}/${i + 1}`,
-            component: require.resolve(`./src/templates/category-template.js`),
-            context: {
-              limit: postsPerPage,
-              skip: i * postsPerPage,
-              numPages,
-              currentPage: i + 1,
-              cat: catName,
-              uri: catSlug
-            },
-          })
-        })
-      })
-
-    // Make latest page
-      const allposts = data.posts.totalCount
-      const allpostsPerPage = 12
-      const allnumPages = Math.ceil(allposts / allpostsPerPage)
-      Array.from({ length: allnumPages }).forEach((_, i) => {
+      const posts = cat.sum
+      const postsPerPage = 12
+      const numPages = Math.ceil(posts / postsPerPage)
+      Array.from({ length: numPages > 1 ? numPages : "1" }).forEach((_, i) => {
         actions.createPage({
-          path: i === 0 ? `/latest` : `/latest/${i + 1}`,
-          component: require.resolve(`./src/templates/blog-list.js`),
+          path: i === 0 ? `${catSlug}` : `${catSlug}/${i + 1}`,
+          component: require.resolve(`./src/templates/category-template.js`),
           context: {
-            limit: allpostsPerPage,
-            skip: i * allpostsPerPage,
-            allnumPages,
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            numPages,
             currentPage: i + 1,
+            cat: catName,
+            uri: catSlug
           },
         })
       })
+    })
 
-      // Make homepage
+    // Make latest page
+    const allposts = data.posts.totalCount
+    const allpostsPerPage = 12
+    const allnumPages = Math.ceil(allposts / allpostsPerPage)
+    Array.from({ length: allnumPages }).forEach((_, i) => {
       actions.createPage({
-        path: '/',
-        id: 'homepage',
-        component: require.resolve(`./src/templates/homepage.js`),
-        context: { slug: '/' },
+        path: i === 0 ? `/latest` : `/latest/${i + 1}`,
+        component: require.resolve(`./src/templates/blog-list.js`),
+        context: {
+          limit: allpostsPerPage,
+          skip: i * allpostsPerPage,
+          allnumPages,
+          currentPage: i + 1,
+        },
       })
+    })
+
+    // Make homepage
+    actions.createPage({
+      path: '/',
+      id: 'homepage',
+      component: require.resolve(`./src/templates/homepage.js`),
+      context: { slug: '/' },
+    })
+
+    redirects.forEach(redirect => 
+      createRedirect({
+        fromPath: redirect.fromPath,
+        toPath: "/",
+        statusCode: 410,
+      })
+    )
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
