@@ -245,6 +245,13 @@ module.exports = {
           shortname: `udonis-blog`
       }
   },
-  `gatsby-plugin-gatsby-cloud`
+  `gatsby-plugin-gatsby-cloud`,
+  {
+    resolve: `gatsby-plugin-canonical-urls`,
+    options: {
+      siteUrl: `https://blog.udonis.co/`,
+      stripQueryString: true,
+    },
+  },
   ]
 };
