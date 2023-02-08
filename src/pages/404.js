@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import Seo from "../components/seo";
 import Layout from "../components/layout";
+import { navigate } from "gatsby";
 
 const NotFoundPage = ({ pageContext: { page } }) => {
+
+  useEffect(() => {
+    navigate("/404");
+  }, []);
+
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
