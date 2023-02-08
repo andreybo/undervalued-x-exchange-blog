@@ -189,19 +189,6 @@ module.exports = {
   `gatsby-transformer-sharp`,
   "gatsby-plugin-image",
   {
-    resolve: "gatsby-plugin-robots-txt",
-    options: {
-      host: "https://wwww.blog.udonis.co/",
-      sitemap: "https://www.blog.udonis.co/sitemap/sitemap-index.xml",
-      policy: [
-        {
-          userAgent: "*",
-          disallow: "/api",
-        },
-      ],
-    },
-  },
-  {
     resolve: `gatsby-plugin-sitemap`,
     options: {
       excludes: ["/404"],
