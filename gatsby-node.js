@@ -13,6 +13,9 @@ exports.createPages = async function ({ actions, graphql }) {
     })
   )
 
+  createRedirect({ fromPath: '/tiktok-updates/new-tiktok-feature-shared-audience', toPath: '/', statusCode: 410 })
+  createRedirect({ fromPath: '/tiktok-updates/tiktok-data-display-method-changes', toPath: '/' })
+
     const { data } = await graphql(`
       query {
         posts: allWpPost {
