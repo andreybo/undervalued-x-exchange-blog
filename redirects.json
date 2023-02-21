@@ -1,35 +1,1140 @@
 [
 
     {
-        "fromPath":"/facebook-advertising/facebook-ad-account-setup",
-        "toPath":"/",
-        "status":410
-     },
-     {
-        "fromPath":"/analytics/google-analytics-access",
-        "toPath":"/",
-        "status":410
-     },
-     {
-        "fromPath":"/ad-account-disabled",
-        "toPath":"/",
-        "status":410
-     },
-     {
-        "fromPath":"/facebook-ads-arent-delivering",
-        "toPath":"/",
-        "status":410
-     },
-     {
-        "fromPath":"/news/ironsource-acquires-tapjoy",
-        "toPath":"/",
-        "status":410
-     },
-     {
-        "fromPath":"/news/scuti-creates-reward-based-marketplace",
-        "toPath":"/",
-        "status":410
-     },
+        "fromPath": "/tiktok-updates/optimization-preference",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/tiktok-updates/new-tiktok-feature-lookalike-audience",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/tiktok-updates/tiktok-released-pixel-update",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/tiktok-updates/tiktok-tool-update-smart-video-feature-update",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/tiktok-updates/tiktok-update-editing-ads-in-a-bulk",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/tiktok-updates/new-tiktok-feature-shared-audience",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/tiktok-updates/tiktok-feature-update-new-events-in-custom-audience",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/tiktok-updates/tiktok-data-display-method-changes",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/user-generated-images-in-product-reviews",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-updates/new-ways-to-customize-your-ad-creative-for-placements",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/panivox-announces-richcast",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/tiktok-updates/tiktok-feature-update-new-events-in-custom-audience/",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/tiktok-updates/new-tiktok-tool-smart-video",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/report-editor-enables-cross-account-insights",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-updates/from-now-on-dynamic-formats-and-ad-creative-feature-on-by-default",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/google-ads-mobile-app-manager-accounts",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/how-smart-campaigns-is-helping-you-reach-more-customers",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/zoom-adding-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/tiktok-updates/new-tiktok-feature-lookalike-audience/",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/understand-your-results-ad-destination-report",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/dapper-labs-has-raised-250m",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/optimization-score-recommendations-manager-accounts",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/epic-games-wants-to-re-release-fortnite",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/performance-planner-now-in-shopping-campaigns",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/apple-vs-epic-games-trial-verdict",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/custom-affinity-custom-intent-migrated-custom-audiences",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/google-ads-campaigns-change-history",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-updates/facebook-updates-coming-in-september-2019",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-updates/special-ad-category",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/larger-call-only-ads-for-higher-quality",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/how-to-reach-local-consumers-in-a-dynamic-market",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/raw-fury-partners-with-altor",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-updates/metrics-optimization",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/gismarts-snapchat-games-reach-90-million-players",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/google-introduces-conversion-actions-at-the-campaign-level-for-video-ads",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/explanations-update",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/google-ads-editor-v1-3-update",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-updates/find-the-winner-before-a-b-tests-end",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/easier-reporting-across-accounts-with-report-editor",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/youtube-masthead-ads-on-tvs-available-to-all-advertisers",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-updates/customize-the-carousel-for-various-placements-plus-the-creative-hub-update-is-now-available",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/google-allows-alternative-payment-systems",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/google-postpones-switch-to-standard-delivery-in-search-shopping-campaigns-until-october",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/more-holiday-shoppers-with-upgraded-merchant-center",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/google-expand-misrepresentation-policy",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/plarium-acquires-futureplay",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/genvid-intels-partnership",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-updates/fundraising-via-instagram-live",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/event/digital-media-marketing-conference/feed/",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/parallel-tracking-mandatory-for-video-campaigns",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/azur-games-obtains-neosus-minority-stake",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/my-games-acquires-mamboo-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/new-asset-reporting-features",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/optimization-score-for-display-campaigns",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/plansharing",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/budget-planning-performance-planner",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/google-updated-mobile-app",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/niantic-acquires-scaniverse",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/thunderful-acquires-early-morning-studio",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/new-features-for-responsive-search-ads",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/activision-blizzard-union-rights-lawsuit-filed",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/seasonality-adjustments-for-smart-bidding",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/provide-more-important-and-effective-ad-experiences-with-feeds-in-app-campaigns",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/update-access-level-account-ownership-google-ads-account",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/frequency-reporting-video-campaigns",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/simplifying-image-requirements-app-campaigns",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/conversion-categories-and-reporting-expanded",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/eloelo-raises-2-1-million",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/flavourworks-develops-immersive-touch-live-action-game",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/google-ads-api-on-scale",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/philippe-sauze-joins-my-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/filters-now-available-on-the-overview-page",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/latest-posts/gta-remasters-coming-mobile",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/responsive-search-ads",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/scale-your-ads-with-youtube-dynamic-lineups",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/auction-time-bidding-comes-to-search-ads-360",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/create-location-extension-simpler-and-faster",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/two-new-ways-to-reach-your-customers-on-google-search",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/tv-reach-planner-5-more-countries",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/zynga-finalizes-starlark-acquisition",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/search-shopping-ads-category-reporting",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/new-features-for-smart-shopping-campaigns",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/tabletop-games-spending-increased",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-updates/new-ways-to-customize-your-ad-creative-for-placements-2",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/discover-more-places-with-discovery-ads",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/activision-blizzards-net-revenue-exceeds-2-billion",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/square-enix-opens-a-london-mobile-studio",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/create-new-campaign-and-set-up-conversion-measurement",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/find-keywords-quicker-and-easier-with-refined-keywords",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-updates/in-stream-placement-offer-dynamic-ads",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/latest-posts/scuti-creates-reward-based-marketplace",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/snapchat-ads-updates",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/top-signals-update",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/newporftolio-bidstrategies",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/mobile-marketing/grow-facebook-groups",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/australian-loot-box-ban",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/grow-your-audience-faster-with-maximize-conversions-bidding-in-app-campaigns",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/digital-marketing/marketing-trends-travel-industry",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/netflix-starts-testing-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/remarketing-lits-gupdate",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/hotel-ads-product-updates-during-covid-19-to-support-the-industry",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/goodgame-studios-launches-an-in-house-publishing",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/call-ads-with-an-optional-website-link",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-updates/separating-audience-network-from-news-feed-yes-please",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/new-features-in-recommendations",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/bid-simulator-roas",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/crazylabs-acquires-firescore-interactive",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/case-study/using-facebook-ads-to-launch-successful-media-campaign",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/app-annie-security-fraud-investigation",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/winzo-announced-game-developer-fund",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/miniclip-partners-with-byss-mobile",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/mag-interactives-mobile-games-saving-the-ocean",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/google-ads-editor-v1-4",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/latest-posts/enthusiast-gaming-acquires-addicting-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/fortnite-is-shutting-down-in-china",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/google-ads-zapier",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/new-design-for-attribution-reports",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/hyper-casual-developer-8sec-expands-business",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-updates/check-out-your-a-b-tests-earlier-than-before",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/google-placements",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/optimization-scores-now-available-through-google-ads-app",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/ea-reports-record-q2-financial-results",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/responsive-display-ads-have-a-new-design",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-updates/shopping-tags-inside-instagram-ads",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/snapchat-updates/introducing-product-ads",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/scopely-acquires-sonys-gsn-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/sandbox-acquires-spanish-educational-gaming-companies",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-advertising/how-to-add-admin-to-facebook-page",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/green-grey-invests-2-million-in-pocket-size-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-advertising/facebook-ads-update-creating-multiple-ad-sets-at-once",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/six-new-columns-under-conversion-reporting",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/animoca-acquires-blowfish-studios",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/developer-teaches-turkish-village-children-to-make-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/viker-partners-with-zebedee",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/action-game-spending-doubled",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/supercell-backed-papukaya-starts-developing-mobile-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/understand-changes-in-explanation-conversions",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/standard-delivery-mandatory-google-ads",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/jagex-hires-industry-veterans",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/team17-sets-record-revenues",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/bluestacks-introduces-mobile-game-streaming",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/habbo-nfts-generated-14-million",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/woogas-switchcraft-promotes-diversity",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/color-star-acquires-elephant-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/requiring-advertiser-identity-verification-to-improve-transparency",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/activision-blizzard-forms-workplace-responsibility-committee",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/voodoo-president-joins-homa",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/nexters-revenue-skyrocketed",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/dream-sports-acquires-rolocule-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/apples-payment-rules-are-anti-competitive",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/skillz-partners-with-etermax",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/netflix-games-is-now-available-on-ios",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/crazylabs-partners-with-huawei",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/pokemon-go-developer-niantic-acquires-hoss",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/pocket-burger-games-raises-1m",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/nexters-reports-booking-growth",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/netflix-launches-mobile-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/google-sued-for-play-store-monopoly",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/google-sued-for-play-store-monopoly",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/krafton-raising-3-75-billion",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/apple-refuses-fortnites-return",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/now-gg-launches-cloud-payments",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/voodoo-invests-in-teskin",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/mz-rovio-veterans-raised-6m",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/glu-mobile-executives-leaving",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/tilting-point-raises-235-million",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/embracer-acquires-demiurge-studios",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/kixeye-shareholders-reportedly-sued-stillfront",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/latest-posts/qiiwi-games-acquires-playright-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/google-ads-is-testing-lead-form-extension-in-search-ads",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/roblox-outage-causes-players-migration",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/waysun-becomes-majority-shareholder-boss-bunny-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/epic-games-google-lawsuit",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/tripledot-studios-barcelona-office",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/homa-games-raises-50-million",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/bangladesh-banning-pubg-mobile",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/my-games-venture-capital-invests-3m",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/ironsource-acquires-bidalgo",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/fusebox-faces-sexism-accusations",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/netmarble-will-acquire-spinx-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/focus-home-interactive-acquires-dotemu",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/activision-blizzard-employees-demand-new-ceo",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/facebook-gaming-goes-mobile-first",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/uk-introduced-advertising-guidelines",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/murka-acquires-mobile-deluxe",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/zyngas-harry-potter-game-anniversary",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/rovios-new-canadian-studio-opens",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/three-new-features-overview-page",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/embracer-group-game-revenues-skyrocket",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/electric-manta-voodoo-partnership",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/rfox-media-launches-play-to-eat-model",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/jam-city-cancels-going-public",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/jam-city-acquires-ludia",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/facebook-instant-games-ios",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/genshin-impact-update-boosts-revenue",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/rovios-profits-skyrocket",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/rovio-world-health-organization",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/scientific-games-acquires-sideplay",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/warframe-is-coming-to-mobile",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/updates-in-app-campaign-asset",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/genvid-raises-113-million",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/moon-active-raises-300-million",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/playrix-launches-new-game-studio",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/spongebob-krusty-cook-off-coming-to-china",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/shareholders-criticize-activision-blizzard",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/apple-changes-developer-submissions-policies",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/animoca-brands-raises-65-million",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/stillfront-acquires-jawaker",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/update-customer-match-zapier",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/lightfox-games-partners-with-tribe-gaming",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/n3twork-expands-its-platform",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/nordisk-games-becomes-majority-shareholder-in-star-stable",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/monetization-strategies-for-mobile-apps-and-games",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/google-play-lowers-subscription-cut-to-15",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/kings-of-games-raises-funding",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/zynga-enters-nft-market",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/pubg-new-state-reaches-20-million",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/tencent-buying-sumo-group",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/witcher-monster-slayer-launch",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/audiomob-raises-16-million-for-in-game-audio-ads",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/google-updates/google-ads-fees",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-advertising/facebook-ad-account-setup",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/analytics/google-analytics-access",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/ad-account-disabled",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/facebook-ads-arent-delivering",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/ironsource-acquires-tapjoy",
+        "toPath": "/",
+        "status": 404
+      },
+      {
+        "fromPath": "/news/scuti-creates-reward-based-marketplace",
+        "toPath": "/",
+        "status": 404
+      },
 
     {
         "fromPath":"/mobile-game-dissections/junes-journey-analysis",
