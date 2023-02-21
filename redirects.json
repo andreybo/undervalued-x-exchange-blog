@@ -1,79 +1,35 @@
 [
-    { 
-        "fromPath": "/tiktok-updates/new-tiktok-feature-shared-audience",
-        "toPath": "/",
-        "status": 404
-    },
+
     {
-        "fromPath": "/tiktok-updates/tiktok-data-display-method-changes",
-        "toPath": "/",
-        "status": 404
-    },
-    {
-        "fromPath": "/tiktok-updates/new-tiktok-feature-lookalike-audience",
-        "toPath": "/",
-        "status": 404
-    },
-    {
-        "fromPath": "/tiktok-updates/tiktok-app-events-upgrade-notification",
-        "toPath": "/",
-        "status": 404
-    },
-    {
-        "fromPath": "/tiktok-updates/tiktok-released-pixel-update",
-        "toPath": "/",
-        "status": 404
-    },
-    {
-        "fromPath": "/tiktok-updates/new-tiktok-tool-smart-video",
-        "toPath": "/",
-        "status": 404
-    },
-    {
-        "fromPath": "/tiktok-updates/tiktok-campaign-budget-feature-changed",
-        "toPath": "/",
-        "status": 404
-    },
-    {
-        "fromPath": "/tiktok-updates/tiktok-feature-update-new-events-in-custom-audience",
-        "toPath": "/",
-        "status": 404
-    },
-    {
-        "fromPath": "/tiktok-updates/new-tiktok-feature-suggested-bid-beta-version",
-        "toPath": "/",
-        "status": 404
-    },
-    {
-        "fromPath": "/tiktok-updates/new-tiktok-feature-helo-and-vigo-support-interest-targeting",
-        "toPath": "/",
-        "status": 404
-    },
-    {
-        "fromPath": "/tiktok-updates/tiktok-tool-update-smart-video-feature-update",
-        "toPath": "/",
-        "status": 404
-    },
-    {
-        "fromPath": "/tiktok-updates/tiktok-update-editing-ads-in-a-bulk",
-        "toPath": "/",
-        "status": 404
-    },
-    {
-        "fromPath": "/tiktok-updates/optimization-preference",
-        "toPath": "/",
-        "status": 404
-    },
-    {
-        "fromPath": "/mobile-marketing/mobile-apps/app-marketing-mishaps",
-        "toPath": "/",
-        "status": 404
-    },
-    {
-        "fromPath": "/news/ea-acquires-playdemic",
-        "toPath": "/",
-        "status": 404
-    },
+        "fromPath":"/facebook-advertising/facebook-ad-account-setup",
+        "toPath":"/",
+        "status":410
+     },
+     {
+        "fromPath":"/analytics/google-analytics-access",
+        "toPath":"/",
+        "status":410
+     },
+     {
+        "fromPath":"/ad-account-disabled",
+        "toPath":"/",
+        "status":410
+     },
+     {
+        "fromPath":"/facebook-ads-arent-delivering",
+        "toPath":"/",
+        "status":410
+     },
+     {
+        "fromPath":"/news/ironsource-acquires-tapjoy",
+        "toPath":"/",
+        "status":410
+     },
+     {
+        "fromPath":"/news/scuti-creates-reward-based-marketplace",
+        "toPath":"/",
+        "status":410
+     },
 
     {
         "fromPath":"/mobile-game-dissections/junes-journey-analysis",
