@@ -96,6 +96,27 @@ exports.createPages = async function ({ actions, graphql }) {
         context: { slug: '/' },
       })
 
+      actions.createPage({
+        path: '/privacy',
+        id: 'privacy',
+        component: require.resolve(`./src/templates/privacy.js`),
+        context: { slug: '/privacy' },
+      })
+
+      actions.createPage({
+        path: '/terms',
+        id: 'terms',
+        component: require.resolve(`./src/templates/terms.js`),
+        context: { slug: '/terms' },
+      })
+
+      actions.createPage({
+        path: '/thank-you',
+        id: 'thank-you',
+        component: require.resolve(`./src/templates/thank-you.js`),
+        context: { slug: '/thank-you' },
+      })
+
       redirects.forEach(redirect => 
         createRedirect({
           fromPath: redirect.fromPath,
