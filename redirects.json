@@ -1,50 +1,187 @@
 [
     { 
-        "fromPath": "/tiktok-updates/new-tiktok-feature-shared-audience"
+        "fromPath": "/tiktok-updates/new-tiktok-feature-shared-audience",
+        "toPath": "/"
     },
     {
-        "fromPath": "/tiktok-updates/tiktok-data-display-method-changes"
+        "fromPath": "/tiktok-updates/tiktok-data-display-method-changes",
+        "toPath": "/"
     },
     {
-        "fromPath": "/tiktok-updates/new-tiktok-feature-lookalike-audience"
+        "fromPath": "/tiktok-updates/new-tiktok-feature-lookalike-audience",
+        "toPath": "/"
     },
     {
-        "fromPath": "/tiktok-updates/tiktok-app-events-upgrade-notification"
+        "fromPath": "/tiktok-updates/tiktok-app-events-upgrade-notification",
+        "toPath": "/"
     },
     {
-        "fromPath": "/tiktok-updates/tiktok-released-pixel-update"
+        "fromPath": "/tiktok-updates/tiktok-released-pixel-update",
+        "toPath": "/"
     },
     {
-        "fromPath": "/tiktok-updates/new-tiktok-tool-smart-video"
+        "fromPath": "/tiktok-updates/new-tiktok-tool-smart-video",
+        "toPath": "/"
     },
     {
-        "fromPath": "/tiktok-updates/tiktok-campaign-budget-feature-changed"
+        "fromPath": "/tiktok-updates/tiktok-campaign-budget-feature-changed",
+        "toPath": "/"
     },
     {
-        "fromPath": "/tiktok-updates/tiktok-feature-update-new-events-in-custom-audience"
+        "fromPath": "/tiktok-updates/tiktok-feature-update-new-events-in-custom-audience",
+        "toPath": "/"
     },
     {
-        "fromPath": "/tiktok-updates/new-tiktok-feature-suggested-bid-beta-version"
+        "fromPath": "/tiktok-updates/new-tiktok-feature-suggested-bid-beta-version",
+        "toPath": "/"
     },
     {
-        "fromPath": "/tiktok-updates/new-tiktok-feature-helo-and-vigo-support-interest-targeting"
+        "fromPath": "/tiktok-updates/new-tiktok-feature-helo-and-vigo-support-interest-targeting",
+        "toPath": "/"
     },
     {
-        "fromPath": "/tiktok-updates/tiktok-tool-update-smart-video-feature-update"
+        "fromPath": "/tiktok-updates/tiktok-tool-update-smart-video-feature-update",
+        "toPath": "/"
     },
     {
-        "fromPath": "/tiktok-updates/tiktok-update-editing-ads-in-a-bulk"
+        "fromPath": "/tiktok-updates/tiktok-update-editing-ads-in-a-bulk",
+        "toPath": "/"
     },
     {
-        "fromPath": "/tiktok-updates/optimization-preference"
+        "fromPath": "/tiktok-updates/optimization-preference",
+        "toPath": "/"
     },
     {
-        "fromPath": "/mobile-marketing/mobile-apps/app-marketing-mishaps"
+        "fromPath": "/mobile-marketing/mobile-apps/app-marketing-mishaps",
+        "toPath": "/"
     },
     {
-        "fromPath": "/news/ea-acquires-playdemic"
+        "fromPath": "/news/ea-acquires-playdemic",
+        "toPath": "/"
     },
+
     {
-        "fromPath": "/.../mobile-games/rewarded-video-ads"
-    }
+        "fromPath":"/mobile-game-dissections/junes-journey-analysis",
+        "toPath":"/mobile-marketing/mobile-games/junes-journey-analysis"
+     },
+     {
+        "fromPath":"/mobile-marketing/monetization-strategies-for-mobile-apps-and-games",
+        "toPath":"/mobile-marketing/mobile-apps/monetization-strategies-for-mobile-apps-and-games"
+     },
+     {
+        "fromPath":"/mobile-marketing/mobile-apps/app-market-ad-spend",
+        "toPath":"/mobile-marketing/app-market-ad-spend"
+     },
+     {
+        "fromPath":"/google-ads-updates",
+        "toPath":"/digital-marketing/auto-created-custom-intent-audiences"
+     },
+     {
+        "fromPath":"/mobile-marketing/grow-facebook-groups",
+        "toPath":"/digital-marketing/grow-facebook-groups"
+     },
+     {
+        "fromPath":"/what-is-user-acquisition",
+        "toPath":"/user-acquisition/what-is-user-acquisition"
+     },
+     {
+        "fromPath":"/mobile-marketing/mobile-games/app-store-optimization-mobile-games",
+        "toPath":"/mobile-marketing/app-store-optimization-mobile-games"
+     },
+     {
+        "fromPath":"/complete-guide-to-app-store-optimization",
+        "toPath":"/mobile-marketing/mobile-apps/complete-guide-to-app-store-optimization"
+     },
+     {
+        "fromPath":"/top-11-app-analytics-platforms",
+        "toPath":"/analytics/top-11-app-analytics-platforms"
+     },
+     {
+        "fromPath":"/mobile-marketing/mobile-games/blockchain-gaming",
+        "toPath":"/blockchain/blockchain-gaming"
+     },
+     {
+        "fromPath":"/mobile-marketing/hyper-casual-game",
+        "toPath":"/mobile-marketing/mobile-games/hyper-casual-game"
+     },
+     {
+        "fromPath":"/analytics/google-analytics-referral-exclusion-list",
+        "toPath":"/analytics/referral-exclusion-list"
+     },
+     {
+        "fromPath":"/mobile-marketing/mobile-apps/app-marketing-mishaps",
+        "toPath":"/mobile-marketing/5-mistakes-app-marketing"
+     },
+     {
+        "fromPath":"/determine-target-audience-for-a-successful-mobile-marketing-strategy",
+        "toPath":"/mobile-marketing/determine-target-audience-for-a-successful-mobile-marketing-strategy"
+     },
+     {
+        "fromPath":"/digital-marketing-budget",
+        "toPath":"/digital-marketing/digital-marketing-budget"
+     },
+     {
+        "fromPath":"/7-ways-to-attract-new-users",
+        "toPath":"/mobile-marketing/mobile-games/7-ways-to-attract-new-users"
+     },
+     {
+        "fromPath":"/keyword-research-app-store-optimization",
+        "toPath":"/digital-marketing/keyword-research-app-store-optimization"
+     },
+     {
+        "fromPath":"/digital-marketing/google-ads/google-uac-universal-app-campaigns",
+        "toPath":"/digital-marketing/google-uac-universal-app-campaigns"
+     },
+     {
+        "fromPath":"/get-app-reviewed",
+        "toPath":"/mobile-marketing/get-app-reviewed"
+     },
+     {
+        "fromPath":"/key-elements-facebook-and-snapchat-ad",
+        "toPath":"/digital-marketing/facebook-ads/key-elements-facebook-and-snapchat-ad"
+     },
+     {
+        "fromPath":"/mobile-marketing/mobile-games/mobile-game-monetization-dos-donts",
+        "toPath":"/mobile-marketing/mobile-games/mobile-game-monetization-kpis"
+     },
+     {
+        "fromPath":"/use-social-media-for-growing-your-mobile-app-or-game",
+        "toPath":"/digital-marketing/use-social-media-for-growing-your-mobile-app-or-game"
+     },
+     {
+        "fromPath":"/facebook-advertising/facebook-page-instant-replies",
+        "toPath":"/digital-marketing/facebook-ads/facebook-instant-replies"
+     },
+     {
+        "fromPath":"/mobile-app-retention",
+        "toPath":"/mobile-marketing/mobile-app-retention"
+     },
+     {
+        "fromPath":"/mobile-marketing/mobile-games/blockchain-gaming",
+        "toPath":"/blockchain/blockchain-gaming"
+     },
+     {
+        "fromPath":"/mobile-app-analytics",
+        "toPath":"/mobile-marketing/mobile-app-analytics"
+     },
+     {
+        "fromPath":"/facebook-advertising-strategy",
+        "toPath":"/digital-marketing/facebook-ads/facebook-ad-examples-explained"
+     },
+     {
+        "fromPath":"/key-mobile-game-metrics",
+        "toPath":"/mobile-marketing/mobile-games/key-mobile-game-metrics"
+     },
+     {
+        "fromPath":"/mobile-marketing/hyper-casual-gam",
+        "toPath":"/mobile-marketing/mobile-games/hyper-casual-gamee"
+     },
+     {
+        "fromPath":"/facebook-ads-library",
+        "toPath":"/digital-marketing/facebook-ads-library"
+     },
+     {
+        "fromPath":"/highlighted4/blockchain-gaming",
+        "toPath":"/blockchain/blockchain-gaming"
+     }
 ]

@@ -20,7 +20,7 @@ const Footer = () => (
                 </a>
               </li>
               <li>
-                <Link to="#">
+                <Link to="javascript:;">
                   Predictive modeling (Coming Soon)
                 </Link>
               </li>

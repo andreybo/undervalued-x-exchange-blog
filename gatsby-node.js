@@ -5,14 +5,6 @@ const redirects = require("./redirects.json");
 exports.createPages = async function ({ actions, graphql }) {
   const { createRedirect } = actions
 
-  redirects.forEach(redirect => 
-    createRedirect({
-      fromPath: redirect.fromPath,
-      toPath: "/",
-      statusCode: 404,
-    })
-  )
-
     const { data } = await graphql(`
       query {
         posts: allWpPost {
@@ -103,6 +95,14 @@ exports.createPages = async function ({ actions, graphql }) {
         component: require.resolve(`./src/templates/homepage.js`),
         context: { slug: '/' },
       })
+
+      redirects.forEach(redirect => 
+        createRedirect({
+          fromPath: redirect.fromPath,
+          toPath: redirect.toPath,
+          statusCode: 404,
+        })
+      )
 }
 
 exports.createSchemaCustomization = ({ actions }) => {

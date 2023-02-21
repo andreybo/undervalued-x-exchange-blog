@@ -7,7 +7,7 @@ import { navigate } from "gatsby";
 const NotFoundPage = ({ pageContext: { page } }) => {
 
   useEffect(() => {
-    navigate("/404");
+    navigate("/");
   }, []);
 
   function getRandomInt(max) {
