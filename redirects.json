@@ -230,4 +230,62 @@
         "toPath":"/blockchain/blockchain-gaming",
         "status": 301
      }
+
+
+     ,
+     {
+        "fromPath":"/news/animoca-brands-raises-65-million",
+        "toPath":"/",
+        "status": 301
+     },
+     {
+        "fromPath":"/breeo-industries-facebook-advertising",
+        "toPath":"/",
+        "status": 301
+     },
+     {
+        "fromPath":"/tiktok-ads-updates",
+        "toPath":"/",
+        "status": 301
+     },
+     {
+        "fromPath":"/google-analytics-access",
+        "toPath":"/",
+        "status": 301
+     },
+     {
+        "fromPath":"/news/sulake-announced-habbo-nft",
+        "toPath":"/",
+        "status": 301
+     },
+     {
+        "fromPath":"/news/azerion-acquires-keymobile",
+        "toPath":"/",
+        "status": 301
+     },
+     {
+        "fromPath":"/news/joakim-achren-joins-fingersofts-board",
+        "toPath":"/",
+        "status": 301
+     },
+     {
+        "fromPath":"/mobile-marketing/mobile",
+        "toPath":"/",
+        "status": 301
+     },
+     {
+        "fromPath":"/mobile-marketing/mobile-marketing-",
+        "toPath":"/",
+        "status": 301
+     },
+     {
+        "fromPath":"/main-page",
+        "toPath":"/",
+        "status": 301
+     },
+     {
+        "fromPath":"/mobile-marketing/mobile-games/genshin-impact-advertising/embed",
+        "toPath":"/mobile-marketing/mobile-games/genshin-impact-advertising",
+        "status": 301
+     }
 ]
