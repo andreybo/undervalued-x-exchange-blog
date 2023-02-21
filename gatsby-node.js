@@ -121,7 +121,7 @@ exports.createPages = async function ({ actions, graphql }) {
         createRedirect({
           fromPath: redirect.fromPath,
           toPath: redirect.toPath,
-          statusCode: 410,
+          statusCode: redirect.status,
           redirectInBrowser: true,
           isPermanent: true,
         })
