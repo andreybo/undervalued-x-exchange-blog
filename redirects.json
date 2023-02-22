@@ -1277,8 +1277,8 @@
         "status": 301
      },
      {
-        "fromPath":"/mobile-marketing/hyper-casual-gam",
-        "toPath":"/mobile-marketing/mobile-games/hyper-casual-gamee",
+        "fromPath":"/mobile-marketing/hyper-casual-game",
+        "toPath":"/mobile-marketing/mobile-games/hyper-casual-game",
         "status": 301
      },
      {
