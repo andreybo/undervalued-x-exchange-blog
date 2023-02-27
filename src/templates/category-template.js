@@ -43,7 +43,7 @@ const Category = ({ pageContext, data:{catName, postdata, hotImage} }) => {
                   </svg>
                   </Link>
                 )}
-                {Array.from({ length: numPages > currentPage + 10 ? currentPage + 10: numPages - currentPage }, (_, i) => (
+                {Array.from({ length: numPages > currentPage + 10 ? currentPage + 10 : numPages - currentPage }, (_, i) => (
                   <li
                     key={`pagination-number${i + 1}`}
                     className={`nota${(i === currentPage - 1 && ' activeli') || (i > currentPage + 2 && ' disactiveli') || (i < currentPage - 2 && ' disactiveli') || ''}`}

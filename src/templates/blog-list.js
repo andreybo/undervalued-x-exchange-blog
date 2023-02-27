@@ -38,7 +38,7 @@ const BlogList = ({ pageContext, data:{postdata, hotImage} }) => {
                 </svg>
               </Link>
             )}
-            {Array.from({ length: allnumPages > currentPage + 10 ? currentPage + 10: allnumPages - currentPage }, (_, i) => (
+            {Array.from({ length: allnumPages > currentPage + 10 ? currentPage + 10 : allnumPages - currentPage }, (_, i) => (
               <li
                 key={`pagination-number${currentPage + 1}`}
                 className={`nota${(i === currentPage - 1 && ' activeli') || (i > currentPage + 2 && ' disactiveli') || (i < currentPage - 2 && ' disactiveli') || ''}`}
