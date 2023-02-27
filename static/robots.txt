@@ -2,3 +2,5 @@ User-agent: *
 Disallow: /api
 Sitemap: https://www.blog.udonis.co/sitemap/sitemap-index.xml
 Host: https://wwww.blog.udonis.co
+
+Disallow: /latest/*
