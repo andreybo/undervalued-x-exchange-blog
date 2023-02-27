@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Helmet } from "react-helmet";
 
-function SEO({ title, seo }) {
+function SEO({ title, seo, robots }) {
   const {
     site: { siteMetadata },
   } = useStaticQuery(graphql`
@@ -47,6 +47,7 @@ function SEO({ title, seo }) {
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:card" content="summary_large_image" />
       {seo?.opengraphImage && <meta name="twitter:image:src" content={seo.opengraphImage.sourceUrl} />}
+      {robots ? <meta name="robots" content="noindex"></meta> : ""}
     </Helmet>
   );
 }
