@@ -191,7 +191,7 @@ module.exports = {
   {
     resolve: `gatsby-plugin-sitemap`,
     options: {
-      excludes: ["/404", "/latest/**"],
+      excludes: ["/404"],
     },
   },
   "gatsby-plugin-sass",
