@@ -38,7 +38,7 @@ const BlogList = ({ pageContext, data:{postdata, hotImage} }) => {
                 </svg>
               </Link>
             )}
-            {Array.from({ length: allnumPages < currentPage + 10 ? currentPage + 10: allnumPages - currentPage }, (_, i) => (
+            {Array.from({ length: allnumPages > currentPage + 10 ? currentPage + 10: allnumPages - currentPage }, (_, i) => (
               <li
                 key={`pagination-number${currentPage + 1}`}
                 className={`nota${(i === currentPage - 1 && ' activeli') || (i > currentPage + 2 && ' disactiveli') || (i < currentPage - 2 && ' disactiveli') || ''}`}
@@ -50,7 +50,7 @@ const BlogList = ({ pageContext, data:{postdata, hotImage} }) => {
                 </Link>
               </li>
             ))}
-            {!isLast && allnumPages!= currentPage && (
+            {!isLast && allnumPages > 1  && (
               <Link to={nextPage} rel="next" className="next">
                 <svg width="54" height="26" viewBox="0 0 54 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" clipRule="evenodd" d="M45.8585 15L0 15V11L45.8581 11L37.6484 3.4745L40.3513 0.525879L51.7777 11H52V11.2038L53.9597 13.0002L52 14.7966V15H51.7781L40.3513 25.4745L37.6484 22.5259L45.8585 15Z" fill="white"/>

@@ -7,7 +7,7 @@ exports.createPages = async function ({ actions, graphql }) {
 
     const { data } = await graphql(`
       query {
-        posts: allWpPost {
+        posts: allWpPost(filter: {status: {eq: "publish"}}) {
           edges {
             node {
                 slug
