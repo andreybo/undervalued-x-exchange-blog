@@ -46,7 +46,7 @@ const NotFoundPage = ({ pageContext: { page } }) => {
           it.
         </p>
         <div className="none__hero-buttons">
-          <a className="btn btn--v1" href="https://www.blog.udonis.co/">
+          <a className="btn btn--v1" href="https://www.blog.udonis.co">
             Blog
           </a>
           <a className="btn btn--v1" href="https://www.udonis.co/">

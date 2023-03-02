@@ -236,7 +236,7 @@ module.exports = {
   {
     resolve: `gatsby-plugin-canonical-urls`,
     options: {
-      siteUrl: `https://www.blog.udonis.co/`,
+      siteUrl: `https://www.blog.udonis.co`,
       stripQueryString: true,
     },
   },

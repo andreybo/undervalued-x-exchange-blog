@@ -38,7 +38,7 @@ const ThankYou = ({ pageContext: { page } }) => {
           Your information has been submitted and we will get back to you soon.
         </p>
         <div className="none__hero-buttons">
-          <a className="btn btn--v1" href="https://www.blog.udonis.co/">
+          <a className="btn btn--v1" href="https://www.blog.udonis.co">
             Blog
           </a>
           <button
