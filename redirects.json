@@ -1348,5 +1348,68 @@
         "fromPath":"/mobile-marketing/mobile-games/genshin-impact-advertising/embed",
         "toPath":"/mobile-marketing/mobile-games/genshin-impact-advertising",
         "status": 301
+     },
+
+
+
+     {
+       "fromPath": "/news/ludus-announces-investments-turkish-mobile-game-startups",
+       "toPath": "/404",
+       "status": 404
+     },
+     {
+       "fromPath": "/news/rovio-allegedly-collected-childrens-data",
+       "toPath": "/404",
+       "status": 404
+     },
+     {
+       "fromPath": "/news/tiktok-enters-mobile-gaming-world",
+       "toPath": "/404",
+       "status": 404
+     },
+     {
+       "fromPath": "/news/tencents-mobile-game-revenue",
+       "toPath": "/404",
+       "status": 404
+     },
+     {
+       "fromPath": "/news/hadi-raises-5-million",
+       "toPath": "/404",
+       "status": 404
+     },
+     {
+       "fromPath": "/news/gardenscapes-reached-3-billion",
+       "toPath": "/404",
+       "status": 404
+     },
+     {
+       "fromPath": "/news/embracer-group-acquiring-crazylabs",
+       "toPath": "/404",
+       "status": 404
+     },
+     {
+       "fromPath": "/news/voodoo-acquires-beach-bum",
+       "toPath": "/404",
+       "status": 404
+     },
+     {
+       "fromPath": "/news/udo-games-raises-420000",
+       "toPath": "/404",
+       "status": 404
+     },
+     {
+       "fromPath": "/news/netflix-acquires-game-studio",
+       "toPath": "/404",
+       "status": 404
+     },
+     {
+       "fromPath": "/news/netflix-adding-mobile-games",
+       "toPath": "/404",
+       "status": 404
+     },
+     {
+       "fromPath": "/news/storms-partners-with-voodoo",
+       "toPath": "/404",
+       "status": 404
      }
 ]
