@@ -58,7 +58,7 @@ const Terms = () => {
           We employ the use of cookies. By using Udonis’s website you consent to
           the use of cookies in accordance with Udonis’s defined{" "}
           <strong>privacy policy</strong>. (
-          <a href="/privacy-policy">https://www.udonis.co/privacy-policy</a>)
+          <a href="/privacy">https://www.udonis.co/privacy</a>)
           <br />
           Most of the modern day interactive web sites use cookies to enable us
           to retrieve user details for each visit. Cookies are used in some
