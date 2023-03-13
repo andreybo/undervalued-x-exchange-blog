@@ -162,7 +162,7 @@ const Privacy = () => {
         <p>
           If you have any questions about this Privacy Policy, the practices of
           this site, or your dealings with this site, please contact us at:{" "}
-          <a href="hello@udonis.co.">hello@udonis.co.</a>
+          <a mailto="hello@udonis.co.">hello@udonis.co.</a>
           <br />
           <br />
           <strong>

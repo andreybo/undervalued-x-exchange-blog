@@ -219,7 +219,7 @@ const Terms = () => {
           <br />
           If you are among the organizations listed in paragraph 2 above and are
           interested in linking to our website, you must notify us by sending an
-          e-mail to <a href="hello@udonis.co">hello@udonis.co</a>. Please
+          e-mail to <a mailto="hello@udonis.co">hello@udonis.co</a>. Please
           include your name, your organization name, contact information (such
           as a phone number and/or e-mail address) as well as the URL of your
           site, a list of any URLs from which you intend to link to our Web
@@ -318,7 +318,7 @@ const Terms = () => {
         <p>
           If you have any questions about our Terms &amp; Conditions, the
           practices of this site, or your dealings with this site, please
-          contact us at: <a href="hello@udonis.co.">hello@udonis.co.</a>
+          contact us at: <a mailto="hello@udonis.co.">hello@udonis.co.</a>
           <br />
           <strong>
             Udonis Ltd.,
