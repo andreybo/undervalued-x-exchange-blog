@@ -1411,5 +1411,10 @@
        "fromPath": "/news/storms-partners-with-voodoo",
        "toPath": "/404",
        "status": 404
+     },
+     {
+       "fromPath": "/digital-marketing/email-list-validation-data-enrichment",
+       "toPath": "/404",
+       "status": 404
      }
 ]
