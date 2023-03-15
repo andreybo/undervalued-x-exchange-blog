@@ -160,7 +160,7 @@ module.exports = {
             maxWidth: 1500,
             withWebp: true,
             showCaptions: true,
-            quality: 100,
+            quality: 80,
             loading: 'auto',
             linkImagesToOriginal: false,
           },
