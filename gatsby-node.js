@@ -5,34 +5,32 @@ const redirects = require("./redirects.json");
 exports.createPages = async function ({ actions, graphql }) {
   const { createRedirect } = actions
 
-    const { data } = await graphql(`
-      query {
-        posts: allWpPost(filter: {status: {eq: "publish"}}) {
-          edges {
-            node {
-                slug
-                id
-                guid
-                categories{
-                  nodes{
-                    name
-                    slug
-                  }
-                }
-                uri
-                content
-            }
-          }
-          totalCount
-        }
-        catGroup: allWpCategory {
-          group(field: uri) {
-            fieldValue
-            sum(field: count)
+    const { data } = await graphql(`{
+  posts: allWpPost(filter: {status: {eq: "publish"}}) {
+    edges {
+      node {
+        slug
+        id
+        guid
+        categories {
+          nodes {
+            name
+            slug
           }
         }
+        uri
+        content
       }
-    `)
+    }
+    totalCount
+  }
+  catGroup: allWpCategory {
+    group(field: {uri: SELECT}) {
+      fieldValue
+      sum(field: {count: SELECT})
+    }
+  }
+}`)
 
     // Create posts
     data.posts.edges.forEach(edge => {

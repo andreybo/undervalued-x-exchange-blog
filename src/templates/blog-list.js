@@ -87,41 +87,35 @@ const BlogList = ({ pageContext, data:{postdata, hotImage} }) => {
 }
 export default BlogList
 
-export const indexPageQuery = graphql`
-  query($skip: Int!, $limit: Int!) {
-    postdata: allWpPost(
-      limit: $limit
-      skip: $skip
-      sort: { fields: date, order: DESC }
-    ) {
-      nodes {
-        featuredImage {
-          node{
-            localFile {
-              childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
-              }
+export const indexPageQuery = graphql`query ($skip: Int!, $limit: Int!) {
+  postdata: allWpPost(limit: $limit, skip: $skip, sort: {date: DESC}) {
+    nodes {
+      featuredImage {
+        node {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
             }
           }
         }
-        date
-        excerpt
-        id
-        slug
-        tags{
-          nodes{
-            name
-          }
+      }
+      date
+      excerpt
+      id
+      slug
+      tags {
+        nodes {
+          name
         }
-        title
-        uri
-        categories{
-          nodes{
-            name
-            slug
-          }
+      }
+      title
+      uri
+      categories {
+        nodes {
+          name
+          slug
         }
       }
     }
   }
-`;
+}`;

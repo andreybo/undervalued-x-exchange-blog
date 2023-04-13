@@ -3,26 +3,24 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 
 const Trends = () => {
   
-  const data = useStaticQuery(graphql`
-  query {
-    trends: allWpPost(
-      filter: {categories: {nodes: {elemMatch: {name: {in: ["Highlighted1", "Highlighted2", "Highlighted3", "Highlighted3-2", "Highlighted4"]}}}}}
-      sort: { fields: date, order: DESC }
-    ) {
-      nodes {
-        id
-        title
-        tags{
-          nodes{
-            name
-          }
+  const data = useStaticQuery(graphql`{
+  trends: allWpPost(
+    filter: {categories: {nodes: {elemMatch: {name: {in: ["Highlighted1", "Highlighted2", "Highlighted3", "Highlighted3-2", "Highlighted4"]}}}}}
+    sort: {date: DESC}
+  ) {
+    nodes {
+      id
+      title
+      tags {
+        nodes {
+          name
         }
-        uri
       }
-      totalCount
-    },
+      uri
+    }
+    totalCount
   }
-`)
+}`)
 const [list, setList] = useState(false) 
 const [i, setI] = useState(3) 
 

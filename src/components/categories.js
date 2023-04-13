@@ -4,11 +4,10 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 const Categories = () => {
   
 
-  const data = useStaticQuery(graphql`
-  query {
+  const data = useStaticQuery(graphql`{
   allWpCategory(
-    sort: {fields: count, order: DESC}
-    filter: {name: {nin: ["Highlighted1","Highlighted3","Highlighted2","Highlighted4","Highlighted3-2"]}, count: {gte: 1}}
+    sort: {count: DESC}
+    filter: {name: {nin: ["Highlighted1", "Highlighted3", "Highlighted2", "Highlighted4", "Highlighted3-2"]}, count: {gte: 1}}
   ) {
     nodes {
       name
@@ -16,9 +15,7 @@ const Categories = () => {
       count
     }
   }
-}
-
-`)
+}`)
 
 const [list, setList] = useState(false) 
 const [i, setI] = useState(5) 

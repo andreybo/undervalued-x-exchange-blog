@@ -148,150 +148,140 @@ function IndexPage({
   );
 }
 
-export const indexPageQuery = graphql`
-
-  fragment postData on WpPost {
-    featuredImage {
-      node{
-        localFile {
-          childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
-          }
+export const indexPageQuery = graphql`fragment postData on WpPost {
+  featuredImage {
+    node {
+      localFile {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
     }
-    date
-    excerpt
-    id
-    slug
-    tags{
-      nodes{
-        name
-      }
-    }
-    title
-    uri
-    categories{
-      nodes{
-        name
-        slug
-      }
+  }
+  date
+  excerpt
+  id
+  slug
+  tags {
+    nodes {
+      name
     }
   }
+  title
+  uri
+  categories {
+    nodes {
+      name
+      slug
+    }
+  }
+}
 
-  query {
-    hot1: allWpPost(
-      filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted1"}}}}}
-      sort: { fields: date, order: DESC }
-      limit: 1
-    ) {
-      nodes {
-        ...postData
-        modified
-      }
-    },
-    hot2: allWpPost(
-      filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted2"}}}}}
-      sort: { fields: date, order: DESC }
-      limit: 1
-    ) {
-      nodes {
-        ...postData
-        modified
-      }
-    },
-    hot3: allWpPost(
-      filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted3"}}}}}
-      sort: { fields: date, order: DESC }
-      limit: 1
-    ) {
-      nodes {
-        ...postData
-        modified
-      }
-    },
-    hot32: allWpPost(
-      filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted3-2"}}}}}
-      sort: { fields: date, order: DESC }
-      limit: 1
-    ) {
-      nodes {
-        ...postData
-        modified
-      }
-    },
-    hot4: allWpPost(
-      filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted4"}}}}}
-      sort: { fields: date, order: DESC }
-      limit: 3
-    ) {
-      nodes {
-        ...postData
-        modified
-      }
-    },
-    latest: allWpPost(
-      sort: { fields: date, order: DESC }
-      limit: 4
-    ) {
-      nodes {
-        ...postData
-        modified
-      }
-    }
-    latestOld: allWpPost(
-      sort: { fields: date, order: DESC }
-      limit: 3
-      skip: 4
-    ) {
-      nodes {
-        ...postData
-        modified
-      }
-    }
-    blockchain: allWpPost(
-      filter: {categories: {nodes: {elemMatch: {name: {eq: "Blockchain Game Dissections"}}}}}
-      sort: { fields: date, order: DESC }
-      limit: 4
-    ) {
-      nodes {
-        ...postData
-        modified
-      }
-    }
-    blockchainOld: allWpPost(
-      filter: {categories: {nodes: {elemMatch: {name: {eq: "Blockchain Game Dissections"}}}}}
-      sort: { fields: date, order: DESC }
-      limit: 3
-      skip: 4
-    ) {
-      nodes {
-        ...postData
-        modified
-      }
-    }
-    mgdissections: allWpPost(
-      filter: {categories: {nodes: {elemMatch: {name: {eq: "Mobile Game Dissections"}}}}}
-      sort: { fields: date, order: DESC }
-      limit: 4
-    ) {
-      nodes {
-        ...postData
-        modified
-      }
-    }
-    mgdissectionsOld: allWpPost(
-      filter: {categories: {nodes: {elemMatch: {name: {eq: "Mobile Game Dissections"}}}}}
-      sort: { fields: date, order: DESC }
-      limit: 3
-      skip: 4
-    ) {
-      nodes {
-        ...postData
-        modified
-      }
+{
+  hot1: allWpPost(
+    filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted1"}}}}}
+    sort: {date: DESC}
+    limit: 1
+  ) {
+    nodes {
+      ...postData
+      modified
     }
   }
-`;
+  hot2: allWpPost(
+    filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted2"}}}}}
+    sort: {date: DESC}
+    limit: 1
+  ) {
+    nodes {
+      ...postData
+      modified
+    }
+  }
+  hot3: allWpPost(
+    filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted3"}}}}}
+    sort: {date: DESC}
+    limit: 1
+  ) {
+    nodes {
+      ...postData
+      modified
+    }
+  }
+  hot32: allWpPost(
+    filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted3-2"}}}}}
+    sort: {date: DESC}
+    limit: 1
+  ) {
+    nodes {
+      ...postData
+      modified
+    }
+  }
+  hot4: allWpPost(
+    filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted4"}}}}}
+    sort: {date: DESC}
+    limit: 3
+  ) {
+    nodes {
+      ...postData
+      modified
+    }
+  }
+  latest: allWpPost(sort: {date: DESC}, limit: 4) {
+    nodes {
+      ...postData
+      modified
+    }
+  }
+  latestOld: allWpPost(sort: {date: DESC}, limit: 3, skip: 4) {
+    nodes {
+      ...postData
+      modified
+    }
+  }
+  blockchain: allWpPost(
+    filter: {categories: {nodes: {elemMatch: {name: {eq: "Blockchain Game Dissections"}}}}}
+    sort: {date: DESC}
+    limit: 4
+  ) {
+    nodes {
+      ...postData
+      modified
+    }
+  }
+  blockchainOld: allWpPost(
+    filter: {categories: {nodes: {elemMatch: {name: {eq: "Blockchain Game Dissections"}}}}}
+    sort: {date: DESC}
+    limit: 3
+    skip: 4
+  ) {
+    nodes {
+      ...postData
+      modified
+    }
+  }
+  mgdissections: allWpPost(
+    filter: {categories: {nodes: {elemMatch: {name: {eq: "Mobile Game Dissections"}}}}}
+    sort: {date: DESC}
+    limit: 4
+  ) {
+    nodes {
+      ...postData
+      modified
+    }
+  }
+  mgdissectionsOld: allWpPost(
+    filter: {categories: {nodes: {elemMatch: {name: {eq: "Mobile Game Dissections"}}}}}
+    sort: {date: DESC}
+    limit: 3
+    skip: 4
+  ) {
+    nodes {
+      ...postData
+      modified
+    }
+  }
+}`;
 
 export default IndexPage;

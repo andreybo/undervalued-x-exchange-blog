@@ -92,52 +92,48 @@ const Category = ({ pageContext, data:{catName, postdata, hotImage} }) => {
 }
 export default Category
 
-export const pageQuery = graphql`
-  query($cat: String, $skip: Int!, $limit: Int!) {
-    postdata: allWpPost(
-      limit: $limit
-      skip: $skip
-      sort: { fields: [date], order: DESC }
-      filter: {categories: {nodes: {elemMatch: {uri: {eq: $cat}}}}}
-    ) {
-      totalCount
-      nodes {
-        featuredImage {
-          node{
-            localFile {
-              childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
-              }
+export const pageQuery = graphql`query ($cat: String, $skip: Int!, $limit: Int!) {
+  postdata: allWpPost(
+    limit: $limit
+    skip: $skip
+    sort: {date: DESC}
+    filter: {categories: {nodes: {elemMatch: {uri: {eq: $cat}}}}}
+  ) {
+    totalCount
+    nodes {
+      featuredImage {
+        node {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
             }
           }
         }
-        date
-        excerpt
-        id
-        slug
-        tags{
-          nodes{
-            name
-          }
-        }
-        title
-        uri
-        categories{
-          nodes{
-            name
-            slug
-          }
-        }
-        seo{
-          title
-          metaDesc
+      }
+      date
+      excerpt
+      id
+      slug
+      tags {
+        nodes {
+          name
         }
       }
-    }
-    catName: wpCategory(
-      uri: {eq: $cat}
-    ) {
-      name
+      title
+      uri
+      categories {
+        nodes {
+          name
+          slug
+        }
+      }
+      seo {
+        title
+        metaDesc
+      }
     }
   }
-`
+  catName: wpCategory(uri: {eq: $cat}) {
+    name
+  }
+}`

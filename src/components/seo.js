@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { Helmet } from "react-helmet";
+//import { Helmet } from "react-helmet";
 
-function SEO({ title, seo, robots }) {
+function Head({ title, seo, robots }) {
   const {
     site: { siteMetadata },
   } = useStaticQuery(graphql`
@@ -24,11 +24,7 @@ function SEO({ title, seo, robots }) {
   const pageTitle = seo?.title || title || "Home";
 
   return (
-    <Helmet
-      htmlAttributes={{ lang: "en" }}
-      defaultTitle={defaultTitle}
-      titleTemplate={`%s`}
-    >
+    <>
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
       <meta name="keywords" content={pageKeywords} />
@@ -48,8 +44,8 @@ function SEO({ title, seo, robots }) {
       <meta name="twitter:card" content="summary_large_image" />
       {seo?.opengraphImage && <meta name="twitter:image:src" content={seo.opengraphImage.sourceUrl} />}
       {robots ? <meta name="robots" content="noindex"></meta> : ""}
-    </Helmet>
+    </>
   );
 }
 
-export default SEO;
+export default Head;

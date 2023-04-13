@@ -34,24 +34,19 @@ module.exports = {
               })
             })
           },
-          query: `
-            {
-              allWpPost(
-                sort: {order: DESC, fields: date}
-                limit: 40
-                ) {
-                edges {
-                  node {
-                    date
-                    title
-                    content
-                    excerpt
-                    uri
-                  }
-                }
-              }
-            }
-          `,
+          query: `{
+  allWpPost(sort: {date: DESC}, limit: 40) {
+    edges {
+      node {
+        date
+        title
+        content
+        excerpt
+        uri
+      }
+    }
+  }
+}`,
           output: "/rss.xml",
           title: `RSS Feed`,
         },
@@ -183,7 +178,7 @@ module.exports = {
     resolve: `gatsby-plugin-sharp`,
     options: {
       defaultQuality: 90,
-      failOnError: false,
+      failOn: 'none',
     },
   },
   `gatsby-transformer-sharp`,
