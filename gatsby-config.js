@@ -232,7 +232,6 @@ module.exports = {
           shortname: `udonis-blog`
       }
   },
-  `gatsby-plugin-gatsby-cloud`,
   {
     resolve: `gatsby-plugin-canonical-urls`,
     options: {
