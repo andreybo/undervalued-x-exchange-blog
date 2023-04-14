@@ -5,11 +5,11 @@ import Header from "./header";
 import "../styles/boot.scss";
 import "../styles/layout.scss";
 import CookieConsent from "react-cookie-consent";
-//import { useLocation } from "@reach/router" // this helps tracking the location
-//import { initializeAndTrack } from 'gatsby-plugin-gdpr-cookies'
+import { useLocation } from "@reach/router" // this helps tracking the location
+import { initializeAndTrack } from 'gatsby-plugin-gdpr-cookies'
 
 function Layout({ children, classmain = "page" }) {
-  //const location = useLocation()
+  const location = useLocation()
   return (
     <React.Fragment>
       <Header />
@@ -20,7 +20,7 @@ function Layout({ children, classmain = "page" }) {
         buttonText="Accept"
         declineButtonText="Decline"
         cookieName="gatsby-gdpr-google-tagmanager"
-        //onAccept={() => initializeAndTrack(location)}
+        onAccept={() => initializeAndTrack(location)}
       >
         In order to deliver superior & personalized user experience we use
         cookies.

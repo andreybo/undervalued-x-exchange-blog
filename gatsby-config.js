@@ -36,18 +36,18 @@ module.exports = {
             })
           },
           query: `{
-  allWpPost(sort: {date: DESC}, limit: 40) {
-    edges {
-      node {
-        date
-        title
-        content
-        excerpt
-        uri
-      }
-    }
-  }
-}`,
+            allWpPost(sort: {date: DESC}, limit: 40) {
+              edges {
+                node {
+                  date
+                  title
+                  content
+                  excerpt
+                  uri
+                }
+              }
+            }
+          }`,
           output: "/rss.xml",
           title: `RSS Feed`,
         },

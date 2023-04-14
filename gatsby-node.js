@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 //const redirects = require("./redirects.json");
 
 exports.createPages = async function ({ actions, graphql }) {
-  const { createRedirect } = actions;
+  //const { createRedirect } = actions;
 
   const { data } = await graphql(`{
     posts: allWpPost(filter: {status: {eq: "publish"}}) {
