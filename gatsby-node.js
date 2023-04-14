@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const redirects = require("./redirects.json");
+//const redirects = require("./redirects.json");
 
 exports.createPages = async function ({ actions, graphql }) {
   const { createRedirect } = actions;
@@ -115,7 +115,7 @@ exports.createPages = async function ({ actions, graphql }) {
     context: { slug: '/thank-you' },
   });
 
-  redirects.forEach(redirect => 
+  /*redirects.forEach(redirect => 
     createRedirect({
       fromPath: redirect.fromPath,
       toPath: redirect.toPath,
@@ -123,5 +123,5 @@ exports.createPages = async function ({ actions, graphql }) {
       redirectInBrowser: true,
       isPermanent: true,
     })
-  )
+  )*/
 }
