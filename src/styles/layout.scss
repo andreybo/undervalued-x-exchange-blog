@@ -1333,7 +1333,7 @@ img{
       //flex: 1;
       //flex-shrink: 0;
       //flex-flow: row wrap;
-      justify-content: start;
+      justify-content: flex-start;
       padding: 10px 15px 2px 15px;
       max-height: 80px;
       overflow: hidden;
@@ -1774,7 +1774,7 @@ img{
       flex: 1;
       flex-shrink: 0;
       flex-flow: row wrap;
-      justify-content: start;
+      justify-content: flex-start;
       padding: 15px 15px 0 0px;
     }
     &-empty{
