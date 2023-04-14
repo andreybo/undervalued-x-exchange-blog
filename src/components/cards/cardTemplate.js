@@ -8,11 +8,11 @@ const Card = ({ post, classmain = "hp__col", layoutHorizontal=false, layoutVerti
   return (
         <div className={classmain}>
             <div 
-              className={"news " + (
-                (layoutHorizontal && "news__layout-hor") ||
-                (layoutVertical && "news__layout-ver") ||
-                (layoutTitle && "news__layout-ttle") ||
-                (layoutFirst && "news__layout-first"))}
+              className={
+                (layoutHorizontal && "news news__layout-hor") ||
+                (layoutVertical && "news news__layout-ver") ||
+                (layoutTitle && "news news__layout-ttle") ||
+                (layoutFirst && "news news__layout-first")}
             >
               <Link to={post.uri}
                 className="news__link"
