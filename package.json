@@ -8,9 +8,9 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "GATSBY_CONCURRENT_DOWNLOAD=5 gatsby develop",
-    "start": "GATSBY_CONCURRENT_DOWNLOAD=5 gatsby develop",
-    "build": "GATSBY_CONCURRENT_DOWNLOAD=5 gatsby build",
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build --incremental",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
