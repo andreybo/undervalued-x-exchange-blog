@@ -120,10 +120,6 @@ module.exports = {
         useGatsbyImage: true,
       },
       url: process.env.WPGRAPHQL_URL || `https://cms.udonis.co/graphql`,
-      develop: {
-        hardCacheMediaFiles: true,
-        hardCacheData: true,
-      },
       type: {
         Post: {
           limit:
@@ -216,7 +212,7 @@ module.exports = {
       "trackingId": "UA-65953491-2"
     }
   },
-  {
+  /*{
     resolve: `gatsby-plugin-gdpr-cookies`,
     options: {
       googleTagManager: {
@@ -226,7 +222,7 @@ module.exports = {
       },
       environments: ["production", "development"],
     }
-  },
+  },*/
   {
       resolve: `gatsby-plugin-disqus`,
       options: {
