@@ -128,7 +128,13 @@ module.exports = {
         Post: {
           limit:
             process.env.NODE_ENV === `development` ? 50 : 5000,
-        }
+        },
+        MediaItem: {
+          createFileNodes: false,
+          localFile: {
+            requestConcurrency: 50,
+          },
+        },
       }
     },
   },
