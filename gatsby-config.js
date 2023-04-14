@@ -116,21 +116,7 @@ module.exports = {
   {
     resolve: `gatsby-source-wordpress`,
     options: {
-      html: {
-        useGatsbyImage: true,
-      },
       url: process.env.WPGRAPHQL_URL || `https://cms.udonis.co/graphql`,
-      type: {
-        Post: {
-          limit:
-            process.env.NODE_ENV === `development` ? 50 : 5000,
-        },
-        MediaItem: {
-          localFile: {
-            requestConcurrency: 50,
-          },
-        },
-      }
     },
   },
   {
@@ -155,7 +141,6 @@ module.exports = {
           resolve: 'gatsby-remark-images',
           options: {
             maxWidth: 1000,
-            withWebp: true,
             showCaptions: true,
             quality: 80,
             loading: 'auto',
@@ -180,7 +165,7 @@ module.exports = {
     resolve: `gatsby-plugin-sharp`,
     options: {
       defaultQuality: 90,
-      failOn: 'none',
+      failOn: `warning`,
     },
   },
   `gatsby-transformer-sharp`,
@@ -205,13 +190,13 @@ module.exports = {
       icon: `src/images/udonis-icon.png`
     },
   },
-  {
+  /*{
     resolve: 'gatsby-plugin-google-analytics',
     options: {
       "trackingId": "UA-65953491-2"
     }
   },
-  /*{
+  {
     resolve: `gatsby-plugin-gdpr-cookies`,
     options: {
       googleTagManager: {
