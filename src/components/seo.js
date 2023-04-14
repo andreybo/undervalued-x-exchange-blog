@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-//import { Helmet } from "react-helmet";
 
 function Head({ title, seo, robots }) {
   const {

@@ -80,7 +80,7 @@ export default function BlogPost({ data }) {
               <Subscribe buttonId="ud-postform"/>
               <div className="post__related">
                 <div className="hp__row row">
-                  <Related posts={post.related_posts} title={post.title} limit={4} classmain="col-md-6 col-12 gobottom" layoutHorizontal={true} titleh3={true}/>
+                  <Related posts={post.relatedPosts} title={post.title} limit={4} classmain="col-md-6 col-12 gobottom" layoutHorizontal={true} titleh3={true}/>
                 </div>
               </div>
               <div className="post__comments">
@@ -98,7 +98,7 @@ export default function BlogPost({ data }) {
                 <Subscribe buttonId="ud-sidebarform"/>
               </div>
               <Ads/>
-              <Related posts={post.related_posts} title={post.title} limit={2} classmain="postLeft__related gobottom" layoutHorizontal={true} titleh3={false}/>
+              <Related posts={post.relatedPosts} title={post.title} limit={2} classmain="postLeft__related gobottom" layoutHorizontal={true} titleh3={false}/>
               <Categories/>
             </div>
           </div>
@@ -152,7 +152,7 @@ export const query = graphql`
           }
         }
       }
-      related_posts {
+      relatedPosts {
         nodes {
           title
           uri
@@ -171,6 +171,7 @@ export const query = graphql`
             }
           }
           excerpt
+          modified
           seo{
             title
             metaDesc

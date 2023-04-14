@@ -1,4 +1,5 @@
 module.exports = {
+  trailingSlash: `always`,
   siteMetadata: {
     title: `Udonis Mobile Marketing Agency`,
     description: `Udonis offers all the mobile marketing services you need. Creative production, user acquisition, monetization, growth consulting, and more.!`,
@@ -190,7 +191,6 @@ module.exports = {
     },
   },
   "gatsby-plugin-sass",
-  "gatsby-plugin-react-helmet",
   "gatsby-plugin-sitemap",
   {
     resolve: `gatsby-plugin-manifest`,
