@@ -81,7 +81,7 @@ const data = useStaticQuery(graphql`query ($cat: String, $skip: Int!, $limit: In
         <div className="category__row row">
           <div className="col-md-8 col-12">
               <div className="row">
-                  <Card data={data.postdata} layoutHorizontal={true} descr={false} classmain="col-md-6 col-12 gobottom"/>
+                  <Card data={data.postdata} classmain="col-md-6 col-12 gobottom"/>
               </div>
               <ul className="category__np">
                 {!isFirst && (

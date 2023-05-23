@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-function Head({ title, seo, robots }) {
+function SEO({ title, seo, robots }) {
   const {
     site: { siteMetadata },
   } = useStaticQuery(graphql`
@@ -47,4 +47,4 @@ function Head({ title, seo, robots }) {
   );
 }
 
-export default Head;
+export default SEO;

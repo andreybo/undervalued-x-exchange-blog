@@ -1,16 +1,14 @@
 import React from 'react'
-import CardTemplate from "./cardTemplate";
+import CardTemplateMain from "./cardTemplateMain";
 
-const CardHor = ({ data, classmain = "hp__col", homepage=false}) => {
+const CardHor = ({ data, classmain = "hp__col"}) => {
   const news = data;
 
   return (
     <>
       {news.nodes.map((post, index) => (
-        homepage ? 
-          index < 2 ? <CardTemplate post={post} key={index} layoutHorizontal={true} classmain={classmain}/>
-          : <CardTemplate post={post} key={index} layoutTitle={true} classmain={classmain}/>
-          : <CardTemplate post={post} key={index} layoutHorizontal={true} classmain={classmain}/>
+          index < 2 ? <CardTemplateMain post={post} key={index} classmain={classmain}/>
+          : <CardTemplateMain post={post} key={index} classmain={classmain}/>
       ))}
     </>
   );

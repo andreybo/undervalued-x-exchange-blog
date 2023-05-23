@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Link } from "gatsby";
+import * as React from "react"
+import { Link } from "gatsby"
 
 const Footer = () => (
   <div className="footer">
@@ -7,26 +7,33 @@ const Footer = () => (
       <div className="row">
 
         <div className="col-md-3 col-6">
-          <h3 className="footer-title2">Our services</h3>
+          <h3 className="footer-title2">our services</h3>
           <ul>
               <li>
-                <a href="https://www.udonis.co/acquisition">
+                <a href="https://udonis.co/acquisition">
                   Managed User Acqusition
                 </a>
               </li>
               <li>
-                <a href="https://www.udonis.co/creative">
+                <a href="https://udonis.co/creative">
                   Creative Production
                 </a>
               </li>
               <li>
-                  Predictive modeling (Coming Soon)
+                <a href="https://udonis.co/mobile-business-development">
+                  Business
+                </a>
+              </li>
+              <li>
+                <a href="https://udonis.co/reporting-development">
+                  Reporting
+                </a>
               </li>
           </ul>
         </div>
 
         <div className="col-md-3 col-6">
-          <h3 className="footer-title2">Learn more about</h3>
+          <h3 className="footer-title2">learn more about</h3>
           <ul>
               <li><a href="/">Mobile Marketing</a></li>
               <li><a href="/topics/user-acquisition">User Acquisition</a></li>
@@ -35,12 +42,12 @@ const Footer = () => (
         </div>
 
         <div className="col-md-3 col-6">
-          <h3 className="footer-title2">Udonis</h3>
+          <h3 className="footer-title2">udonis</h3>
           <ul>
-              <li><a href="https://www.udonis.co/about">About us</a></li>
-              <li><a href="https://www.udonis.co/portfolio">Portfolio</a></li>
-              <li><a href="https://www.udonis.co/careers">Careers</a></li>
-              <li><a href="https://www.udonis.co/contact">Contact</a></li>
+              <li><a href="https://udonis.co/about">About us</a></li>
+              <li><a href="https://udonis.co/portfolio">Portfolio</a></li>
+              <li><a href="https://udonis.co/careers">Careers</a></li>
+              <li><a href="https://udonis.co/contact">Contact</a></li>
           </ul>
         </div>
         
@@ -55,11 +62,6 @@ const Footer = () => (
             <li>
               <a href="https://www.facebook.com/udonis.co/">
                 <img src={`/icons/fb.svg`} alt="facebook"/>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/udonisagency/">
-                <img src={`/icons/inst.svg`} alt="instagram"/>
               </a>
             </li>
             <li>
@@ -81,14 +83,14 @@ const Footer = () => (
 
         <div className="col-md-12 col-12 hor padn end">
               <ul>
-                <li><Link to="/privacy">Privacy Policy</Link></li>
+                <li><a href="https://udonis.co/privacy">Privacy Policy</a></li>
                 <li>|</li>
-                <li><Link to="/terms">Terms &amp; conditions</Link></li>
+                <li><a href="https://udonis.co/terms">Terms &amp; conditions</a></li>
               </ul>
             </div>
       </div>
     </footer>
   </div>
-);
+)
 
-export default Footer;
+export default Footer

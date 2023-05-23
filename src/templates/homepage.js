@@ -1,12 +1,14 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
-import CardH from "../components/cards/cardHor";
-import CardV from "../components/cards/cardVert";
-import CardT from "../components/cards/cardTitle";
+
+import CardHot from "../components/cards/cardTemplateMainHot";
+import CardMain from "../components/cards/cardTemplateMain";
+import CardImage from "../components/cards/cardTemplateMainImage";
+import CardLong from "../components/cards/cardTemplateMainLong";
+import CardSmall from "../components/cards/cardTemplateMainSmall";
 import Layout from  "../components/layout";
 import Seo from "../components/seo"
-import Blur from "../components/blur";
 import Ads from "../components/ads";
 
 function IndexPage({
@@ -22,65 +24,30 @@ function IndexPage({
     blockchainOld,
     mgdissections,
     mgdissectionsOld,
-    hotImage
   },
 }) {
   return (
     <Layout>
-      <Seo
-        title='Smart advertising | Udonis Mobile Marketing Agency '
-        metaDesciption='Udonis Blog is your go-to place for all the news related to mobile games & apps, offering a variety of content available to everyone.'
-        />
-        <Blur/>
       <div className="hp">
         <Ads/>
-        <div className="hp__container hp__container--hot container">
-          <div className="hp__hot">
-            <div className="hp__sticker">
-              <StaticImage
-                alt='hot'
-                objectFit='contain'
-                className='hp__sticker--image'
-                src='../images/icons/Icons_0000s_0021_03.png'
-              />
-            </div>
-            <h3 className="hp__hot--text">Highlighted</h3>
-          </div>
-          <div className="hp__row row fixcolor">
-            <div className="hp__col col-md-7 col-12">
-              <div className="hp__row row">
-                  <CardH data={hot1} descr={true} classmain="col-md-6 col-12"/>
-                  <CardH data={hot2} descr={true} classmain="col-md-6 col-12"/>
-                  <CardT data={hot3} descr={true} classmain="col-md-6 col-12"/>
-                  <CardT data={hot32} descr={true} classmain="col-md-6 col-12"/>
+        <div className="hp__container hp__container--hot">
+              <CardHot post={hot1.nodes[0]} classmain="hot_card"/>
+              <div className="hero">
+                  <CardMain post={hot2.nodes[0]} classmain="card-main"/>
+                  <CardMain post={hot3.nodes[0]} classmain="card-main"/>
+                  <CardMain post={hot32.nodes[0]} classmain="card-main"/>
+                  <CardMain post={hot4.nodes[0]} classmain="card-main"/>
               </div>
-            </div>
-            <div className="hp__col col-md-5 col-12 fixheight">
-              <div className="hp__row row">
-                  <CardV data={hot4} descr={true} classmain="col-md-12 col-12"/>
-              </div>
-            </div>
-          </div>
         </div>
-        <div className="hp__container container">
-          <p className="hp__subtitle">Trends for you</p>
+
+        <div className="hp__container">
           <div className="hp__title">
             <h3 className="hp__title--text">Latest</h3>
-            <a className="hp__title--link" href="/latest">
-              <img src="link.svg" alt="link" />
-            </a>
           </div>
-          <div className="hp__row row">
-            <div className="hp__col col-md-7 col-12">
-              <div className="hp__row row">
-                <CardH data={latest} homepage={true} classmain="col-md-6 col-12" />
-              </div>
-            </div>
-            <div className="hp__col col-md-5 col-12">
-              <div className="hp__row row">
-                <CardV data={latestOld} classmain="col-md-12 col-12" />
-              </div>
-            </div>
+          <div className="gap20">
+                {latest.nodes.map((post, index) => (
+                  <CardImage post={post} classmain="news__layout-image-out" key={index}/>
+                ))}
           </div>
           <div className="hp__more">
             <a className="hp__more--link" href="/latest">
@@ -88,25 +55,28 @@ function IndexPage({
             </a>
           </div>
         </div>
+
         <Ads/>
-        <div className="hp__container container">
-          <p className="hp__subtitle">Trends for you</p>
+
+        <div className="hp__container">
           <div className="hp__title">
             <h3 className="hp__title--text">Mobile Game Dissections</h3>
-            <a className="hp__title--link" href="/topics/mobile-game-dissections">
-              <img src="link.svg" alt="link" />
-            </a>
           </div>
-          <div className="hp__row row">
-            <div className="hp__col col-md-7 col-12">
+          <div className="layout">
+            <div className="layout__left">
+              <div className="hp__row row mb40">
+                <CardLong post={mgdissections.nodes[0]} classmain="card-long"/>
+              </div>
               <div className="hp__row row">
-                <CardH data={mgdissections} homepage={true} classmain="col-md-6 col-12" />
+                {mgdissections.nodes.map((post, index) => (
+                  index !== 0 && <CardMain post={post} classmain="col-md-4 col-12" key={index}/>
+                ))}
               </div>
             </div>
-            <div className="hp__col col-md-5 col-12">
-              <div className="hp__row row">
-                <CardV data={mgdissectionsOld} classmain="col-md-12 col-12" />
-              </div>
+            <div className="layout__right vertsmall">
+                {mgdissectionsOld.nodes.map((post, index) => (
+                  <CardSmall post={post} classmain="news__layout-small--out" key={index}/>
+                ))}
             </div>
           </div>
           <div className="hp__more">
@@ -115,26 +85,27 @@ function IndexPage({
             </a>
           </div>
         </div>
+
         <Ads/>
-        <div className="hp__container container">
-          <p className="hp__subtitle">Trends for you</p>
+
+        <div className="hp__container">
           <div className="hp__title">
             <h3 className="hp__title--text">Blockchain Game Dissections</h3>
-            <a className="hp__title--link" href="/topics/blockchain-game-dissections">
-              <img src="link.svg" alt="link" />
-            </a>
           </div>
-          <div className="hp__row row">
-            <div className="hp__col col-md-7 col-12">
-              <div className="hp__row row">
-                <CardH data={blockchain} homepage={true} classmain="col-md-6 col-12" />
-              </div>
-            </div>
-            <div className="hp__col col-md-5 col-12">
-              <div className="hp__row row">
-                <CardV data={blockchainOld} classmain="col-md-12 col-12" />
-              </div>
-            </div>
+          <div className="hp__row block__blockchain--top">
+                <div className="block__blockchain--top_2">
+                  {blockchain.nodes.map((post, index) => (
+                    <CardMain post={post} classmain="card-main" key={index}/>
+                  ))}
+                </div>
+                <div className="block__blockchain--right">
+                  <p>yappy</p>
+                </div>
+          </div>
+          <div className="hp__row block__blockchain--bottom">
+              {blockchainOld.nodes.map((post, index) => (
+                <CardMain post={post} classmain="card-main" key={index}/>
+              ))}
           </div>
           <div className="hp__more">
             <a className="hp__more--link" href="/topics/blockchain-game-dissections">
@@ -221,14 +192,14 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   hot4: allWpPost(
     filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted4"}}}}}
     sort: {date: DESC}
-    limit: 3
+    limit: 1
   ) {
     nodes {
       ...postData
       modified
     }
   }
-  latest: allWpPost(sort: {date: DESC}, limit: 4) {
+  latest: allWpPost(sort: {date: DESC}, limit: 3) {
     nodes {
       ...postData
       modified
@@ -243,7 +214,7 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   blockchain: allWpPost(
     filter: {categories: {nodes: {elemMatch: {name: {eq: "Blockchain Game Dissections"}}}}}
     sort: {date: DESC}
-    limit: 4
+    limit: 2
   ) {
     nodes {
       ...postData
@@ -253,8 +224,8 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   blockchainOld: allWpPost(
     filter: {categories: {nodes: {elemMatch: {name: {eq: "Blockchain Game Dissections"}}}}}
     sort: {date: DESC}
-    limit: 3
-    skip: 4
+    limit: 4
+    skip: 2
   ) {
     nodes {
       ...postData
@@ -274,7 +245,7 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   mgdissectionsOld: allWpPost(
     filter: {categories: {nodes: {elemMatch: {name: {eq: "Mobile Game Dissections"}}}}}
     sort: {date: DESC}
-    limit: 3
+    limit: 5
     skip: 4
   ) {
     nodes {
@@ -285,3 +256,10 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
 }`;
 
 export default IndexPage;
+
+export const Head = () => (
+  <Seo
+  title='Smart advertising | Udonis Mobile Marketing Agency '
+  metaDesciption='Udonis Blog is your go-to place for all the news related to mobile games & apps, offering a variety of content available to everyone.'
+  />
+)
