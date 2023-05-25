@@ -10,16 +10,6 @@ const ThankYou = ({ pageContext: { page } }) => {
 
   return (
     <div>
-      <Seo
-        title="Thank You"
-        metaDesciption="Thank you for reaching out to Udonis. Our team will reach out to you as soon as possible."
-      />
-
-      <div className="blur-container">
-        <div
-          className={"blur blur__position-5 blur__variant-" + getRandomInt(4)}
-        />
-      </div>
 
       <div className="thanks__hero">
         <div className="thanks__hero-image">
@@ -64,3 +54,10 @@ const ThankYou = ({ pageContext: { page } }) => {
 };
 
 export default ThankYou;
+
+export const Head = () => (
+  <Seo
+    title="Thank You"
+    metaDesciption="Thank you for reaching out to Udonis. Our team will reach out to you as soon as possible."
+  />
+)

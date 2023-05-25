@@ -19,19 +19,28 @@ export default function BlogPost({ data }) {
 
   return (
     <Layout>
-      <Seo title={post.title} seo={post.seo} />
-      <Blur/>
-      <div className="post post__container container">
-        <div className="post__row row">
-          <div className="post__col post__col--left col-md-7 col-12">
+      <div className="post">
+        <div className="post__top">
+          <div className="post__left">
             <div className="post__out">
               <div className="post__head">
+                <div className="post__head--image-top">
                   <GatsbyImage
                     image={post.featuredImage ==null ? null : post.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
                     alt={post.title}
                     objectFit='cover'
                   />
+                </div>
                 <h1 className="post__head--title">{post.title}</h1>
+                <div className="trends__tag-container">
+                  {post.tags.nodes.map((tag, index) => (
+                    <div key={index}>
+                      <p className="trends__tag">
+                        #{tag.name.replace(/ /g,"")}
+                      </p>
+                    </div>
+                  ))}
+                </div>
                 <p className="post__head--author">
                   by <b>{post.author ? post.author.node.name : 'Udonis'}</b>,&nbsp; 
                   <time dateTime={postDate}>{Moment(postDate).format('MMMM D, YYYY')}</time>
@@ -43,24 +52,8 @@ export default function BlogPost({ data }) {
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 ></div>
               </div>
-              <div className="post__border post__border--first emptytag">
-                <StaticImage
-                  alt='hot'
-                  objectFit='contain'
-                  className='post__border--image'
-                  src='../images/down.png'
-                />
-              </div>
             </div>
               <div className="post__about">
-                <div className="post__border post__border--second">
-                  <StaticImage
-                    alt='hot'
-                    objectFit='contain'
-                    className='post__border--image'
-                    src='../images/up.png'
-                  />
-                </div>
                 <h3>
                   About Udonis
                 </h3>
@@ -71,42 +64,40 @@ export default function BlogPost({ data }) {
                   </a>
                 </p>
               </div>
-              <StaticImage
-                alt='hot'
-                objectFit='contain'
-                className='post__hot--image'
-                src='../images/icons/Icons_0000s_0021_03.png'
-              />
               <Subscribe buttonId="ud-postform"/>
-              <div className="post__related">
-                <div className="hp__row row">
-                  <Related posts={post.relatedPosts} title={post.title} limit={4} classmain="col-md-6 col-12 gobottom" layoutHorizontal={true} titleh3={true}/>
-                </div>
-              </div>
               <div className="post__comments">
                 <h3>
                   Comments
                 </h3>
                 <Comments slug={post.slug} title={post.title} id={post.id}/>
               </div>
-              
           </div>
-          <div className="col-md-5 col-12 postLeft">
-            <div className="gap-container">
+          <div className="post__right">
               <Trends/>
-              <div className="postLeft__subscribe">
-                <Subscribe buttonId="ud-sidebarform"/>
+              <div className="maxw">
+                <Categories/>
+                <Ads/>
+                <Related posts={post.relatedPosts} limit={4} classmain="postcard" layoutHorizontal={true} titleh3={true}/>
               </div>
-              <Ads/>
-              <Related posts={post.relatedPosts} title={post.title} limit={2} classmain="postLeft__related gobottom" layoutHorizontal={true} titleh3={false}/>
-              <Categories/>
-            </div>
+          </div>
+        </div>
+        
+        <div className="post__related">
+          <h3 className="related__title">
+            Related posts
+          </h3>
+          <div className="post__related-out">
+              <Related posts={post.relatedPosts} limit={4} classmain="postcard" layoutHorizontal={true} titleh3={true}/>
           </div>
         </div>
       </div>
     </Layout>
   )
 }
+
+export const Head = ({data}) => (
+  <Seo title={data.wpPost.title} seo={data.wpPost.seo} />
+)
 
 export const query = graphql`
   query($slug: String) {

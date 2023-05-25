@@ -66,8 +66,8 @@ const max = data.trends.nodes.lenth
       </div>
         <div className="categories__more">
           <button onClick={handleLoadMore}>
-            <svg className={list?'acti':'nn'} width="23" height="14" viewBox="0 0 23 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd" clipRule="evenodd" d="M0.939453 3.06077L3.06077 0.939453L11.5001 9.37879L19.9395 0.939453L22.0608 3.06077L11.5001 13.6214L0.939453 3.06077Z" fill="#9AB8E5"/>
+            <svg className={list?'acti':'nn'} width="23" height="13" viewBox="0 0 23 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L11.5 11.5L22 1" stroke="white" stroke-opacity="0.19"/>
             </svg>
           </button>
         </div>

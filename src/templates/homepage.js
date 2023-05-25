@@ -10,6 +10,7 @@ import CardSmall from "../components/cards/cardTemplateMainSmall";
 import Layout from  "../components/layout";
 import Seo from "../components/seo"
 import Ads from "../components/ads";
+import Subscribe from "../components/subscribe";
 
 function IndexPage({
   data: {
@@ -98,8 +99,8 @@ function IndexPage({
                     <CardMain post={post} classmain="card-main" key={index}/>
                   ))}
                 </div>
-                <div className="block__blockchain--right">
-                  <p>yappy</p>
+                <div className="block__blockchain--right gold">
+                  <Subscribe buttonId="ud-postform"/>
                 </div>
           </div>
           <div className="hp__row block__blockchain--bottom">

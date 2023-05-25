@@ -18,8 +18,6 @@ const BlogList = ({ pageContext, data:{postdata, hotImage} }) => {
   const nextPage = '/latest/' + (currentPage + 1).toString()
   return (
     <Layout>
-      <Seo title='Latest Posts | Udonis' />
-      <Blur/>
       <div className="category container">
         <div className="category__title-container">
           <p className="category__tag">Category</p>
@@ -86,6 +84,11 @@ const BlogList = ({ pageContext, data:{postdata, hotImage} }) => {
   )
 }
 export default BlogList
+
+
+export const Head = ({data}) => (
+  <Seo title='Latest Posts | Udonis' />
+)
 
 export const indexPageQuery = graphql`query ($skip: Int!, $limit: Int!) {
   postdata: allWpPost(limit: $limit, skip: $skip, sort: {date: DESC}) {

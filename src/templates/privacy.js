@@ -8,15 +8,6 @@ const Privacy = () => {
 
   return (
     <div className="tp">
-      <Seo
-        title="Privacy Policy"
-        metaDesciption="Udonis Privacy Policy for your reading pleasure."
-      />
-      <div className="blur-container">
-        <div
-          className={"blur blur__position-5 blur__variant-" + getRandomInt(4)}
-        />
-      </div>
 
       <div className="tp__inner container">
         <h1 className="tp__inner-title">Privacy Policy</h1>
@@ -182,3 +173,10 @@ const Privacy = () => {
 };
 
 export default Privacy;
+
+export const Head = () => (
+  <Seo
+    title="Privacy Policy"
+    metaDesciption="Udonis Privacy Policy for your reading pleasure."
+  />
+)

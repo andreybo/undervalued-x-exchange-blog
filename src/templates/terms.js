@@ -8,15 +8,6 @@ const Terms = () => {
 
   return (
     <div className="tp">
-      <Seo
-        title="Terms and Conditions"
-        metaDesciption="Udonis Terms and Conditions for your reading pleasure."
-      />
-      <div className="blur-container">
-        <div
-          className={"blur blur__position-5 blur__variant-" + getRandomInt(4)}
-        />
-      </div>
 
       <div className="tp__inner container">
         <h1 className="tp__inner-title">Terms and Conditions</h1>
@@ -335,3 +326,10 @@ const Terms = () => {
 };
 
 export default Terms;
+
+export const Head = () => (
+  <Seo
+    title="Terms and Conditions"
+    metaDesciption="Udonis Terms and Conditions for your reading pleasure."
+  />
+)

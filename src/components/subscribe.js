@@ -98,8 +98,8 @@ render() {
                   />
                   <label htmlFor="EMAIL">Email</label>
               </div>
-              <button id={this.props.buttonId} className="btn btn--v2" type="submit" name="submit">
-                  SUBSCRIBE
+              <button id={this.props.buttonId} className="main_cta" type="submit" name="submit">
+                <span>SUBSCRIBE</span>
               </button>
           </form>
         <p className="post__subscribe--terms">
@@ -113,9 +113,7 @@ render() {
 
 const Subscirbe = ({buttonId}) => {
   return (
-    <div>
       <TheFormComponent buttonId={buttonId}/>
-    </div>
   )
 }
 

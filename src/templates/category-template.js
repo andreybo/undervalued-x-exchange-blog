@@ -71,8 +71,6 @@ const data = useStaticQuery(graphql`query ($cat: String, $skip: Int!, $limit: In
   const nextPage = uri + '/' + (currentPage + 1).toString()
   return (
     <Layout>
-      <Seo title={`${data.catName.name} | Udonis`} metaDesciption={catHeader} />
-      <Blur/>
       <div className="category container">
         <div className="category__title-container">
           <p className="category__tag">Category</p>
@@ -139,3 +137,7 @@ const data = useStaticQuery(graphql`query ($cat: String, $skip: Int!, $limit: In
   )
 }
 export default Category
+
+export const Head = ({data}) => (
+  <Seo title={`${data.catName.name} | Udonis`} metaDesciption={catHeader} />
+)
