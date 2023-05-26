@@ -121,12 +121,6 @@ module.exports = {
         hardCacheMediaFiles: true,
         hardCacheData: true,
       },
-      type: {
-        Post: {
-          limit:
-            process.env.NODE_ENV === `development` ? 50 : 5000,
-        }
-      }
     },
   },
   {
