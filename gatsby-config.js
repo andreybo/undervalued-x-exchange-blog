@@ -194,7 +194,7 @@ module.exports = {
       icon: `src/images/udonis-icon.png`
     },
   },
-  /*{
+  {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
       "trackingId": "UA-65953491-2"
@@ -210,13 +210,21 @@ module.exports = {
       },
       environments: ["production", "development"],
     }
-  },*/
+  },
   {
       resolve: `gatsby-plugin-disqus`,
       options: {
           shortname: `udonis-blog`
       }
   },
+  {
+    resolve: `gatsby-plugin-canonical-urls`,
+    options: {
+      siteUrl: `https://www.blog.udonis.co`,
+      stripQueryString: true,
+    },
+  },
+  `gatsby-plugin-gatsby-cloud`,
   {
     resolve: `gatsby-plugin-canonical-urls`,
     options: {
