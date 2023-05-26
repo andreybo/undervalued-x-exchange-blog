@@ -2,9 +2,6 @@ import React from "react";
 import Seo from "../components/seo";
 
 const Privacy = () => {
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
 
   return (
     <div className="tp">

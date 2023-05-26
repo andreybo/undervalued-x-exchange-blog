@@ -1,9 +1,8 @@
 import React from "react"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 import Card from "../components/cards/cardHor";
 import Layout from  "../components/layout";
 import { Link } from 'gatsby'
-import Blur from "../components/blur";
 import Seo from "../components/seo";
 import Categories from "../components/categories";
 import Subscribe from "../components/subscribe";
@@ -18,15 +17,15 @@ const BlogList = ({ pageContext, data:{postdata, hotImage} }) => {
   const nextPage = '/latest/' + (currentPage + 1).toString()
   return (
     <Layout>
-      <div className="category container">
+      <div className="category__container">
         <div className="category__title-container">
           <p className="category__tag">Category</p>
           <h1 className="category__title">Latest Posts</h1>
         </div>
-        <div className="category__row row">
-          <div className="col-md-8 col-12">
-            <div className="row">
-              <Card data={postdata} layoutHorizontal={true} descr={false} classmain="col-md-6 col-12 gobottom"/>
+        <div className="category__top">
+          <div className="category__left">
+            <div className="category__main">
+              <Card data={postdata} layoutHorizontal={true} descr={false} classmain="postcard"/>
             </div>
             <ul className="category__np">
             {!isFirst && (
@@ -72,8 +71,8 @@ const BlogList = ({ pageContext, data:{postdata, hotImage} }) => {
               <Subscribe/>
             </div>
           </div>
-          <div className="col-md-4 col-12">
-            <div className="gap-container">
+          <div className="category__right">
+            <div className="maxw">
               <Categories/>
               <Ads/>
             </div>

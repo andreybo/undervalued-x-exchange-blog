@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "gatsby";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Moment from 'moment';
 
 const CardLong = ({ post, classmain = "hp__col"}) => {

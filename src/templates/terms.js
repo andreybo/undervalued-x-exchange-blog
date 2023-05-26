@@ -2,9 +2,6 @@ import React from "react";
 import Seo from "../components/seo";
 
 const Terms = () => {
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
 
   return (
     <div className="tp">

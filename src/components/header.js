@@ -10,6 +10,7 @@ const Header = () => {
     setActive(!isActive);
   };
 
+  
   const [isSearch, setSearch] = useState(false);
 
   const searchToggle = () => {
@@ -136,7 +137,7 @@ const Header = () => {
   return (
     <>
       <header className="header liquid">
-          <div className="header__container container">
+          <div className={isSearch? "header__container container activesearch":"header__container container"}>
               <Link className="header__leftside header__leftside-logo navbar-brand" to="/">
                   <img src={`/svg/logo.svg`} alt="Udonis"/>
               </Link>
@@ -175,7 +176,7 @@ const Header = () => {
               </li>
             ))}
               </ul>
-              <div className="header__search">
+          <div className="header__search">
             <Search/>
           </div>
           <button

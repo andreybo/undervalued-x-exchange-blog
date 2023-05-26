@@ -1,55 +1,31 @@
 import React from "react";
 import Seo from "../components/seo";
-import { StaticImage } from "gatsby-plugin-image";
-import { navigate } from "gatsby";
+import Layout from  "../components/layout";
 
 const ThankYou = ({ pageContext: { page } }) => {
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
 
   return (
-    <div>
+    <Layout>
 
       <div className="thanks__hero">
         <div className="thanks__hero-image">
-          <StaticImage
-            src="../images/home/bottle.png"
-            quality={95}
-            formats={["auto", "webp"]}
-            placeholder="blurred"
-            alt=""
-          />
         </div>
-        <h1 className="thanks__hero-title htitle">
+        <h1 className="thanks__hero-title htitle gifBack gifBack--v1">
           Thank you for reaching us!
         </h1>
         <p className="thanks__hero-descr">
           Your information has been submitted and we will get back to you soon.
         </p>
-        <div className="none__hero-buttons">
-          <a className="btn btn--v1" href="https://www.blog.udonis.co">
-            Blog
+        <div className="thanks__hero-buttons">
+          <a className="main_cta main_cta--white" href="https://www.blog.udonis.co">
+            <span>Blog</span>
           </a>
-          <button
-            className="btn btn--v1"
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            Homepage
-          </button>
-          <button
-            className="btn btn--v1"
-            onClick={() => {
-              navigate("/contact");
-            }}
-          >
-            About us
-          </button>
+          <a className="main_cta main_cta--white" href="https://www.udonis.co">
+            <span>About us</span>
+          </a>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

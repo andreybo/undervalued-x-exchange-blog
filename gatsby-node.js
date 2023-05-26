@@ -24,9 +24,9 @@ exports.createPages = async function ({ actions, graphql }) {
       totalCount
     }
     catGroup: allWpCategory {
-      group(field: { uri: SELECT }) {
+      group(field: uri) {
         fieldValue
-        sum(field: { count: SELECT })
+        sum(field: count)
       }
     }
   }`);
