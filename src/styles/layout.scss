@@ -2725,18 +2725,17 @@ div.CookieConsent{
   left: 20px!important;
   bottom: 20px!important;
   padding: 15px;
-  border-radius: 20px;
+  border-radius: $border-m;
   box-shadow: 0 0 20px rgb(41 146 250 / 14%);
-  background: #fff!important;
+  background: $grey!important;
   color: #000!important;
   button{
-    background-image: linear-gradient(90deg,#ff8037,#ffec44,#fff673,#ffae00)!important;
-    box-shadow: 0 4px 15px 0 rgb(255 238 0 / 33%), inset 0 0 28px #ffe600!important;
-    color: #373c56!important;
-    text-transform: uppercase!important;
+    background-color: $gold;
+    color: #000!important;
+    text-transform: lowercase!important;
     padding: 10px 25px!important;
-    border-radius: 200px!important;
-    font-family: 'Inter', sans-serif!important;
+    border-radius: $border-m!important;
+    font-family: 'Proxima Nova', sans-serif!important;
     font-weight: 600!important;
     &:hover{
       transform: scale(1.2);
