@@ -278,6 +278,8 @@ img {
       position: absolute;
       //top: 21px;
       z-index: 12;
+      left: 0;
+      padding-left: 15px;
       .liquid-alt &{
         top:6px;
       }
@@ -2651,7 +2653,7 @@ img {
         margin: 0;
       }
       @include media-breakpoint-down(md) {
-        width: calc(100% - 80px);
+        width: calc(100% - 60px);
         padding-left: 15px;
       }
     }
@@ -2829,6 +2831,9 @@ div#disqus_thread iframe[sandbox] {
     a{
       color: $white;
       font-size: var(--font-s);
+    }
+    &:hover{
+      color: $gold;
     }
   }
 }
