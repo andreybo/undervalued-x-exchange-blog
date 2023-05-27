@@ -64,28 +64,37 @@ exports.createPages = async function ({ actions, graphql }) {
               numPages,
               currentPage: i + 1,
               cat: catSlug,
-              uri: catSlug
+              uri: catSlug + `/${i}`
             },
           })
         })
       })
 
     // Make latest page
-      const allposts = data.posts.totalCount
-      const allpostsPerPage = 12
-      const allnumPages = Math.ceil(allposts / allpostsPerPage)
-      Array.from({ length: allnumPages }).forEach((_, i) => {
+    // Set the number of posts per page
+    const POSTS_PER_PAGE = 12;
+
+    // Calculate the number of pages needed
+    const postsCount = data.posts.totalCount;
+    const numPages = Math.ceil(postsCount / POSTS_PER_PAGE);
+
+    // Create a page for each group of posts
+    if (actions && actions.createPage) {
+      for (let pageNumber = 0; pageNumber < numPages; pageNumber++) {
+        const path = pageNumber === 0 ? `/latest` : `/latest/${pageNumber + 1}`;
+
         actions.createPage({
-          path: i === 0 ? `/latest` : `/latest/${i + 1}`,
+          path,
           component: require.resolve(`./src/templates/blog-list.js`),
           context: {
-            limit: allpostsPerPage,
-            skip: i * allpostsPerPage,
-            allnumPages,
-            currentPage: i + 1,
+            limit: POSTS_PER_PAGE,
+            skip: pageNumber * POSTS_PER_PAGE,
+            numPages,
+            currentPage: pageNumber + 1,
           },
-        })
-      })
+        });
+      }
+    }
 
       // Make homepage
       actions.createPage({
