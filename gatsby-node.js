@@ -54,7 +54,7 @@ exports.createPages = async function ({ actions, graphql }) {
         const posts = cat.sum
         const postsPerPage = 12
         const numPages = Math.ceil(posts / postsPerPage)
-        Array.from({ length: numPages > 1 ? numPages : 1 }).forEach((_, i) => {
+        Array.from({ length: numPages }).forEach((_, i) => {
           actions.createPage({
             path: i === 0 ? `${catSlug}` : `${catSlug}/${i + 1}`,
             component: require.resolve(`./src/templates/category-template.js`),
@@ -64,37 +64,32 @@ exports.createPages = async function ({ actions, graphql }) {
               numPages,
               currentPage: i + 1,
               cat: catSlug,
-              uri: i === 0 ? catSlug : `${catSlug}/${i}`
+              uri: catSlug
             },
           })
         })
       })
 
     // Make latest page
-    // Set the number of posts per page
-    const POSTS_PER_PAGE = 12;
-
-    // Calculate the number of pages needed
-    const postsCount = data.posts.totalCount;
-    const numPages = Math.ceil(postsCount / POSTS_PER_PAGE);
-
-    // Create a page for each group of posts
-    if (actions && actions.createPage) {
-      for (let pageNumber = 0; pageNumber < numPages; pageNumber++) {
-        const path = pageNumber === 0 ? `/latest` : `/latest/${pageNumber + 1}`;
-
-        actions.createPage({
-          path,
+      const allposts = data.posts.totalCount
+      const allpostsPerPage = 12
+      const allnumPages = Math.ceil(allposts / allpostsPerPage)
+      Array.from({ length: allnumPages }).forEach((_, i) => {
+        pagesToCreate.push({
+          path: i === 0 ? `/latest` : `/latest/${i + 1}`,
           component: require.resolve(`./src/templates/blog-list.js`),
           context: {
-            limit: POSTS_PER_PAGE,
-            skip: pageNumber * POSTS_PER_PAGE,
-            numPages,
-            currentPage: pageNumber + 1,
+            limit: allpostsPerPage,
+            skip: i * allpostsPerPage,
+            allnumPages,
+            currentPage: i + 1,
           },
-        });
-      }
-    }
+        })
+      })
+
+      pagesToCreate.forEach(page => {
+        actions.createPage(page);
+      })
 
       // Make homepage
       actions.createPage({
