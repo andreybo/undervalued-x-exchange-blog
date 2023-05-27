@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef } from 'react';
 import { Link } from "gatsby"
 import Search from "./search";
 
@@ -8,6 +8,16 @@ const Header = () => {
 
   const handleToggle = () => {
     setActive(!isActive);
+  };
+
+  const menuRef = useRef(null);
+
+  const scrollMenu = (direction) => {
+    if (direction === 'left') {
+      menuRef.current.scrollLeft -= 200;
+    } else {
+      menuRef.current.scrollLeft += 200;
+    }
   };
 
   
@@ -123,16 +133,6 @@ const Header = () => {
     }
   ]
 
-  
-
-  const menuRef = useRef(null);
-
-  const handleScroll = (event) => {
-    const delta = Math.max(-1, Math.min(1, event.deltaY || -event.detail));
-    menuRef.current.scrollLeft -= delta * 50;
-  };
-
-
 
   return (
     <>
@@ -204,23 +204,35 @@ const Header = () => {
               </div>
           </div>
     </header>
-    <div className='submenu-out'>
-      <div className='submenu container'>
-        <div
-          ref={menuRef}
-          onWheel={handleScroll}
-          className='horScroll'
+    <div className='catmenu-out'>
+      <div className="horizontal-menu-container container">
+        <button
+          className="scroll-button scroll-button-left"
+          onClick={() => scrollMenu('left')}
         >
-          {submenu.map((item, index) => (
-            <a
-              href={item.path}
-              key={index}
-              className={item.class}
-            >
-              {item.name}
-            </a>
-          ))}
+        <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.75 0.75L1.25 11.25L11.75 21.75" stroke="white" stroke-opacity="0.19"/>
+        </svg>
+        </button>
+        <div className="horizontal-menu" ref={menuRef}>
+            {submenu.map((item, index) => (
+              <a
+                href={item.path}
+                key={`menu-item-${index}`}
+                className={item.class}
+              >
+                {item.name}
+              </a>
+            ))}
         </div>
+        <button
+          className="scroll-button scroll-button-right"
+          onClick={() => scrollMenu('right')}
+        >
+          <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.25 21.75L11.75 11.25L1.25 0.75" stroke="white" stroke-opacity="0.19"/>
+          </svg>
+        </button>
       </div>
     </div>
     </>
