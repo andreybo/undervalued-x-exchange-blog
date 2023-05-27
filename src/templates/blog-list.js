@@ -1,5 +1,4 @@
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image";
 import Card from "../components/cards/cardHor";
 import Layout from  "../components/layout";
 import { Link } from 'gatsby'

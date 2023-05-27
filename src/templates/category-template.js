@@ -2,7 +2,6 @@ import React from "react";
 import Card from "../components/cards/cardHor";
 import Layout from  "../components/layout";
 import { Link } from 'gatsby';
-import { StaticImage } from "gatsby-plugin-image";
 import Categories from "../components/categories";
 import Subscribe from "../components/subscribe";
 import Ads from "../components/ads";

@@ -50,12 +50,11 @@ exports.createPages = async function ({ actions, graphql }) {
     // Make category pages
       data.catGroup.group.forEach(cat => {
         const catSlug = cat.fieldValue
-        const catName = cat.fieldValue
 
         const posts = cat.sum
         const postsPerPage = 12
         const numPages = Math.ceil(posts / postsPerPage)
-        Array.from({ length: numPages > 1 ? numPages : "1" }).forEach((_, i) => {
+        Array.from({ length: numPages > 1 ? numPages : 1 }).forEach((_, i) => {
           actions.createPage({
             path: i === 0 ? `${catSlug}` : `${catSlug}/${i + 1}`,
             component: require.resolve(`./src/templates/category-template.js`),
@@ -64,7 +63,7 @@ exports.createPages = async function ({ actions, graphql }) {
               skip: i * postsPerPage,
               numPages,
               currentPage: i + 1,
-              cat: catName,
+              cat: catSlug,
               uri: catSlug
             },
           })
