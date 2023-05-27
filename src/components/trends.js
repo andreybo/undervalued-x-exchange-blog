@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 
 const Trends = () => {
   
-  const data = useStaticQuery(graphql`{
+  const {data} = useStaticQuery(graphql`{
   trends: allWpPost(
     filter: {categories: {nodes: {elemMatch: {name: {in: ["Highlighted1", "Highlighted2", "Highlighted3", "Highlighted3-2", "Highlighted4"]}}}}}
     sort: {date: DESC}

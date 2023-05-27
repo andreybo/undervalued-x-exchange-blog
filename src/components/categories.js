@@ -4,7 +4,7 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 const Categories = () => {
   
 
-  const data = useStaticQuery(graphql`{
+  const {data} = useStaticQuery(graphql`{
   allWpCategory(
     sort: {count: DESC}
     filter: {name: {nin: ["Highlighted1", "Highlighted3", "Highlighted2", "Highlighted4", "Highlighted3-2"]}, count: {gte: 1}}

@@ -12,7 +12,7 @@ import { graphql } from "gatsby"
 const Category = ({ pageContext }) => {
 
   
-const data = useStaticQuery(graphql`query ($cat: String, $skip: Int!, $limit: Int!) {
+const {data} = useStaticQuery(graphql`query ($cat: String, $skip: Int!, $limit: Int!) {
   postdata: allWpPost(
     limit: $limit
     skip: $skip
