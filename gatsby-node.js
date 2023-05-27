@@ -1,8 +1,9 @@
+const _ = require("lodash")
 const fetch = require('node-fetch');
 const redirects = require("./redirects.json");
 
 exports.createPages = async function ({ actions, graphql }) {
-  const { createRedirect, createPage } = actions
+  const { createRedirect } = actions
 
     const { data } = await graphql(`
       query {
@@ -25,9 +26,9 @@ exports.createPages = async function ({ actions, graphql }) {
           totalCount
         }
         catGroup: allWpCategory {
-          group(field: uri) {
+          group(field: {uri: SELECT}) {
             fieldValue
-            sum(field: count)
+            sum(field: {count: SELECT})
           }
         }
       }
@@ -38,7 +39,7 @@ exports.createPages = async function ({ actions, graphql }) {
       const postUri = edge.node.uri
       const postSlug = edge.node.slug
       const id = edge.node.id
-      createPage({
+      actions.createPage({
         path: postUri,
         id: id,
         component: require.resolve(`./src/templates/blog-post.js`),
@@ -54,8 +55,8 @@ exports.createPages = async function ({ actions, graphql }) {
         const posts = cat.sum
         const postsPerPage = 12
         const numPages = Math.ceil(posts / postsPerPage)
-        for (let i = 0; i < (numPages > 1 ? numPages : 1); i++) {
-          createPage({
+        Array.from({ length: numPages > 1 ? numPages : "1" }).forEach((_, i) => {
+          actions.createPage({
             path: i === 0 ? `${catSlug}` : `${catSlug}/${i + 1}`,
             component: require.resolve(`./src/templates/category-template.js`),
             context: {
@@ -66,16 +67,16 @@ exports.createPages = async function ({ actions, graphql }) {
               cat: catName,
               uri: catSlug
             },
-          });
-        }
+          })
+        })
       })
 
     // Make latest page
       const allposts = data.posts.totalCount
       const allpostsPerPage = 12
       const allnumPages = Math.ceil(allposts / allpostsPerPage)
-      for (let i = 0; i < allnumPages; i++) {
-        createPage({
+      Array.from({ length: allnumPages }).forEach((_, i) => {
+        actions.createPage({
           path: i === 0 ? `/latest` : `/latest/${i + 1}`,
           component: require.resolve(`./src/templates/blog-list.js`),
           context: {
@@ -84,8 +85,8 @@ exports.createPages = async function ({ actions, graphql }) {
             allnumPages,
             currentPage: i + 1,
           },
-        });
-      }
+        })
+      })
 
       // Make homepage
       actions.createPage({
