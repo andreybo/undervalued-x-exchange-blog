@@ -2730,7 +2730,9 @@ div.CookieConsent{
   background: $grey!important;
   color: #000!important;
   button{
-    background-color: $gold;
+    background-color: $gold!important;
+    background: $gold!important;
+    background-image: $gold!important;
     color: #000!important;
     text-transform: lowercase!important;
     padding: 10px 25px!important;
