@@ -9,7 +9,7 @@ import Seo from "../components/seo";
 // Components
 import { graphql } from "gatsby"
 const Category = ({ pageContext, data:{catName, postdata} }) => {
-  const { cat, currentPage, numPages, uri } = pageContext
+  const { cat, currentPage, numPages, uri, checkSum } = pageContext
 
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
@@ -19,6 +19,7 @@ const Category = ({ pageContext, data:{catName, postdata} }) => {
     <Layout>
       <div className="category__container">
         <div className="category__title-container">
+          <p>{checkSum}</p>
           <p className="category__tag">Category</p>
           <h1 className="category__title">{catName.name}</h1>
         </div>

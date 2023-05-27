@@ -47,13 +47,15 @@ exports.createPages = async function ({ actions, graphql }) {
       })
     })
 
+    
+    const postsPerPage = 12
+
     // Make category pages
       data.catGroup.group.forEach(cat => {
         const catSlug = cat.fieldValue
-
         const posts = cat.sum
-        const postsPerPage = 12
         const numPages = Math.ceil(posts / postsPerPage)
+
         Array.from({ length: numPages }).forEach((_, i) => {
           actions.createPage({
             path: i === 0 ? `${catSlug}` : `${catSlug}/${i + 1}`,
@@ -62,6 +64,7 @@ exports.createPages = async function ({ actions, graphql }) {
               limit: postsPerPage,
               skip: i * postsPerPage,
               numPages,
+              checkSum: posts,
               currentPage: i + 1,
               cat: catSlug,
               uri: catSlug
@@ -72,10 +75,9 @@ exports.createPages = async function ({ actions, graphql }) {
 
     // Make latest page
       const allposts = data.posts.totalCount
-      const allpostsPerPage = 12
-      const allnumPages = Math.ceil(allposts / allpostsPerPage)
+      const allnumPages = Math.ceil(allposts / postsPerPage)
       Array.from({ length: allnumPages }).forEach((_, i) => {
-        pagesToCreate.push({
+        actions.createPage({
           path: i === 0 ? `/latest` : `/latest/${i + 1}`,
           component: require.resolve(`./src/templates/blog-list.js`),
           context: {
@@ -85,10 +87,6 @@ exports.createPages = async function ({ actions, graphql }) {
             currentPage: i + 1,
           },
         })
-      })
-
-      pagesToCreate.forEach(page => {
-        actions.createPage(page);
       })
 
       // Make homepage
