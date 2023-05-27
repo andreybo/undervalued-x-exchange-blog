@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { useFlexSearch } from 'react-use-flexsearch'
 
 const SearchPage = () => {
-  const {queryData} = useStaticQuery(graphql`
+  const queryData = useStaticQuery(graphql`
     query {
         localSearchPosts {
           index
