@@ -64,7 +64,7 @@ exports.createPages = async function ({ actions, graphql }) {
               numPages,
               currentPage: i + 1,
               cat: catSlug,
-              uri: catSlug + `/${i}`
+              uri: i === 0 ? catSlug : `${catSlug}/${i}`
             },
           })
         })
