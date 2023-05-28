@@ -53,19 +53,6 @@ exports.createPages = async function ({ actions, graphql }) {
       })
     })
 
-    // Create AMP posts
-    result.data.posts.edges.forEach(edge => {
-      const postUri = edge.node.uri
-      const postSlug = edge.node.slug
-      const id = edge.node.id
-      actions.createPage({
-        path: `${postUri}/amp/`,
-        id: id,
-        component: require.resolve(`./src/templates/blog-post.amp.js`),
-        context: { slug: postSlug },
-      })
-    })
-
     
     const categoryTemplate = path.resolve("./src/templates/blog-list.js")
     const categories = result.data.allWpCategory.nodes

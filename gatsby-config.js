@@ -224,31 +224,6 @@ module.exports = {
       stripQueryString: true,
     },
   },
-  {
-    resolve: `gatsby-plugin-amp`,
-    options: {
-      analytics: {
-        type: 'gtag',
-        dataCredentials: 'include',
-        config: {
-          vars: {
-            gtag_id: 'G-J3XN01S71Y',
-            config: {
-              'G-J3XN01S71Y': {
-                page_location: '{{pathname}}'
-              },
-            },
-          },
-        },
-      },
-      canonicalBaseUrl: 'https://blog.udonis.co/',
-      components: ['amp-form'],
-      excludedPaths: ['/404*', '/'],
-      pathIdentifier: '/amp/',
-      relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
-      useAmpClientIdApi: true,
-    },
-  },
   `gatsby-plugin-gatsby-cloud`,
   {
     resolve: `gatsby-plugin-canonical-urls`,
