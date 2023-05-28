@@ -9,24 +9,24 @@ import Ads from "../components/ads";
 // Components
 import { graphql } from "gatsby"
 const BlogList = ({ pageContext, data:{postdata} }) => {
-  const { currentPage, numPages } = pageContext
+  const { cat, currentPage, numPages,  name, numPosts } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? '/latest/' : '/latest/' + (currentPage - 1).toString()
-  const nextPage = '/latest/' + (currentPage + 1).toString()
+  const prevPage = currentPage - 1 === 1 ? cat : cat + "/" + (currentPage - 1).toString()
+  const nextPage = cat + "/" + (currentPage + 1).toString()
   return (
     <Layout>
       <div className="category__container">
         <div className="category__title-container">
           <p className="category__tag">Category</p>
-          <h1 className="category__title">Latest Posts</h1>
+          <h1 className="category__title">{name}</h1>
         </div>
         <div className="category__top">
           <div className="category__left">
             <div className="category__main">
               <Card data={postdata} layoutHorizontal={true} descr={false} classmain="postcard"/>
             </div>
-            <ul className="category__np">
+            <ul className="category__np" style={{display: numPages > 1 ? 'flex' : 'none'}}>
             {!isFirst && (
               <Link to={prevPage} rel="prev" className="prev">
                 <svg width="54" height="26" viewBox="0 0 54 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,18 +34,24 @@ const BlogList = ({ pageContext, data:{postdata} }) => {
                 </svg>
               </Link>
             )}
-            {Array.from({ length: numPages > currentPage + 10 ? currentPage + 10 : numPages - currentPage }, (_, i) => (
-              <li
-                key={`pagination-number${currentPage + 1}`}
-                className={`nota${(i === currentPage - 1 && ' activeli') || (i > currentPage + 2 && ' disactiveli') || (i < currentPage - 2 && ' disactiveli') || ''}`}
-              >
-                <Link
-                  to={`${i === 0 ? '/latest/' : '/latest/' + (i + 1)}`}
-                >
-                  {i + 1}
-                </Link>
-              </li>
-            ))}
+            {Array.from({ length: 11 }, (_, i) => {
+              const pageIndex = currentPage > 5 ? currentPage + i - 5 : i + 1;
+              const classes = ['nota'];
+              if (pageIndex === currentPage) {
+                classes.push('activeli');
+              } else if (pageIndex > currentPage + 2 || pageIndex < currentPage - 2) {
+                classes.push('disactiveli');
+              }
+              if (pageIndex <= numPages) {
+                return (
+                  <li key={`pagination-number-${pageIndex}`} className={classes.join(' ')}>
+                    <Link to={`${pageIndex === 1 ? cat : cat + "/" + pageIndex}`}>
+                      {pageIndex}
+                    </Link>
+                  </li>
+                );
+              }
+            })}
             {!isLast && numPages > 1  && (
               <Link to={nextPage} rel="next" className="next">
                 <svg width="54" height="26" viewBox="0 0 54 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,14 +75,14 @@ const BlogList = ({ pageContext, data:{postdata} }) => {
 }
 export default BlogList
 
-
-export const Head = () => (
-  <Seo title='Latest Posts | Udonis' />
-)
-
 export const query = graphql`
-  query ($skip: Int!, $limit: Int!) {
-  postdata: allWpPost(limit: $limit, skip: $skip, sort: {date: DESC}) {
+  query ($id: [String], $skip: Int!, $limit: Int!) {
+  postdata: allWpPost(
+    filter: { categories: { nodes: { elemMatch: { id: { in: $id } } } } }
+    limit: $limit,
+    skip: $skip,
+    sort: {date: DESC})
+    {
     nodes {
       featuredImage {
         node {
@@ -107,3 +113,10 @@ export const query = graphql`
     }
   }
 }`;
+
+
+export const Head = ({ pageContext }) => (
+  <Seo title={`${pageContext.name} ${pageContext.currentPage === 1 ? "" : `| Page ${pageContext.currentPage} `}| Udonis`} metaDesciption={`${pageContext.numPosts} post${
+    pageContext.numPosts === 1 ? "" : "s"
+  } in "${pageContext.name}"`} />
+)

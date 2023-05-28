@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-function SEO({ title, seo, robots }) {
+function SEO({ title, seo, robots, metaDesciption }) {
   const {
     site: { siteMetadata },
   } = useStaticQuery(graphql`
@@ -18,7 +18,7 @@ function SEO({ title, seo, robots }) {
 
   const defaultTitle = siteMetadata.title;
 
-  const pageDescription = seo?.metaDesc || siteMetadata.description;
+  const pageDescription = metaDesciption || seo?.metaDesc || siteMetadata.description;
   const pageKeywords = seo?.metaKeywords || siteMetadata.keywords;
   const pageTitle = seo?.title || title || "Home";
 

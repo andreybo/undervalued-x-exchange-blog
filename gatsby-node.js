@@ -25,11 +25,11 @@ exports.createPages = async function ({ actions, graphql }) {
           }
           totalCount
         }
-        allWpCategory {
+        allWpCategory(filter: {name: {nin: ["Uncategorized", "Highlighted1", "Highlighted2", "Highlighted3-2", "Highlighted3", "Highlighted4"]}}) {
           nodes {
             id
             name
-            slug
+            uri
             count
           }
         }
@@ -54,7 +54,7 @@ exports.createPages = async function ({ actions, graphql }) {
     })
 
     
-    const categoryTemplate = path.resolve("./src/templates/category-template.js")
+    const categoryTemplate = path.resolve("./src/templates/blog-list.js")
     const categories = result.data.allWpCategory.nodes
     const postsPerPage = 12
 
@@ -65,35 +65,40 @@ exports.createPages = async function ({ actions, graphql }) {
 
         Array.from({ length: numberOfPages }).forEach((_, i) => {
           createPage({
-            path: i === 0 ? `${category.slug}` : `${category.slug}/${i + 1}`,
+            path: i === 0 ? category.uri : `${category.uri}/${i + 1}`,
             component: categoryTemplate,
             context: {
               id: category.id,
               limit: postsPerPage,
               skip: i * postsPerPage,
               numPages: numberOfPages,
+              numPosts: category.count,
               currentPage: i + 1,
-              cat: category.slug,
+              cat: category.uri,
               name: category.name
             },
           })
         })
-      })
+    })
 
     // Make latest page
       const allposts = result.data.posts.totalCount
-      const latestTemplate = path.resolve("./src/templates/blog-list.js")
+      const categoryIds = result.data.allWpCategory.nodes.map(category => category.id); 
 
       const allnumPages = Math.ceil(allposts / postsPerPage)
       Array.from({ length: allnumPages }).forEach((_, i) => {
         actions.createPage({
           path: i === 0 ? `/latest` : `/latest/${i + 1}`,
-          component: latestTemplate,
+          component: categoryTemplate,
           context: {
+            id: categoryIds,
             limit: postsPerPage,
             skip: i * postsPerPage,
             numPages: allnumPages,
+            numPosts: allposts,
             currentPage: i + 1,
+            name: 'Latest Posts',
+            cat: '/latest'
           },
         })
       })
