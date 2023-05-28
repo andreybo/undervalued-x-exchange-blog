@@ -71,7 +71,7 @@ const Category = ({ pageContext, data:{catName, postdata} }) => {
 }
 export default Category
 
-export const pageQuery = graphql`
+export const indexPageQuery = graphql`
   query($cat: String, $skip: Int!, $limit: Int!) {
     postdata: allWpPost(
       limit: $limit
