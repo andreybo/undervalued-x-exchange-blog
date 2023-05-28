@@ -2850,6 +2850,10 @@ div#disqus_thread iframe[sandbox] {
   display: flex;
   align-items: center;
   overflow: hidden;
+  
+  @include media-breakpoint-down(md) {
+    padding: 0;
+  }
 }
 
 .horizontal-menu {
@@ -2864,6 +2868,11 @@ div#disqus_thread iframe[sandbox] {
   justify-content: center;
   &::-webkit-scrollbar{
     display: none;
+  }
+  a{
+    &:hover{
+      color: $gold;
+    }
   }
 }
 
