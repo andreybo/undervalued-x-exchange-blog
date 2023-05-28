@@ -2504,12 +2504,20 @@ img {
     display: flex;
     gap: 10px;
     justify-content: space-between;
+    margin: 50px 0;
     a {
-      color: #9ab8e5;
+      color: $dark;
+      opacity: .5;
+      &:hover{
+        opacity: 1;
+      }
     }
-  }
-  .activeli {
-    background: #f5f8fb;
+    .activeli {
+      a{
+        font-weight: 700;
+        opacity: 1;
+      }
+    }
   }
   .nota {
     display: flex;

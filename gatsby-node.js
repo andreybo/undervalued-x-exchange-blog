@@ -1,11 +1,12 @@
 const fetch = require('node-fetch');
 const redirects = require("./redirects.json");
+const path = require("path");
 
 exports.createPages = async function ({ actions, graphql }) {
-  const { createRedirect } = actions
+  const { createRedirect, createPage } = actions
 
-    const { data } = await graphql(`
-      query {
+    const result = await graphql(`
+      {
         posts: allWpPost(filter: {status: {eq: "publish"}}) {
           edges {
             node {
@@ -24,17 +25,23 @@ exports.createPages = async function ({ actions, graphql }) {
           }
           totalCount
         }
-        catGroup: allWpCategory {
-          group(field: {uri: SELECT}) {
-            fieldValue
-            sum(field: {count: SELECT})
+        allWpCategory {
+          nodes {
+            id
+            name
+            slug
+            count
           }
         }
       }
     `)
 
+    if (result.errors) {
+      throw result.errors
+    }
+
     // Create posts
-    data.posts.edges.forEach(edge => {
+    result.data.posts.edges.forEach(edge => {
       const postUri = edge.node.uri
       const postSlug = edge.node.slug
       const id = edge.node.id
@@ -47,46 +54,49 @@ exports.createPages = async function ({ actions, graphql }) {
     })
 
     
+    const categoryTemplate = path.resolve("./src/templates/category-template.js")
+    const categories = result.data.allWpCategory.nodes
     const postsPerPage = 12
 
     // Make category pages
-      data.catGroup.group.forEach(cat => {
-        const catSlug = cat.fieldValue
-        const posts = cat.sum
-        const numPages = Math.ceil(posts / postsPerPage)
+    categories.forEach((category) => {
 
-        for (let i = 0; i < numPages; i++) {
-          actions.createPage({
-            path: i === 0 ? `${catSlug}` : `${catSlug}/${i + 1}`,
-            component: require.resolve(`./src/templates/category-template.js`),
+        const numberOfPages = Math.ceil(category.count / postsPerPage)
+
+        Array.from({ length: numberOfPages }).forEach((_, i) => {
+          createPage({
+            path: i === 0 ? `${category.slug}` : `${category.slug}/${i + 1}`,
+            component: categoryTemplate,
             context: {
+              id: category.id,
               limit: postsPerPage,
               skip: i * postsPerPage,
-              numPages,
-              checkSum: posts,
+              numPages: numberOfPages,
               currentPage: i + 1,
-              cat: catSlug,
-              uri: catSlug
+              cat: category.slug,
+              name: category.name
             },
           })
-        }
+        })
       })
 
     // Make latest page
-      const allposts = data.posts.totalCount
+      const allposts = result.data.posts.totalCount
+      const latestTemplate = path.resolve("./src/templates/blog-list.js")
+
       const allnumPages = Math.ceil(allposts / postsPerPage)
-      for (let i = 0; i < allnumPages; i++) {
+      Array.from({ length: allnumPages }).forEach((_, i) => {
         actions.createPage({
           path: i === 0 ? `/latest` : `/latest/${i + 1}`,
-          component: require.resolve(`./src/templates/blog-list.js`),
+          component: latestTemplate,
           context: {
             limit: postsPerPage,
             skip: i * postsPerPage,
-            allnumPages,
+            numPages: allnumPages,
             currentPage: i + 1,
           },
         })
-      }
+      })
 
       // Make homepage
       actions.createPage({

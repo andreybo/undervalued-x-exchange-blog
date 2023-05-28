@@ -6,22 +6,21 @@ import Categories from "../components/categories";
 import Subscribe from "../components/subscribe";
 import Ads from "../components/ads";
 import Seo from "../components/seo";
-// Components
 import { graphql } from "gatsby"
-const Category = ({ pageContext, data:{catName, postdata} }) => {
-  const { cat, currentPage, numPages, uri, checkSum } = pageContext
+
+const Category = ({ pageContext, data:{postdata} }) => {
+  const { cat, currentPage, numPages, id, name } = pageContext
 
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? uri : uri + '/' + (currentPage - 1).toString()
-  const nextPage = uri + '/' + (currentPage + 1).toString()
+  const prevPage = currentPage - 1 === 1 ? cat : cat + '/' + (currentPage - 1).toString()
+  const nextPage = cat + '/' + (currentPage + 1).toString()
   return (
     <Layout>
       <div className="category__container">
         <div className="category__title-container">
-          <p>{checkSum}</p>
-          <p className="category__tag">Category</p>
-          <h1 className="category__title">{catName.name}</h1>
+          <p className="category__tag">Category {id}</p>
+          <h1 className="category__title">{name}</h1>
         </div>
         <div className="category__top">
           <div className="category__left">
@@ -32,7 +31,7 @@ const Category = ({ pageContext, data:{catName, postdata} }) => {
                 {!isFirst && (
                   <Link to={prevPage} rel="prev" className="prev">
                   <svg width="54" height="26" viewBox="0 0 54 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M8.14152 15L54 15V11L8.14192 11L16.3516 3.4745L13.6487 0.525879L2.22235 11H2V11.2038L0.040329 13.0002L2 14.7966V15H2.22195L13.6487 25.4745L16.3516 22.5259L8.14152 15Z" fill="white"/>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M8.14152 15L54 15V11L8.14192 11L16.3516 3.4745L13.6487 0.525879L2.22235 11H2V11.2038L0.040329 13.0002L2 14.7966V15H2.22195L13.6487 25.4745L16.3516 22.5259L8.14152 15Z" fill="#D89C1E"/>
                   </svg>
                   </Link>
                 )}
@@ -51,7 +50,7 @@ const Category = ({ pageContext, data:{catName, postdata} }) => {
                 {!isLast && numPages > 1 && (
                   <Link to={nextPage} rel="next" className="next">
                   <svg width="54" height="26" viewBox="0 0 54 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M45.8585 15L0 15V11L45.8581 11L37.6484 3.4745L40.3513 0.525879L51.7777 11H52V11.2038L53.9597 13.0002L52 14.7966V15H51.7781L40.3513 25.4745L37.6484 22.5259L45.8585 15Z" fill="white"/>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M45.8585 15L0 15V11L45.8581 11L37.6484 3.4745L40.3513 0.525879L51.7777 11H52V11.2038L53.9597 13.0002L52 14.7966V15H51.7781L40.3513 25.4745L37.6484 22.5259L45.8585 15Z" fill="#D89C1E"/>
                   </svg>
                   </Link>
                 )}
@@ -71,15 +70,14 @@ const Category = ({ pageContext, data:{catName, postdata} }) => {
 }
 export default Category
 
-export const indexPageQuery = graphql`
-  query($cat: String, $skip: Int!, $limit: Int!) {
+export const query = graphql`
+  query($id: String!, $limit: Int!, $skip: Int!) {
     postdata: allWpPost(
+      filter: { categories: { nodes: { elemMatch: { id: { eq: $id } } } } }
+      sort: { date: DESC }
       limit: $limit
       skip: $skip
-      sort: { date: DESC }
-      filter: {categories: {nodes: {elemMatch: {uri: {eq: $cat}}}}}
     ) {
-      totalCount
       nodes {
         featuredImage {
           node{
@@ -113,17 +111,11 @@ export const indexPageQuery = graphql`
         }
       }
     }
-    catName: wpCategory(
-      uri: {eq: $cat}
-    ) {
-      name
-    }
   }
 `
 
-
-export const Head = ({ data:{catName, postdata} }) => (
-  <Seo title={`${catName.name} | Udonis`} metaDesciption={`${postdata.totalCount} post${
-    postdata.totalCount === 1 ? "" : "s"
-  } in "${catName.name}"`} />
+export const Head = ({ pageContext }) => (
+  <Seo title={`${pageContext.name} | Udonis`} metaDesciption={`${pageContext.numPages} post${
+    pageContext === 1 ? "" : "s"
+  } in "${pageContext.name}"`} />
 )
