@@ -1,4 +1,3 @@
-const _ = require("lodash")
 const fetch = require('node-fetch');
 const redirects = require("./redirects.json");
 
@@ -56,7 +55,7 @@ exports.createPages = async function ({ actions, graphql }) {
         const posts = cat.sum
         const numPages = Math.ceil(posts / postsPerPage)
 
-        Array.from({ length: numPages }).forEach((_, i) => {
+        for (let i = 0; i < numPages; i++) {
           actions.createPage({
             path: i === 0 ? `${catSlug}` : `${catSlug}/${i + 1}`,
             component: require.resolve(`./src/templates/category-template.js`),
@@ -70,24 +69,24 @@ exports.createPages = async function ({ actions, graphql }) {
               uri: catSlug
             },
           })
-        })
+        }
       })
 
     // Make latest page
       const allposts = data.posts.totalCount
       const allnumPages = Math.ceil(allposts / postsPerPage)
-      Array.from({ length: allnumPages }).forEach((_, i) => {
+      for (let i = 0; i < allnumPages; i++) {
         actions.createPage({
           path: i === 0 ? `/latest` : `/latest/${i + 1}`,
           component: require.resolve(`./src/templates/blog-list.js`),
           context: {
-            limit: allpostsPerPage,
-            skip: i * allpostsPerPage,
+            limit: postsPerPage,
+            skip: i * postsPerPage,
             allnumPages,
             currentPage: i + 1,
           },
         })
-      })
+      }
 
       // Make homepage
       actions.createPage({
