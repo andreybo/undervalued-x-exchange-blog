@@ -225,6 +225,8 @@ img {
   padding: 20px 30px;
   position: relative;
   background-color: $white;
+  border-left: 1px solid #F2F7F9;
+  border-right: 1px solid #F2F7F9;
   @include media-breakpoint-down(md){
     padding: 10px 15px;
   }
@@ -2052,8 +2054,15 @@ img {
     position: relative;
     margin-bottom: 60px;
   }
+  &__right{
+    .trends{
+      @include media-breakpoint-up(md) {
+        margin-top: 45px;
+      }
+    }
+  }
   &__head {
-    border-radius: $border-m $border-m 0 0;
+    //border-radius: $border-m $border-m 0 0;
     overflow: hidden;
     .trends__tag-container{
       padding: 15px 0px;
@@ -2909,5 +2918,37 @@ div#disqus_thread iframe[sandbox] {
   }
   .horizontal-menu{
     justify-content: start;
+  }
+}
+
+.share{
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: row;
+  gap: 15px;
+  &__soc{
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    flex-wrap: wrap;
+    button{
+      width: 30px;
+      height: 30px;
+      border-radius: $border-m;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &_nav-button{
+        width: 30px;
+        height: 30px;
+        background: $white;
+        border-radius: $border-m;
+        border: 1px solid #666;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
   }
 }

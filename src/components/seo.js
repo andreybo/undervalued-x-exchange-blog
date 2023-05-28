@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-function SEO({ title, seo, robots, metaDesciption }) {
+function SEO({ title, seo, robots, metaDesciption, amp }) {
   const {
     site: { siteMetadata },
   } = useStaticQuery(graphql`
@@ -43,6 +43,11 @@ function SEO({ title, seo, robots, metaDesciption }) {
       <meta name="twitter:card" content="summary_large_image" />
       {seo?.opengraphImage && <meta name="twitter:image:src" content={seo.opengraphImage.sourceUrl} />}
       {robots ? <meta name="robots" content="noindex"></meta> : ""}
+      {amp &&
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />}
+      {amp &&
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no" />
+      }
     </>
   );
 }

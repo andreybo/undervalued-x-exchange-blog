@@ -2,18 +2,13 @@ import { graphql } from "gatsby";
 import React from 'react';
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import { GatsbyImage } from "gatsby-plugin-image";
-import Comments from "../components/comments";
-import Subscribe from "../components/subscribe";
 import Trends from "../components/trends";
 import Categories from "../components/categories";
-import ShareButtons from "../components/share-buttons";
 import Related from "../components/related";
-import Ads from "../components/ads";
 import Moment from 'moment';
+import { GatsbyImage } from "gatsby-plugin-image";
 
-
-export default function BlogPost({ data }) {
+export default function BlogPostAMP({ data }) {
   const post = data.wpPost
   const postDate = post.modified ? post.modified : post.date
   const url = typeof window !== 'undefined' ? window.location.href : '';
@@ -25,7 +20,6 @@ export default function BlogPost({ data }) {
           <div className="post__left">
             <div className="post__out">
               <div className="post__head">
-                <ShareButtons url={url} title={post.title} description={data.wpPost.seo.metaDesc} />
                 <div className="post__head--image-top">
                   <GatsbyImage
                     image={post.featuredImage ==null ? null : post.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
@@ -66,19 +60,11 @@ export default function BlogPost({ data }) {
                   </a>
                 </p>
               </div>
-              <Subscribe buttonId="ud-postform"/>
-              <div className="post__comments">
-                <h3>
-                  Comments
-                </h3>
-                <Comments slug={post.slug} title={post.title} id={post.id}/>
-              </div>
           </div>
-          <div className="post__right">
+          <div className="post__right" style={{marginBotton:'-45xpx'}}>
               <Trends/>
               <div className="maxw">
                 <Categories/>
-                <Ads/>
                 <Related posts={post.relatedPosts} limit={4} classmain="postcard" layoutHorizontal={true} titleh3={true}/>
               </div>
           </div>
@@ -98,7 +84,7 @@ export default function BlogPost({ data }) {
 }
 
 export const Head = ({data}) => (
-  <Seo title={data.wpPost.title} seo={data.wpPost.seo} />
+  <Seo title={data.wpPost.title} seo={data.wpPost.seo} amp='true'/>
 )
 
 export const query = graphql`
