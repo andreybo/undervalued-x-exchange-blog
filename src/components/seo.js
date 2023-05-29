@@ -35,16 +35,12 @@ function SEO({ title, seo, robots, metaDesciption, amp }) {
       {seo?.opengraphImage && <meta property="og:image" content={seo.opengraphImage.sourceUrl} />}
       <meta name="og:type" content="website" />
       
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-      </meta>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta name="twitter:site" content="@GraphCMS" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:card" content="summary_large_image" />
       {seo?.opengraphImage && <meta name="twitter:image:src" content={seo.opengraphImage.sourceUrl} />}
       {robots ? <meta name="robots" content="noindex"></meta> : ""}
-      {amp &&
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />}
       {amp &&
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no" />
       }

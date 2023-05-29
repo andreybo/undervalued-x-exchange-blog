@@ -211,7 +211,7 @@ const Header = () => {
           onClick={() => scrollMenu('left')}
         >
         <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.75 0.75L1.25 11.25L11.75 21.75" stroke="white" stroke-opacity="0.5"/>
+          <path d="M11.75 0.75L1.25 11.25L11.75 21.75" stroke="white" strokeOpacity="0.5"/>
         </svg>
         </button>
         <div className="horizontal-menu" ref={menuRef}>
@@ -230,7 +230,7 @@ const Header = () => {
           onClick={() => scrollMenu('right')}
         >
           <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.25 21.75L11.75 11.25L1.25 0.75" stroke="white" stroke-opacity="0.5"/>
+            <path d="M1.25 21.75L11.75 11.25L1.25 0.75" stroke="white" strokeOpacity="0.5"/>
           </svg>
         </button>
       </div>
