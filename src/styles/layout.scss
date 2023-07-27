@@ -27,19 +27,12 @@
   }
 }
 
-@function randomNum($min, $max) {
-  $rand: random();
-  $randomNum: $min + floor($rand * (($max - $min) + 1));
-
-  @return $randomNum;
-}
-
 /*colors*/
-$dark: #132332;
+$dark: #171F26;
 $white: #fff;
 $grey: #F2F8F9;
 $gold: #D89C1E;
-$yellow: #FCE474;
+$yellow: #FFDD00;
 $gr-gold: linear-gradient(134.39deg, #D89719 1.54%, #D89C1E 39.88%, #FCE474 53.83%, #D89C1E 85.2%);
 
 /*borders*/
@@ -52,48 +45,44 @@ $cardV: 170px;
 $cardH-m: 400px;
 $cardV-m: 170px;
 
-/*fonts*/
-$font-Inter: "Inter", sans-serif;
-$font-Lyon: "Lyonbold";
+@import url('https://fonts.cdnfonts.com/css/pp-neue-montreal');
 
 :root {
   --font-xxl: 72px;
-  --font-xl: 48px;
-  --font-l: 24px;
+  --font-xl: 54px;
+  --font-l: 32px;
   --font-body: 18px;
   --font-s: 14px;
 }
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(md){
   :root {
     --font-xxl: 48px;
     --font-xl: 32px;
-    --font-l: 21px;
+    --font-l: 24px;
     --font-body: 16px;
     --font-s: 14px;
   }
 }
 
-@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
-
 body {
-  background-color: #f9feff;
+  background-color: $white;
   color: $dark;
-  font-family: 'Proxima Nova', sans-serif;
-  font-weight: 300;
+  font-family: 'PP Neue Montreal', sans-serif;
+  font-weight:300;
   font-size: 18px;
   height: 100%;
   overflow-x: auto;
   margin: 0;
   padding: 0;
-  line-height: 1.2;
-  background-image: url('/assets/pattern-white.png');
+  
+  letter-spacing: 1px;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'PP Neue Montreal', sans-serif;
   line-height: 1.2;
 }
 
@@ -149,7 +138,7 @@ img {
 }
 
 .main_cta{
-  background: $gr-gold;
+  background: $dark;
   max-width: 250px;
   width: 100%;
   height: 50px;
@@ -166,13 +155,13 @@ img {
     cursor: pointer;
     span{
       color: $dark;
-      font-family: 'Proxima Nova', sans-serif;
+      font-family: 'PP Neue Montreal', sans-serif;
       font-weight:300;
       font-size: 18px;
     }
   }
   &:hover{
-    animation: animateGradient 1s ease-in-out infinite alternate;
+    background: $white;
     color: $dark;
   }
   span{
@@ -222,14 +211,16 @@ img {
 }
 
 .main {
-  padding: 20px 30px;
+  padding: 0px;
   position: relative;
-  background-color: $white;
-  border-left: 1px solid #F2F7F9;
-  border-right: 1px solid #F2F7F9;
   @include media-breakpoint-down(md){
     padding: 10px 15px;
   }
+}
+
+.mt0{
+  margin-top: 0!important;
+  padding-top: 20px;
 }
 
 
@@ -260,7 +251,8 @@ img {
   position: relative;
   top: 0;
   width: 100%;
-  background-color: #fff;
+  background-color: $yellow;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   z-index: 11;
   .liquid-alt &{
     background-color: $white;
@@ -434,6 +426,7 @@ img {
       flex-direction: row;
       position: relative;
       margin: 0;
+      align-items: center;
       @include media-breakpoint-up(md){
         gap: 30px;
       }
@@ -650,6 +643,11 @@ img {
     &__blog{
       text-decoration: underline!important;
       font-weight: bold;
+    }
+    &__contact{
+      border: 2px solid $dark;
+      padding: 10px 25px;
+      border-radius: 50px;
     }
   }
   li:hover,a:hover{
@@ -933,6 +931,10 @@ img {
 
 .hp {
   //margin-top: 20px;
+  &-yellow{
+    background-color: $yellow;
+    padding-bottom: 30px;
+  }
   @include media-breakpoint-down(md) {
     margin-top: 20px;
     margin-left: 5px;
@@ -1189,15 +1191,13 @@ img {
 }
 
 .gold{
-  background: linear-gradient(45deg, #D89719 15%, #D89C1E 40%, #FCE474 53%, #D89C1E 85%, #D89C1E 100%), #FFFFFF;
-  background-size: 200% 200%;
-  animation: animateGradient 4s ease-in-out infinite alternate;
+  background-color: $yellow;
 }
 
 .news {
   width: 100%;
-  background: #ffffff;
-  border: 1px solid $grey;
+  //background: #ffffff;
+  border: none;
   border-radius: $border-m;
   overflow: hidden;
   position: relative;
@@ -1208,6 +1208,10 @@ img {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  &__withtag {
+    flex-direction: column-reverse;
+    display: flex;
+  }
   &:after {
     content: "";
     position: absolute;
@@ -1220,13 +1224,20 @@ img {
       rgba(255, 255, 255, 0) 0%,
       #ffffff 90.21%
     );
+    .hp-yellow &{
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        $yellow 90.21%
+      );
+    }
     @include media-breakpoint-down(md) {
       opacity: 0;
     }
   }
   &:hover {
     z-index: 2;
-    border: 1px solid $yellow;
+    border: none;
     &::before {
       bottom: 0px;
     }
@@ -1304,7 +1315,7 @@ img {
             max-height: 0px;
           }
           .news-out {
-            height: calc($cardH - 170px);
+            height: calc($cardH - 160px);
             @include media-breakpoint-down(md) {
               height: calc($cardH-m - 170px);
             }
@@ -1318,18 +1329,6 @@ img {
         position: relative;
         @include media-breakpoint-down(md) {
           max-height: unset;
-        }
-        &:after{
-          content: '';
-          position: absolute;
-          right: 15px;
-          bottom: 15px;
-          display: block;
-          width: 70px;
-          height: 70px;
-          background: url(/svg/hot.svg);
-          background-repeat: no-repeat;
-          background-size: contain;
         }
       }
       .news__top--title{
@@ -1582,7 +1581,7 @@ img {
       }
     }
     &--title {
-      padding: 15px 15px 0 15px;
+      padding: 5px 15px 0 15px;
       font-size: 18px;
       margin: 0;
       @include media-breakpoint-up(md) {
@@ -1648,7 +1647,10 @@ img {
     }
   }
   &__tag {
-    color: $gold;
+    color: $dark;
+    border: 1px solid $dark;
+    padding: 5px 15px;
+    border-radius: 20px;
     margin: 0;
     font-size: 12px !important;
     font-weight: 500;
@@ -1659,7 +1661,11 @@ img {
     display: inline-block;
     align-items: center;
     flex-direction: row;
-    color: $gold;
+    margin-bottom: 15px;
+    .news__layout-image-out &{
+      color: $white;
+      border: 1px solid $white;
+    }
     &-container {
       display: flex;
       gap: 12px;
@@ -1679,8 +1685,14 @@ img {
     flex-direction: row;
     padding: 10px 15px 2px 15px;
     font-size: 12px;
-    color: #C7CACE;
+    color: $dark;
     align-items: center;
+    .news__layout-image-out &{
+      color: $white;
+      svg{
+        filter: invert(1);
+      }
+    }
     @include media-breakpoint-down(md) {
       gap: 2px;
       svg {
@@ -1927,10 +1939,11 @@ img {
     }
   }
   &__subscribe {
-    background: $dark;
+    background: $yellow;
     border-radius: $border-m;
     padding: 5px 35px 25px 35px;
     text-align: left;
+    color: $dark;
     width: 100%;
     @include media-breakpoint-down(md) {
       padding: 5px 20px 25px 20px;
@@ -1963,7 +1976,7 @@ img {
       }
     }
     a {
-      color: $white;
+      color: $dark;
       font-weight: bold;
       text-decoration: underline;
       opacity: .5;
@@ -1978,7 +1991,7 @@ img {
       margin: 0!important;
     }
     p {
-      color: $white;
+      color: $dark;
       margin-top: 0;
       margin-bottom: 5px;
       opacity: .5;
@@ -1986,7 +1999,7 @@ img {
     h3 {
       font-size: var(--font-l);
       margin-bottom: 0;
-      color: $white;
+      color: $dark;
     }
   }
   &__related {
@@ -2355,7 +2368,8 @@ img {
         & + label {
           transform: translateY(-10px);
           opacity: 0.7;
-          color: $yellow;
+          color: $dark;
+          font-weight: 600;
         }
       }
     }
@@ -2375,15 +2389,15 @@ img {
   &__select {
     height: 50px;
     width: 100%;
-    background: #465563;
-    border: 1px solid #465563;
+    background: unset;
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
-    color: #fff;
+    color: $dark;
     padding-left: 10px;
     font-size: var(--font-s);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     &::placeholder {
-      color: #fff;
+      color: $dark;
       opacity: .5;
       padding-left: 5px;
       font-size: var(--font-s);
@@ -2405,7 +2419,7 @@ img {
     padding-left: 10px;
     &::placeholder {
       color: $dark;
-      font-family: 'Proxima Nova', sans-serif;
+      font-family: 'PP Neue Montreal', sans-serif;
       font-size: var(--font-s);
     }
     &-container {
@@ -2654,17 +2668,17 @@ img {
       left: 0px;
     }
     input {
-      background: #fff;
-      border: 1px solid #000;
+      background: unset;
+      border: unset;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+      padding: 5px;
       padding-left: 30px;
-      padding-right: 10px;
-      height: 30px;
-      border-radius: $border-m;
-      padding-top: 0px;
       width: 100%;
+      font-size: 16px;
+      height: 100%;
       &::placeholder {
         color: #000;
-        font-family: 'Proxima Nova', sans-serif;
+        font-family: 'PP Neue Montreal', sans-serif;
         line-height: 1;
         padding: 0;
         margin: 0;
@@ -2713,22 +2727,6 @@ img {
   }
 }
 
-.activesearch {
-  .header__search {
-    opacity: 1;
-    pointer-events: all;
-  }
-  .header__msearch-close {
-    opacity: 1;
-  }
-  .header__leftside-logo img {
-    opacity: 0;
-  }
-  .search__input input {
-    animation: searchin 1s ease-out;
-  }
-}
-
 @keyframes searchin {
   0% {
     transform: translateX(22px);
@@ -2756,7 +2754,7 @@ div.CookieConsent{
     text-transform: lowercase!important;
     padding: 10px 25px!important;
     border-radius: $border-m!important;
-    font-family: 'Proxima Nova', sans-serif!important;
+    font-family: 'PP Neue Montreal', sans-serif!important;
     font-weight: 600!important;
     &:hover{
       transform: scale(1.2);
@@ -2841,17 +2839,11 @@ div#disqus_thread iframe[sandbox] {
 
 .catmenu{
   &-out{
-    background-color: $dark;
+    background-color: $yellow;
     position: sticky;
     top: 0;
     z-index: 10;
-    a{
-      color: $white;
-      font-size: var(--font-s);
-    }
-    &:hover{
-      color: $gold;
-    }
+    padding: 20px 0;
   }
 }
 
@@ -2949,6 +2941,33 @@ div#disqus_thread iframe[sandbox] {
         justify-content: center;
         align-items: center;
         cursor: pointer;
+    }
+  }
+}
+
+.catm{
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  &__selector{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    p{
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      opacity: .6;
+      font-weight: 500;
+    }
+    select{
+      border: 0;
+      background: unset;
+      outline: none;
+      font-size: 16;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+      padding: 5px;
     }
   }
 }
