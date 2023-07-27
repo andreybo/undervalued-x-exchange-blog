@@ -13,7 +13,7 @@ function Layout({ children, classmain = "page" }) {
   return (
     <React.Fragment>
       <Header />
-      <main className={"overflow main container " + classmain}>{children}</main>
+      <main className={"overflow main " + classmain}>{children}</main>
       <Footer />
       <CookieConsent
         location="bottom"

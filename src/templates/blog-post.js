@@ -20,7 +20,7 @@ export default function BlogPost({ data }) {
 
   return (
     <Layout>
-      <div className="post">
+      <div className="post container">
         <div className="post__top">
           <div className="post__left">
             <div className="post__out">

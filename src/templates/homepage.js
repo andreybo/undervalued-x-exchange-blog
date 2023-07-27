@@ -28,9 +28,8 @@ function IndexPage({
 }) {
   return (
     <Layout>
-      <div className="hp">
-        <Ads/>
-        <div className="hp__container hp__container--hot">
+    <div className="hp-yellow">
+        <div className="hp__container hp__container--hot container mt0">
               <CardHot post={hot1.nodes[0]} classmain="hot_card"/>
               <div className="hero">
                   <CardMain post={hot2.nodes[0]} classmain="card-main"/>
@@ -39,6 +38,8 @@ function IndexPage({
                   <CardMain post={hot4.nodes[0]} classmain="card-main"/>
               </div>
         </div>
+    </div>
+      <div className="hp container">
 
         <div className="hp__container">
           <div className="hp__title">
