@@ -63,31 +63,31 @@ const Header = () => {
       path: "/portfolio",
       name: "portfolio",
       submenu: [],
-      class: "nav__portfolio bzz"
+      class: "nav__portfolio bec"
     },
     {
       path: "/",
       name: "Blog",
       submenu: [],
-      class: "nav__blog bzz"
+      class: "nav__blog bec"
     },
     {
       path: "/careers",
       name: "Careers",
       submenu: [],
-      class: "nav__career bzz"
+      class: "nav__career bec"
     },
     {
       path: "/about",
       name: "About",
       submenu: [],
-      class: "nav__about bzz"
+      class: "nav__about bec"
     },
     {
       path: "/contact",
       name: "Get in touch",
       submenu: [],
-      class: "nav__contact bzz"
+      class: "nav__contact bup"
     }
   ]
 
@@ -165,7 +165,7 @@ const Header = () => {
                 <a
                   className={"header__nav-link nav-link headm " + link.class}
                   href={link.path}
-                  bzz={link.name}
+                  bec={link.name}
                 >
                   {link.name}
                 </a>

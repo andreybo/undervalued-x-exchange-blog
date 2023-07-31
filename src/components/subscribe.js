@@ -74,37 +74,44 @@ class TheFormComponent extends React.Component {
 render() {
   return(
     <div className="post__subscribe">
-        <h3>Subscribe to the hottest content in mobile</h3>
-        
-      {this.state.submitSuccess &&
-        <p className="post__success">Thank you for subscribing</p>
-      }
-        <div className={!this.state.submitSuccess ? 'post__hide enabled' : 'post__hide disabled'}>
-          <form id="sib-form" className="cform" name="contact-form"
-              onSubmit={this.handleSubmit}>
-              <input type="hidden" name="bot-field" />
-              <input type="hidden" name="form-name" value="contact-form" />
-              <div className="cform__label floating-label">
-                  <input
-                  className="cform__input"
-                  type="text"
-                  placeholder="Email"
-                  name="EMAIL"
-                  id="EMAIL"
-                  autoComplete="off"
-                  data-required="true"
-                  required
-                  value={this.state.EMAIL} onChange={this.handleInputChange}
-                  />
-                  <label htmlFor="EMAIL">Email</label>
-              </div>
-              <button id={this.props.buttonId} className="main_cta" type="submit" name="submit">
-                <span>SUBSCRIBE</span>
-              </button>
-          </form>
-        <p className="post__subscribe--terms">
-          By subscribing, I confirm that I have read and understood the <a href="/privacy">Privacy Policy</a>.
-        </p>
+      <div className="post__grid-bottom p60">
+        <div className="left">
+          <h3>Subscribe to the hottest content in mobile</h3>
+          
+          {this.state.submitSuccess &&
+            <p className="post__success">Thank you for subscribing</p>
+          }
+            <div className={!this.state.submitSuccess ? 'post__hide enabled' : 'post__hide disabled'}>
+              <form id="sib-form" className="cform" name="contact-form"
+                  onSubmit={this.handleSubmit}>
+                  <input type="hidden" name="bot-field" />
+                  <input type="hidden" name="form-name" value="contact-form" />
+                  <div className="cform__label floating-label">
+                      <input
+                      className="cform__input"
+                      type="text"
+                      placeholder="Email"
+                      name="EMAIL"
+                      id="EMAIL"
+                      autoComplete="off"
+                      data-required="true"
+                      required
+                      value={this.state.EMAIL} onChange={this.handleInputChange}
+                      />
+                      <label htmlFor="EMAIL">Email</label>
+                  </div>
+                  <button id={this.props.buttonId} className="main_cta" type="submit" name="submit">
+                    <span>SUBSCRIBE</span>
+                  </button>
+              </form>
+            <p className="post__subscribe--terms">
+              By subscribing, I confirm that I have read and understood the <a href="/privacy">Privacy Policy</a>.
+            </p>
+          </div>
+        </div>
+        <div className="right">
+            <img src="/ui.png"/>
+        </div>
       </div>
     </div>
   )

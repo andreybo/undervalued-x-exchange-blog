@@ -39,7 +39,7 @@ const max = data.trends.nodes.lenth
   },[setI,list,max])
 
   return (
-    <div className='trends maxw'>
+    <div className='trends'>
       <div className="trends__title">
         <h3 className="trends__title--text">Trends for you</h3>
         <span className="trends__title--number">{data.trends.totalCount}</span>

@@ -7,7 +7,6 @@ import Comments from "../components/comments";
 import Subscribe from "../components/subscribe";
 import Trends from "../components/trends";
 import Categories from "../components/categories";
-import ShareButtons from "../components/share-buttons";
 import Related from "../components/related";
 import Ads from "../components/ads";
 import Moment from 'moment';
@@ -25,7 +24,6 @@ export default function BlogPost({ data }) {
           <div className="post__left">
             <div className="post__out">
               <div className="post__head">
-                <ShareButtons url={url} title={post.title} description={data.wpPost.seo.metaDesc} />
                 <div className="post__head--image-top">
                   <GatsbyImage
                     image={post.featuredImage ==null ? null : post.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
@@ -33,22 +31,24 @@ export default function BlogPost({ data }) {
                     objectFit='cover'
                   />
                 </div>
-                <h1 className="post__head--title">{post.title}</h1>
-                <div className="trends__tag-container">
-                  {post.tags.nodes.map((tag, index) => (
-                    <div key={index}>
-                      <p className="trends__tag">
-                        #{tag.name.replace(/ /g,"")}
-                      </p>
-                    </div>
-                  ))}
+                <div className="p60">
+                  <h1 className="post__head--title">{post.title}</h1>
+                  <div className="trends__tag-container">
+                    <p className="post__head--author">
+                      by <b>{post.author ? post.author.node.name : 'Udonis'}</b>,&nbsp; 
+                      <time dateTime={postDate}>{Moment(postDate).format('MMMM D, YYYY')}</time>
+                    </p>
+                    {post.tags.nodes.map((tag, index) => (
+                      <div key={index}>
+                        <p className="trends__tag">
+                          #{tag.name.replace(/ /g,"")}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <p className="post__head--author">
-                  by <b>{post.author ? post.author.node.name : 'Udonis'}</b>,&nbsp; 
-                  <time dateTime={postDate}>{Moment(postDate).format('MMMM D, YYYY')}</time>
-                </p>
               </div>
-              <div className="post__content">
+              <div className="post__content p60">
                 <div
                   className="blog-post-content"
                   dangerouslySetInnerHTML={{ __html: post.content }}
@@ -56,27 +56,28 @@ export default function BlogPost({ data }) {
               </div>
             </div>
               <div className="post__about">
-                <h3>
-                  About Udonis
-                </h3>
-                <p>
-                  Udonis is an independent full-service mobile marketing agency that acquired more than 200,000,000 users for mobile games since 2018. Visit
-                  <a href="https://www.udonis.co/" className="post-abouta">
-                      udonis.co
-                  </a>
-                </p>
+                <div className="post__grid-bottom p60">
+                  <div className="left">
+                    <h3>
+                      About Udonis
+                    </h3>
+                    <p>
+                      Udonis is an independent full-service mobile marketing agency that acquired more than 200,000,000 users for mobile games since 2018. Visit
+                      <a href="https://www.udonis.co/" className="post-abouta">
+                          udonis.co
+                      </a>
+                    </p>
+                  </div>
+                  <div className="right">
+                      <img src="/svg/short.svg"/>
+                  </div>
+                </div>
               </div>
               <Subscribe buttonId="ud-postform"/>
-              <div className="post__comments">
-                <h3>
-                  Comments
-                </h3>
-                <Comments slug={post.slug} title={post.title} id={post.id}/>
-              </div>
           </div>
           <div className="post__right">
               <Trends/>
-              <div className="maxw">
+              <div className="maxww">
                 <Categories/>
                 <Ads/>
                 <Related posts={post.relatedPosts} limit={4} classmain="postcard" layoutHorizontal={true} titleh3={true}/>
@@ -90,6 +91,13 @@ export default function BlogPost({ data }) {
           </h3>
           <div className="post__related-out">
               <Related posts={post.relatedPosts} limit={4} classmain="postcard" layoutHorizontal={true} titleh3={true}/>
+          </div>
+
+          <div className="post__comments">
+                <h3>
+                  Comments
+                </h3>
+                <Comments slug={post.slug} title={post.title} id={post.id}/>
           </div>
         </div>
       </div>

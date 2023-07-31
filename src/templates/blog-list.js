@@ -63,7 +63,7 @@ const BlogList = ({ pageContext, data:{postdata} }) => {
               <Subscribe/>
           </div>
           <div className="category__right">
-            <div className="maxw">
+            <div className="maxww">
               <Categories/>
               <Ads/>
             </div>
