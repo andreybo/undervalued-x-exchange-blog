@@ -16,7 +16,7 @@ const BlogList = ({ pageContext, data:{postdata} }) => {
   const nextPage = cat + "/" + (currentPage + 1).toString()
   return (
     <Layout>
-      <div className="category__container">
+      <div className="category__container container">
         <div className="category__title-container">
           <p className="category__tag">Category</p>
           <h1 className="category__title">{name}</h1>

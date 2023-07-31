@@ -12,19 +12,21 @@ function Layout({ children, classmain = "page" }) {
   const location = useLocation()
   return (
     <React.Fragment>
-      <Header />
-      <main className={"overflow main " + classmain}>{children}</main>
-      <Footer />
-      <CookieConsent
-        location="bottom"
-        buttonText="Accept"
-        declineButtonText="Decline"
-        cookieName="gatsby-gdpr-google-tagmanager"
-        onAccept={() => initializeAndTrack(location)}
-      >
-        In order to deliver superior & personalized user experience we use
-        cookies.
-      </CookieConsent>
+      <div className={classmain}>
+        <Header />
+        <main className="overflow main">{children}</main>
+        <Footer />
+        <CookieConsent
+          location="bottom"
+          buttonText="Accept"
+          declineButtonText="Decline"
+          cookieName="gatsby-gdpr-google-tagmanager"
+          onAccept={() => initializeAndTrack(location)}
+        >
+          In order to deliver superior & personalized user experience we use
+          cookies.
+        </CookieConsent>
+      </div>
     </React.Fragment>
   );
 }

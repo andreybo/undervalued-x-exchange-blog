@@ -31,7 +31,7 @@
 $dark: #171F26;
 $white: #fff;
 $grey: #F2F8F9;
-$gold: #D89C1E;
+$gold: #b6b6b6;
 $yellow: #FFDD00;
 $gr-gold: linear-gradient(134.39deg, #D89719 1.54%, #D89C1E 39.88%, #FCE474 53.83%, #D89C1E 85.2%);
 
@@ -2023,6 +2023,9 @@ img {
   }
 
   &__content {
+
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     p {
       line-height: 1.5;
     }
@@ -2066,12 +2069,10 @@ img {
   &__out {
     position: relative;
     margin-bottom: 60px;
+    background-color: #fff;
   }
   &__right{
     .trends{
-      @include media-breakpoint-up(md) {
-        margin-top: 45px;
-      }
     }
   }
   &__head {
@@ -2079,18 +2080,24 @@ img {
     overflow: hidden;
     .trends__tag-container{
       padding: 15px 0px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
     &--title {
       font-size: 32px;
       margin-top: 25px;
       padding: 0;
       line-height: 1.2;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
     &--author {
       margin-top: 0;
       padding: 0px 0px 25px 0px;
       border-bottom: 1px solid #e0e9f7;
       margin-bottom: 10px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
     &--image-top{
       height: 400px;
@@ -2163,24 +2170,21 @@ img {
 }
 
 .trends {
-  background: $dark;
-  border: 1px solid #0d1439;
-  border-radius: $border-m;
   overflow: hidden;
   display: grid;
   min-height: 400px;
-  grid-template-rows: 60px 1fr 30px;
+  grid-template-rows: 30px 1fr 30px;
 
   &__item {
     position: relative;
     padding: 15px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     &:last-child{
       border-bottom: none;
     }
     &-container {
       //background: rgba(0, 0, 0, 0.17);
-      padding: 0 15px;
+      padding: 0;
       @include media-breakpoint-down(md) {
         padding: 0 15px;
       }
@@ -2188,7 +2192,6 @@ img {
     &--title {
       margin: 0;
       padding: 0;
-      color: #fff;
       font-size: 18px;
       line-height: 1.2;
     }
@@ -2203,27 +2206,24 @@ img {
   &__title {
     display: flex;
     justify-content: space-between;
-    padding: 15px;
-    border-bottom: 1px solid $gold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     @include media-breakpoint-down(md) {
       padding: 15px;
     }
     &--text {
-      color: $white;
-      font-size: var(--font-l);
+      font-size: 12px;
+      text-transform: uppercase;
+      line-height: 1;
       margin: 0;
       padding: 0;
     }
     &--number {
-      background: $grey;
-      border-radius: 30px;
-      color: $gold;
+      color: $yellow;
       font-size: 12px;
       width: 25px;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 25px;
     }
   }
   &__tag {
@@ -2464,7 +2464,7 @@ img {
   &__more {
     text-align: center;
     padding: 6px 0;
-    border-top: 1px solid #3F4C59;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
     &:hover {
       a,
       button {
@@ -2475,6 +2475,10 @@ img {
     button {
       display: block;
       width: 100%;
+      svg{
+        fill: #000;
+        opacity: .5;
+      }
     }
     button {
       border: none;
@@ -2596,7 +2600,7 @@ img {
   display: flex;
   gap: 20px;
   flex-direction: column;
-  float: right;
+  float: left;
   width: 100%;
   @include media-breakpoint-up(md) {
     max-width: 270px;
@@ -2609,13 +2613,13 @@ img {
 }
 
 .categories {
-  background: #F2F8F9;
+  //background: #F2F8F9;
   //box-shadow: 0px 0px 20px rgba(41, 146, 250, 0.14);
   border-radius: $border-m;
   &__title {
-    font-size: 18px;
-    padding: 0 25px;
+    font-size: 12px;
     padding-top: 18px;
+    text-transform: uppercase;
     margin: 0;
     padding-bottom: 10px;
     border-bottom: 1px solid $gold;
@@ -2639,8 +2643,7 @@ img {
       }
     }
     &-container {
-      background: #f5f8fb;
-      padding: 0 25px;
+      padding: 0;
     }
     &--link {
       position: absolute;
@@ -2969,5 +2972,20 @@ div#disqus_thread iframe[sandbox] {
       border-bottom: 1px solid rgba(0, 0, 0, 0.4);
       padding: 5px;
     }
+  }
+}
+.blogpost{
+  background-color: #F4FAFB;
+  .catmenu-out{
+    display: none;
+  }
+  .header{
+    background-color: unset;
+  }
+  .share{
+    display: none;
+  }
+  .main{
+    padding-top: 40px;
   }
 }

@@ -19,7 +19,7 @@ export default function BlogPost({ data }) {
   const url = typeof window !== 'undefined' ? window.location.href : '';
 
   return (
-    <Layout>
+    <Layout classmain="blogpost">
       <div className="post container">
         <div className="post__top">
           <div className="post__left">
