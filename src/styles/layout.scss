@@ -1615,7 +1615,7 @@ img {
       font-size: 18px;
       margin: 0;
       @include media-breakpoint-up(md) {
-        min-height: 75px;
+        min-height: 50px;
         .grid2 & {
           min-height: 50px;
         }
@@ -1724,6 +1724,9 @@ img {
     font-size: 12px;
     color: $dark;
     align-items: center;
+    .maxww &{
+      margin-bottom: 5px;
+    }
     .news__layout-image-out &{
       color: $white;
       svg{
@@ -2571,6 +2574,25 @@ img {
     @include media-breakpoint-down(md) {
       grid-template-columns: 1fr;
       margin-bottom: 0;
+    }
+  }
+  &__container{
+    margin-top: 40px;
+    .news{
+      margin-bottom: 0px;
+    }
+    .grid2{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      @include  media-breakpoint-down(md) {
+        grid-template-columns: 1fr;
+      }
+    }
+    .newsout{
+      overflow: hidden;
+      margin-bottom: 20px;
+      padding-top: 15px;
+      padding-bottom: 15px;
     }
   }
   &__main{

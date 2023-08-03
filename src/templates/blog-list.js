@@ -1,11 +1,10 @@
 import React from "react"
-import Card from "../components/cards/cardHor";
+import CardMain from "../components/cards/cardTemplateMain";
+import CardLong from "../components/cards/cardTemplateMainLong";
 import Layout from  "../components/layout";
 import { Link } from 'gatsby'
 import Seo from "../components/seo";
-import Categories from "../components/categories";
 import Subscribe from "../components/subscribe";
-import Ads from "../components/ads";
 // Components
 import { graphql } from "gatsby"
 const BlogList = ({ pageContext, data:{postdata} }) => {
@@ -15,16 +14,17 @@ const BlogList = ({ pageContext, data:{postdata} }) => {
   const prevPage = currentPage - 1 === 1 ? cat : cat + "/" + (currentPage - 1).toString()
   const nextPage = cat + "/" + (currentPage + 1).toString()
   return (
-    <Layout>
+      <Layout>
+      <div className="hp-yellow">
+          <div className="container mt0">
+                <CardLong post={postdata.nodes[0]} classmain="card-long"/>
+          </div>
+      </div>
       <div className="category__container container">
-        <div className="category__title-container">
-          <p className="category__tag">Category</p>
-          <h1 className="category__title">{name}</h1>
-        </div>
-        <div className="category__top">
-          <div className="category__left">
-            <div className="category__main">
-              <Card data={postdata} layoutHorizontal={true} descr={false} classmain="postcard"/>
+            <div className="row grid2">
+                {postdata.nodes.map((post, index) => (
+                  index !== 0 && <CardMain post={post} classmain="newsout" key={index}/>
+                ))}
             </div>
             <ul className="category__np" style={{display: numPages > 1 ? 'flex' : 'none'}}>
             {!isFirst && (
@@ -60,15 +60,11 @@ const BlogList = ({ pageContext, data:{postdata} }) => {
               </Link>
             )}
             </ul>
-              <Subscribe/>
-          </div>
-          <div className="category__right">
-            <div className="maxww">
-              <Categories/>
-              <Ads/>
-            </div>
-          </div>
-          </div>
+      </div>
+      <div className="hp-yellow2">
+        <div className="home_sub">
+          <Subscribe/>
+        </div>
       </div>
     </Layout>
   )
