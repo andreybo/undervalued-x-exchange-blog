@@ -22,9 +22,18 @@ const CardSmall = ({ post, classmain = "hp__col"}) => {
                     />
                 </div>
                 <div className="news__layout-small--text">
-                  <h3 className="news__top--title">{post.title}</h3>
                   <div className='news__date'>
                     <time dateTime={post.modified}>{Moment(post.modified).format('MMMM D, YYYY')}</time>
+                  </div>
+                  <h3 className="news__top--title">{post.title}</h3>
+                  <div className={post.tags.nodes.length > 0?"news__tag-container":"news__tag-empty"}>
+                    {post.tags.nodes.slice(0,3).map((tag, index) => (
+                      <div key={index}>
+                        <p className="news__tag">
+                          #{tag.name.replace(/ /g,"")}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

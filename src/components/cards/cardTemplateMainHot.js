@@ -25,20 +25,18 @@ const CardHot = ({ post, classmain = "hp__col"}) => {
                   </div>
                   <div
                     className="news__withtag">
-                    <h3 className="news__top--title">{post.title}</h3>
-                    <div className='news__date'>
+                    <div className={post.tags.nodes.length > 0?"news__tag-container":"news__tag-empty"}>
                       <time dateTime={post.modified}>{Moment(post.modified).format('MMMM D, YYYY')}</time>
+                      {post.tags.nodes.slice(0,3).map((tag, index) => (
+                        <div key={index}>
+                          <p className="news__tag">
+                            #{tag.name.replace(/ /g,"")}
+                          </p>
+                        </div>
+                      ))}
                     </div>
+                    <h3 className="news__top--title">{post.title}</h3>
                   </div>
-                </div>
-                <div className={post.tags.nodes.length > 0?"news__tag-container":"news__tag-empty"}>
-                  {post.tags.nodes.slice(0,3).map((tag, index) => (
-                    <div key={index}>
-                      <p className="news__tag">
-                        #{tag.name.replace(/ /g,"")}
-                      </p>
-                    </div>
-                  ))}
                 </div>
                 <div dangerouslySetInnerHTML = {{ __html: post.excerpt ? post.excerpt : "" }} className="news__padfix">
                 </div>

@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 
 import CardHot from "../components/cards/cardTemplateMainHot";
 import CardMain from "../components/cards/cardTemplateMain";
-import CardImage from "../components/cards/cardTemplateMainImage";
 import CardLong from "../components/cards/cardTemplateMainLong";
 import CardSmall from "../components/cards/cardTemplateMainSmall";
 import Layout from  "../components/layout";
@@ -15,41 +14,37 @@ function IndexPage({
   data: {
     hot1,
     hot2,
-    hot3,
-    hot32,
-    hot4,
     latest,
-    latestOld,
     blockchain,
-    blockchainOld,
     mgdissections,
-    mgdissectionsOld,
   },
 }) {
   return (
-    <Layout>
+    <Layout classmain="home">
     <div className="hp-yellow">
         <div className="hp__container hp__container--hot container mt0">
               <CardHot post={hot1.nodes[0]} classmain="hot_card"/>
               <div className="hero">
-                  <CardMain post={hot2.nodes[0]} classmain="card-main"/>
-                  <CardMain post={hot3.nodes[0]} classmain="card-main"/>
-                  <CardMain post={hot32.nodes[0]} classmain="card-main"/>
-                  <CardMain post={hot4.nodes[0]} classmain="card-main"/>
+                {hot2.nodes.map((post, index) => (
+                  <CardSmall post={post} classmain="news__layout-small--out" key={index}/>
+                ))}
               </div>
         </div>
     </div>
-      <div className="hp container">
+      <div className="hp container slatest">
 
         <div className="hp__container">
           <div className="hp__title">
             <h3 className="hp__title--text">Latest</h3>
           </div>
-          <div className="gap20">
+              <div className="hp__row row mb40">
+                <CardLong post={latest.nodes[0]} classmain="card-long"/>
+              </div>
+              <div className="row grid2">
                 {latest.nodes.map((post, index) => (
-                  <CardImage post={post} classmain="news__layout-image-out" key={index}/>
+                  index !== 0 && <CardMain post={post} classmain="col-md-4 col-12" key={index}/>
                 ))}
-          </div>
+              </div>
           <div className="hp__more">
             <a className="hp__more--link" href="/latest">
               View More
@@ -59,62 +54,54 @@ function IndexPage({
 
         <Ads/>
 
+
         <div className="hp__container">
           <div className="hp__title">
             <h3 className="hp__title--text">Mobile Game Dissections</h3>
           </div>
-          <div className="layout">
-            <div className="layout__left">
               <div className="hp__row row mb40">
                 <CardLong post={mgdissections.nodes[0]} classmain="card-long"/>
               </div>
-              <div className="hp__row row">
+              <div className="row grid2">
                 {mgdissections.nodes.map((post, index) => (
                   index !== 0 && <CardMain post={post} classmain="col-md-4 col-12" key={index}/>
                 ))}
               </div>
-            </div>
-            <div className="layout__right vertsmall">
-                {mgdissectionsOld.nodes.map((post, index) => (
-                  <CardSmall post={post} classmain="news__layout-small--out" key={index}/>
-                ))}
-            </div>
-          </div>
           <div className="hp__more">
-            <a className="hp__more--link" href="/topics/mobile-game-dissections">
+            <a className="hp__more--link" href="/latest">
               View More
             </a>
           </div>
         </div>
 
         <Ads/>
+
 
         <div className="hp__container">
           <div className="hp__title">
             <h3 className="hp__title--text">Blockchain Game Dissections</h3>
           </div>
-          <div className="hp__row block__blockchain--top">
-                <div className="block__blockchain--top_2">
-                  {blockchain.nodes.map((post, index) => (
-                    <CardMain post={post} classmain="card-main" key={index}/>
-                  ))}
-                </div>
-                <div className="block__blockchain--right gold">
-                  <Subscribe buttonId="ud-postform"/>
-                </div>
-          </div>
-          <div className="hp__row block__blockchain--bottom">
-              {blockchainOld.nodes.map((post, index) => (
-                <CardMain post={post} classmain="card-main" key={index}/>
-              ))}
-          </div>
+              <div className="hp__row row mb40">
+                <CardLong post={blockchain.nodes[0]} classmain="card-long"/>
+              </div>
+              <div className="row grid2">
+                {blockchain.nodes.map((post, index) => (
+                  index !== 0 && <CardMain post={post} classmain="col-md-4 col-12" key={index}/>
+                ))}
+              </div>
           <div className="hp__more">
-            <a className="hp__more--link" href="/topics/blockchain-game-dissections">
+            <a className="hp__more--link" href="/latest">
               View More
             </a>
           </div>
         </div>
+
         <Ads/>
+      </div>
+      <div className="hp-yellow2">
+        <div className="home_sub">
+          <Subscribe/>
+        </div>
       </div>
     </Layout>
   );
@@ -161,52 +148,24 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
     }
   }
   hot2: allWpPost(
-    filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted2"}}}}}
-    sort: {date: DESC}
-    limit: 1
+    filter: {
+      categories: {
+        nodes: {
+          elemMatch: {
+            name: { in: ["Highlighted2", "Highlighted3", "Highlighted3-2"] }
+          }
+        }
+      }
+    }
+    sort: { date: DESC }
+    limit: 3
   ) {
     nodes {
       ...postData
       modified
     }
   }
-  hot3: allWpPost(
-    filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted3"}}}}}
-    sort: {date: DESC}
-    limit: 1
-  ) {
-    nodes {
-      ...postData
-      modified
-    }
-  }
-  hot32: allWpPost(
-    filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted3-2"}}}}}
-    sort: {date: DESC}
-    limit: 1
-  ) {
-    nodes {
-      ...postData
-      modified
-    }
-  }
-  hot4: allWpPost(
-    filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted4"}}}}}
-    sort: {date: DESC}
-    limit: 1
-  ) {
-    nodes {
-      ...postData
-      modified
-    }
-  }
-  latest: allWpPost(sort: {date: DESC}, limit: 3) {
-    nodes {
-      ...postData
-      modified
-    }
-  }
-  latestOld: allWpPost(sort: {date: DESC}, limit: 3, skip: 4) {
+  latest: allWpPost(sort: {date: DESC}, limit: 4) {
     nodes {
       ...postData
       modified
@@ -215,18 +174,7 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   blockchain: allWpPost(
     filter: {categories: {nodes: {elemMatch: {name: {eq: "Blockchain Game Dissections"}}}}}
     sort: {date: DESC}
-    limit: 2
-  ) {
-    nodes {
-      ...postData
-      modified
-    }
-  }
-  blockchainOld: allWpPost(
-    filter: {categories: {nodes: {elemMatch: {name: {eq: "Blockchain Game Dissections"}}}}}
-    sort: {date: DESC}
     limit: 4
-    skip: 2
   ) {
     nodes {
       ...postData
@@ -237,17 +185,6 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
     filter: {categories: {nodes: {elemMatch: {name: {eq: "Mobile Game Dissections"}}}}}
     sort: {date: DESC}
     limit: 4
-  ) {
-    nodes {
-      ...postData
-      modified
-    }
-  }
-  mgdissectionsOld: allWpPost(
-    filter: {categories: {nodes: {elemMatch: {name: {eq: "Mobile Game Dissections"}}}}}
-    sort: {date: DESC}
-    limit: 5
-    skip: 4
   ) {
     nodes {
       ...postData
