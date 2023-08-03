@@ -23,7 +23,7 @@ function IndexPage({
     <Layout classmain="home">
     <div className="hp-yellow">
         <div className="hp__container hp__container--hot container mt0">
-              <CardHot post={hot1.nodes[0]} classmain="hot_card"/>
+              <CardHot post={hot1.nodes[0]} classmain=" imin"/>
               <div className="hero">
                 {hot2.nodes.map((post, index) => (
                   <CardSmall post={post} classmain="news__layout-small--out" key={index}/>
@@ -38,7 +38,7 @@ function IndexPage({
             <h3 className="hp__title--text">Latest</h3>
           </div>
               <div className="hp__row row mb40">
-                <CardLong post={latest.nodes[0]} classmain="card-long"/>
+                <CardLong post={latest.nodes[0]} classmain="card-long imin"/>
               </div>
               <div className="row grid2">
                 {latest.nodes.map((post, index) => (
@@ -60,7 +60,7 @@ function IndexPage({
             <h3 className="hp__title--text">Mobile Game Dissections</h3>
           </div>
               <div className="hp__row row mb40">
-                <CardLong post={mgdissections.nodes[0]} classmain="card-long"/>
+                <CardLong post={mgdissections.nodes[0]} classmain="card-long imin"/>
               </div>
               <div className="row grid2">
                 {mgdissections.nodes.map((post, index) => (
@@ -82,7 +82,7 @@ function IndexPage({
             <h3 className="hp__title--text">Blockchain Game Dissections</h3>
           </div>
               <div className="hp__row row mb40">
-                <CardLong post={blockchain.nodes[0]} classmain="card-long"/>
+                <CardLong post={blockchain.nodes[0]} classmain="card-long imin"/>
               </div>
               <div className="row grid2">
                 {blockchain.nodes.map((post, index) => (
@@ -124,6 +124,7 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   tags {
     nodes {
       name
+      uri
     }
   }
   title

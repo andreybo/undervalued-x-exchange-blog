@@ -14,6 +14,7 @@ const Trends = () => {
       tags {
         nodes {
           name
+          uri
         }
       }
       uri
@@ -55,9 +56,9 @@ const max = data.trends.nodes.lenth
               <div className={post.tags.nodes.length > 0?"trends__tag-container":"trends__tag-empty"}>
                 {post.tags.nodes.map((tag, index) => (
                   <div key={index}>
-                    <p className="trends__tag">
+                    <a className="trends__tag" href={tag.uri}>
                       #{tag.name.replace(/ /g,"")}
-                    </p>
+                    </a>
                   </div>
                 ))}
               </div>

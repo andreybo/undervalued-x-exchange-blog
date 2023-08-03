@@ -40,9 +40,9 @@ export default function BlogPost({ data }) {
                     </p>
                     {post.tags.nodes.map((tag, index) => (
                       <div key={index}>
-                        <p className="trends__tag">
+                        <a className="trends__tag" href={tag.uri}>
                           #{tag.name.replace(/ /g,"")}
-                        </p>
+                        </a>
                       </div>
                     ))}
                   </div>
@@ -141,6 +141,7 @@ export const query = graphql`
       tags{
         nodes{
           name
+          uri
         }
       }
       uri
@@ -169,6 +170,7 @@ export const query = graphql`
           tags{
             nodes{
               name
+              uri
             }
           }
           excerpt

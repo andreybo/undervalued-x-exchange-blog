@@ -7,7 +7,7 @@ const CardHot = ({ post, classmain = "hp__col"}) => {
 
   return (
             <div 
-              className="news news__layout-hot"
+              className={"news news__layout-hot" + classmain}
             >
               <Link to={post.uri}
                 className="news__link"
@@ -29,9 +29,9 @@ const CardHot = ({ post, classmain = "hp__col"}) => {
                       <time dateTime={post.modified}>{Moment(post.modified).format('MMMM D, YYYY')}</time>
                       {post.tags.nodes.slice(0,3).map((tag, index) => (
                         <div key={index}>
-                          <p className="news__tag">
+                          <a className="news__tag" href={tag.uri}>
                             #{tag.name.replace(/ /g,"")}
-                          </p>
+                          </a>
                         </div>
                       ))}
                     </div>

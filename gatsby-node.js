@@ -19,6 +19,12 @@ exports.createPages = async function ({ actions, graphql }) {
                     slug
                   }
                 }
+                tags{
+                  nodes{
+                    name
+                    slug
+                  }
+                }
                 uri
                 content
             }
@@ -26,6 +32,14 @@ exports.createPages = async function ({ actions, graphql }) {
           totalCount
         }
         allWpCategory(filter: {name: {nin: ["Uncategorized", "Highlighted1", "Highlighted2", "Highlighted3-2", "Highlighted3", "Highlighted4"]}}) {
+          nodes {
+            id
+            name
+            uri
+            count
+          }
+        }
+        allWpTag {
           nodes {
             id
             name
@@ -79,6 +93,31 @@ exports.createPages = async function ({ actions, graphql }) {
             },
           })
         })
+    })
+
+    // Make tag pages
+    const tagTemplate = path.resolve("./src/templates/tag-list.js")
+    const tags = result.data.allWpTag.nodes
+
+    tags.forEach((tag) => {
+      const numberOfPages = Math.ceil(tag.count / postsPerPage)
+
+      Array.from({ length: numberOfPages }).forEach((_, i) => {
+        createPage({
+          path: i === 0 ? tag.uri : `${tag.uri}/${i + 1}`,
+          component: tagTemplate,
+          context: {
+            id: tag.id,
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            numPages: numberOfPages,
+            numPosts: tag.count,
+            currentPage: i + 1,
+            tag: tag.uri,
+            name: tag.name
+          },
+        })
+      })
     })
 
     // Make latest page
@@ -187,4 +226,3 @@ exports.createResolvers = ({
     }
   })
 }
-

@@ -7,12 +7,14 @@ import Seo from "../components/seo";
 import Subscribe from "../components/subscribe";
 // Components
 import { graphql } from "gatsby"
-const BlogList = ({ pageContext, data:{postdata} }) => {
-  const { cat, currentPage, numPages,  name, numPosts } = pageContext
+
+
+const TagList = ({ pageContext, data:{postdata} }) => {
+  const { tag, currentPage, numPages,  name, numPosts } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? cat : cat + "/" + (currentPage - 1).toString()
-  const nextPage = cat + "/" + (currentPage + 1).toString()
+  const prevPage = currentPage - 1 === 1 ? tag : tag + "/" + (currentPage - 1).toString()
+  const nextPage = tag + "/" + (currentPage + 1).toString()
   return (
       <Layout>
       <div className="hp-yellow">
@@ -45,7 +47,7 @@ const BlogList = ({ pageContext, data:{postdata} }) => {
               if (pageIndex <= numPages) {
                 return (
                   <li key={`pagination-number-${pageIndex}`} className={classes.join(' ')}>
-                    <Link to={`${pageIndex === 1 ? cat : cat + "/" + pageIndex}`}>
+                    <Link to={`${pageIndex === 1 ? tag : tag + "/" + pageIndex}`}>
                       {pageIndex}
                     </Link>
                   </li>
@@ -69,12 +71,12 @@ const BlogList = ({ pageContext, data:{postdata} }) => {
     </Layout>
   )
 }
-export default BlogList
+export default TagList
 
 export const query = graphql`
   query ($id: [String], $skip: Int!, $limit: Int!) {
   postdata: allWpPost(
-    filter: { categories: { nodes: { elemMatch: { id: { in: $id } } } } }
+    filter: { tags: { nodes: { elemMatch: { id: { in: $id } } } } }
     limit: $limit,
     skip: $skip,
     sort: {date: DESC})
@@ -101,12 +103,6 @@ export const query = graphql`
       }
       title
       uri
-      categories {
-        nodes {
-          name
-          slug
-        }
-      }
     }
   }
 }`;

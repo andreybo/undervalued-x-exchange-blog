@@ -1196,12 +1196,10 @@ img {
 
 .news {
   width: 100%;
-  //background: #ffffff;
   border: none;
   border-radius: $border-m;
   overflow: hidden;
   position: relative;
-  //display: flex;
   flex-direction: column;
   height: 100%;
   padding-bottom: 12px;
@@ -1326,7 +1324,7 @@ img {
             height: calc(100% + 30px);
             background-color: $yellow;
             z-index: -1;
-            border-radius: 20px;
+            border-radius: 12px;
           }
           .news__hover {
             opacity: 1;
@@ -1440,10 +1438,17 @@ img {
     &-small{
       position: relative;
       overflow: hidden;
-      //padding: 15px 0;
+      position: relative;
+      &--hover{
+        transform: translateY(100%);
+      }
+      
       &:hover{
         .news__layout-small--hover{
-          opacity: 1;
+          transform: translateY(0);
+        }
+        .news__layout-small--content{
+          transform: translateY(-100%);
         }
       }
       .news__tag-container{
@@ -1453,6 +1458,8 @@ img {
         display: grid;
         grid-template-columns: 200px 1fr;
         gap: 20px;
+        transition: transform .3s ease-in-out;
+        transform: translateY(0);
         .news__date{
           padding: 0;
           margin: 0;
@@ -1480,12 +1487,13 @@ img {
         padding-top: 0px;
         width: 100%;
         left: 0;
-        background-color: #fff;
+        background-color: $yellow;
+        color: $dark;
+        border: 1px solid $dark;
         border-radius: 8px;
         height: 100%;
-        opacity: 0;
         font-size: 16px;
-        transition: opacity .3s ease-in-out;
+        transition: transform .3s ease-in-out;
         .news__padfix{
           height: 100%;
           display: flex;
@@ -1518,7 +1526,7 @@ img {
       }
       &--image{
         position: relative;
-        border-radius: 20px;
+        border-radius: 12px;
         overflow: hidden;
         .gatsby-image-wrapper{
           @include media-breakpoint-up(md) {
@@ -1622,9 +1630,12 @@ img {
       }
       overflow: hidden;
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      @include media-breakpoint-down(md) {
+        -webkit-line-clamp: 4;
+      }
     }
     &--ttle {
       opacity: 1;
@@ -1639,7 +1650,7 @@ img {
       max-height: 160px;
       align-items: end;
       display: flex;
-      border-radius: 20px;
+      border-radius: 12px;
       overflow: hidden;
       .grid2 & {
         max-height: 220px;
@@ -1699,6 +1710,7 @@ img {
     align-items: center;
     flex-direction: row;
     margin-bottom: 5px;
+    text-decoration: unset!important;
     .news__layout-image-out &{
       color: $white;
       border: 1px solid $white;
@@ -1714,6 +1726,7 @@ img {
       padding: 0px 0px 0px 0px;
       max-height: 80px;
       overflow: hidden;
+      z-index: 12;
     }
   }
   &__date {
@@ -1992,7 +2005,7 @@ img {
   }
   &__subscribe {
     background: $yellow;
-    border-radius: 20px;
+    border-radius: 12px;
     padding-top: 40px;
     padding-bottom: 40px;
     text-align: left;
@@ -2079,7 +2092,7 @@ img {
     background: #E2E9EF;
     text-align: left;
     position: relative;
-    border-radius: 20px;
+    border-radius: 12px;
     margin: 20px 0;
   }
 
@@ -2264,6 +2277,7 @@ img {
       height: 100%;
       top: 0;
       left: 0;
+      z-index: 0;
     }
   }
   &__title {
@@ -2300,6 +2314,10 @@ img {
     font-size: 10px !important;
     text-transform: uppercase;
     font-weight: 500;
+    text-decoration: unset!important;
+    &:hover {
+      opacity: .5;
+    }
     &-container {
       display: flex;
       gap: 10px;
@@ -2308,6 +2326,8 @@ img {
       flex-flow: row wrap;
       justify-content: flex-start;
       padding: 10px 15px 0 0px;
+      z-index: 12;
+      position: relative;
     }
     &-empty {
       padding-bottom: 0px;
@@ -3130,5 +3150,80 @@ div#disqus_thread iframe[sandbox] {
 .bup{
   &:hover{
     border-color: rgba(0, 0, 0, 0.19);
+  }
+}
+
+/* CustomCursor.css */
+
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 110px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  &.isdisplay{
+    opacity: 1;
+  }
+}
+
+.mhovered{
+  cursor: none;
+  .custom-cursor{
+    opacity: 1;
+  }
+}
+
+#gatsby-focus-wrapper{
+  position: relative;
+}
+
+.imin a{
+  cursor: none !important;
+}
+
+.cursor-circle {
+  width: 20px;
+  height: 20px;
+  background-color: #FC2694; /* Customize the circle background color as needed */
+  border-radius: 50%;
+  opacity: 0.8;
+  left: -10px;
+  top: -10px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  .zoomed &{
+    transform: scale(3);
+    background-color: #000;
+  }
+  svg{
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    .zoomed & {
+      opacity: 1;
+    }
+  }
+}
+
+.cursor-text {
+  color: #fff;
+  background-color: #000; /* Customize the text color as needed */
+  font-size: 13px;
+  border-radius: 12px;
+  text-align: center;
+  left: -50%;
+  position: relative;
+  padding: 5px 15px;
+  transition: all 0.3s ease-in-out;
+  ;
+  .zoomed &{
+    opacity: 0;
   }
 }
