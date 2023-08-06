@@ -95,49 +95,49 @@ const Header = () => {
   let submenu = [
     {
       path: "/",
-      name: "any",
+      name: "All Categories",
       submenu: [],
       class: "nav__any"
     },
     {
       path: "/topics/mobile-marketing/mobile-games/",
-      name: "mobile games",
+      name: "Mobile Games",
       submenu: [],
       class: "nav__sub"
     },
     {
       path: "/topics/mobile-game-dissections/",
-      name: "mobile game dissections",
+      name: "Mobile Game Dissections",
       submenu: [],
       class: "nav__sub"
     },
     {
       path: "/topics/mobile-marketing/mobile-apps/",
-      name: "mobile apps",
+      name: "Mobile Apps",
       submenu: [],
       class: "nav__sub"
     },
     {
       path: "/topics/blockchain/",
-      name: "blockchain",
+      name: "Blockchain",
       submenu: [],
       class: "nav__sub"
     },
     {
       path: "/topics/mobile-marketing/",
-      name: "mobile marketing",
+      name: "Mobile Marketing",
       submenu: [],
       class: "nav__sub"
     },
     {
       path: "/topics/digital-marketing/",
-      name: "digital marketing",
+      name: "Digital Marketing",
       submenu: [],
       class: "nav__sub"
     },
     {
       path: "/topics/blockchain-game-dissections/",
-      name: "blockchain game dissections",
+      name: "Blockchain Game Dissections",
       submenu: [],
       class: "nav__sub"
     }
@@ -201,7 +201,6 @@ const Header = () => {
         <h3>Title should be here</h3>
         <div className='catm-in'>
             <div className="catm__selector">
-              <p>Category:</p>
               <select
                   className="selector"
                   ref={menuRef}

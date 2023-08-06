@@ -86,27 +86,37 @@ render() {
                   onSubmit={this.handleSubmit}>
                   <input type="hidden" name="bot-field" />
                   <input type="hidden" name="form-name" value="contact-form" />
-                  <div className="cform__label floating-label">
-                      <input
-                      className="cform__input"
-                      type="text"
-                      placeholder="Email"
-                      name="EMAIL"
-                      id="EMAIL"
-                      autoComplete="off"
+                  <div className="oout">
+                    <div className="cform__label floating-label">
+                        <input
+                        className="cform__input"
+                        type="text"
+                        placeholder="Email"
+                        name="EMAIL"
+                        id="EMAIL"
+                        autoComplete="off"
+                        data-required="true"
+                        required
+                        value={this.state.EMAIL} onChange={this.handleInputChange}
+                        />
+                        <label htmlFor="EMAIL">Email</label>
+                    </div>
+                    <button id={this.props.buttonId} className="main_cta" type="submit" name="submit">
+                      <span>SUBSCRIBE</span>
+                    </button>
+                  </div>
+                  <div className="cform__label-checkbox floating-label">
+                    <input
+                      className="cform__checkbox"
+                      type="checkbox"
+                      name="privacy-policy"
+                      id="privacy-policy"
                       data-required="true"
                       required
-                      value={this.state.EMAIL} onChange={this.handleInputChange}
-                      />
-                      <label htmlFor="EMAIL">Email</label>
+                    />
+                    <label htmlFor="privacy-policy">By subscribing, I confirm that I have read and understood the <a href="/privacy">Privacy Policy</a>.</label>
                   </div>
-                  <button id={this.props.buttonId} className="main_cta" type="submit" name="submit">
-                    <span>SUBSCRIBE</span>
-                  </button>
               </form>
-            <p className="post__subscribe--terms">
-              By subscribing, I confirm that I have read and understood the <a href="/privacy">Privacy Policy</a>.
-            </p>
           </div>
         </div>
         <div className="right">

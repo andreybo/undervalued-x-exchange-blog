@@ -219,7 +219,7 @@ img {
   padding: 0px;
   position: relative;
   @include media-breakpoint-down(md){
-    padding: 10px 15px;
+    //padding: 10px 15px;
   }
 }
 
@@ -258,7 +258,7 @@ img {
   width: 100%;
   background-color: $yellow;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  z-index: 11;
+  z-index: 14;
   .liquid-alt &{
     background-color: $white;
       @include media-breakpoint-up(md){
@@ -391,7 +391,7 @@ img {
           width: 80%;
           height: 3px;
           position: absolute;
-          background-color: $gold;
+          background-color: #000;
           transition: all 0.4s ease-out;
           right: 0;
           &:nth-child(1){
@@ -406,8 +406,10 @@ img {
           }
       }
       &.active{
+        position: fixed;
+        z-index: 13;
           span{
-          background-color: $gold;
+          background-color: #fff;
               &:nth-child(1){
                   top: 50%;
                   transform: translateY(-50%) rotate(45deg);
@@ -452,6 +454,9 @@ img {
                 height: 2px;
                 bottom: -4px;
                 background-color: #000;
+                @include media-breakpoint-down(md){
+                  display: none;
+                }
               }
               &:hover{
                 &:after{
@@ -504,12 +509,15 @@ img {
           opacity: 0;
           transform: translateX(100%);
           transition: all linear .2s;
-          z-index: 11;
+          z-index: 13;
           pointer-events: none;
-          top: 50px;
+          top: 0;
           right: 0;
           padding-left: 15px;
           background-color: $dark;
+          padding-top: 50px;
+          padding-right: 15px;
+          height: 100%;
 
           &-li{
               margin-left: 0px;
@@ -674,9 +682,11 @@ img {
       }
     }
     &__contact{
-      border: 2px solid $dark;
-      padding: 10px 25px;
-      border-radius: 50px;
+      @include media-breakpoint-up(md){
+        border: 2px solid $dark;
+        padding: 10px 25px;
+        border-radius: 50px;
+      }
     }
   }
   li:hover,a:hover{
@@ -1053,6 +1063,8 @@ img {
       @include media-breakpoint-down(md) {
         grid-template-columns: 1fr;
         margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
       }
     }
   }
@@ -1521,7 +1533,7 @@ img {
         gap: 50px;
         @include media-breakpoint-down(md) {
           grid-template-columns: 1fr;
-          border: 1px solid $grey;
+          //border: 1px solid $grey;
         }
       }
       &--image{
@@ -1908,8 +1920,20 @@ img {
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 20px;
+      @include media-breakpoint-down(md) {
+        display: flex;
+        flex-direction: column-reverse;
+      }
       img{
         width: 100%;
+        @include media-breakpoint-down(md) {
+          max-width: 50%;
+        }
+      }
+      h3{
+        @include media-breakpoint-down(md) {
+          margin-bottom: 0;
+        }
       }
     }
   } 
@@ -1927,6 +1951,8 @@ img {
     @include media-breakpoint-down(md) {
       grid-template-columns: 1fr;
       margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
     }
   }
   .postLeft {
@@ -2016,18 +2042,25 @@ img {
       font-size: 12px;
     }
     #sib-form{
-      display: flex;
-      flex-direction: row;
-      gap: 12px;
-      margin: 20px 0;
-      border: 1px solid rgba(0, 0, 0, 0.19);
-      border-radius: 200px;
-      padding: 10px;
-      @include media-breakpoint-down(md) {
-        flex-direction: column;
+      .oout{
+        border: 1px solid rgba(0, 0, 0, 0.19);
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        margin: 20px 0 0 0 ;
+        border-radius: 200px;
+        padding: 10px;
+        @include media-breakpoint-down(md) {
+          flex-direction: column;
+          border: none;
+          padding: 0;
+        }
       }
       .cform__label{
-        margin: 0;
+        @include media-breakpoint-down(md) {
+          border-bottom: 1px solid #000;
+          margin-bottom: 20px;
+        }
       }
     }
     button{
@@ -2094,6 +2127,12 @@ img {
     position: relative;
     border-radius: 12px;
     margin: 20px 0;
+    .p60{
+      @include media-breakpoint-down(md) {
+        text-align: center;
+      }
+
+    }
   }
 
   &__content {
@@ -2162,6 +2201,9 @@ img {
       margin-top: 25px;
       padding: 0;
       line-height: 1.2;
+      @include media-breakpoint-down(md) {
+        font-size: 28px;
+      }
     }
     &--author {
       margin-top: 0;
@@ -2192,6 +2234,10 @@ img {
 .p60{
   padding-left: 60px;
   padding-right: 60px;
+  @include media-breakpoint-down(md) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .place-for-you-ad {
@@ -2237,6 +2283,12 @@ img {
   }
 }
 
+.right{
+  @include media-breakpoint-down(md) {
+    text-align: center;
+  }
+}
+
 .related {
   &__title {
     padding: 0;
@@ -2261,7 +2313,7 @@ img {
       //background: rgba(0, 0, 0, 0.17);
       padding: 0;
       @include media-breakpoint-down(md) {
-        padding: 0 15px;
+        padding: 0;
       }
     }
     &--title {
@@ -2285,7 +2337,7 @@ img {
     justify-content: space-between;
     border-bottom: 1px solid #DCE1E2;
     @include media-breakpoint-down(md) {
-      padding: 15px;
+      padding: 15px 0;
     }
     &--text {
       font-size: 12px;
@@ -2433,6 +2485,16 @@ img {
     width: 100%;
     margin-top: 20px;
     position: relative;
+    @include media-breakpoint-up(md) {
+      margin-top: 0px;
+    }
+    &-checkbox{
+      display: flex;
+      margin-top: 20px;
+      label{
+        font-size: 12px;
+      }
+    }
     &.fix {
       margin-top: 8px;
     }
@@ -2774,6 +2836,7 @@ img {
   position: relative;
   &__input {
     position: relative;
+    height: 30px;
     @include media-breakpoint-down(md) {
       left: 0px;
     }
@@ -2782,10 +2845,12 @@ img {
       border: unset;
       border-bottom: 1px solid rgba(0, 0, 0, 0.4);
       padding: 5px;
-      padding-left: 30px;
+      padding-left: 10px;
       width: 100%;
       font-size: 16px;
       height: 100%;
+      font-family: 'PP Neue Montreal', sans-serif;
+      font-weight: 300;
       &::placeholder {
         color: #000;
         font-family: 'PP Neue Montreal', sans-serif;
@@ -2794,14 +2859,15 @@ img {
         margin: 0;
       }
       @include media-breakpoint-down(md) {
-        width: calc(100% - 60px);
-        padding-left: 15px;
+        width: 100%;
+        //padding-left: 15px;
       }
     }
     svg {
       position: absolute;
       left: 12px;
       top: 10px;
+      display: none;
       @include media-breakpoint-down(md) {
         display: none;
       }
@@ -3099,21 +3165,35 @@ div#disqus_thread iframe[sandbox] {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
   &-in{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
     align-items: center;
   }
   h3{
     margin: 0;
     padding: 0;
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+  &__search{
+    &--buttons{
+      display: none;
+    }
   }
   &__selector{
     display: flex;
     flex-direction: row;
     gap: 12px;
     align-items: center;
+    @include media-breakpoint-down(md) {
+      display: unset;
+    }
     p{
       margin: 0;
       padding: 0;
@@ -3125,9 +3205,13 @@ div#disqus_thread iframe[sandbox] {
       border: 0;
       background: unset;
       outline: none;
-      font-size: 16;
+      font-size: 16px;
+      font-weight: 300;
       border-bottom: 1px solid rgba(0, 0, 0, 0.4);
       padding: 5px;
+      height: 30px;
+      width: 100%;
+      font-family: 'PP Neue Montreal', sans-serif;
     }
   }
 }

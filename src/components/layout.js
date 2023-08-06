@@ -39,6 +39,14 @@ function Layout({ children, classmain = "page" }) {
         });
       });
     }
+
+    return () => {
+      document.body.classList.remove('mhovered'); // This will be called on component unmount
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.remove('mhovered'); // This will be called on component mount
   }, []);
 
   return (
