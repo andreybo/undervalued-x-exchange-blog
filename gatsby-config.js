@@ -182,7 +182,6 @@ module.exports = {
     },
   },
   "gatsby-plugin-sass",
-  "gatsby-plugin-sitemap",
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
@@ -217,13 +216,6 @@ module.exports = {
       options: {
           shortname: `udonis-blog`
       }
-  },
-  {
-    resolve: `gatsby-plugin-canonical-urls`,
-    options: {
-      siteUrl: `https://www.blog.udonis.co`,
-      stripQueryString: true,
-    },
   },
   `gatsby-plugin-gatsby-cloud`,
   {
