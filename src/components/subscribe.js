@@ -120,7 +120,7 @@ render() {
           </div>
         </div>
         <div className="right">
-            <img src="/ui.png"/>
+            <p>image</p>
         </div>
       </div>
     </div>

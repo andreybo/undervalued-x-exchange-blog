@@ -58,7 +58,7 @@ exports.createPages = async function ({ actions, graphql }) {
       const postUri = edge.node.uri
       const postSlug = edge.node.slug
       const id = edge.node.id
-      actions.createPage({
+      createPage({
         path: postUri,
         id: id,
         component: require.resolve(`./src/templates/blog-post.js`),
@@ -186,10 +186,9 @@ exports.createSchemaCustomization = ({ actions }) => {
 }
 
 
-exports.createResolvers = ({
-  actions,
-  createResolvers,
-}) => {
+exports.createResolvers = ({ actions, createResolvers }) => {
+  const fetch = require('node-fetch')
+  const redirects = require("./redirects.json")
 
   createResolvers({
     WpPost: {
@@ -214,4 +213,17 @@ exports.createResolvers = ({
       },
     }
   })
+
+  
+
+  redirects.forEach(redirect => 
+    actions.createRedirect({
+      fromPath: redirect.fromPath,
+      toPath: redirect.toPath,
+      statusCode: redirect.status,
+      redirectInBrowser: true,
+      isPermanent: true,
+    })
+  )
+
 }
