@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 const path = require("path");
 
 exports.createPages = async function ({ actions, graphql }) {
