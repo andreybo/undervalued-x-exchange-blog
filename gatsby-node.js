@@ -1,5 +1,4 @@
 const fetch = require('node-fetch');
-const redirects = require("./redirects.json");
 const path = require("path");
 
 exports.createPages = async function ({ actions, graphql }) {
@@ -170,16 +169,6 @@ exports.createPages = async function ({ actions, graphql }) {
         component: require.resolve(`./src/templates/thank-you.js`),
         context: { slug: '/thank-you' },
       })
-
-      redirects.forEach(redirect => 
-        createRedirect({
-          fromPath: redirect.fromPath,
-          toPath: redirect.toPath,
-          statusCode: redirect.status,
-          redirectInBrowser: true,
-          isPermanent: true,
-        })
-      )
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
