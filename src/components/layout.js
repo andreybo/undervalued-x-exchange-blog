@@ -4,9 +4,7 @@ import Footer from "./footer";
 import Header from "./header";
 import "../styles/boot.scss";
 import "../styles/layout.scss";
-import CookieConsent from "react-cookie-consent";
 import { useLocation } from "@reach/router" // this helps tracking the location
-import { initializeAndTrack } from 'gatsby-plugin-gdpr-cookies'
 import CustomCursor from "./custom-cursor"
 
 function Layout({ children, classmain = "page" }) {
@@ -55,16 +53,6 @@ function Layout({ children, classmain = "page" }) {
         <Header />
         <main className="overflow main">{children}</main>
         <Footer />
-        <CookieConsent
-          location="bottom"
-          buttonText="Accept"
-          declineButtonText="Decline"
-          cookieName="gatsby-gdpr-google-tagmanager"
-          onAccept={() => initializeAndTrack(location)}
-        >
-          In order to deliver superior & personalized user experience we use
-          cookies.
-        </CookieConsent>
       </div>
       <CustomCursor isDisplay={isDisplay} position={cursorPosition} />
     </React.Fragment>
