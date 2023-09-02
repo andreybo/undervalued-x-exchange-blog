@@ -1,4 +1,3 @@
-const fetch = require('node-fetch');
 const path = require("path");
 
 exports.createPages = async function ({ actions, graphql }) {
@@ -188,7 +187,6 @@ exports.createSchemaCustomization = ({ actions }) => {
 
 exports.createResolvers = ({ actions, createResolvers }) => {
   const fetch = require('node-fetch')
-  const redirects = require("./redirects.json")
 
   createResolvers({
     WPGraphQL_MediaItem: {
@@ -282,17 +280,5 @@ exports.createResolvers = ({ actions, createResolvers }) => {
       },
     }
   })
-
-  
-
-  redirects.forEach(redirect => 
-    actions.createRedirect({
-      fromPath: redirect.fromPath,
-      toPath: redirect.toPath,
-      statusCode: redirect.status,
-      redirectInBrowser: true,
-      isPermanent: true,
-    })
-  )
 
 }
