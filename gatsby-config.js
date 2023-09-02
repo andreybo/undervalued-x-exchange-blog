@@ -122,6 +122,10 @@ module.exports = {
         hardCacheMediaFiles: true,
         hardCacheData: true,
       },
+      schema: {
+        timeout: 500000,
+        perPage: 50,
+      },
     },
   },
   {
