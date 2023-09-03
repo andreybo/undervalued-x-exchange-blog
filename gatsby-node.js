@@ -73,9 +73,9 @@ exports.createPages = async function ({ actions, graphql }) {
     // Make category pages
     categories.forEach((category) => {
 
-        const numberOfPages = Math.ceil(category.count / postsPerPage)
+        const numberOfPagesCategory = Math.ceil(category.count / postsPerPage)
 
-        Array.from({ length: numberOfPages }).forEach((_, i) => {
+        Array.from({ length: numberOfPagesCategory }).forEach((_, i) => {
           actions.createPage({
             path: i === 0 ? category.uri : `${category.uri}/${i + 1}`,
             component: categoryTemplate,
@@ -83,7 +83,7 @@ exports.createPages = async function ({ actions, graphql }) {
               id: category.id,
               limit: postsPerPage,
               skip: i * postsPerPage,
-              numPages: numberOfPages,
+              numPages: numberOfPagesCategory,
               numPosts: category.count,
               currentPage: i + 1,
               cat: category.uri,
@@ -98,9 +98,9 @@ exports.createPages = async function ({ actions, graphql }) {
     const tags = result.data.allWpTag.nodes
 
     tags.forEach((tag) => {
-      const numberOfPages = Math.ceil(tag.count / postsPerPage)
+      const numberOfPagesTag = Math.ceil(tag.count / postsPerPage)
 
-      Array.from({ length: numberOfPages }).forEach((_, i) => {
+      Array.from({ length: numberOfPagesTag }).forEach((_, i) => {
         actions.createPage({
           path: i === 0 ? tag.uri : `${tag.uri}/${i + 1}`,
           component: tagTemplate,
@@ -108,7 +108,7 @@ exports.createPages = async function ({ actions, graphql }) {
             id: tag.id,
             limit: postsPerPage,
             skip: i * postsPerPage,
-            numPages: numberOfPages,
+            numPages: numberOfPagesTag,
             numPosts: tag.count,
             currentPage: i + 1,
             tag: tag.uri,
