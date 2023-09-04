@@ -18,6 +18,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
+    "deepmerge": "^4.3.1",
     "dotenv": "^16.0.3",
     "flexsearch": "^0.7.31",
     "formik": "^2.2.9",
