@@ -1,4 +1,5 @@
 import * as React from "react";
+import { StaticImage } from "gatsby-plugin-image"
 
 class TheFormComponent extends React.Component {
 
@@ -120,7 +121,13 @@ render() {
           </div>
         </div>
         <div className="right">
-            <p>image</p>
+            <StaticImage
+                src="../images/s.png"
+                quality={95}
+                formats={["auto", "webp", "avif"]}
+                placeholder="none"
+                alt=""
+            />
         </div>
       </div>
     </div>

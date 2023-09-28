@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Link } from "gatsby"
 import Search from "./search";
 
-const Header = () => {
+const Header = ({title = "Udonis"}) => {
 
   const [isActive, setActive] = useState(false);
 
@@ -198,7 +198,7 @@ const Header = () => {
     <div className='catmenu-out'>
       <div className="container">
         <div className='catm'>
-        <h3>Title should be here</h3>
+        <h3>{title}</h3>
         <div className='catm-in'>
             <div className="catm__selector">
               <select

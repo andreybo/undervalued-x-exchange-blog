@@ -20,10 +20,10 @@ function IndexPage({
   },
 }) {
   return (
-    <Layout classmain="home">
+    <Layout classmain="home" title="Highlighted">
     <div className="hp-yellow">
         <div className="hp__container hp__container--hot container mt0">
-              <CardHot post={hot1.nodes[0]} classmain=" imin"/>
+          {hot1.nodes[0] && <CardHot post={hot1.nodes[0]} classmain=" imin"/>}
               <div className="hero">
                 {hot2.nodes.map((post, index) => (
                   <CardSmall post={post} classmain="news__layout-small--out" key={index}/>
@@ -75,28 +75,6 @@ function IndexPage({
         </div>
 
         <Ads/>
-
-
-        <div className="hp__container">
-          <div className="hp__title">
-            <h3 className="hp__title--text">Blockchain Game Dissections</h3>
-          </div>
-              <div className="hp__row row mb40">
-                <CardLong post={blockchain.nodes[0]} classmain="card-long imin"/>
-              </div>
-              <div className="row grid2">
-                {blockchain.nodes.map((post, index) => (
-                  index !== 0 && <CardMain post={post} classmain="col-md-4 col-12" key={index}/>
-                ))}
-              </div>
-          <div className="hp__more">
-            <a className="hp__more--link" href="/latest">
-              View More
-            </a>
-          </div>
-        </div>
-
-        <Ads/>
       </div>
       <div className="hp-yellow2">
         <div className="home_sub">
@@ -129,6 +107,9 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   }
   title
   uri
+  seo {
+    metaDesc
+  }
   categories {
     nodes {
       name

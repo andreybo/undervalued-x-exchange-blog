@@ -1458,6 +1458,7 @@ img {
       &:hover{
         .news__layout-small--hover{
           transform: translateY(0);
+          border-color: $dark;
         }
         .news__layout-small--content{
           transform: translateY(-100%);
@@ -1479,7 +1480,7 @@ img {
       }
       .news__top--title{
         padding: 0;
-        font-size: 20px;
+        font-size: 18px;
         min-height: unset;
         margin: 8px 0;
       }
@@ -1501,7 +1502,7 @@ img {
         left: 0;
         background-color: $yellow;
         color: $dark;
-        border: 1px solid $dark;
+        border: 1px solid $yellow;
         border-radius: 8px;
         height: 100%;
         font-size: 16px;
@@ -1540,6 +1541,9 @@ img {
         position: relative;
         border-radius: 12px;
         overflow: hidden;
+        @include media-breakpoint-up(md) {
+          min-height: 320px;
+        }
         .gatsby-image-wrapper{
           @include media-breakpoint-up(md) {
             position: absolute;
@@ -1642,7 +1646,7 @@ img {
       }
       overflow: hidden;
       display: -webkit-box;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
       @include media-breakpoint-down(md) {
@@ -1920,11 +1924,18 @@ img {
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 20px;
+      .left{
+        h3{
+          @include media-breakpoint-down(md) {
+            text-align: center;
+          }
+        }
+      }
       @include media-breakpoint-down(md) {
         display: flex;
         flex-direction: column-reverse;
       }
-      img{
+      .imgsvg, .gatsby-image-wrapper{
         width: 100%;
         @include media-breakpoint-down(md) {
           max-width: 50%;
@@ -2232,8 +2243,8 @@ img {
 }
 
 .p60{
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
   @include media-breakpoint-down(md) {
     padding-left: 15px;
     padding-right: 15px;
@@ -2878,6 +2889,9 @@ img {
     display: block;
     width: 400px;
     right: 0;
+    height: 80vh;
+    overflow-y: scroll;
+    border-radius: $border-m;
     &.disabled {
       display: none;
     }
@@ -2889,12 +2903,12 @@ img {
   &__result {
     background: #fff;
     box-shadow: 4px -2px 16px #9abdff6e;
-    margin-top: 10px;
+    margin-top: 0px;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-radius: $border-m;
     list-style: none;
     padding-left: 0;
+    margin-bottom: 0;
     &-item {
       padding: 10px 15px;
       font-size: 16px;

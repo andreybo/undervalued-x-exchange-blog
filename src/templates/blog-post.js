@@ -55,6 +55,7 @@ export default function BlogPost({ data }) {
                 ></div>
               </div>
             </div>
+              <Subscribe buttonId="ud-postform"/>
               <div className="post__about">
                 <div className="post__grid-bottom p60">
                   <div className="left">
@@ -69,11 +70,10 @@ export default function BlogPost({ data }) {
                     </p>
                   </div>
                   <div className="right">
-                      <img src="/svg/short.svg"/>
+                      <img className="imgsvg" src="/svg/short.svg"/>
                   </div>
                 </div>
               </div>
-              <Subscribe buttonId="ud-postform"/>
           </div>
           <div className="post__right">
               <Trends/>

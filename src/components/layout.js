@@ -7,7 +7,7 @@ import "../styles/layout.scss";
 import { useLocation } from "@reach/router" // this helps tracking the location
 import CustomCursor from "./custom-cursor"
 
-function Layout({ children, classmain = "page" }) {
+function Layout({ children, classmain = "page", title="Udonis" }) {
   const location = useLocation()
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isZoom, setIsZoom] = useState(false);
@@ -50,7 +50,7 @@ function Layout({ children, classmain = "page" }) {
   return (
     <React.Fragment>
       <div className={classmain}>
-        <Header />
+        <Header title={title}/>
         <main className="overflow main">{children}</main>
         <Footer />
       </div>

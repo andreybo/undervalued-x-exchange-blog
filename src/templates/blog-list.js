@@ -14,7 +14,7 @@ const BlogList = ({ pageContext, data:{postdata} }) => {
   const prevPage = currentPage - 1 === 1 ? cat : cat + "/" + (currentPage - 1).toString()
   const nextPage = cat + "/" + (currentPage + 1).toString()
   return (
-      <Layout>
+      <Layout title={name}>
       <div className="hp-yellow">
           <div className="container mt0">
                 <CardLong post={postdata.nodes[0]} classmain="card-long"/>
