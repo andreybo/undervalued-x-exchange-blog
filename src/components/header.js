@@ -40,19 +40,25 @@ const Header = ({title = "Udonis"}) => {
       class: "nav__services",
       submenu: [
         {
-          path: "/mobile-business-development",
+          path: "https://udonis.co/user-acquisition",
+          name: "user acquisition",
+          submenu: [],
+          class: "nav__acquisition"
+        },
+        {
+          path: "https://udonis.co/creative-production",
+          name: "creative production",
+          submenu: [],
+          class: "nav__portfolio"
+        },
+        {
+          path: "https://udonis.co/mobile-business-development",
           name: "mobile business development",
           submenu: [],
           class: "nav__mbd"
         },
         {
-          path: "/acquisition",
-          name: "acquisition",
-          submenu: [],
-          class: "nav__acquisition"
-        },
-        {
-          path: "/reporting-development",
+          path: "https://udonis.co/reporting-development",
           name: "reporting development",
           submenu: [],
           class: "nav__reporting"
@@ -60,10 +66,10 @@ const Header = ({title = "Udonis"}) => {
       ]
     },
     {
-      path: "/portfolio",
-      name: "portfolio",
+      path: "https://udonis.co/about",
+      name: "About",
       submenu: [],
-      class: "nav__portfolio bec"
+      class: "nav__about bec"
     },
     {
       path: "/",
@@ -72,22 +78,16 @@ const Header = ({title = "Udonis"}) => {
       class: "nav__blog bec"
     },
     {
-      path: "/careers",
+      path: "https://udonis.co/careers",
       name: "Careers",
       submenu: [],
       class: "nav__career bec"
     },
     {
-      path: "/about",
-      name: "About",
+      path: "https://udonis.co/contact",
+      name: "Contact us",
       submenu: [],
-      class: "nav__about bec"
-    },
-    {
-      path: "/contact",
-      name: "Get in touch",
-      submenu: [],
-      class: "nav__contact bup"
+      class: "nav__contact bec"
     }
   ]
 
