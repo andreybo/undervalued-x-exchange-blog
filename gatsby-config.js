@@ -184,7 +184,6 @@ module.exports = {
     resolve: `gatsby-plugin-sharp`,
     options: {
       defaultQuality: 90,
-      failOn: `warning`,
       failOnError: false,
     },
   },

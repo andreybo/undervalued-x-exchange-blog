@@ -2025,7 +2025,7 @@ img {
   }
   a {
     color: $dark;
-    text-decoration: underline;
+    text-decoration: none;
   }
   &__comments {
     margin-bottom: 40px;
@@ -2168,6 +2168,9 @@ img {
     p {
       line-height: 1.5;
     }
+    a{
+      color: #2196f3;
+    }
     figure,
     img {
       height: auto;
@@ -2195,11 +2198,14 @@ img {
       display: none;
     }
     h2 {
-      font-size: 28px;
+      font-size: 32px;
       margin-top: 50px;
     }
     h3 {
-      font-size: var(--font-l);
+      font-size: 28px;
+      span{
+        font-weight: 500!important;
+      }
     }
     h4 {
       font-size: 20px;
@@ -3057,7 +3063,7 @@ div#disqus_thread iframe[sandbox] {
 .catmenu{
   &-out{
     background-color: $yellow;
-    position: sticky;
+    //position: sticky;
     top: 0;
     z-index: 10;
     padding: 20px 0;

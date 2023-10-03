@@ -198,7 +198,7 @@ const Header = ({title = "Udonis"}) => {
     <div className='catmenu-out'>
       <div className="container">
         <div className='catm'>
-        <h3>{title}</h3>
+        <h3 className='hp__title--text'>{title}</h3>
         <div className='catm-in'>
             <div className="catm__selector">
               <select
