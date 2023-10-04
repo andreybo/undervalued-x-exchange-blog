@@ -2041,8 +2041,11 @@ img {
     font-size: 16px;
     span {
       font-size: unset !important;
-      font-weight: unset !important;
+      font-weight: 400 !important;
     }
+  }
+  span {
+    font-weight: 400 !important;
   }
   li {
     margin-bottom: 8px;
