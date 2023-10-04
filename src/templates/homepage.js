@@ -179,7 +179,7 @@ export default IndexPage;
 
 export const Head = () => (
   <Seo
-  title='Smart advertising | Udonis Mobile Marketing Agency '
-  metaDesciption='Udonis Blog is your go-to place for all the news related to mobile games & apps, offering a variety of content available to everyone.'
+  title='Blog | Udonis Mobile Marketing Agency'
+  metaDesciption='Dive deep into the mobile games industry: from user acquisition to monetization. Discover the latest trends, insights, and expert analyses all in one place.'
   />
 )
