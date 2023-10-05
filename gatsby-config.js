@@ -185,6 +185,7 @@ module.exports = {
     options: {
       defaultQuality: 90,
       failOnError: false,
+      failOn: `warning`,
     },
   },
   `gatsby-transformer-sharp`,
