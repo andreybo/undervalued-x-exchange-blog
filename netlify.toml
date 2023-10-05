@@ -1,8 +1,8 @@
 [build]
-    command = "yarn build"
+    command = "gatsby-runner"
     publish = "public"
     functions = "functions"
 [dev]
-    command = "yarn develop"
+    command = "gatsby develop"
 [[plugins]]
-    package = "@netlify/plugin-gatsby"
+    package = "@netlify/gatsby-runner"
