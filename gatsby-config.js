@@ -121,6 +121,9 @@ module.exports = {
         hardCacheMediaFiles: true,
         hardCacheData: true,
       },
+      excludedRoutes: [
+        "**/media",
+      ],
       schema: {
         timeout: 5000000,
         perPage: 20,
