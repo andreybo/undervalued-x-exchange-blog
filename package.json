@@ -24,6 +24,7 @@
     "flexsearch": "^0.7.31",
     "formik": "^2.2.9",
     "gatsby": "^5.12.5",
+    "gatsby-adapter-netlify": "^1.0.1",
     "gatsby-plugin-canonical-urls": "^5.12.0",
     "gatsby-plugin-disqus": "^1.2.6",
     "gatsby-plugin-feed": "^5.12.0",
@@ -43,18 +44,18 @@
     "gatsby-transformer-sharp": "^5.12.0",
     "lazysizes": "^5.3.2",
     "moment": "^2.29.2",
-    "netlify-cli": "^16.4.2",
+    "netlify-cli": "^16.5.1",
     "react": "^18.0.0",
     "react-cookie-consent": "^8.0.1",
     "react-dom": "^18.0.0",
     "react-feather": "^2.0.10",
     "react-share": "^4.4.1",
     "react-use-flexsearch": "^0.1.1",
-    "sass": "^1.62.0"
+    "sass": "^1.62.0",
+    "to": "^0.2.9",
+    "update": "^0.7.4"
   },
   "devDependencies": {
-    "@netlify/plugin-gatsby": "^3.7.1",
-    "gatsby-plugin-netlify": "^5.1.1",
     "prettier": "^2.5.1"
   },
   "engines": {

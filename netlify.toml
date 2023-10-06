@@ -4,5 +4,6 @@
     functions = "functions"
 [dev]
     command = "gatsby develop"
+    targetPort = 8000
 [[plugins]]
     package = "@netlify/gatsby-runner"

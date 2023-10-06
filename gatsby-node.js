@@ -49,7 +49,8 @@ exports.createPages = async function ({ actions, graphql }) {
     `)
 
     if (result.errors) {
-      throw result.errors
+      console.error("Error retrieving GraphQL data:", result.errors);
+      throw new Error("Error retrieving GraphQL data:", result.errors);
     }
 
     // Create posts

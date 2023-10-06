@@ -8,7 +8,6 @@ module.exports = {
     keywords: "Digital, Ads"
   },
   plugins: [
-    'gatsby-plugin-netlify',
   {
     resolve: `gatsby-plugin-feed`,
     options: {
