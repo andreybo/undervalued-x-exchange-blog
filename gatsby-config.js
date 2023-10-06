@@ -185,7 +185,7 @@ module.exports = {
     options: {
       defaultQuality: 90,
       failOnError: false,
-      failOn: `warning`,
+      failOn: `none`,
     },
   },
   `gatsby-transformer-sharp`,
@@ -197,6 +197,18 @@ module.exports = {
     },
   },
   "gatsby-plugin-sass",
+  {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: `udonis-website`,
+      short_name: `udonis`,
+      start_url: `/`,
+      background_color: `#fff`,
+      theme_color: `#fff`,
+      display: `minimal-ui`,
+      icon: `src/images/udonis-icon.png`
+    },
+  },
   {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
