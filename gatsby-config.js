@@ -198,18 +198,6 @@ module.exports = {
   },
   "gatsby-plugin-sass",
   {
-    resolve: `gatsby-plugin-manifest`,
-    options: {
-      name: `udonis-website`,
-      short_name: `udonis`,
-      start_url: `/`,
-      background_color: `#fff`,
-      theme_color: `#fff`,
-      display: `minimal-ui`,
-      icon: `src/images/udonis-icon.png`
-    },
-  },
-  {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
       "trackingId": "G-J3XN01S71Y"
