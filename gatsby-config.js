@@ -123,8 +123,8 @@ module.exports = {
         hardCacheData: true,
       },
       schema: {
-        timeout: 500000,
-        perPage: 50,
+        timeout: 5000000,
+        perPage: 20,
       },
       type: {
         Post: {
