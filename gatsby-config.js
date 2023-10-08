@@ -121,12 +121,16 @@ module.exports = {
         hardCacheMediaFiles: true,
         hardCacheData: true,
       },
-      excludedRoutes: [
-        "**/media",
-      ],
+      production: {
+        hardCacheMediaFiles: true,
+      },
       schema: {
         timeout: 5000000,
         perPage: 20,
+      },
+      html: {
+        useGatsbyImage: false,
+        createStaticFiles: false,
       },
       type: {
         Post: {
@@ -155,7 +159,22 @@ module.exports = {
     }
   },
   {
-    resolve: 'gatsby-transformer-remark'
+    resolve: 'gatsby-transformer-remark',
+    options: {
+      plugins: [
+        {
+          resolve: 'gatsby-remark-images',
+          options: {
+            maxWidth: 1000,
+            showCaptions: true,
+            quality: 80,
+            loading: 'auto',
+            linkImagesToOriginal: false,
+          },
+        },
+        `gatsby-remark-lazy-load`
+      ],
+    },
   },
   {
     resolve: 'gatsby-remark-audio',

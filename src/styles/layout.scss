@@ -3351,3 +3351,17 @@ div#disqus_thread iframe[sandbox] {
     opacity: 0;
   }
 }
+
+
+.react-responsive-modal-modal {
+  max-width: 90%!important;
+  padding: 0!important;
+  background: unset!important;
+  box-shadow: unset!important;
+}
+
+.react-responsive-modal-closeButton {
+  top: 0!important;
+  right: 0!important;
+  background: rgba(255,255,255, 0.5)!important;
+}

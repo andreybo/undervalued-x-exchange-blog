@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import React from 'react';
+import React, { useState } from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -11,11 +11,46 @@ import Related from "../components/related";
 import Ads from "../components/ads";
 import Moment from 'moment';
 
+import parse from 'html-react-parser';
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
+
 
 export default function BlogPost({ data }) {
   const post = data.wpPost
   const postDate = post.modified ? post.modified : post.date
   const url = typeof window !== 'undefined' ? window.location.href : '';
+  const [open, setOpen] = useState(false);
+
+  const [imageSrc, setImageSrc] = useState("");
+  const [imageAlt, setImageAlt] = useState("");
+  const onOpenModal = (src) => {
+    setOpen(true);
+    return setImageSrc(src);
+  };
+  const onCloseModal = () => setOpen(false);
+
+  const transformedContent = parse(post.content, {
+    replace: domNode => {
+      if (domNode.name && domNode.name === 'img') {
+        const src = domNode.attribs && domNode.attribs.src;
+        return (
+          <div>
+            <img
+              src={src}
+              alt={domNode.attribs.src}
+              srcset={domNode.attribs.srcset}
+              sizes={domNode.attribs.sizes}
+              decoding={domNode.attribs.decoding}
+              loading={domNode.attribs.loading}
+              onClick={() => onOpenModal(src, domNode.attribs.src)}
+              style={{ cursor: 'pointer'}}
+            />
+          </div>
+        );
+      }
+    }
+  });
 
   return (
     <Layout classmain="blogpost">
@@ -51,8 +86,9 @@ export default function BlogPost({ data }) {
               <div className="post__content p60">
                 <div
                   className="blog-post-content"
-                  dangerouslySetInnerHTML={{ __html: post.content }}
-                ></div>
+                >
+                  {transformedContent}
+                </div>
               </div>
             </div>
               <Subscribe buttonId="ud-postform"/>
@@ -101,6 +137,9 @@ export default function BlogPost({ data }) {
           </div>
         </div>
       </div>
+        <Modal open={open} onClose={onCloseModal} center>
+          <img src={imageSrc} alt={imageAlt} />
+        </Modal>
     </Layout>
   )
 }
