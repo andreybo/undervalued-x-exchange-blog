@@ -117,13 +117,6 @@ module.exports = {
     resolve: `gatsby-source-wordpress`,
     options: {
       url: process.env.WPGRAPHQL_URL || `https://cms.udonis.co/graphql`,
-      develop: {
-        hardCacheMediaFiles: true,
-        hardCacheData: true,
-      },
-      production: {
-        hardCacheMediaFiles: true,
-      },
       schema: {
         timeout: 5000000,
         perPage: 20,
