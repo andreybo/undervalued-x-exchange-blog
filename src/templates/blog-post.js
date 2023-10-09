@@ -99,14 +99,14 @@ export default function BlogPost({ data }) {
                       About Udonis
                     </h3>
                     <p>
-                      Udonis is an independent full-service mobile marketing agency that acquired more than 200,000,000 users for mobile games since 2018. Visit
-                      <a href="https://www.udonis.co/" className="post-abouta">
-                          udonis.co
+                      Udonis is an independent full-service mobile marketing agency that acquired more than 200,000,000 users for mobile games since 2018.
+                      <a href="https://www.udonis.co/" className="main_cta main_cta--u">
+                          <span>Visit udonis.co</span>
                       </a>
                     </p>
                   </div>
-                  <div className="right">
-                      <img className="imgsvg" src="/svg/short.svg"/>
+                  <div className="right fixright">
+                      <img className="imgsvg imgu" src="/svg/short.svg"/>
                   </div>
                 </div>
               </div>

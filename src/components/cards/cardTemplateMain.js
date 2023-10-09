@@ -39,19 +39,21 @@ const CardMain = ({ post, classmain = "hp__col"}) => {
                   <div
                     className="news__withtag">
                     <h3 className="news__top--title">{post.title}</h3>
-                    <div className='news__date'>
-                      <time dateTime={post.modified}>{Moment(post.modified).format('MMMM D, YYYY')}</time>
-                    </div>
                   </div>
                 </div>
-                    <div className={post.tags.nodes.length > 0?"news__tag-container":"news__tag-empty"}>
-                      {post.tags.nodes.slice(0,3).map((tag, index) => (
-                        <div key={index}>
-                          <a className="news__tag" href={tag.uri}>
-                            #{tag.name.replace(/ /g,"")}
-                          </a>
-                        </div>
-                      ))}
+                    <div className='news__datetag'>
+                      <div className='news__date'>
+                        <time dateTime={post.modified}>{Moment(post.modified).format('MMMM D, YYYY')}</time>
+                      </div>
+                      <div className={post.tags.nodes.length > 0?"news__tag-container":"news__tag-empty"}>
+                        {post.tags.nodes.slice(0,3).map((tag, index) => (
+                          <div key={index}>
+                            <a className="news__tag" href={tag.uri}>
+                              #{tag.name.replace(/ /g,"")}
+                            </a>
+                          </div>
+                        ))}
+                      </div>
                     </div>
               </div>
               <div className="news__hover">

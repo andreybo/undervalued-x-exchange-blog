@@ -134,13 +134,13 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
       categories: {
         nodes: {
           elemMatch: {
-            name: { in: ["Highlighted2", "Highlighted3", "Highlighted3-2"] }
+            name: { in: ["Highlighted2", "Highlighted3", "Highlighted3-2", "Highlighted4"] }
           }
         }
       }
     }
     sort: { date: DESC }
-    limit: 3
+    limit: 4
   ) {
     nodes {
       ...postData
