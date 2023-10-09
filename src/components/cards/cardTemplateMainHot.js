@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Moment from 'moment';
 
 const CardHot = ({ post, classmain = "hp__col"}) => {
+  const [height, setHeight] = useState('auto');
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+      const element = imageRef.current;
+      if(element) {
+          setHeight(`${(1/1.91) * element.offsetWidth}px`);
+      }
+  }, []);
 
   return (
             <div 
@@ -14,7 +23,7 @@ const CardHot = ({ post, classmain = "hp__col"}) => {
               ></Link>
               <div className="news-out">
                 <div className="news__top news__top--hor">
-                  <div className="news__top news__top--hor news__top--image">
+                  <div className="news__top news__top--hor news__top--image" style={{height: height}} ref={imageRef}>
                       <GatsbyImage
                         alt={post.title}
                         objectFit='cover'

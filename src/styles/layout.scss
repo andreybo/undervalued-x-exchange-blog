@@ -1359,7 +1359,7 @@ img {
             opacity: 1;
           }
           .news__top--image {
-            max-height: 0px;
+            height: 0px!important;
           }
           .news-out {
             height: calc($cardH - 160px);
@@ -1558,9 +1558,6 @@ img {
         position: relative;
         border-radius: 12px;
         overflow: hidden;
-        @include media-breakpoint-up(md) {
-          min-height: 320px;
-        }
         .gatsby-image-wrapper{
           @include media-breakpoint-up(md) {
             position: absolute;
@@ -1680,13 +1677,17 @@ img {
       opacity: 1;
       overflow: hidden;
       transition: all 0.4s ease-in-out;
-      max-height: 160px;
+      //max-height: 160px;
       align-items: end;
       display: flex;
       border-radius: 12px;
       overflow: hidden;
+      .gatsby-image-wrapper{
+        width: 100%;
+        height: 100%;
+      }
       .grid2 & {
-        max-height: 220px;
+        //max-height: 220px;
       }
       .gatsby-image-wrapper {
       }

@@ -169,7 +169,7 @@ module.exports = {
             showCaptions: true,
             quality: 80,
             loading: 'auto',
-            linkImagesToOriginal: false,
+            linkImagesToOriginal: false
           },
         },
         `gatsby-remark-lazy-load`
