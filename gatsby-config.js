@@ -125,6 +125,12 @@ module.exports = {
         useGatsbyImage: false,
         createStaticFiles: false,
       },
+      production: {
+        hardCacheMediaFiles: true,
+      },
+      develop: {
+        hardCacheMediaFiles: true,
+      },
       type: {
         Post: {
           limit:

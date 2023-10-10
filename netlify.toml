@@ -1,9 +1,7 @@
 [build]
-    command = "gatsby-runner"
+    command = "gatsby build"
     publish = "public"
     functions = "functions"
 [dev]
     command = "gatsby develop"
     targetPort = 8000
-[[plugins]]
-    package = "@netlify/gatsby-runner"
