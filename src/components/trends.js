@@ -53,10 +53,10 @@ const max = data.trends.nodes.lenth
                 className="trends__item--link"
               ></Link>
               <h3 className="trends__item--title">{post.title}</h3>
-              <div className={post.tags.nodes.length > 0?"trends__tag-container":"trends__tag-empty"}>
+              <div className={post.tags.nodes.length > 0?"news__tag-container":"news__tag-empty"}>
                 {post.tags.nodes.map((tag, index) => (
                   <div key={index}>
-                    <a className="trends__tag" href={tag.uri}>
+                    <a className="news__tag" href={tag.uri}>
                       #{tag.name.replace(/ /g,"")}
                     </a>
                   </div>

@@ -2044,6 +2044,7 @@ img {
   p,
   li {
     font-size: 16px;
+    font-weight: 400;
     span {
       font-size: unset !important;
       font-weight: 400 !important;
@@ -2233,7 +2234,7 @@ img {
   &__head {
     //border-radius: $border-m $border-m 0 0;
     overflow: hidden;
-    .trends__tag-container{
+    .news__tag-container{
       padding: 15px 0px;
     }
     &--in{
@@ -2344,6 +2345,10 @@ img {
   min-height: 400px;
   grid-template-rows: 30px 1fr 30px;
   margin-bottom: 40px;
+
+  .news__tag{
+    margin-top: 12px;
+  }
 
   &__item {
     position: relative;
@@ -2924,6 +2929,7 @@ img {
     max-height: 80vh;
     overflow-y: scroll;
     border-radius: $border-m;
+    z-index: 11;
     &.disabled {
       display: none;
     }

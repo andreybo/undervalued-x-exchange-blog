@@ -40,7 +40,7 @@ const Header = ({title = "Udonis"}) => {
       class: "nav__services",
       submenu: [
         {
-          path: "https://udonis.co/user-acquisition",
+          path: "https://udonis.co/acquisition",
           name: "user acquisition",
           submenu: [],
           class: "nav__acquisition"

@@ -5,55 +5,74 @@ const Footer = () => (
   <div className="footer">
     <footer className="footer-container container">
       <div className="row">
-        
-        <div className="col-md-3 col-6 footer-logo logohover mobile">
-          <Link to="/">
-            <img src={`/svg/logo-w.svg`} alt="Udonis" className="fl"/>
-          </Link>
-        </div>
 
         <div className="col-md-3 col-6">
-          <h3 className="footer-title2">services</h3>
+          <h3 className="footer-title2">our services</h3>
           <ul>
               <li>
                 <a href="https://udonis.co/acquisition">
-                  Managed User Acqusition
+                  user acquisition
                 </a>
               </li>
               <li>
-                <a href="https://udonis.co/creative">
-                  Creative Production
+                <a href="/creative">
+                  creative production
                 </a>
               </li>
               <li>
                 <a href="https://udonis.co/mobile-business-development">
-                Business Development
+                  mobile business development
                 </a>
               </li>
               <li>
-                <a href="https://udonis.co/reporting-development">
-                  RReporting Dashboards
+                <a href="https://udonis.co/marketing-dashboard">
+                  marketing dashboard
                 </a>
               </li>
+          </ul>
+        </div>
+
+        <div className="col-md-3 col-6">
+          <h3 className="footer-title2">learn more about</h3>
+          <ul>
+              <li><a href="/">mobile marketing</a></li>
+              <li><a href="/topics/acquisition">user acquisition</a></li>
+              <li><a href="/topics/mobile-marketing/mobile-apps">mobile apps</a></li>
           </ul>
         </div>
 
         <div className="col-md-3 col-6">
           <h3 className="footer-title2">udonis</h3>
           <ul>
-              <li><a href="https://udonis.co/about">About us</a></li>
-              <li><a href="https://udonis.co/portfolio">Portfolio</a></li>
-              <li><a href="https://udonis.co/careers">Careers</a></li>
-              <li><a href="https://udonis.co/contact">Contact</a></li>
+              <li><a href="https://udonis.co/about">about us</a></li>
+              <li><a href="https://udonis.co/careers">careers</a></li>
+              <li><a href="https://udonis.co/contact">contact</a></li>
           </ul>
         </div>
-
-        <div className="col-md-3 col-6">
-          <h3 className="footer-title2">social</h3>
-          <ul>
-              <li><a href="https://twitter.com/UdonisMarketing/">Twitter</a></li>
-              <li><a href="https://www.facebook.com/udonis.co/">Facebook</a></li>
-              <li><a href="https://www.linkedin.com/company/udonis-inc/">Linkedin</a></li>
+        
+        <div className="col-md-3 col-6 footer-logo logohover mobile">
+          <a href="/">
+            <img src={`/svg/logo-w.svg`} alt="Udonis" className="fl"/>
+          </a>
+          <div className="footer_copyright">
+            <p>© {new Date().getFullYear()} udonis. all rights reserved.</p>
+          </div>
+          <ul className="soc">
+            <li>
+              <a href="https://www.facebook.com/udonis.co/">
+                <img src={`/icons/fb.svg`} alt="facebook"/>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/UdonisMarketing/">
+                <img src={`/icons/tw.svg`} alt="twitter"/>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/udonis-inc/">
+                <img src={`/icons/in.svg`} alt="linkedin"/>
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -63,11 +82,9 @@ const Footer = () => (
 
         <div className="col-md-12 col-12 hor padn end">
               <ul>
-                <li className="allrights">© {new Date().getFullYear()} Udonis. All rights reserved.</li>
+                <li><a href="/privacy">privacy policy</a></li>
                 <li>|</li>
-                <li><a href="https://udonis.co/privacy">Privacy Policy</a></li>
-                <li>|</li>
-                <li><a href="https://udonis.co/terms">Terms &amp; conditions</a></li>
+                <li><a href="/terms">terms &amp; conditions</a></li>
               </ul>
             </div>
       </div>
