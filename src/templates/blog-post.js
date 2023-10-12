@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from 'react';
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -52,6 +52,18 @@ export default function BlogPost({ data }) {
     }
   });
 
+  
+
+  const [height, setHeight] = useState('auto');
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+      const element = imageRef.current;
+      if(element) {
+          setHeight(`${(1/1.91) * element.offsetWidth}px`);
+      }
+  }, []);
+
   return (
     <Layout classmain="blogpost">
       <div className="post container">
@@ -59,7 +71,7 @@ export default function BlogPost({ data }) {
           <div className="post__left">
             <div className="post__out">
               <div className="post__head">
-                <div className="post__head--image-top">
+                <div className="post__head--image-top" style={{height: height}} ref={imageRef}>
                   <GatsbyImage
                     image={post.featuredImage ==null ? null : post.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
                     alt={post.title}
