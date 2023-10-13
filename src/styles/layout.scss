@@ -1168,7 +1168,7 @@ img {
   display: flex;
   flex-direction: column;
   //grid-template-columns: 1fr 1fr;
-  gap: 22px;
+  gap: 19px;
   @include media-breakpoint-down(md) {
     //grid-template-columns: 1fr;
   }
@@ -1246,7 +1246,7 @@ img {
   &__withtag {
     flex-direction: column;
     display: flex;
-    margin-top: 20px;
+    margin-top: 16px;
   }
   &:after {
     content: "";
@@ -1387,7 +1387,7 @@ img {
         display: none;
       }
       .news__tag-container{
-        margin-top: 8px;
+        margin-top: 4px;
       }
       .news__padfix{
         p{
