@@ -1325,6 +1325,9 @@ img {
     &-hor {
       height: $cardH;
       position: relative;
+      .post__right &{
+        height: calc($cardH + 20px);
+      }
       .grid2 &{
         height: 350px;
       }
@@ -1333,6 +1336,9 @@ img {
       }
       .news-out {
         height: calc($cardH - 10px);
+        .post__right &{
+          height: calc($cardH + 10px);
+        }
         .grid2 &{
           height: 330px;
         }
