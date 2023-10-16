@@ -77,7 +77,7 @@ render() {
     <div className="post__subscribe">
       <div className="post__grid-bottom p60">
         <div className="left">
-          <h3>Get the insider’s edge in mobile gaming - Subscribe now</h3>
+          <h3>Get the insider’s edge in mobile gaming</h3>
           
           {this.state.submitSuccess &&
             <p className="post__success">Thank you for subscribing</p>
