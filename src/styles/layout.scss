@@ -1967,8 +1967,10 @@ img {
           }
         }
         .main_cta--u, #ud-postform{
-          margin: 0 auto;
-          margin-top: 20px;
+          @include media-breakpoint-down(md) {
+            margin: 0 auto;
+            margin-top: 20px;
+          }
         }
       }
       @include media-breakpoint-down(md) {
