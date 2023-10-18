@@ -17,6 +17,7 @@ function IndexPage({
     latest,
     blockchain,
     mgdissections,
+    recent
   },
 }) {
   return (
@@ -75,6 +76,27 @@ function IndexPage({
         </div>
 
         <Ads/>
+
+
+        <div className="hp__container">
+          <div className="hp__title">
+            <h3 className="hp__title--text">Recently updated</h3>
+          </div>
+              <div className="hp__row row mb40">
+                <CardLong post={recent.nodes[0]} classmain="card-long imin"/>
+              </div>
+              <div className="row grid2">
+                {recent.nodes.map((post, index) => (
+                  index !== 0 && <CardMain post={post} classmain="col-md-4 col-12" key={index}/>
+                ))}
+              </div>
+          <div className="hp__more">
+            <a className="hp__more--link" href="/recently-updated">
+              View More
+            </a>
+          </div>
+        </div>
+
       </div>
       <div className="hp-yellow2">
         <div className="home_sub">
@@ -135,6 +157,24 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
         nodes: {
           elemMatch: {
             name: { in: ["Highlighted2", "Highlighted3", "Highlighted3-2", "Highlighted4"] }
+          }
+        }
+      }
+    }
+    sort: { date: DESC }
+    limit: 4
+  ) {
+    nodes {
+      ...postData
+      modified
+    }
+  }
+  recent: allWpPost(
+    filter: {
+      categories: {
+        nodes: {
+          elemMatch: {
+            name: { in: ["Recently updated"] }
           }
         }
       }
