@@ -3409,3 +3409,22 @@ div#disqus_thread iframe[sandbox] {
   justify-content: center;
   align-items: center;
 }
+
+.cats{
+  padding-bottom: 20px;
+  ul{
+    padding: 0;
+    list-style: none;
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+    @include media-breakpoint-down(md) {
+      columns: 1;
+      -webkit-columns: 1;
+      -moz-columns: 1;
+    }
+  }
+  li{
+    padding: 5px 0;
+  }
+}

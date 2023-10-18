@@ -15,9 +15,11 @@ function IndexPage({
     hot1,
     hot2,
     latest,
-    blockchain,
+    mgm,
     mgdissections,
-    recent
+    monetization,
+    recent,
+    allWpCategory
   },
 }) {
   return (
@@ -53,8 +55,24 @@ function IndexPage({
           </div>
         </div>
 
-        <Ads/>
-
+        <div className="hp__container">
+          <div className="hp__title">
+            <h3 className="hp__title--text">Recently updated</h3>
+          </div>
+              <div className="hp__row row mb40">
+                <CardLong post={recent.nodes[0]} classmain="card-long imin"/>
+              </div>
+              <div className="row grid2">
+                {recent.nodes.map((post, index) => (
+                  index !== 0 && <CardMain post={post} classmain="col-md-4 col-12" key={index}/>
+                ))}
+              </div>
+          <div className="hp__more">
+            <a className="hp__more--link" href="/topics/recently-updated/">
+              View More
+            </a>
+          </div>
+        </div>
 
         <div className="hp__container">
           <div className="hp__title">
@@ -75,25 +93,55 @@ function IndexPage({
           </div>
         </div>
 
-        <Ads/>
-
-
         <div className="hp__container">
           <div className="hp__title">
-            <h3 className="hp__title--text">Recently updated</h3>
+            <h3 className="hp__title--text">Mobile Game Market</h3>
           </div>
               <div className="hp__row row mb40">
-                <CardLong post={recent.nodes[0]} classmain="card-long imin"/>
+                <CardLong post={mgm.nodes[0]} classmain="card-long imin"/>
               </div>
               <div className="row grid2">
-                {recent.nodes.map((post, index) => (
+                {mgm.nodes.map((post, index) => (
                   index !== 0 && <CardMain post={post} classmain="col-md-4 col-12" key={index}/>
                 ))}
               </div>
           <div className="hp__more">
-            <a className="hp__more--link" href="/topics/recently-updated/">
+            <a className="hp__more--link" href="/topics/mobile-game-market/">
               View More
             </a>
+          </div>
+        </div>
+
+        <div className="hp__container">
+          <div className="hp__title">
+            <h3 className="hp__title--text">Monetization</h3>
+          </div>
+              <div className="hp__row row mb40">
+                <CardLong post={monetization.nodes[0]} classmain="card-long imin"/>
+              </div>
+              <div className="row grid2">
+                {monetization.nodes.map((post, index) => (
+                  index !== 0 && <CardMain post={post} classmain="col-md-4 col-12" key={index}/>
+                ))}
+              </div>
+          <div className="hp__more">
+            <a className="hp__more--link" href="/topics/monetization/">
+              View More
+            </a>
+          </div>
+        </div>
+
+        <div className="hp__container">
+          <div className="hp__title">
+            <h3 className="hp__title--text">All Categories</h3>
+          </div>
+
+          <div className="cats">
+            <ul>
+              {allWpCategory.nodes.map((category, index) => (
+                <li key={index}><a href={category.uri}>{category.name}</a></li>
+              ))}
+            </ul>
           </div>
         </div>
 
@@ -213,6 +261,40 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
       modified
     }
   }
+  
+  mgm: allWpPost(
+    filter: {categories: {nodes: {elemMatch: {name: {eq: "Mobile Game Market"}}}}}
+    sort: {date: DESC}
+    limit: 4
+  ) {
+    nodes {
+      ...postData
+      modified
+    }
+  }
+  
+  monetization: allWpPost(
+    filter: {categories: {nodes: {elemMatch: {name: {eq: "Monetization"}}}}}
+    sort: {date: DESC}
+    limit: 4
+  ) {
+    nodes {
+      ...postData
+      modified
+    }
+  }
+  
+
+allWpCategory(
+  sort: {count: DESC}
+  filter: {name: {nin: ["Highlighted1", "Highlighted3", "Highlighted2", "Highlighted4", "Highlighted3-2", "Uncategorized"]}, count: {gte: 1}}
+) {
+  nodes {
+    name
+    uri
+    count
+  }
+}
 }`;
 
 export default IndexPage;
