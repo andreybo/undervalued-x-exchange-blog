@@ -91,7 +91,7 @@ function IndexPage({
                 ))}
               </div>
           <div className="hp__more">
-            <a className="hp__more--link" href="/recently-updated">
+            <a className="hp__more--link" href="/topics/recently-updated/">
               View More
             </a>
           </div>
