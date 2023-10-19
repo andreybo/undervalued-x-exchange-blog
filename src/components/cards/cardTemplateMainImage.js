@@ -14,8 +14,6 @@ const CardImage = ({ post, classmain = "hp__col"}) => {
           setHeight(`${(1/1.91) * element.offsetWidth}px`);
       }
   }, []);
-
-  const isRecentlyUpdated = post.categories.nodes.some(category => category.name === "Recently updated");
   
 
   return (
@@ -41,11 +39,7 @@ const CardImage = ({ post, classmain = "hp__col"}) => {
                 </div>
                 <div className="news__layout-image--hover">
                   <div className='news__date'>
-                    {isRecentlyUpdated ? (
-                      <time dateTime={post.modified}>{Moment(post.modified).format('MMMM D, YYYY')}</time>
-                    ) : (
-                      <time dateTime={post.date}>{Moment(post.date).format('MMMM D, YYYY')}</time>
-                    )}
+                    <time dateTime={post.modified}>{Moment(post.modified).format('MMMM D, YYYY')}</time>
                   </div>
                   <div className={post.tags.nodes.length > 0?"news__tag-container":"news__tag-empty"}>
                     {post.tags.nodes.slice(0,3).map((tag, index) => (

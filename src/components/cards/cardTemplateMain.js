@@ -15,8 +15,6 @@ const CardMain = ({ post, classmain = "hp__col"}) => {
       }
   }, []);
 
-  const isRecentlyUpdated = post.categories.nodes.some(category => category.name === "Recently updated");
-
 
   return (
         <div className={classmain}>
@@ -45,11 +43,7 @@ const CardMain = ({ post, classmain = "hp__col"}) => {
                 </div>
                     <div className='news__datetag'>
                       <div className='news__date'>
-                    {isRecentlyUpdated ? (
-                      <time dateTime={post.modified}>{Moment(post.modified).format('MMMM D, YYYY')}</time>
-                    ) : (
-                      <time dateTime={post.date}>{Moment(post.date).format('MMMM D, YYYY')}</time>
-                    )}
+                        <time dateTime={post.modified}>{Moment(post.modified).format('MMMM D, YYYY')}</time>
                       </div>
                       <div className={post.tags.nodes.length > 0?"news__tag-container":"news__tag-empty"}>
                         {post.tags.nodes.slice(0,3).map((tag, index) => (

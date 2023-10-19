@@ -3000,10 +3000,11 @@ div.CookieConsent{
   box-shadow: 0 0 20px rgb(41 146 250 / 14%);
   background: $grey!important;
   color: #000!important;
+  border: 1px solid #000;
   button{
-    background-color: $gold!important;
-    background: $gold!important;
-    background-image: $gold!important;
+    background-color: #ffdd00!important;
+    background: #ffdd00!important;
+    background-image: #ffdd00!important;
     color: #000!important;
     text-transform: lowercase!important;
     padding: 10px 25px!important;

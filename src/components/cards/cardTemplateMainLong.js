@@ -15,8 +15,6 @@ const CardLong = ({ post, classmain = "hp__col"}) => {
       }
   }, []);
 
-  const isRecentlyUpdated = post.categories.nodes.some(category => category.name === "Recently updated");
-
   return (
         <div className={classmain}>
             <div className="news news__layout-long">
@@ -36,11 +34,7 @@ const CardLong = ({ post, classmain = "hp__col"}) => {
                 <div className='news__layout-long--content'>
                     <h3 className="news__top--title">{post.title}</h3>
                     <div className='news__date'>
-                      {isRecentlyUpdated ? (
-                        <time dateTime={post.modified}>{Moment(post.modified).format('MMMM D, YYYY')}</time>
-                      ) : (
-                        <time dateTime={post.date}>{Moment(post.date).format('MMMM D, YYYY')}</time>
-                      )}
+                      <time dateTime={post.modified}>{Moment(post.modified).format('MMMM D, YYYY')}</time>
                     </div>
                     <div dangerouslySetInnerHTML = {{ __html: post.seo ? post.seo.metaDesc : post.excerpt }} className="news__padfix2">
                     </div>
