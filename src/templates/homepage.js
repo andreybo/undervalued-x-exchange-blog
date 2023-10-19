@@ -19,6 +19,7 @@ function IndexPage({
     mgdissections,
     monetization,
     recent,
+    ua,
     allWpCategory
   },
 }) {
@@ -107,6 +108,25 @@ function IndexPage({
               </div>
           <div className="hp__more">
             <a className="hp__more--link" href="/topics/mobile-game-market/">
+              View More
+            </a>
+          </div>
+        </div>
+
+        <div className="hp__container">
+          <div className="hp__title">
+            <h3 className="hp__title--text">User Acquisition</h3>
+          </div>
+              <div className="hp__row row mb40">
+                <CardLong post={ua.nodes[0]} classmain="card-long imin"/>
+              </div>
+              <div className="row grid2">
+                {ua.nodes.map((post, index) => (
+                  index !== 0 && <CardMain post={post} classmain="col-md-4 col-12" key={index}/>
+                ))}
+              </div>
+          <div className="hp__more">
+            <a className="hp__more--link" href="/topics/user-acquisition/">
               View More
             </a>
           </div>
@@ -275,6 +295,17 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   
   monetization: allWpPost(
     filter: {categories: {nodes: {elemMatch: {name: {eq: "Monetization"}}}}}
+    sort: {date: DESC}
+    limit: 4
+  ) {
+    nodes {
+      ...postData
+      modified
+    }
+  }
+  
+  ua: allWpPost(
+    filter: {categories: {nodes: {elemMatch: {name: {eq: "User Acquisition"}}}}}
     sort: {date: DESC}
     limit: 4
   ) {
