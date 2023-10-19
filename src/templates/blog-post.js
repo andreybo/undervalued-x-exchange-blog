@@ -18,7 +18,7 @@ import { Modal } from 'react-responsive-modal';
 
 export default function BlogPost({ data }) {
   const post = data.wpPost
-  const postDate = post.modified ? post.modified : post.date
+  const postDate = post.categories.nodes.some(cat => cat.name === "Recently updated") ? post.modified : post.date;
   const url = typeof window !== 'undefined' ? window.location.href : '';
   const [open, setOpen] = useState(false);
 
@@ -222,6 +222,12 @@ export const query = graphql`
             nodes{
               name
               uri
+            }
+          }
+          categories{
+            nodes{
+              name
+              slug
             }
           }
           excerpt

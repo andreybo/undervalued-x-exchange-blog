@@ -14,6 +14,8 @@ const CardHot = ({ post, classmain = "hp__col"}) => {
       }
   }, []);
 
+  const isRecentlyUpdated = post.categories.nodes.some(category => category.name === "Recently updated");
+
   return (
             <div 
               className={"news news__layout-hot" + classmain}
@@ -35,7 +37,11 @@ const CardHot = ({ post, classmain = "hp__col"}) => {
                   <div
                     className="news__withtag">
                     <div className={post.tags.nodes.length > 0?"news__tag-container":"news__tag-empty"}>
+                    {isRecentlyUpdated ? (
                       <time dateTime={post.modified}>{Moment(post.modified).format('MMMM D, YYYY')}</time>
+                    ) : (
+                      <time dateTime={post.date}>{Moment(post.date).format('MMMM D, YYYY')}</time>
+                    )}
                       {post.tags.nodes.slice(0,3).map((tag, index) => (
                         <div key={index}>
                           <a className="news__tag" href={tag.uri}>

@@ -186,6 +186,7 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
     }
   }
   date
+  modified
   excerpt
   id
   slug
@@ -216,7 +217,6 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   ) {
     nodes {
       ...postData
-      modified
     }
   }
   hot2: allWpPost(
@@ -234,7 +234,6 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   ) {
     nodes {
       ...postData
-      modified
     }
   }
   recent: allWpPost(
@@ -247,18 +246,16 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
         }
       }
     }
-    sort: { date: DESC }
+    sort: { modified: DESC }
     limit: 4
   ) {
     nodes {
       ...postData
-      modified
     }
   }
   latest: allWpPost(sort: {date: DESC}, limit: 4) {
     nodes {
       ...postData
-      modified
     }
   }
   blockchain: allWpPost(
@@ -268,7 +265,6 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   ) {
     nodes {
       ...postData
-      modified
     }
   }
   mgdissections: allWpPost(
@@ -278,7 +274,6 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   ) {
     nodes {
       ...postData
-      modified
     }
   }
   
@@ -289,7 +284,6 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   ) {
     nodes {
       ...postData
-      modified
     }
   }
   
@@ -300,7 +294,6 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   ) {
     nodes {
       ...postData
-      modified
     }
   }
   
@@ -311,7 +304,6 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
   ) {
     nodes {
       ...postData
-      modified
     }
   }
   
