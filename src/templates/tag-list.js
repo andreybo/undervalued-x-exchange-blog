@@ -101,6 +101,12 @@ export const query = graphql`
           uri
         }
       }
+      categories {
+        nodes {
+          name
+          slug
+        }
+      }
       title
       uri
     }
