@@ -1763,7 +1763,7 @@ img {
     }
     &-container {
       display: flex;
-      gap: 12px;
+      gap: 6px;
       flex-direction: row;
       //flex: 1;
       //flex-shrink: 0;
@@ -2848,6 +2848,10 @@ img {
       display: none;
     }
   }
+}
+
+.postcard{
+  overflow: hidden;
 }
 
 .categories {
