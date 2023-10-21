@@ -4,7 +4,7 @@
     functions = "functions"
 [dev]
     command = "gatsby develop"
-    targetPort = 8000are 
+    targetPort = 8000
 
 [[redirect]]
 fromPath = "/tiktok-updates/optimization-preference"
