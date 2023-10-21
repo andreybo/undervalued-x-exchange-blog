@@ -7,1411 +7,1411 @@
     targetPort = 8000
 
 [[redirect]]
-fromPath = "/tiktok-updates/optimization-preference"
-toPath = "/404"
-status = 404
+    from = "/tiktok-updates/optimization-preference"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/tiktok-updates/new-tiktok-feature-lookalike-audience"
-toPath = "/404"
-status = 404
+    from = "/tiktok-updates/new-tiktok-feature-lookalike-audience"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/tiktok-updates/tiktok-released-pixel-update"
-toPath = "/404"
-status = 404
+    from = "/tiktok-updates/tiktok-released-pixel-update"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/tiktok-updates/tiktok-tool-update-smart-video-feature-update"
-toPath = "/404"
-status = 404
+    from = "/tiktok-updates/tiktok-tool-update-smart-video-feature-update"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/tiktok-updates/tiktok-update-editing-ads-in-a-bulk"
-toPath = "/404"
-status = 404
+    from = "/tiktok-updates/tiktok-update-editing-ads-in-a-bulk"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/tiktok-updates/new-tiktok-feature-shared-audience"
-toPath = "/404"
-status = 404
+    from = "/tiktok-updates/new-tiktok-feature-shared-audience"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/tiktok-updates/tiktok-feature-update-new-events-in-custom-audience"
-toPath = "/404"
-status = 404
+    from = "/tiktok-updates/tiktok-feature-update-new-events-in-custom-audience"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/tiktok-updates/tiktok-data-display-method-changes"
-toPath = "/404"
-status = 404
+    from = "/tiktok-updates/tiktok-data-display-method-changes"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/user-generated-images-in-product-reviews"
-toPath = "/404"
-status = 404
+    from = "/google-updates/user-generated-images-in-product-reviews"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-updates/new-ways-to-customize-your-ad-creative-for-placements"
-toPath = "/404"
-status = 404
+    from = "/facebook-updates/new-ways-to-customize-your-ad-creative-for-placements"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/panivox-announces-richcast"
-toPath = "/404"
-status = 404
+    from = "/news/panivox-announces-richcast"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/tiktok-updates/tiktok-feature-update-new-events-in-custom-audience/"
-toPath = "/404"
-status = 404
+    from = "/tiktok-updates/tiktok-feature-update-new-events-in-custom-audience/"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/tiktok-updates/new-tiktok-tool-smart-video"
-toPath = "/404"
-status = 404
+    from = "/tiktok-updates/new-tiktok-tool-smart-video"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/report-editor-enables-cross-account-insights"
-toPath = "/404"
-status = 404
+    from = "/google-updates/report-editor-enables-cross-account-insights"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-updates/from-now-on-dynamic-formats-and-ad-creative-feature-on-by-default"
-toPath = "/404"
-status = 404
+    from = "/facebook-updates/from-now-on-dynamic-formats-and-ad-creative-feature-on-by-default"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/google-ads-mobile-app-manager-accounts"
-toPath = "/404"
-status = 404
+    from = "/google-updates/google-ads-mobile-app-manager-accounts"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/how-smart-campaigns-is-helping-you-reach-more-customers"
-toPath = "/404"
-status = 404
+    from = "/google-updates/how-smart-campaigns-is-helping-you-reach-more-customers"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/zoom-adding-games"
-toPath = "/404"
-status = 404
+    from = "/news/zoom-adding-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/tiktok-updates/new-tiktok-feature-lookalike-audience/"
-toPath = "/404"
-status = 404
+    from = "/tiktok-updates/new-tiktok-feature-lookalike-audience/"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/understand-your-results-ad-destination-report"
-toPath = "/404"
-status = 404
+    from = "/google-updates/understand-your-results-ad-destination-report"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/dapper-labs-has-raised-250m"
-toPath = "/404"
-status = 404
+    from = "/news/dapper-labs-has-raised-250m"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/optimization-score-recommendations-manager-accounts"
-toPath = "/404"
-status = 404
+    from = "/google-updates/optimization-score-recommendations-manager-accounts"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/epic-games-wants-to-re-release-fortnite"
-toPath = "/404"
-status = 404
+    from = "/news/epic-games-wants-to-re-release-fortnite"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/performance-planner-now-in-shopping-campaigns"
-toPath = "/404"
-status = 404
+    from = "/google-updates/performance-planner-now-in-shopping-campaigns"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/apple-vs-epic-games-trial-verdict"
-toPath = "/404"
-status = 404
+    from = "/news/apple-vs-epic-games-trial-verdict"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/custom-affinity-custom-intent-migrated-custom-audiences"
-toPath = "/404"
-status = 404
+    from = "/google-updates/custom-affinity-custom-intent-migrated-custom-audiences"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/google-ads-campaigns-change-history"
-toPath = "/404"
-status = 404
+    from = "/google-updates/google-ads-campaigns-change-history"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-updates/facebook-updates-coming-in-september-2019"
-toPath = "/404"
-status = 404
+    from = "/facebook-updates/facebook-updates-coming-in-september-2019"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-updates/special-ad-category"
-toPath = "/404"
-status = 404
+    from = "/facebook-updates/special-ad-category"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/larger-call-only-ads-for-higher-quality"
-toPath = "/404"
-status = 404
+    from = "/google-updates/larger-call-only-ads-for-higher-quality"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/how-to-reach-local-consumers-in-a-dynamic-market"
-toPath = "/404"
-status = 404
+    from = "/google-updates/how-to-reach-local-consumers-in-a-dynamic-market"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/raw-fury-partners-with-altor"
-toPath = "/404"
-status = 404
+    from = "/news/raw-fury-partners-with-altor"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-updates/metrics-optimization"
-toPath = "/404"
-status = 404
+    from = "/facebook-updates/metrics-optimization"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/gismarts-snapchat-games-reach-90-million-players"
-toPath = "/404"
-status = 404
+    from = "/news/gismarts-snapchat-games-reach-90-million-players"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/google-introduces-conversion-actions-at-the-campaign-level-for-video-ads"
-toPath = "/404"
-status = 404
+    from = "/google-updates/google-introduces-conversion-actions-at-the-campaign-level-for-video-ads"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/explanations-update"
-toPath = "/404"
-status = 404
+    from = "/google-updates/explanations-update"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/google-ads-editor-v1-3-update"
-toPath = "/404"
-status = 404
+    from = "/google-updates/google-ads-editor-v1-3-update"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-updates/find-the-winner-before-a-b-tests-end"
-toPath = "/404"
-status = 404
+    from = "/facebook-updates/find-the-winner-before-a-b-tests-end"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/easier-reporting-across-accounts-with-report-editor"
-toPath = "/404"
-status = 404
+    from = "/google-updates/easier-reporting-across-accounts-with-report-editor"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/youtube-masthead-ads-on-tvs-available-to-all-advertisers"
-toPath = "/404"
-status = 404
+    from = "/google-updates/youtube-masthead-ads-on-tvs-available-to-all-advertisers"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-updates/customize-the-carousel-for-various-placements-plus-the-creative-hub-update-is-now-available"
-toPath = "/404"
-status = 404
+    from = "/facebook-updates/customize-the-carousel-for-various-placements-plus-the-creative-hub-update-is-now-available"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/google-allows-alternative-payment-systems"
-toPath = "/404"
-status = 404
+    from = "/news/google-allows-alternative-payment-systems"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/google-postpones-switch-to-standard-delivery-in-search-shopping-campaigns-until-october"
-toPath = "/404"
-status = 404
+    from = "/google-updates/google-postpones-switch-to-standard-delivery-in-search-shopping-campaigns-until-october"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/more-holiday-shoppers-with-upgraded-merchant-center"
-toPath = "/404"
-status = 404
+    from = "/google-updates/more-holiday-shoppers-with-upgraded-merchant-center"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/google-expand-misrepresentation-policy"
-toPath = "/404"
-status = 404
+    from = "/google-updates/google-expand-misrepresentation-policy"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/plarium-acquires-futureplay"
-toPath = "/404"
-status = 404
+    from = "/news/plarium-acquires-futureplay"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/genvid-intels-partnership"
-toPath = "/404"
-status = 404
+    from = "/news/genvid-intels-partnership"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-updates/fundraising-via-instagram-live"
-toPath = "/404"
-status = 404
+    from = "/facebook-updates/fundraising-via-instagram-live"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/event/digital-media-marketing-conference/feed/"
-toPath = "/404"
-status = 404
+    from = "/event/digital-media-marketing-conference/feed/"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/parallel-tracking-mandatory-for-video-campaigns"
-toPath = "/404"
-status = 404
+    from = "/google-updates/parallel-tracking-mandatory-for-video-campaigns"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/azur-games-obtains-neosus-minority-stake"
-toPath = "/404"
-status = 404
+    from = "/news/azur-games-obtains-neosus-minority-stake"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/my-games-acquires-mamboo-games"
-toPath = "/404"
-status = 404
+    from = "/news/my-games-acquires-mamboo-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/new-asset-reporting-features"
-toPath = "/404"
-status = 404
+    from = "/google-updates/new-asset-reporting-features"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/optimization-score-for-display-campaigns"
-toPath = "/404"
-status = 404
+    from = "/google-updates/optimization-score-for-display-campaigns"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/plansharing"
-toPath = "/404"
-status = 404
+    from = "/google-updates/plansharing"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/budget-planning-performance-planner"
-toPath = "/404"
-status = 404
+    from = "/google-updates/budget-planning-performance-planner"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/google-updated-mobile-app"
-toPath = "/404"
-status = 404
+    from = "/google-updates/google-updated-mobile-app"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/niantic-acquires-scaniverse"
-toPath = "/404"
-status = 404
+    from = "/news/niantic-acquires-scaniverse"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/thunderful-acquires-early-morning-studio"
-toPath = "/404"
-status = 404
+    from = "/news/thunderful-acquires-early-morning-studio"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/new-features-for-responsive-search-ads"
-toPath = "/404"
-status = 404
+    from = "/google-updates/new-features-for-responsive-search-ads"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/activision-blizzard-union-rights-lawsuit-filed"
-toPath = "/404"
-status = 404
+    from = "/news/activision-blizzard-union-rights-lawsuit-filed"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/seasonality-adjustments-for-smart-bidding"
-toPath = "/404"
-status = 404
+    from = "/google-updates/seasonality-adjustments-for-smart-bidding"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/provide-more-important-and-effective-ad-experiences-with-feeds-in-app-campaigns"
-toPath = "/404"
-status = 404
+    from = "/google-updates/provide-more-important-and-effective-ad-experiences-with-feeds-in-app-campaigns"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/update-access-level-account-ownership-google-ads-account"
-toPath = "/404"
-status = 404
+    from = "/google-updates/update-access-level-account-ownership-google-ads-account"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/frequency-reporting-video-campaigns"
-toPath = "/404"
-status = 404
+    from = "/google-updates/frequency-reporting-video-campaigns"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/simplifying-image-requirements-app-campaigns"
-toPath = "/404"
-status = 404
+    from = "/google-updates/simplifying-image-requirements-app-campaigns"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/conversion-categories-and-reporting-expanded"
-toPath = "/404"
-status = 404
+    from = "/google-updates/conversion-categories-and-reporting-expanded"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/eloelo-raises-2-1-million"
-toPath = "/404"
-status = 404
+    from = "/news/eloelo-raises-2-1-million"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/flavourworks-develops-immersive-touch-live-action-game"
-toPath = "/404"
-status = 404
+    from = "/news/flavourworks-develops-immersive-touch-live-action-game"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/google-ads-api-on-scale"
-toPath = "/404"
-status = 404
+    from = "/google-updates/google-ads-api-on-scale"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/philippe-sauze-joins-my-games"
-toPath = "/404"
-status = 404
+    from = "/news/philippe-sauze-joins-my-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/filters-now-available-on-the-overview-page"
-toPath = "/404"
-status = 404
+    from = "/google-updates/filters-now-available-on-the-overview-page"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/latest-posts/gta-remasters-coming-mobile"
-toPath = "/404"
-status = 404
+    from = "/latest-posts/gta-remasters-coming-mobile"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/responsive-search-ads"
-toPath = "/404"
-status = 404
+    from = "/google-updates/responsive-search-ads"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/scale-your-ads-with-youtube-dynamic-lineups"
-toPath = "/404"
-status = 404
+    from = "/google-updates/scale-your-ads-with-youtube-dynamic-lineups"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/auction-time-bidding-comes-to-search-ads-360"
-toPath = "/404"
-status = 404
+    from = "/google-updates/auction-time-bidding-comes-to-search-ads-360"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/create-location-extension-simpler-and-faster"
-toPath = "/404"
-status = 404
+    from = "/google-updates/create-location-extension-simpler-and-faster"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/two-new-ways-to-reach-your-customers-on-google-search"
-toPath = "/404"
-status = 404
+    from = "/google-updates/two-new-ways-to-reach-your-customers-on-google-search"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/tv-reach-planner-5-more-countries"
-toPath = "/404"
-status = 404
+    from = "/google-updates/tv-reach-planner-5-more-countries"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/zynga-finalizes-starlark-acquisition"
-toPath = "/404"
-status = 404
+    from = "/news/zynga-finalizes-starlark-acquisition"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/search-shopping-ads-category-reporting"
-toPath = "/404"
-status = 404
+    from = "/google-updates/search-shopping-ads-category-reporting"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/new-features-for-smart-shopping-campaigns"
-toPath = "/404"
-status = 404
+    from = "/google-updates/new-features-for-smart-shopping-campaigns"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/tabletop-games-spending-increased"
-toPath = "/404"
-status = 404
+    from = "/news/tabletop-games-spending-increased"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-updates/new-ways-to-customize-your-ad-creative-for-placements-2"
-toPath = "/404"
-status = 404
+    from = "/facebook-updates/new-ways-to-customize-your-ad-creative-for-placements-2"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/discover-more-places-with-discovery-ads"
-toPath = "/404"
-status = 404
+    from = "/google-updates/discover-more-places-with-discovery-ads"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/activision-blizzards-net-revenue-exceeds-2-billion"
-toPath = "/404"
-status = 404
+    from = "/news/activision-blizzards-net-revenue-exceeds-2-billion"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/square-enix-opens-a-london-mobile-studio"
-toPath = "/404"
-status = 404
+    from = "/news/square-enix-opens-a-london-mobile-studio"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/create-new-campaign-and-set-up-conversion-measurement"
-toPath = "/404"
-status = 404
+    from = "/google-updates/create-new-campaign-and-set-up-conversion-measurement"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/find-keywords-quicker-and-easier-with-refined-keywords"
-toPath = "/404"
-status = 404
+    from = "/google-updates/find-keywords-quicker-and-easier-with-refined-keywords"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-updates/in-stream-placement-offer-dynamic-ads"
-toPath = "/404"
-status = 404
+    from = "/facebook-updates/in-stream-placement-offer-dynamic-ads"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/latest-posts/scuti-creates-reward-based-marketplace"
-toPath = "/404"
-status = 404
+    from = "/latest-posts/scuti-creates-reward-based-marketplace"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/snapchat-ads-updates"
-toPath = "/404"
-status = 404
+    from = "/snapchat-ads-updates"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/top-signals-update"
-toPath = "/404"
-status = 404
+    from = "/google-updates/top-signals-update"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/newporftolio-bidstrategies"
-toPath = "/404"
-status = 404
+    from = "/google-updates/newporftolio-bidstrategies"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/mobile-marketing/grow-facebook-groups"
-toPath = "/404"
-status = 404
+    from = "/mobile-marketing/grow-facebook-groups"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/australian-loot-box-ban"
-toPath = "/404"
-status = 404
+    from = "/news/australian-loot-box-ban"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/grow-your-audience-faster-with-maximize-conversions-bidding-in-app-campaigns"
-toPath = "/404"
-status = 404
+    from = "/google-updates/grow-your-audience-faster-with-maximize-conversions-bidding-in-app-campaigns"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/digital-marketing/marketing-trends-travel-industry"
-toPath = "/404"
-status = 404
+    from = "/digital-marketing/marketing-trends-travel-industry"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/netflix-starts-testing-games"
-toPath = "/404"
-status = 404
+    from = "/news/netflix-starts-testing-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/remarketing-lits-gupdate"
-toPath = "/404"
-status = 404
+    from = "/google-updates/remarketing-lits-gupdate"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/hotel-ads-product-updates-during-covid-19-to-support-the-industry"
-toPath = "/404"
-status = 404
+    from = "/google-updates/hotel-ads-product-updates-during-covid-19-to-support-the-industry"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/goodgame-studios-launches-an-in-house-publishing"
-toPath = "/404"
-status = 404
+    from = "/news/goodgame-studios-launches-an-in-house-publishing"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/call-ads-with-an-optional-website-link"
-toPath = "/404"
-status = 404
+    from = "/google-updates/call-ads-with-an-optional-website-link"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-updates/separating-audience-network-from-news-feed-yes-please"
-toPath = "/404"
-status = 404
+    from = "/facebook-updates/separating-audience-network-from-news-feed-yes-please"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/new-features-in-recommendations"
-toPath = "/404"
-status = 404
+    from = "/google-updates/new-features-in-recommendations"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/bid-simulator-roas"
-toPath = "/404"
-status = 404
+    from = "/google-updates/bid-simulator-roas"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/crazylabs-acquires-firescore-interactive"
-toPath = "/404"
-status = 404
+    from = "/news/crazylabs-acquires-firescore-interactive"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/case-study/using-facebook-ads-to-launch-successful-media-campaign"
-toPath = "/404"
-status = 404
+    from = "/case-study/using-facebook-ads-to-launch-successful-media-campaign"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/app-annie-security-fraud-investigation"
-toPath = "/404"
-status = 404
+    from = "/news/app-annie-security-fraud-investigation"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/winzo-announced-game-developer-fund"
-toPath = "/404"
-status = 404
+    from = "/news/winzo-announced-game-developer-fund"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/miniclip-partners-with-byss-mobile"
-toPath = "/404"
-status = 404
+    from = "/news/miniclip-partners-with-byss-mobile"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/mag-interactives-mobile-games-saving-the-ocean"
-toPath = "/404"
-status = 404
+    from = "/news/mag-interactives-mobile-games-saving-the-ocean"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/google-ads-editor-v1-4"
-toPath = "/404"
-status = 404
+    from = "/google-updates/google-ads-editor-v1-4"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/latest-posts/enthusiast-gaming-acquires-addicting-games"
-toPath = "/404"
-status = 404
+    from = "/latest-posts/enthusiast-gaming-acquires-addicting-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/fortnite-is-shutting-down-in-china"
-toPath = "/404"
-status = 404
+    from = "/news/fortnite-is-shutting-down-in-china"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/google-ads-zapier"
-toPath = "/404"
-status = 404
+    from = "/google-updates/google-ads-zapier"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/new-design-for-attribution-reports"
-toPath = "/404"
-status = 404
+    from = "/google-updates/new-design-for-attribution-reports"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/hyper-casual-developer-8sec-expands-business"
-toPath = "/404"
-status = 404
+    from = "/news/hyper-casual-developer-8sec-expands-business"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-updates/check-out-your-a-b-tests-earlier-than-before"
-toPath = "/404"
-status = 404
+    from = "/facebook-updates/check-out-your-a-b-tests-earlier-than-before"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/google-placements"
-toPath = "/404"
-status = 404
+    from = "/google-updates/google-placements"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/optimization-scores-now-available-through-google-ads-app"
-toPath = "/404"
-status = 404
+    from = "/google-updates/optimization-scores-now-available-through-google-ads-app"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/ea-reports-record-q2-financial-results"
-toPath = "/404"
-status = 404
+    from = "/news/ea-reports-record-q2-financial-results"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/responsive-display-ads-have-a-new-design"
-toPath = "/404"
-status = 404
+    from = "/google-updates/responsive-display-ads-have-a-new-design"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-updates/shopping-tags-inside-instagram-ads"
-toPath = "/404"
-status = 404
+    from = "/facebook-updates/shopping-tags-inside-instagram-ads"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/snapchat-updates/introducing-product-ads"
-toPath = "/404"
-status = 404
+    from = "/snapchat-updates/introducing-product-ads"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/scopely-acquires-sonys-gsn-games"
-toPath = "/404"
-status = 404
+    from = "/news/scopely-acquires-sonys-gsn-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/sandbox-acquires-spanish-educational-gaming-companies"
-toPath = "/404"
-status = 404
+    from = "/news/sandbox-acquires-spanish-educational-gaming-companies"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-advertising/how-to-add-admin-to-facebook-page"
-toPath = "/404"
-status = 404
+    from = "/facebook-advertising/how-to-add-admin-to-facebook-page"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/green-grey-invests-2-million-in-pocket-size-games"
-toPath = "/404"
-status = 404
+    from = "/news/green-grey-invests-2-million-in-pocket-size-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-advertising/facebook-ads-update-creating-multiple-ad-sets-at-once"
-toPath = "/404"
-status = 404
+    from = "/facebook-advertising/facebook-ads-update-creating-multiple-ad-sets-at-once"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/six-new-columns-under-conversion-reporting"
-toPath = "/404"
-status = 404
+    from = "/google-updates/six-new-columns-under-conversion-reporting"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/animoca-acquires-blowfish-studios"
-toPath = "/404"
-status = 404
+    from = "/news/animoca-acquires-blowfish-studios"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/developer-teaches-turkish-village-children-to-make-games"
-toPath = "/404"
-status = 404
+    from = "/news/developer-teaches-turkish-village-children-to-make-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/viker-partners-with-zebedee"
-toPath = "/404"
-status = 404
+    from = "/news/viker-partners-with-zebedee"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/action-game-spending-doubled"
-toPath = "/404"
-status = 404
+    from = "/news/action-game-spending-doubled"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/supercell-backed-papukaya-starts-developing-mobile-games"
-toPath = "/404"
-status = 404
+    from = "/news/supercell-backed-papukaya-starts-developing-mobile-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/understand-changes-in-explanation-conversions"
-toPath = "/404"
-status = 404
+    from = "/google-updates/understand-changes-in-explanation-conversions"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/standard-delivery-mandatory-google-ads"
-toPath = "/404"
-status = 404
+    from = "/google-updates/standard-delivery-mandatory-google-ads"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/jagex-hires-industry-veterans"
-toPath = "/404"
-status = 404
+    from = "/news/jagex-hires-industry-veterans"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/team17-sets-record-revenues"
-toPath = "/404"
-status = 404
+    from = "/news/team17-sets-record-revenues"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/bluestacks-introduces-mobile-game-streaming"
-toPath = "/404"
-status = 404
+    from = "/news/bluestacks-introduces-mobile-game-streaming"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/habbo-nfts-generated-14-million"
-toPath = "/404"
-status = 404
+    from = "/news/habbo-nfts-generated-14-million"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/woogas-switchcraft-promotes-diversity"
-toPath = "/404"
-status = 404
+    from = "/news/woogas-switchcraft-promotes-diversity"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/color-star-acquires-elephant-games"
-toPath = "/404"
-status = 404
+    from = "/news/color-star-acquires-elephant-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/requiring-advertiser-identity-verification-to-improve-transparency"
-toPath = "/404"
-status = 404
+    from = "/google-updates/requiring-advertiser-identity-verification-to-improve-transparency"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/activision-blizzard-forms-workplace-responsibility-committee"
-toPath = "/404"
-status = 404
+    from = "/news/activision-blizzard-forms-workplace-responsibility-committee"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/voodoo-president-joins-homa"
-toPath = "/404"
-status = 404
+    from = "/news/voodoo-president-joins-homa"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/nexters-revenue-skyrocketed"
-toPath = "/404"
-status = 404
+    from = "/news/nexters-revenue-skyrocketed"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/dream-sports-acquires-rolocule-games"
-toPath = "/404"
-status = 404
+    from = "/news/dream-sports-acquires-rolocule-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/apples-payment-rules-are-anti-competitive"
-toPath = "/404"
-status = 404
+    from = "/news/apples-payment-rules-are-anti-competitive"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/skillz-partners-with-etermax"
-toPath = "/404"
-status = 404
+    from = "/news/skillz-partners-with-etermax"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/netflix-games-is-now-available-on-ios"
-toPath = "/404"
-status = 404
+    from = "/news/netflix-games-is-now-available-on-ios"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/crazylabs-partners-with-huawei"
-toPath = "/404"
-status = 404
+    from = "/news/crazylabs-partners-with-huawei"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/pokemon-go-developer-niantic-acquires-hoss"
-toPath = "/404"
-status = 404
+    from = "/news/pokemon-go-developer-niantic-acquires-hoss"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/pocket-burger-games-raises-1m"
-toPath = "/404"
-status = 404
+    from = "/news/pocket-burger-games-raises-1m"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/nexters-reports-booking-growth"
-toPath = "/404"
-status = 404
+    from = "/news/nexters-reports-booking-growth"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/netflix-launches-mobile-games"
-toPath = "/404"
-status = 404
+    from = "/news/netflix-launches-mobile-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/google-sued-for-play-store-monopoly"
-toPath = "/404"
-status = 404
+    from = "/news/google-sued-for-play-store-monopoly"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/google-sued-for-play-store-monopoly"
-toPath = "/404"
-status = 404
+    from = "/news/google-sued-for-play-store-monopoly"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/krafton-raising-3-75-billion"
-toPath = "/404"
-status = 404
+    from = "/news/krafton-raising-3-75-billion"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/apple-refuses-fortnites-return"
-toPath = "/404"
-status = 404
+    from = "/news/apple-refuses-fortnites-return"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/now-gg-launches-cloud-payments"
-toPath = "/404"
-status = 404
+    from = "/news/now-gg-launches-cloud-payments"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/voodoo-invests-in-teskin"
-toPath = "/404"
-status = 404
+    from = "/news/voodoo-invests-in-teskin"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/mz-rovio-veterans-raised-6m"
-toPath = "/404"
-status = 404
+    from = "/news/mz-rovio-veterans-raised-6m"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/glu-mobile-executives-leaving"
-toPath = "/404"
-status = 404
+    from = "/news/glu-mobile-executives-leaving"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/tilting-point-raises-235-million"
-toPath = "/404"
-status = 404
+    from = "/news/tilting-point-raises-235-million"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/embracer-acquires-demiurge-studios"
-toPath = "/404"
-status = 404
+    from = "/news/embracer-acquires-demiurge-studios"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/kixeye-shareholders-reportedly-sued-stillfront"
-toPath = "/404"
-status = 404
+    from = "/news/kixeye-shareholders-reportedly-sued-stillfront"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/latest-posts/qiiwi-games-acquires-playright-games"
-toPath = "/404"
-status = 404
+    from = "/latest-posts/qiiwi-games-acquires-playright-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/google-ads-is-testing-lead-form-extension-in-search-ads"
-toPath = "/404"
-status = 404
+    from = "/google-updates/google-ads-is-testing-lead-form-extension-in-search-ads"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/roblox-outage-causes-players-migration"
-toPath = "/404"
-status = 404
+    from = "/news/roblox-outage-causes-players-migration"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/waysun-becomes-majority-shareholder-boss-bunny-games"
-toPath = "/404"
-status = 404
+    from = "/news/waysun-becomes-majority-shareholder-boss-bunny-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/epic-games-google-lawsuit"
-toPath = "/404"
-status = 404
+    from = "/news/epic-games-google-lawsuit"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/tripledot-studios-barcelona-office"
-toPath = "/404"
-status = 404
+    from = "/news/tripledot-studios-barcelona-office"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/homa-games-raises-50-million"
-toPath = "/404"
-status = 404
+    from = "/news/homa-games-raises-50-million"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/bangladesh-banning-pubg-mobile"
-toPath = "/404"
-status = 404
+    from = "/news/bangladesh-banning-pubg-mobile"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/my-games-venture-capital-invests-3m"
-toPath = "/404"
-status = 404
+    from = "/news/my-games-venture-capital-invests-3m"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/ironsource-acquires-bidalgo"
-toPath = "/404"
-status = 404
+    from = "/news/ironsource-acquires-bidalgo"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/fusebox-faces-sexism-accusations"
-toPath = "/404"
-status = 404
+    from = "/news/fusebox-faces-sexism-accusations"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/netmarble-will-acquire-spinx-games"
-toPath = "/404"
-status = 404
+    from = "/news/netmarble-will-acquire-spinx-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/focus-home-interactive-acquires-dotemu"
-toPath = "/404"
-status = 404
+    from = "/news/focus-home-interactive-acquires-dotemu"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/activision-blizzard-employees-demand-new-ceo"
-toPath = "/404"
-status = 404
+    from = "/news/activision-blizzard-employees-demand-new-ceo"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/facebook-gaming-goes-mobile-first"
-toPath = "/404"
-status = 404
+    from = "/news/facebook-gaming-goes-mobile-first"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/uk-introduced-advertising-guidelines"
-toPath = "/404"
-status = 404
+    from = "/news/uk-introduced-advertising-guidelines"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/murka-acquires-mobile-deluxe"
-toPath = "/404"
-status = 404
+    from = "/news/murka-acquires-mobile-deluxe"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/zyngas-harry-potter-game-anniversary"
-toPath = "/404"
-status = 404
+    from = "/news/zyngas-harry-potter-game-anniversary"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/rovios-new-canadian-studio-opens"
-toPath = "/404"
-status = 404
+    from = "/news/rovios-new-canadian-studio-opens"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/three-new-features-overview-page"
-toPath = "/404"
-status = 404
+    from = "/google-updates/three-new-features-overview-page"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/embracer-group-game-revenues-skyrocket"
-toPath = "/404"
-status = 404
+    from = "/news/embracer-group-game-revenues-skyrocket"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/electric-manta-voodoo-partnership"
-toPath = "/404"
-status = 404
+    from = "/news/electric-manta-voodoo-partnership"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/rfox-media-launches-play-to-eat-model"
-toPath = "/404"
-status = 404
+    from = "/news/rfox-media-launches-play-to-eat-model"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/jam-city-cancels-going-public"
-toPath = "/404"
-status = 404
+    from = "/news/jam-city-cancels-going-public"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/jam-city-acquires-ludia"
-toPath = "/404"
-status = 404
+    from = "/news/jam-city-acquires-ludia"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/facebook-instant-games-ios"
-toPath = "/404"
-status = 404
+    from = "/news/facebook-instant-games-ios"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/genshin-impact-update-boosts-revenue"
-toPath = "/404"
-status = 404
+    from = "/news/genshin-impact-update-boosts-revenue"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/rovios-profits-skyrocket"
-toPath = "/404"
-status = 404
+    from = "/news/rovios-profits-skyrocket"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/rovio-world-health-organization"
-toPath = "/404"
-status = 404
+    from = "/news/rovio-world-health-organization"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/scientific-games-acquires-sideplay"
-toPath = "/404"
-status = 404
+    from = "/news/scientific-games-acquires-sideplay"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/warframe-is-coming-to-mobile"
-toPath = "/404"
-status = 404
+    from = "/news/warframe-is-coming-to-mobile"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/updates-in-app-campaign-asset"
-toPath = "/404"
-status = 404
+    from = "/google-updates/updates-in-app-campaign-asset"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/genvid-raises-113-million"
-toPath = "/404"
-status = 404
+    from = "/news/genvid-raises-113-million"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/moon-active-raises-300-million"
-toPath = "/404"
-status = 404
+    from = "/news/moon-active-raises-300-million"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/playrix-launches-new-game-studio"
-toPath = "/404"
-status = 404
+    from = "/news/playrix-launches-new-game-studio"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/spongebob-krusty-cook-off-coming-to-china"
-toPath = "/404"
-status = 404
+    from = "/news/spongebob-krusty-cook-off-coming-to-china"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/shareholders-criticize-activision-blizzard"
-toPath = "/404"
-status = 404
+    from = "/news/shareholders-criticize-activision-blizzard"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/apple-changes-developer-submissions-policies"
-toPath = "/404"
-status = 404
+    from = "/news/apple-changes-developer-submissions-policies"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/animoca-brands-raises-65-million"
-toPath = "/404"
-status = 404
+    from = "/news/animoca-brands-raises-65-million"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/stillfront-acquires-jawaker"
-toPath = "/404"
-status = 404
+    from = "/news/stillfront-acquires-jawaker"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/update-customer-match-zapier"
-toPath = "/404"
-status = 404
+    from = "/google-updates/update-customer-match-zapier"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/lightfox-games-partners-with-tribe-gaming"
-toPath = "/404"
-status = 404
+    from = "/news/lightfox-games-partners-with-tribe-gaming"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/n3twork-expands-its-platform"
-toPath = "/404"
-status = 404
+    from = "/news/n3twork-expands-its-platform"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/nordisk-games-becomes-majority-shareholder-in-star-stable"
-toPath = "/404"
-status = 404
+    from = "/news/nordisk-games-becomes-majority-shareholder-in-star-stable"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/monetization-strategies-for-mobile-apps-and-games"
-toPath = "/404"
-status = 404
+    from = "/monetization-strategies-for-mobile-apps-and-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/google-play-lowers-subscription-cut-to-15"
-toPath = "/404"
-status = 404
+    from = "/news/google-play-lowers-subscription-cut-to-15"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/kings-of-games-raises-funding"
-toPath = "/404"
-status = 404
+    from = "/news/kings-of-games-raises-funding"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/zynga-enters-nft-market"
-toPath = "/404"
-status = 404
+    from = "/news/zynga-enters-nft-market"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/pubg-new-state-reaches-20-million"
-toPath = "/404"
-status = 404
+    from = "/news/pubg-new-state-reaches-20-million"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/tencent-buying-sumo-group"
-toPath = "/404"
-status = 404
+    from = "/news/tencent-buying-sumo-group"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/witcher-monster-slayer-launch"
-toPath = "/404"
-status = 404
+    from = "/news/witcher-monster-slayer-launch"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/audiomob-raises-16-million-for-in-game-audio-ads"
-toPath = "/404"
-status = 404
+    from = "/news/audiomob-raises-16-million-for-in-game-audio-ads"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-updates/google-ads-fees"
-toPath = "/404"
-status = 404
+    from = "/google-updates/google-ads-fees"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-advertising/facebook-ad-account-setup"
-toPath = "/404"
-status = 404
+    from = "/facebook-advertising/facebook-ad-account-setup"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/analytics/google-analytics-access"
-toPath = "/404"
-status = 404
+    from = "/analytics/google-analytics-access"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/ad-account-disabled"
-toPath = "/404"
-status = 404
+    from = "/ad-account-disabled"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/facebook-ads-arent-delivering"
-toPath = "/404"
-status = 404
+    from = "/facebook-ads-arent-delivering"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/ironsource-acquires-tapjoy"
-toPath = "/404"
-status = 404
+    from = "/news/ironsource-acquires-tapjoy"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/scuti-creates-reward-based-marketplace"
-toPath = "/404"
-status = 404
+    from = "/news/scuti-creates-reward-based-marketplace"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/mobile-game-dissections/junes-journey-analysis"
-toPath = "/mobile-marketing/mobile-games/junes-journey-analysis"
-status = 301
+    from = "/mobile-game-dissections/junes-journey-analysis"
+    to = "/mobile-marketing/mobile-games/junes-journey-analysis"
+    status = 301
 
 [[redirect]]
-fromPath = "/mobile-marketing/monetization-strategies-for-mobile-apps-and-games"
-toPath = "/mobile-marketing/mobile-apps/monetization-strategies-for-mobile-apps-and-games"
-status = 301
+    from = "/mobile-marketing/monetization-strategies-for-mobile-apps-and-games"
+    to = "/mobile-marketing/mobile-apps/monetization-strategies-for-mobile-apps-and-games"
+    status = 301
 
 [[redirect]]
-fromPath = "/mobile-marketing/mobile-apps/app-market-ad-spend"
-toPath = "/mobile-marketing/app-market-ad-spend"
-status = 301
+    from = "/mobile-marketing/mobile-apps/app-market-ad-spend"
+    to = "/mobile-marketing/app-market-ad-spend"
+    status = 301
 
 [[redirect]]
-fromPath = "/google-ads-updates"
-toPath = "/digital-marketing/auto-created-custom-intent-audiences"
-status = 301
+    from = "/google-ads-updates"
+    to = "/digital-marketing/auto-created-custom-intent-audiences"
+    status = 301
 
 [[redirect]]
-fromPath = "/mobile-marketing/grow-facebook-groups"
-toPath = "/digital-marketing/grow-facebook-groups"
-status = 301
+    from = "/mobile-marketing/grow-facebook-groups"
+    to = "/digital-marketing/grow-facebook-groups"
+    status = 301
 
 [[redirect]]
-fromPath = "/what-is-user-acquisition"
-toPath = "/user-acquisition/what-is-user-acquisition"
-status = 301
+    from = "/what-is-user-acquisition"
+    to = "/user-acquisition/what-is-user-acquisition"
+    status = 301
 
 [[redirect]]
-fromPath = "/mobile-marketing/mobile-games/app-store-optimization-mobile-games"
-toPath = "/mobile-marketing/app-store-optimization-mobile-games"
-status = 301
+    from = "/mobile-marketing/mobile-games/app-store-optimization-mobile-games"
+    to = "/mobile-marketing/app-store-optimization-mobile-games"
+    status = 301
 
 [[redirect]]
-fromPath = "/complete-guide-to-app-store-optimization"
-toPath = "/mobile-marketing/mobile-apps/complete-guide-to-app-store-optimization"
-status = 301
+    from = "/complete-guide-to-app-store-optimization"
+    to = "/mobile-marketing/mobile-apps/complete-guide-to-app-store-optimization"
+    status = 301
 
 [[redirect]]
-fromPath = "/top-11-app-analytics-platforms"
-toPath = "/analytics/top-11-app-analytics-platforms"
-status = 301
+    from = "/top-11-app-analytics-platforms"
+    to = "/analytics/top-11-app-analytics-platforms"
+    status = 301
 
 [[redirect]]
-fromPath = "/mobile-marketing/mobile-games/blockchain-gaming"
-toPath = "/blockchain/blockchain-gaming"
-status = 301
+    from = "/mobile-marketing/mobile-games/blockchain-gaming"
+    to = "/blockchain/blockchain-gaming"
+    status = 301
 
 [[redirect]]
-fromPath = "/mobile-marketing/hyper-casual-game"
-toPath = "/mobile-marketing/mobile-games/hyper-casual-game"
-status = 301
+    from = "/mobile-marketing/hyper-casual-game"
+    to = "/mobile-marketing/mobile-games/hyper-casual-game"
+    status = 301
 
 [[redirect]]
-fromPath = "/analytics/google-analytics-referral-exclusion-list"
-toPath = "/analytics/referral-exclusion-list"
-status = 301
+    from = "/analytics/google-analytics-referral-exclusion-list"
+    to = "/analytics/referral-exclusion-list"
+    status = 301
 
 [[redirect]]
-fromPath = "/mobile-marketing/mobile-apps/app-marketing-mishaps"
-toPath = "/mobile-marketing/5-mistakes-app-marketing"
-status = 301
+    from = "/mobile-marketing/mobile-apps/app-marketing-mishaps"
+    to = "/mobile-marketing/5-mistakes-app-marketing"
+    status = 301
 
 [[redirect]]
-fromPath = "/determine-target-audience-for-a-successful-mobile-marketing-strategy"
-toPath = "/mobile-marketing/determine-target-audience-for-a-successful-mobile-marketing-strategy"
-status = 301
+    from = "/determine-target-audience-for-a-successful-mobile-marketing-strategy"
+    to = "/mobile-marketing/determine-target-audience-for-a-successful-mobile-marketing-strategy"
+    status = 301
 
 [[redirect]]
-fromPath = "/digital-marketing-budget"
-toPath = "/digital-marketing/digital-marketing-budget"
-status = 301
+    from = "/digital-marketing-budget"
+    to = "/digital-marketing/digital-marketing-budget"
+    status = 301
 
 [[redirect]]
-fromPath = "/7-ways-to-attract-new-users"
-toPath = "/mobile-marketing/mobile-games/7-ways-to-attract-new-users"
-status = 301
+    from = "/7-ways-to-attract-new-users"
+    to = "/mobile-marketing/mobile-games/7-ways-to-attract-new-users"
+    status = 301
 
 [[redirect]]
-fromPath = "/keyword-research-app-store-optimization"
-toPath = "/digital-marketing/keyword-research-app-store-optimization"
-status = 301
+    from = "/keyword-research-app-store-optimization"
+    to = "/digital-marketing/keyword-research-app-store-optimization"
+    status = 301
 
 [[redirect]]
-fromPath = "/digital-marketing/google-ads/google-uac-universal-app-campaigns"
-toPath = "/digital-marketing/google-uac-universal-app-campaigns"
-status = 301
+    from = "/digital-marketing/google-ads/google-uac-universal-app-campaigns"
+    to = "/digital-marketing/google-uac-universal-app-campaigns"
+    status = 301
 
 [[redirect]]
-fromPath = "/get-app-reviewed"
-toPath = "/mobile-marketing/get-app-reviewed"
-status = 301
+    from = "/get-app-reviewed"
+    to = "/mobile-marketing/get-app-reviewed"
+    status = 301
 
 [[redirect]]
-fromPath = "/key-elements-facebook-and-snapchat-ad"
-toPath = "/digital-marketing/facebook-ads/key-elements-facebook-and-snapchat-ad"
-status = 301
+    from = "/key-elements-facebook-and-snapchat-ad"
+    to = "/digital-marketing/facebook-ads/key-elements-facebook-and-snapchat-ad"
+    status = 301
 
 [[redirect]]
-fromPath = "/mobile-marketing/mobile-games/mobile-game-monetization-dos-donts"
-toPath = "/mobile-marketing/mobile-games/mobile-game-monetization-kpis"
-status = 301
+    from = "/mobile-marketing/mobile-games/mobile-game-monetization-dos-donts"
+    to = "/mobile-marketing/mobile-games/mobile-game-monetization-kpis"
+    status = 301
 
 [[redirect]]
-fromPath = "/use-social-media-for-growing-your-mobile-app-or-game"
-toPath = "/digital-marketing/use-social-media-for-growing-your-mobile-app-or-game"
-status = 301
+    from = "/use-social-media-for-growing-your-mobile-app-or-game"
+    to = "/digital-marketing/use-social-media-for-growing-your-mobile-app-or-game"
+    status = 301
 
 [[redirect]]
-fromPath = "/facebook-advertising/facebook-page-instant-replies"
-toPath = "/digital-marketing/facebook-ads/facebook-instant-replies"
-status = 301
+    from = "/facebook-advertising/facebook-page-instant-replies"
+    to = "/digital-marketing/facebook-ads/facebook-instant-replies"
+    status = 301
 
 [[redirect]]
-fromPath = "/mobile-app-retention"
-toPath = "/mobile-marketing/mobile-app-retention"
-status = 301
+    from = "/mobile-app-retention"
+    to = "/mobile-marketing/mobile-app-retention"
+    status = 301
 
 [[redirect]]
-fromPath = "/mobile-marketing/mobile-games/blockchain-gaming"
-toPath = "/blockchain/blockchain-gaming"
-status = 301
+    from = "/mobile-marketing/mobile-games/blockchain-gaming"
+    to = "/blockchain/blockchain-gaming"
+    status = 301
 
 [[redirect]]
-fromPath = "/mobile-app-analytics"
-toPath = "/mobile-marketing/mobile-app-analytics"
-status = 301
+    from = "/mobile-app-analytics"
+    to = "/mobile-marketing/mobile-app-analytics"
+    status = 301
 
 [[redirect]]
-fromPath = "/facebook-advertising-strategy"
-toPath = "/digital-marketing/facebook-ads/facebook-ad-examples-explained"
-status = 301
+    from = "/facebook-advertising-strategy"
+    to = "/digital-marketing/facebook-ads/facebook-ad-examples-explained"
+    status = 301
 
 [[redirect]]
-fromPath = "/key-mobile-game-metrics"
-toPath = "/mobile-marketing/mobile-games/key-mobile-game-metrics"
-status = 301
+    from = "/key-mobile-game-metrics"
+    to = "/mobile-marketing/mobile-games/key-mobile-game-metrics"
+    status = 301
 
 [[redirect]]
-fromPath = "/mobile-marketing/hyper-casual-game"
-toPath = "/mobile-marketing/mobile-games/hyper-casual-game"
-status = 301
+    from = "/mobile-marketing/hyper-casual-game"
+    to = "/mobile-marketing/mobile-games/hyper-casual-game"
+    status = 301
 
 [[redirect]]
-fromPath = "/facebook-ads-library"
-toPath = "/digital-marketing/facebook-ads-library"
-status = 301
+    from = "/facebook-ads-library"
+    to = "/digital-marketing/facebook-ads-library"
+    status = 301
 
 [[redirect]]
-fromPath = "/highlighted4/blockchain-gaming"
-toPath = "/blockchain/blockchain-gaming"
-status = 301
+    from = "/highlighted4/blockchain-gaming"
+    to = "/blockchain/blockchain-gaming"
+    status = 301
 
 [[redirect]]
-fromPath = "/news/animoca-brands-raises-65-million"
-toPath = "/404"
-status = 404
+    from = "/news/animoca-brands-raises-65-million"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/breeo-industries-facebook-advertising"
-toPath = "/404"
-status = 404
+    from = "/breeo-industries-facebook-advertising"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/tiktok-ads-updates"
-toPath = "/404"
-status = 404
+    from = "/tiktok-ads-updates"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/google-analytics-access"
-toPath = "/404"
-status = 404
+    from = "/google-analytics-access"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/sulake-announced-habbo-nft"
-toPath = "/404"
-status = 404
+    from = "/news/sulake-announced-habbo-nft"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/azerion-acquires-keymobile"
-toPath = "/404"
-status = 404
+    from = "/news/azerion-acquires-keymobile"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/joakim-achren-joins-fingersofts-board"
-toPath = "/404"
-status = 404
+    from = "/news/joakim-achren-joins-fingersofts-board"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/mobile-marketing/mobile"
-toPath = "/404"
-status = 404
+    from = "/mobile-marketing/mobile"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/mobile-marketing/mobile-marketing-"
-toPath = "/404"
-status = 404
+    from = "/mobile-marketing/mobile-marketing-"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/main-page"
-toPath = "/404"
-status = 404
+    from = "/main-page"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/mobile-marketing/mobile-games/genshin-impact-advertising/embed"
-toPath = "/mobile-marketing/mobile-games/genshin-impact-advertising"
-status = 301
+    from = "/mobile-marketing/mobile-games/genshin-impact-advertising/embed"
+    to = "/mobile-marketing/mobile-games/genshin-impact-advertising"
+    status = 301
 
 [[redirect]]
-fromPath = "/news/ludus-announces-investments-turkish-mobile-game-startups"
-toPath = "/404"
-status = 404
+    from = "/news/ludus-announces-investments-turkish-mobile-game-startups"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/rovio-allegedly-collected-childrens-data"
-toPath = "/404"
-status = 404
+    from = "/news/rovio-allegedly-collected-childrens-data"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/tiktok-enters-mobile-gaming-world"
-toPath = "/404"
-status = 404
+    from = "/news/tiktok-enters-mobile-gaming-world"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/tencents-mobile-game-revenue"
-toPath = "/404"
-status = 404
+    from = "/news/tencents-mobile-game-revenue"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/hadi-raises-5-million"
-toPath = "/404"
-status = 404
+    from = "/news/hadi-raises-5-million"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/gardenscapes-reached-3-billion"
-toPath = "/404"
-status = 404
+    from = "/news/gardenscapes-reached-3-billion"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/embracer-group-acquiring-crazylabs"
-toPath = "/404"
-status = 404
+    from = "/news/embracer-group-acquiring-crazylabs"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/voodoo-acquires-beach-bum"
-toPath = "/404"
-status = 404
+    from = "/news/voodoo-acquires-beach-bum"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/udo-games-raises-420000"
-toPath = "/404"
-status = 404
+    from = "/news/udo-games-raises-420000"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/netflix-acquires-game-studio"
-toPath = "/404"
-status = 404
+    from = "/news/netflix-acquires-game-studio"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/netflix-adding-mobile-games"
-toPath = "/404"
-status = 404
+    from = "/news/netflix-adding-mobile-games"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/news/storms-partners-with-voodoo"
-toPath = "/404"
-status = 404
+    from = "/news/storms-partners-with-voodoo"
+    to = "/404"
+    status = 404
 
 [[redirect]]
-fromPath = "/digital-marketing/email-list-validation-data-enrichment"
-toPath = "/404"
-status = 404
+    from = "/digital-marketing/email-list-validation-data-enrichment"
+    to = "/404"
+    status = 404
