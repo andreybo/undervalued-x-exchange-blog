@@ -215,12 +215,6 @@ module.exports = {
     },
   },
   {
-    resolve: 'gatsby-plugin-google-analytics',
-    options: {
-      "trackingId": "G-J3XN01S71Y"
-    }
-  },
-  {
     resolve: `gatsby-plugin-gdpr-cookies`,
     options: {
       googleTagManager: {
