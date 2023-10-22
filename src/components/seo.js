@@ -30,6 +30,7 @@ function SEO({ title, seo, robots, metaDesciption, amp }) {
       {seo?.opengraphImage ? <meta property="image" content={seo.opengraphImage.sourceUrl} /> : <meta property="image" content="/og/og.jpg" />}
 
       <meta property="og:title" content={pageTitle} />
+      <meta name="google-site-verification" content="AQfC9vwDmiwy2GWVkVmAKhWjhZbuNiwW14hWhwdKsgs" />
       <meta property="og:description" content={pageDescription} />
       <meta property="og:site_name" content={defaultTitle} />
       {seo?.opengraphImage ? <meta property="og:image" content={seo.opengraphImage.sourceUrl} /> : <meta property="og:image" content="/og/og.jpg" />}
