@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby";
 import { useFlexSearch } from 'react-use-flexsearch'
 
@@ -27,8 +27,24 @@ const SearchPage = () => {
     setInputActive(false);
   };
 
+  const searchInputRef = useRef(null);           
+
+  const handleClickOutside = (event) => {
+      if (searchInputRef.current && !searchInputRef.current.contains(event.target)) {
+        setInputActive(false);
+      }
+    };
+
+    useEffect(() => {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, []);
+
+
   return (
-    <div className="search">
+    <div className="search" ref={searchInputRef}>
       <div className="search__input">
         <input
           id="ud-blogsearch"
@@ -38,7 +54,6 @@ const SearchPage = () => {
           autoComplete='off'
           placeholder="Search"
           onFocus={handleFocus}
-          onBlur={handleBlur}
           onChange={(event) => setQuery(event.target.value)}
         />
         <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">

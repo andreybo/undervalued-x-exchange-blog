@@ -218,7 +218,7 @@ module.exports = {
     resolve: 'gatsby-plugin-google-gtag',
     options: {
         trackingIds: [
-            process.env.GA_MEASUREMENT_ID,
+            process.env.GA_MEASUREMENT_ID || "G-0QZQZQZQZQ",
         ],
         gtagConfig: {
             anonymize_ip: true,
