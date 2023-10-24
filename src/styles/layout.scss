@@ -142,6 +142,10 @@ img {
   width: 100%;
 }
 
+.wp-caption-text{
+  margin-top: 8px;
+}
+
 .main_cta{
   background: $dark;
   max-width: 250px;
@@ -1955,6 +1959,9 @@ img {
 }
 
 .post {
+  &__left, &__right{
+    overflow: hidden;
+  }
   &__grid{
     &-bottom{
       display: grid;
@@ -2205,7 +2212,7 @@ img {
     img {
       height: auto;
       margin: 0 auto;
-      max-width: min-content;
+      max-width: 100%;
       display: block;
       width: 100%;
     }
@@ -2261,7 +2268,7 @@ img {
       display: flex;
     }
     &--title {
-      font-size: 44px;
+      font-size: 42px;
       margin-top: 25px;
       padding: 0;
       line-height: 1.2;

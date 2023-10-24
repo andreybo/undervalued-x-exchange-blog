@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import Search from "./search";
 
 const Header = ({title = "Udonis"}) => {
@@ -13,7 +13,7 @@ const Header = ({title = "Udonis"}) => {
   const menuRef = useRef(null);
 
   useEffect(() => {
-    menuRef.current.value = window.location.pathname;
+    
   }, []);
 
   const scrollMenu = (direction) => {
@@ -31,6 +31,60 @@ const Header = ({title = "Udonis"}) => {
     setSearch(!isSearch);
     setActive(false);
   };
+
+  
+
+  
+  const data = useStaticQuery(graphql`
+  query {
+    allWpCategory(
+      sort: { count: DESC }
+      filter: {
+        name: {
+          nin: [
+            "Highlighted1"
+            "Highlighted3"
+            "Highlighted2"
+            "Highlighted4"
+            "Highlighted3-2"
+            "Uncategorized"
+          ]
+        }
+        count: { gte: 1 }
+      }
+    ) {
+      nodes {
+        name
+        uri
+        count
+      }
+    }
+  }
+`)
+
+  const pathname = window.location.pathname;
+
+  const categories = data.allWpCategory.nodes;
+
+  const normalizeUri = (uri) => {
+    return uri.endsWith('/') ? uri : `${uri}/`;
+  };
+
+  const category = categories.find(node => normalizeUri(node.uri) === normalizeUri(pathname));
+
+  console.log('Matched Category:', category);
+
+  const [selectedCategory, setSelectedCategory] = useState(category ? category.uri : '');
+
+  console.log('Pathname:', pathname);
+  console.log('Categories:', categories);
+
+  useEffect(() => {
+    if (category) {
+      setSelectedCategory(category.uri);
+    }
+  }, [category]);
+
 
   
   let menu = [
@@ -88,58 +142,6 @@ const Header = ({title = "Udonis"}) => {
       name: "Contact us",
       submenu: [],
       class: "nav__contact bec"
-    }
-  ]
-
-  
-  let submenu = [
-    {
-      path: "/",
-      name: "All Categories",
-      submenu: [],
-      class: "nav__any"
-    },
-    {
-      path: "/topics/mobile-marketing/mobile-games/",
-      name: "Mobile Games",
-      submenu: [],
-      class: "nav__sub"
-    },
-    {
-      path: "/topics/mobile-game-dissections/",
-      name: "Mobile Game Dissections",
-      submenu: [],
-      class: "nav__sub"
-    },
-    {
-      path: "/topics/mobile-marketing/mobile-apps/",
-      name: "Mobile Apps",
-      submenu: [],
-      class: "nav__sub"
-    },
-    {
-      path: "/topics/blockchain/",
-      name: "Blockchain",
-      submenu: [],
-      class: "nav__sub"
-    },
-    {
-      path: "/topics/mobile-marketing/",
-      name: "Mobile Marketing",
-      submenu: [],
-      class: "nav__sub"
-    },
-    {
-      path: "/topics/digital-marketing/",
-      name: "Digital Marketing",
-      submenu: [],
-      class: "nav__sub"
-    },
-    {
-      path: "/topics/blockchain-game-dissections/",
-      name: "Blockchain Game Dissections",
-      submenu: [],
-      class: "nav__sub"
     }
   ]
 
@@ -204,13 +206,15 @@ const Header = ({title = "Udonis"}) => {
               <select
                   className="selector"
                   ref={menuRef}
+                  value={selectedCategory}
                   onChange={(e) => (window.location.href = e.target.value)}
                 >
-                  {submenu.map((item, index) => (
+                  <option value="/" className='All Categories'>All Categories</option>
+                  {categories.map((item, index) => (
                     <option
-                      value={item.path}
+                      value={item.uri}
                       key={`menu-item-${index}`}
-                      className={item.class}
+                      className="nav__sub"
                     >
                       {item.name}
                     </option>
