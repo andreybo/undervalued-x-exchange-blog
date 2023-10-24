@@ -29,7 +29,7 @@ exports.createPages = async function ({ actions, graphql }) {
           }
           totalCount
         }
-        allWpCategory(filter: {name: {nin: ["Uncategorized", "Highlighted1", "Highlighted2", "Highlighted3-2", "Highlighted3", "Highlighted4"]}}) {
+        allWpCategory(filter: {name: {nin: ["Uncategorized", "Highlighted1", "Highlighted2", "Highlighted3-2", "Highlighted3", "Highlighted4", "News", "Analytics", "Google Ads", "TikTok Updates", "Gaming Talks"]}}) {
           nodes {
             id
             name

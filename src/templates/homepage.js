@@ -58,7 +58,7 @@ function IndexPage({
 
         <div className="hp__container">
           <div className="hp__title">
-            <h3 className="hp__title--text">Recently updated</h3>
+            <h3 className="hp__title--text">Recently Updated</h3>
           </div>
               <div className="hp__row row mb40">
                 <CardLong post={recent.nodes[0]} classmain="card-long imin"/>
@@ -310,7 +310,7 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
 
 allWpCategory(
   sort: {count: DESC}
-  filter: {name: {nin: ["Highlighted1", "Highlighted3", "Highlighted2", "Highlighted4", "Highlighted3-2", "Uncategorized"]}, count: {gte: 1}}
+  filter: {name: {nin: ["Highlighted1", "Highlighted3", "Highlighted2", "Highlighted4", "Highlighted3-2", "Uncategorized", "News", "Analytics", "Google Ads", "TikTok Updates", "Gaming Talks"]}, count: {gte: 1}}
 ) {
   nodes {
     name
