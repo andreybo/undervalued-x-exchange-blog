@@ -40,25 +40,25 @@ const Header = ({title = "Udonis"}) => {
       class: "nav__services",
       submenu: [
         {
-          path: "https://udonis.co/acquisition",
+          path: "https://www.udonis.co/acquisition",
           name: "user acquisition",
           submenu: [],
           class: "nav__acquisition"
         },
         {
-          path: "https://udonis.co/creative-production",
+          path: "https://www.udonis.co/creative-production",
           name: "creative production",
           submenu: [],
           class: "nav__portfolio"
         },
         {
-          path: "https://udonis.co/mobile-business-development",
+          path: "https://www.udonis.co/mobile-business-development",
           name: "mobile business development",
           submenu: [],
           class: "nav__mbd"
         },
         {
-          path: "https://udonis.co/reporting-development",
+          path: "https://www.udonis.co/reporting-development",
           name: "reporting development",
           submenu: [],
           class: "nav__reporting"
@@ -66,7 +66,7 @@ const Header = ({title = "Udonis"}) => {
       ]
     },
     {
-      path: "https://udonis.co/about",
+      path: "https://www.udonis.co/about",
       name: "About",
       submenu: [],
       class: "nav__about bec"
@@ -78,13 +78,13 @@ const Header = ({title = "Udonis"}) => {
       class: "nav__blog bec"
     },
     {
-      path: "https://udonis.co/careers",
+      path: "https://www.udonis.co/careers",
       name: "Careers",
       submenu: [],
       class: "nav__career bec"
     },
     {
-      path: "https://udonis.co/contact",
+      path: "https://www.udonis.co/contact",
       name: "Contact us",
       submenu: [],
       class: "nav__contact bec"

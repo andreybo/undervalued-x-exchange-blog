@@ -10,7 +10,7 @@ const Footer = () => (
           <h3 className="footer-title2">our services</h3>
           <ul>
               <li>
-                <a href="https://udonis.co/acquisition">
+                <a href="https://www.udonis.co/acquisition">
                   user acquisition
                 </a>
               </li>
@@ -20,12 +20,12 @@ const Footer = () => (
                 </a>
               </li>
               <li>
-                <a href="https://udonis.co/mobile-business-development">
+                <a href="https://www.udonis.co/mobile-business-development">
                   mobile business development
                 </a>
               </li>
               <li>
-                <a href="https://udonis.co/marketing-dashboard">
+                <a href="https://www.udonis.co/marketing-dashboard">
                   marketing dashboard
                 </a>
               </li>
@@ -44,9 +44,9 @@ const Footer = () => (
         <div className="col-md-3 col-6">
           <h3 className="footer-title2">udonis</h3>
           <ul>
-              <li><a href="https://udonis.co/about">about us</a></li>
-              <li><a href="https://udonis.co/careers">careers</a></li>
-              <li><a href="https://udonis.co/contact">contact</a></li>
+              <li><a href="https://www.udonis.co/about">about us</a></li>
+              <li><a href="https://www.udonis.co/careers">careers</a></li>
+              <li><a href="https://www.udonis.co/contact">contact</a></li>
           </ul>
         </div>
         
