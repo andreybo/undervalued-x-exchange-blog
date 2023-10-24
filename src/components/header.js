@@ -62,7 +62,10 @@ const Header = ({title = "Udonis"}) => {
   }
 `)
 
-  const pathname = window.location.pathname;
+
+const [pathname, setPathname] = useState(null);
+
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const categories = data.allWpCategory.nodes;
 
@@ -70,20 +73,25 @@ const Header = ({title = "Udonis"}) => {
     return uri.endsWith('/') ? uri : `${uri}/`;
   };
 
-  const category = categories.find(node => normalizeUri(node.uri) === normalizeUri(pathname));
-
-  console.log('Matched Category:', category);
-
-  const [selectedCategory, setSelectedCategory] = useState(category ? category.uri : '');
-
-  console.log('Pathname:', pathname);
-  console.log('Categories:', categories);
-
   useEffect(() => {
-    if (category) {
-      setSelectedCategory(category.uri);
+    if (typeof window !== "undefined") {
+      const currentPath = window.location.pathname;
+      setPathname(currentPath);
+
+      const matchedCategory = categories.find(node => normalizeUri(node.uri) === normalizeUri(currentPath));
+
+      if (matchedCategory) {
+        console.log('Matched Category:', matchedCategory);
+        setSelectedCategory(matchedCategory.uri);
+      } else {
+        setSelectedCategory('/');
+      }
+
+      console.log('Pathname:', currentPath);
     }
-  }, [category]);
+  }, [categories]);
+
+  console.log('Selected Category:', selectedCategory);
 
 
   
