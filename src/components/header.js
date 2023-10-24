@@ -48,6 +48,11 @@ const Header = ({title = "Udonis"}) => {
             "Highlighted4"
             "Highlighted3-2"
             "Uncategorized"
+            "News"
+            "Analytics"
+            "Google Ads"
+            "TikTok Updates"
+            "Gaming Talks"
           ]
         }
         count: { gte: 1 }

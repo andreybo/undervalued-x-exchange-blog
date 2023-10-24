@@ -3429,8 +3429,8 @@ div#disqus_thread iframe[sandbox] {
     padding: 0;
     list-style: none;
     columns: 3;
-    -webkit-columns: 3;
-    -moz-columns: 3;
+    -webkit-columns: 2;
+    -moz-columns: 2;
     @include media-breakpoint-down(md) {
       columns: 1;
       -webkit-columns: 1;
