@@ -27,20 +27,20 @@ function SEO({ title, seo, robots, metaDesciption, amp }) {
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
       <meta name="keywords" content={pageKeywords} />
-      {seo?.opengraphImage ? <meta property="image" content={seo.opengraphImage.sourceUrl} /> : <meta property="image" content="/og/og.jpg" />}
+      {seo?.opengraphImage ? <meta property="image" content={seo.opengraphImage.sourceUrl} /> : <meta property="image" content="https://www.blog.udonis.co/og/og.jpg" />}
 
       <meta property="og:title" content={pageTitle} />
       <meta name="google-site-verification" content="AQfC9vwDmiwy2GWVkVmAKhWjhZbuNiwW14hWhwdKsgs" />
       <meta property="og:description" content={pageDescription} />
       <meta property="og:site_name" content={defaultTitle} />
-      {seo?.opengraphImage ? <meta property="og:image" content={seo.opengraphImage.sourceUrl} /> : <meta property="og:image" content="/og/og.jpg" />}
+      {seo?.opengraphImage ? <meta property="og:image" content={seo.opengraphImage.sourceUrl} /> : <meta property="og:image" content="https://www.blog.udonis.co/og/og.jpg" />}
       <meta name="og:type" content="website" />
       
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta name="twitter:site" content="@GraphCMS" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:card" content="summary_large_image" />
-      {seo?.opengraphImage ? <meta property="twitter:image:src" content={seo.opengraphImage.sourceUrl} /> : <meta property="twitter:image:src" content="/og/og.jpg" />}
+      {seo?.opengraphImage ? <meta property="twitter:image:src" content={seo.opengraphImage.sourceUrl} /> : <meta property="twitter:image:src" content="https://www.blog.udonis.co/og/og.jpg" />}
       {robots ? <meta name="robots" content="noindex"></meta> : ""}
       {amp &&
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no" />
