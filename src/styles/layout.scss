@@ -51,7 +51,7 @@ $cardV-m: 170px;
   --font-xxl: 72px;
   --font-xl: 54px;
   --font-l: 32px;
-  --font-body: 18px;
+  --font-body: 20px;
   --font-s: 14px;
 }
 @include media-breakpoint-down(md){
@@ -59,7 +59,7 @@ $cardV-m: 170px;
     --font-xxl: 48px;
     --font-xl: 32px;
     --font-l: 24px;
-    --font-body: 16px;
+    --font-body: 20px;
     --font-s: 14px;
   }
 }
@@ -68,8 +68,8 @@ body {
   background-color: $white;
   color: $dark;
   font-family: "elza", sans-serif;
-  font-weight:300;
-  font-size: 18px;
+  font-weight:200;
+  font-size: 20px;
   height: 100%;
   overflow-x: auto;
   margin: 0;
@@ -165,8 +165,8 @@ img {
     span{
       color: $dark;
       font-family: "elza", sans-serif;
-      font-weight:300;
-      font-size: 18px;
+      font-weight:200;
+      font-size: 20px;
     }
   }
   &:hover{
@@ -2070,15 +2070,15 @@ img {
   }
   p,
   li {
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 20px;
+    font-weight: 200;
     span {
       font-size: unset !important;
-      font-weight: 300 !important;
+      font-weight: 200 !important;
     }
   }
   span {
-    font-weight: 300 !important;
+    font-weight: 200 !important;
   }
   li {
     margin-bottom: 8px;
@@ -2203,7 +2203,7 @@ img {
       padding-bottom: 50px;
     p {
       line-height: 1.5;
-      font-weight: 300;
+      font-weight: 200;
     }
     a{
       color: #2196f3;
@@ -2926,10 +2926,10 @@ img {
       padding: 5px;
       padding-left: 10px;
       width: 100%;
-      font-size: 16px;
+      font-size: 20px;
       height: 100%;
       font-family: "elza", sans-serif;
-      font-weight: 300;
+      font-weight: 200;
       &::placeholder {
         color: #000;
         font-family: "elza", sans-serif;
@@ -3293,8 +3293,8 @@ div#disqus_thread iframe[sandbox] {
       border: 0;
       background: unset;
       outline: none;
-      font-size: 16px;
-      font-weight: 300;
+      font-size: 20px;
+      font-weight: 200;
       border-bottom: 1px solid rgba(0, 0, 0, 0.4);
       padding: 5px;
       height: 30px;
