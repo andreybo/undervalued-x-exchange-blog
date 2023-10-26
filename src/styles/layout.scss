@@ -2269,8 +2269,10 @@ img {
   &__head {
     //border-radius: $border-m $border-m 0 0;
     overflow: hidden;
+    border-bottom: 1px solid #dce1e2;
+    margin-bottom: 40px;
     .news__tag-container{
-      padding: 15px 0px;
+      padding: 15px 0px 10px 0px;
     }
     &--in{
       display: flex;
