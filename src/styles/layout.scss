@@ -1314,7 +1314,8 @@ img {
     }
   }
   &__padfix {
-    font-size: 16px;
+    font-size: 20px;
+    line-height: 1.2;
     margin: 0 0 15px;
     padding: 10px 0 0 0;
     .news__layout-small &{
@@ -1324,6 +1325,9 @@ img {
       margin: 0;
       padding: 0;
     }
+  }
+  &__padfix2{
+    line-height: 1.4;
   }
   &__layout {
     &-hor {
