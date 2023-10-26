@@ -51,7 +51,7 @@ $cardV-m: 170px;
   --font-xxl: 72px;
   --font-xl: 54px;
   --font-l: 32px;
-  --font-body: 18px;
+  --font-body: 20px;
   --font-s: 14px;
 }
 @include media-breakpoint-down(md){
@@ -59,7 +59,7 @@ $cardV-m: 170px;
     --font-xxl: 48px;
     --font-xl: 32px;
     --font-l: 24px;
-    --font-body: 16px;
+    --font-body: 20px;
     --font-s: 14px;
   }
 }
@@ -68,8 +68,8 @@ body {
   background-color: $white;
   color: $dark;
   font-family: "elza", sans-serif;
-  font-weight:300;
-  font-size: 18px;
+  font-weight:200;
+  font-size: 20px;
   height: 100%;
   overflow-x: auto;
   margin: 0;
@@ -85,6 +85,10 @@ h4 {
   font-family: "elza", sans-serif;
   line-height: 1.2;
   font-weight: 500;
+}
+
+h2{
+  font-weight: 600;
 }
 
 b, strong{
@@ -165,8 +169,8 @@ img {
     span{
       color: $dark;
       font-family: "elza", sans-serif;
-      font-weight:300;
-      font-size: 18px;
+      font-weight:200;
+      font-size: 20px;
     }
   }
   &:hover{
@@ -1314,7 +1318,8 @@ img {
     }
   }
   &__padfix {
-    font-size: 16px;
+    font-size: 20px;
+    line-height: 1.2;
     margin: 0 0 15px;
     padding: 10px 0 0 0;
     .news__layout-small &{
@@ -1324,6 +1329,9 @@ img {
       margin: 0;
       padding: 0;
     }
+  }
+  &__padfix2{
+    line-height: 1.4;
   }
   &__layout {
     &-hor {
@@ -2070,15 +2078,15 @@ img {
   }
   p,
   li {
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 20px;
+    font-weight: 200;
     span {
       font-size: unset !important;
-      font-weight: 300 !important;
+      font-weight: 200 !important;
     }
   }
   span {
-    font-weight: 300 !important;
+    font-weight: 200 !important;
   }
   li {
     margin-bottom: 8px;
@@ -2203,7 +2211,7 @@ img {
       padding-bottom: 50px;
     p {
       line-height: 1.5;
-      font-weight: 300;
+      font-weight: 200;
     }
     a{
       color: #2196f3;
@@ -2236,16 +2244,20 @@ img {
     }
     h2 {
       font-size: 32px;
-      margin-top: 50px;
+      margin-top: 35px;
+      margin-bottom: -5px;
     }
     h3 {
       font-size: 28px;
+      margin-bottom: -5px;
+      margin-top: 35px;
       span{
         font-weight: 500!important;
       }
     }
     h4 {
       font-size: 20px;
+      margin-bottom: -5px;
     }
   }
   &__out {
@@ -2261,17 +2273,20 @@ img {
   &__head {
     //border-radius: $border-m $border-m 0 0;
     overflow: hidden;
+    border-bottom: 1px solid #dce1e2;
+    margin-bottom: 40px;
     .news__tag-container{
-      padding: 15px 0px;
+      padding: 15px 0px 10px 0px;
     }
     &--in{
       display: flex;
     }
     &--title {
-      font-size: 42px;
+      font-size: 34px;
       margin-top: 25px;
       padding: 0;
       line-height: 1.2;
+      font-weight: 700;
       @include media-breakpoint-down(md) {
         font-size: 28px;
       }
@@ -2929,7 +2944,7 @@ img {
       font-size: 16px;
       height: 100%;
       font-family: "elza", sans-serif;
-      font-weight: 300;
+      font-weight: 200;
       &::placeholder {
         color: #000;
         font-family: "elza", sans-serif;
@@ -3294,7 +3309,7 @@ div#disqus_thread iframe[sandbox] {
       background: unset;
       outline: none;
       font-size: 16px;
-      font-weight: 300;
+      font-weight: 200;
       border-bottom: 1px solid rgba(0, 0, 0, 0.4);
       padding: 5px;
       height: 30px;
