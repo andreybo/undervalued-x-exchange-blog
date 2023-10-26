@@ -2245,15 +2245,18 @@ img {
     h2 {
       font-size: 32px;
       margin-top: 50px;
+      margin-bottom: -5px;
     }
     h3 {
       font-size: 28px;
+      margin-bottom: -5px;
       span{
         font-weight: 500!important;
       }
     }
     h4 {
       font-size: 20px;
+      margin-bottom: -5px;
     }
   }
   &__out {
