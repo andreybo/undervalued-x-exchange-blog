@@ -69,7 +69,7 @@ function IndexPage({
                 ))}
               </div>
           <div className="hp__more">
-            <a className="hp__more--link" href="/topics/recently-updated/">
+            <a className="hp__more--link" href="/topics/recently-updated">
               View More
             </a>
           </div>
@@ -107,7 +107,7 @@ function IndexPage({
                 ))}
               </div>
           <div className="hp__more">
-            <a className="hp__more--link" href="/topics/mobile-game-market/">
+            <a className="hp__more--link" href="/topics/mobile-game-market">
               View More
             </a>
           </div>
@@ -126,7 +126,7 @@ function IndexPage({
                 ))}
               </div>
           <div className="hp__more">
-            <a className="hp__more--link" href="/topics/user-acquisition/">
+            <a className="hp__more--link" href="/topics/user-acquisition">
               View More
             </a>
           </div>
@@ -145,7 +145,7 @@ function IndexPage({
                 ))}
               </div>
           <div className="hp__more">
-            <a className="hp__more--link" href="/topics/monetization/">
+            <a className="hp__more--link" href="/topics/monetization">
               View More
             </a>
           </div>
