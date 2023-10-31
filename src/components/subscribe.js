@@ -32,7 +32,7 @@ class TheFormComponent extends React.Component {
       }
     
       submitData = async data => {
-        const url = '/api/sendinblue';
+        const url = '/.netlify/functions/sendinblue/';
     
         
     
