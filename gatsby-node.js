@@ -45,6 +45,35 @@ exports.createPages = async function ({ actions, graphql }) {
             count
           }
         }
+
+        allWpUser(filter: {name: {in: ["Andrea Knezovic", "Mihovil Grguric"]}}) {
+          nodes {
+            name
+            slug
+            description
+            posts {
+              nodes {
+                  slug
+                  id
+                  guid
+                  categories{
+                    nodes{
+                      name
+                      slug
+                    }
+                  }
+                  tags{
+                    nodes{
+                      name
+                      slug
+                    }
+                  }
+                  uri
+                  content
+              }
+            }
+          }
+        }
       }
     `)
 
@@ -91,6 +120,19 @@ exports.createPages = async function ({ actions, graphql }) {
               name: category.name
             },
           })
+        })
+    })
+
+    const authors = result.data.allWpUser.nodes
+
+    authors.forEach((author) => {
+        createPage({
+          path: `/authors/${author.slug}`,
+          component: require.resolve(`./src/templates/author.js`),
+          context: {
+            id: author.id,
+            slug: author.slug,
+          },
         })
     })
 
@@ -168,6 +210,13 @@ exports.createPages = async function ({ actions, graphql }) {
         id: 'thank-you',
         component: require.resolve(`./src/templates/thank-you.js`),
         context: { slug: '/thank-you' },
+      })
+
+      actions.createPage({
+        path: '/authors',
+        id: 'authors',
+        component: require.resolve(`./src/templates/authors.js`),
+        context: { slug: '/authors' },
       })
 }
 

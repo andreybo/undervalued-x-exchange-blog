@@ -82,7 +82,7 @@ export default function BlogPost({ data }) {
                   <h1 className="post__head--title">{post.title}</h1>
                   <div className="news__tag-container">
                     <p className="post__head--author">
-                      by <b>{post.author ? post.author.node.name : 'Udonis'}</b>,&nbsp; 
+                      by <a href={"/authors/" + post.author.node.slug}><b>{post.author ? post.author.node.name : 'Udonis'}</b></a>,&nbsp; 
                       <time dateTime={postDate}>{Moment(postDate).format('MMMM D, YYYY')}</time>
                     </p>
                     {post.tags.nodes.map((tag, index) => (
@@ -168,6 +168,7 @@ export const query = graphql`
       author{
         node{
           name
+          slug
         }
       }
       title
