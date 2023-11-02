@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /api
-Sitemap: https://www.blog.udonis.co/sitemap/sitemap-index.xml
+Disallow: /.netlify/*
+Sitemap: https://www.blog.udonis.co/sitemap-index.xml
 Host: https://wwww.blog.udonis.co
