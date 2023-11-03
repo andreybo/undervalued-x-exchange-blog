@@ -1967,8 +1967,20 @@ img {
 }
 
 .post {
-  &__left, &__right{
+  &__left{
     overflow: hidden;
+  }
+  &__left, &__right{
+    .news__layout-hor .news-out{
+      @include media-breakpoint-down(md) {
+        height: auto!important;
+      }
+    }
+    .post__right .news__layout-hor{
+      @include media-breakpoint-down(md) {
+        height: auto!important;
+      }
+    }
   }
   &__grid{
     &-bottom{
@@ -2874,7 +2886,7 @@ img {
 }
 
 .postcard{
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 .categories {

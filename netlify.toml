@@ -62,7 +62,7 @@
     status = 404
 
 [[redirects]]
-    from = "/tiktok-updates/tiktok-feature-update-new-events-in-custom-audience/"
+    from = "/tiktok-updates/tiktok-feature-update-new-events-in-custom-audience"
     to = "/404"
     status = 404
 
@@ -97,7 +97,7 @@
     status = 404
 
 [[redirects]]
-    from = "/tiktok-updates/new-tiktok-feature-lookalike-audience/"
+    from = "/tiktok-updates/new-tiktok-feature-lookalike-audience"
     to = "/404"
     status = 404
 
@@ -247,7 +247,7 @@
     status = 404
 
 [[redirects]]
-    from = "/event/digital-media-marketing-conference/feed/"
+    from = "/event/digital-media-marketing-conference/feed"
     to = "/404"
     status = 404
 
