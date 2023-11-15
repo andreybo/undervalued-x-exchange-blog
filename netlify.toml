@@ -1415,3 +1415,123 @@
     from = "/digital-marketing/email-list-validation-data-enrichment"
     to = "/404"
     status = 404
+
+[[redirects]]
+    from = "/blockchain/nft-marketplaces"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/buy-land-metaverse"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/crypto-coins-tokens"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/fungible-non-fungible-tokens"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/buy-sell-nfts"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/nft-influencers"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/gauge-value-nft"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/build-discord-community-blockchain-projects"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/crypto-slang-terms"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/dot-swoosh"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/nfts-instagram"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/top-discord-bots"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/staking-crypto"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/crypto-scams"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/nft-analytics-platforms"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/nft-rug-pulls"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/nft-collections"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/move-to-earn-games"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/crypto-wallets"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/earn-money-blockchain-games"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/metamask-wallet"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/top-decentralized-exchanges"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/nft-mystery-box"
+    to = "/"
+    status = 410
+
+[[redirects]]
+    from = "/blockchain/governance-tokens"
+    to = "/"
+    status = 410
