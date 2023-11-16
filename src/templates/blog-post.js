@@ -29,7 +29,7 @@ export default function BlogPost({ data }) {
     return setImageSrc(src);
   };
   const onCloseModal = () => setOpen(false);
-  const currentDomain = window.location.origin;
+  const currentDomain = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://test-image--udonis-blog-2023.netlify.app';
 
   const transformedContent = parse(post.content, {
     replace: domNode => {
@@ -42,7 +42,7 @@ export default function BlogPost({ data }) {
           <div>
             <img
               src={currentDomain +"/.netlify/images?url=" + src + "&w=" + {w} + "&h=" + h}
-              alt={domNode.attribs.altText}
+              alt={domNode.attribs.altText || data.wpPost.title}
               onClick={() => onOpenModal(src, domNode.attribs.src)}
               style={{ cursor: 'pointer'}}
             />
