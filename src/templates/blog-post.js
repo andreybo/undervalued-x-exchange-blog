@@ -37,12 +37,8 @@ export default function BlogPost({ data }) {
         return (
           <div>
             <img
-              src={src}
+              src={"https://test-image--udonis-blog-2023.netlify.app/.netlify/images?url=" + src}
               alt={domNode.attribs.src}
-              srcset={domNode.attribs.srcset}
-              sizes={domNode.attribs.sizes}
-              decoding={domNode.attribs.decoding}
-              loading={domNode.attribs.loading}
               onClick={() => onOpenModal(src, domNode.attribs.src)}
               style={{ cursor: 'pointer'}}
             />
