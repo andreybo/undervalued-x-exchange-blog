@@ -29,16 +29,20 @@ export default function BlogPost({ data }) {
     return setImageSrc(src);
   };
   const onCloseModal = () => setOpen(false);
+  const currentDomain = window.location.origin;
 
   const transformedContent = parse(post.content, {
     replace: domNode => {
       if (domNode.name && domNode.name === 'img') {
         const src = domNode.attribs && domNode.attribs.src;
+        const w = domNode.attribs.width;
+        const h = domNode.attribs.height;
+        
         return (
           <div>
             <img
-              src={"https://test-image--udonis-blog-2023.netlify.app/.netlify/images?url=" + src}
-              alt={domNode.attribs.src}
+              src={currentDomain +"/.netlify/images?url=" + src + "&w=" + {w} + "&h=" + h}
+              alt={domNode.attribs.altText}
               onClick={() => onOpenModal(src, domNode.attribs.src)}
               style={{ cursor: 'pointer'}}
             />
