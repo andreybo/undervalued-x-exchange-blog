@@ -163,9 +163,9 @@ const [pathname, setPathname] = useState(null);
     <>
       <header className="header liquid">
           <div className="header__container container">
-              <Link className="header__leftside header__leftside-logo navbar-brand" to="https://www.udonis.co">
+              <a className="header__leftside header__leftside-logo navbar-brand" href="https://www.udonis.co">
                   <img src={`/svg/logo.svg`} alt="Udonis"/>
-              </Link>
+              </a>
               <ul className={`${isActive ? "header__nav toggle nav active" : "header__nav toggle nav"}`}>
                   
             {menu.map((link) => (

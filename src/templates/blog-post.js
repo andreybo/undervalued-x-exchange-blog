@@ -19,7 +19,6 @@ import { Modal } from 'react-responsive-modal';
 export default function BlogPost({ data }) {
   const post = data.wpPost
   const postDate = post.modified ? post.modified : post.date
-  const url = typeof window !== 'undefined' ? window.location.href : '';
   const [open, setOpen] = useState(false);
 
   const [imageSrc, setImageSrc] = useState("");
@@ -34,16 +33,18 @@ export default function BlogPost({ data }) {
   const transformedContent = parse(post.content, {
     replace: domNode => {
       if (domNode.name && domNode.name === 'img') {
-        const src = domNode.attribs && domNode.attribs.src;
-        const w = domNode.attribs.width;
-        const h = domNode.attribs.height;
+        const w = domNode.attribs && domNode.attribs.width;
+        const h = domNode.attribs && domNode.attribs.height;
+        const src = currentDomain +"/.netlify/images?url=" + domNode.attribs.src + "&w=" + w + "&h=" + h;
         
         return (
           <div>
             <img
-              src={currentDomain +"/.netlify/images?url=" + src + "&w=" + {w} + "&h=" + h}
+              src={src}
               alt={domNode.attribs.altText || data.wpPost.title}
               onClick={() => onOpenModal(src, domNode.attribs.src)}
+              width={w}
+              height={h}
               style={{ cursor: 'pointer'}}
             />
           </div>
