@@ -6,6 +6,9 @@
     command = "gatsby develop"
     targetPort = 8000
 
+[images]
+	remote_images = ["https://cms.udonis.co/.*"]
+
 [[redirects]]
     from = "/tiktok-updates/optimization-preference"
     to = "/404"
