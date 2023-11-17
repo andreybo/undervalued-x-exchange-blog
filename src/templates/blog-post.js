@@ -35,12 +35,13 @@ export default function BlogPost({ data }) {
       if (domNode.name && domNode.name === 'img') {
         const w = domNode.attribs && domNode.attribs.width;
         const h = domNode.attribs && domNode.attribs.height;
+        const attr = w && h ? `&w="${w}"&h="${h}"` : '';
         const src = currentDomain +"/.netlify/images?url=" + domNode.attribs.src;
         
         return (
           <div>
             <img
-              src={src + "&w=" + w + "&h=" + h}
+              src={src + attr}
               alt={domNode.attribs.altText || data.wpPost.title}
               onClick={() => onOpenModal(src, domNode.attribs.src)}
               width={w}
@@ -119,7 +120,7 @@ export default function BlogPost({ data }) {
                     </p>
                   </div>
                   <div className="right fixright">
-                      <img className="imgsvg imgu" src="/svg/short.svg" alt="Udonis"/>
+                      <img className="imgsvg imgu" src="/svg/short.svg" alt="Udonis" width="150" height="164"/>
                   </div>
                 </div>
               </div>

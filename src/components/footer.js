@@ -52,7 +52,7 @@ const Footer = () => (
         
         <div className="col-md-3 col-6 footer-logo logohover mobile">
           <a href="/">
-            <img src={`/svg/logo-w.svg`} alt="Udonis" className="fl"/>
+            <img src={`/svg/logo-w.svg`} alt="Udonis" className="fl" width="168" height="45"/>
           </a>
           <div className="footer_copyright">
             <p>© {new Date().getFullYear()} udonis. all rights reserved.</p>
@@ -60,17 +60,17 @@ const Footer = () => (
           <ul className="soc">
             <li>
               <a href="https://www.facebook.com/udonis.co/">
-                <img src={`/icons/fb.svg`} alt="facebook"/>
+                <img src={`/icons/fb.svg`} alt="facebook" width="16" height="16"/>
               </a>
             </li>
             <li>
               <a href="https://twitter.com/UdonisMarketing/">
-                <img src={`/icons/tw.svg`} alt="twitter"/>
+                <img src={`/icons/tw.svg`} alt="twitter" width="20" height="16"/>
               </a>
             </li>
             <li>
               <a href="https://www.linkedin.com/company/udonis-inc/">
-                <img src={`/icons/in.svg`} alt="linkedin"/>
+                <img src={`/icons/in.svg`} alt="linkedin" width="16" height="16"/>
               </a>
             </li>
           </ul>
