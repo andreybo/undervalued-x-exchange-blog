@@ -19,7 +19,6 @@ import { Modal } from 'react-responsive-modal';
 export default function BlogPost({ data }) {
   const post = data.wpPost
   const postDate = post.modified ? post.modified : post.date
-  const url = typeof window !== 'undefined' ? window.location.href : '';
   const [open, setOpen] = useState(false);
 
   const [imageSrc, setImageSrc] = useState("");
@@ -29,21 +28,23 @@ export default function BlogPost({ data }) {
     return setImageSrc(src);
   };
   const onCloseModal = () => setOpen(false);
+  const currentDomain = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://www.blog.udonis.co';
 
   const transformedContent = parse(post.content, {
     replace: domNode => {
       if (domNode.name && domNode.name === 'img') {
-        const src = domNode.attribs && domNode.attribs.src;
+        const w = domNode.attribs && domNode.attribs.width;
+        const h = domNode.attribs && domNode.attribs.height;
+        const src = currentDomain +"/.netlify/images?url=" + domNode.attribs.src;
+        
         return (
           <div>
             <img
-              src={src}
-              alt={domNode.attribs.src}
-              srcset={domNode.attribs.srcset}
-              sizes={domNode.attribs.sizes}
-              decoding={domNode.attribs.decoding}
-              loading={domNode.attribs.loading}
+              src={src + "&w=" + w + "&h=" + h}
+              alt={domNode.attribs.altText || data.wpPost.title}
               onClick={() => onOpenModal(src, domNode.attribs.src)}
+              width={w}
+              height={h}
               style={{ cursor: 'pointer'}}
             />
           </div>
@@ -118,7 +119,7 @@ export default function BlogPost({ data }) {
                     </p>
                   </div>
                   <div className="right fixright">
-                      <img className="imgsvg imgu" src="/svg/short.svg"/>
+                      <img className="imgsvg imgu" src="/svg/short.svg" alt="Udonis"/>
                   </div>
                 </div>
               </div>

@@ -15,7 +15,7 @@ function Authors({
           {users.nodes.map((user, index) => (
             <div className="author__about">
               <div className="author__image">
-                <img src={"/authors/" + user.slug + ".jpg"}/>
+                <img src={"/authors/" + user.slug + ".jpg"} alt={user.name}/>
               </div>
               <div className="author__descr">
                 <h1>{user.name}</h1>
