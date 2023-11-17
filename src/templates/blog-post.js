@@ -28,7 +28,7 @@ export default function BlogPost({ data }) {
     return setImageSrc(src);
   };
   const onCloseModal = () => setOpen(false);
-  const currentDomain = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://test-image--udonis-blog-2023.netlify.app';
+  const currentDomain = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://www.blog.udonis.co';
 
   const transformedContent = parse(post.content, {
     replace: domNode => {
