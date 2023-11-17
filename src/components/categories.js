@@ -51,7 +51,7 @@ const max = data.allWpCategory.nodes.lenth
         ))}
       </div>
         <div className="categories__more">
-          <button onClick={handleLoadMore}>
+          <button onClick={handleLoadMore}><span className="hidden">Show More</span>
             <svg className={list?'acti':'nn'} width="23" height="13" viewBox="0 0 23 13" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 1L11.5 11.5L22 1" stroke="#C4C9CA" strokeOpacity="1"/>
             </svg>

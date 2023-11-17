@@ -35,7 +35,7 @@ export default function BlogPost({ data }) {
       if (domNode.name && domNode.name === 'img') {
         const w = domNode.attribs && domNode.attribs.width;
         const h = domNode.attribs && domNode.attribs.height;
-        const attr = w && h ? `&w="${w}"&h="${h}"` : '';
+        const attr = w && h ? `&w=${w}&h=${h}` : '';
         const src = currentDomain +"/.netlify/images?url=" + domNode.attribs.src;
         
         return (
