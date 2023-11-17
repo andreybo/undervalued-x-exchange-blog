@@ -13,7 +13,7 @@ export default function Author({ data }) {
       <div className="author__container container">
         <div className="author__about">
           <div className="author__image">
-            <img src={"/authors/" + author.slug + ".jpg"}/>
+            <img src={"/authors/" + author.slug + ".jpg"} alt={author.name}/>
           </div>
           <div className="author__descr">
             <h1>{author.name}</h1>
