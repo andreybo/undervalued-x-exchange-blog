@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-function SEO({ title, seo, robots, metaDesciption, amp }) {
+function SEO({ title, seo, robots, metaDesciption, amp, author, datePublished, dateModified, category }) {
   const {
     site: { siteMetadata },
   } = useStaticQuery(graphql`
@@ -21,6 +21,41 @@ function SEO({ title, seo, robots, metaDesciption, amp }) {
   const pageDescription = metaDesciption || seo?.metaDesc || siteMetadata.description;
   const pageKeywords = seo?.metaKeywords || siteMetadata.keywords;
   const pageTitle = seo?.title || title || "Home";
+
+  const authorName = author?.node?.name;
+  const authorSlug = "https://www.blog.udonis.co/authors/" + author?.node?.slug;
+
+  console.log(authorSlug);
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": pageTitle,
+    "image": [
+      seo?.opengraphImage?.sourceUrl || "https://www.blog.udonis.co/og/og.jpg"
+    ],
+    "datePublished": datePublished,
+    "dateModified": dateModified,
+    "description": pageDescription,
+    "author": [
+      {
+        "@type": "Person",
+        "name": authorName,
+        "url": authorSlug
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Udonis",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.blog.udonis.co/u.png"
+      }
+    },
+    "articleSection": category,
+  };
+
+  const schemaAsString = JSON.stringify(schema, null, 2);
 
   return (
     <>
@@ -44,6 +79,9 @@ function SEO({ title, seo, robots, metaDesciption, amp }) {
       {robots ? <meta name="robots" content="noindex"></meta> : ""}
       {amp &&
       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no" />
+      }
+      {author &&
+        <script type="application/ld+json">{schemaAsString}</script>
       }
     </>
   );

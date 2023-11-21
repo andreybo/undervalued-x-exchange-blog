@@ -159,7 +159,7 @@ export default function BlogPost({ data }) {
 }
 
 export const Head = ({data}) => (
-  <Seo title={data.wpPost.title} seo={data.wpPost.seo} />
+  <Seo title={data.wpPost.title} seo={data.wpPost.seo} author={data.wpPost.author} dateModified={data.wpPost.seo.opengraphModifiedTime} datePublished={data.wpPost.seo.opengraphPublishedTime} category={data.wpPost.categories.nodes.slice(-1)[0].name}/>
 )
 
 export const query = graphql`
@@ -188,6 +188,8 @@ export const query = graphql`
         metaDesc
         metaKeywords
         title
+        opengraphModifiedTime
+        opengraphPublishedTime
         opengraphImage {
           sourceUrl
         }
