@@ -213,7 +213,7 @@ const [pathname, setPathname] = useState(null);
     <div className='catmenu-out'>
       <div className="container">
         <div className='catm'>
-        <h3 className='hp__title--text'>{title}</h3>
+        <p className='hp__title--text'>{title}</p>
         <div className='catm-in'>
             <div className="catm__selector">
               <select

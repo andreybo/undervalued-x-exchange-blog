@@ -1121,6 +1121,8 @@ img {
       margin-top: 0;
       position: relative;
       font-size: 48px;
+      font-weight: 500;
+      line-height: 1.2;
       @include media-breakpoint-down(md) {
         font-size: 30px;
       }
