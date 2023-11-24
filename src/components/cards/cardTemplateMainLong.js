@@ -36,8 +36,6 @@ const CardLong = ({ post, classmain = "hp__col"}) => {
                     <div className='news__date'>
                       <time dateTime={post.modified}>{Moment(post.modified).format('MMMM D, YYYY')}</time>
                     </div>
-                    <div dangerouslySetInnerHTML = {{ __html: post.seo ? post.seo.metaDesc : post.excerpt }} className="news__padfix2">
-                    </div>
                     <div className={post.tags.nodes.length > 0?"news__tag-container":"news__tag-empty"}>
                       {post.tags.nodes.slice(0,3).map((tag, index) => (
                         <div key={index}>
@@ -46,6 +44,8 @@ const CardLong = ({ post, classmain = "hp__col"}) => {
                           </a>
                         </div>
                       ))}
+                    </div>
+                    <div dangerouslySetInnerHTML = {{ __html: post.seo ? post.seo.metaDesc : post.excerpt }} className="news__padfix2">
                     </div>
                 </div>
               </div>
