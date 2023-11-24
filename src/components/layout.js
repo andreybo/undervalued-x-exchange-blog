@@ -57,13 +57,12 @@ function Layout({ children, classmain = "page", title="Udonis" }) {
         <Footer />
         <CookieConsent
           location="bottom"
-          buttonText="Accept"
+          buttonText="Got it"
           declineButtonText="Decline"
           cookieName="gatsby-gdpr-google-tagmanager"
           onAccept={() => initializeAndTrack(location)}
         >
-          In order to deliver superior & personalized user experience we use
-          cookies.
+          We use cookies to deliver a personalized user experience.
         </CookieConsent>
       </div>
       <CustomCursor isDisplay={isDisplay} position={cursorPosition} />
