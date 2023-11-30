@@ -59,6 +59,7 @@ function SEO({ title, seo, robots, metaDesciption, amp, author, datePublished, d
 
   return (
     <>
+      <html lang="en" />
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
       <meta name="keywords" content={pageKeywords} />

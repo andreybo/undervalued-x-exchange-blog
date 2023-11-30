@@ -126,7 +126,7 @@ render() {
                 quality={95}
                 formats={["auto", "webp", "avif"]}
                 placeholder="none"
-                alt=""
+                alt="Udonis"
             />
         </div>
       </div>
