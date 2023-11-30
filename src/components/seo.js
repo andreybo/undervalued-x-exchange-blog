@@ -65,6 +65,7 @@ function SEO({ title, seo, robots, metaDesciption, amp, author, datePublished, d
       {seo?.opengraphImage ? <meta property="image" content={seo.opengraphImage.sourceUrl} /> : <meta property="image" content="https://www.blog.udonis.co/og/og.jpg" />}
 
       <meta property="og:title" content={pageTitle} />
+      <meta property="og:url" content={window.location.href} />
       <meta name="google-site-verification" content="AQfC9vwDmiwy2GWVkVmAKhWjhZbuNiwW14hWhwdKsgs" />
       <meta property="og:description" content={pageDescription} />
       <meta property="og:site_name" content={defaultTitle} />
@@ -72,9 +73,12 @@ function SEO({ title, seo, robots, metaDesciption, amp, author, datePublished, d
       <meta name="og:type" content="website" />
       
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-      <meta name="twitter:site" content="@GraphCMS" />
+      <meta name="twitter:site" content="@UdonisMarketing" />
       <meta name="twitter:title" content={pageTitle} />
+      <meta property="twitter:domain" content="blog.udonis.co"/>
+      <meta property="twitter:url" content={window.location.href}/>
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:description" content={pageDescription}/>
       {seo?.opengraphImage ? <meta property="twitter:image:src" content={seo.opengraphImage.sourceUrl} /> : <meta property="twitter:image:src" content="https://www.blog.udonis.co/og/og.jpg" />}
       {robots ? <meta name="robots" content="noindex"></meta> : ""}
       {amp &&
