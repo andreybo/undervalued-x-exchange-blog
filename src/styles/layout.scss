@@ -3534,24 +3534,10 @@ div#disqus_thread iframe[sandbox] {
   position: relative;
   border-radius: 12px;
   margin: 20px 0 0 0;
-  h3{
+  h2{
     margin: 0;
     padding-bottom: 40px;
-    span{
-      font-weight: unset!important;
-      position: relative;
-      &::after {
-        content: "";
-        width: 4px;
-        height: 100%;
-        background: #FD4A76;
-        display: block;
-        position: absolute;
-        right: -10px;
-        top: 0;
-        animation: blink 0.5s ease infinite alternate-reverse;
-      }
-    }
+    font-size: 32px;
   }
   .accordion{
     border-radius: 12px;
@@ -3569,9 +3555,9 @@ div#disqus_thread iframe[sandbox] {
       h3{
         padding: 20px 0;
         margin: 0;
-        font-size: 24px;
         width: 100%;
         text-align: left;
+        font-size: 28px;
       }
       .acti {
         transform: rotate(180deg);

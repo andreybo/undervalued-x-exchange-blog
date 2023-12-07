@@ -206,9 +206,34 @@ export default function BlogPost({ data }) {
   )
 }
 
-export const Head = ({data}) => (
-  <Seo title={data.wpPost.title} seo={data.wpPost.seo} author={data.wpPost.author} dateModified={data.wpPost.seo.opengraphModifiedTime} datePublished={data.wpPost.seo.opengraphPublishedTime} category={data.wpPost.categories.nodes.slice(-1)[0].name}/>
-)
+export const Head = ({ data }) => {
+  const faqData = [];
+  for (let i = 1; i <= 10; i++) {
+    const questionKey = `question${i}`;
+    const answerKey = `answer${i}`;
+
+    // Check if both question and answer are non-empty before adding to faqData
+    if (data.wpPost.faq[questionKey] && data.wpPost.faq[answerKey]) {
+      faqData.push({
+        question: data.wpPost.faq[questionKey],
+        answer: data.wpPost.faq[answerKey],
+      });
+    }
+  }
+
+  return (
+    <Seo 
+      title={data.wpPost.title} 
+      seo={data.wpPost.seo} 
+      author={data.wpPost.author} 
+      dateModified={data.wpPost.seo.opengraphModifiedTime} 
+      datePublished={data.wpPost.seo.opengraphPublishedTime} 
+      category={data.wpPost.categories.nodes.slice(-1)[0].name} 
+      faqData={faqData} 
+    />
+  );
+};
+
 
 export const query = graphql`
   query($slug: String) {

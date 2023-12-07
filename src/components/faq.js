@@ -5,7 +5,7 @@ export default function FAQ({ faqData }) {
   return (
     <div className="faq">
       <div className="faq_inner">
-        <h3 className="p60">Frequently Asked Questions</h3>
+        <h2 className="p60">Frequently Asked Questions</h2>
         {faqData.map(({ question, answer }) => (
           question && answer && (
             <Accordion key={question} question={question} answer={answer} />
