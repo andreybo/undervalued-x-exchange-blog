@@ -6,9 +6,11 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import Comments from "../components/comments";
 import Subscribe from "../components/subscribe";
 import Trends from "../components/trends";
+import FAQ from "../components/faq";
 import Categories from "../components/categories";
 import Related from "../components/related";
 import Ads from "../components/ads";
+import Promo from "../components/promo";
 import Moment from 'moment';
 
 import parse from 'html-react-parser';
@@ -21,6 +23,20 @@ export default function BlogPost({ data }) {
   const postDate = post.modified ? post.modified : post.date
   const [open, setOpen] = useState(false);
 
+  const faqData = [];
+  for (let i = 1; i <= 10; i++) {
+    const questionKey = `question${i}`;
+    const answerKey = `answer${i}`;
+
+    // Check if both question and answer are non-empty before adding to faqData
+    if (post.faq[questionKey] && post.faq[answerKey]) {
+      faqData.push({
+        question: post.faq[questionKey],
+        answer: post.faq[answerKey],
+      });
+    }
+  }
+
   const [imageSrc, setImageSrc] = useState("");
   const [imageAlt, setImageAlt] = useState("");
   const onOpenModal = (src) => {
@@ -29,30 +45,55 @@ export default function BlogPost({ data }) {
   };
   const onCloseModal = () => setOpen(false);
   const currentDomain = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://www.blog.udonis.co';
-
+  const h2Texts = [];
+  
   const transformedContent = parse(post.content, {
     replace: domNode => {
-      if (domNode.name && domNode.name === 'img') {
-        const w = domNode.attribs && domNode.attribs.width;
-        const h = domNode.attribs && domNode.attribs.height;
-        const attr = w && h ? `&w=${w}&h=${h}` : '';
-        const src = currentDomain +"/.netlify/images?url=" + domNode.attribs.src;
-        
-        return (
-          <div>
-            <img
-              src={src + attr}
-              alt={domNode.attribs.altText || data.wpPost.title}
-              onClick={() => onOpenModal(src, domNode.attribs.src)}
-              width={w}
-              height={h}
-              style={{ cursor: 'pointer'}}
-            />
-          </div>
-        );
+      if (domNode.children && domNode.children.some(child => child.type === 'text' && child.data.includes('<--PROMO-->'))) {
+        return <Promo />;
+      }
+
+      switch (domNode.name) {
+        case 'img':
+          const w = domNode.attribs && domNode.attribs.width;
+          const h = domNode.attribs && domNode.attribs.height;
+          const attr = w && h ? `&w=${w}&h=${h}` : '';
+          const src = currentDomain + "/.netlify/images?url=" + domNode.attribs.src;
+  
+          return (
+            <div>
+              <img
+                src={src + attr}
+                alt={domNode.attribs.altText || post.title}
+                onClick={() => onOpenModal(src, domNode.attribs.src)}
+                width={w}
+                height={h}
+                style={{ cursor: 'pointer'}}
+              />
+            </div>
+          );
+  
+        case 'h2':
+          const text = domNode.children[0].data;
+          const id = `h2-${h2Texts.length}`;
+          h2Texts.push({ id, text });
+  
+          return (
+            <h2 id={id}>
+              {text}
+            </h2>
+          );
+  
+        default:
+          // If you want to handle other tags differently, add more cases here.
+          break;
       }
     }
   });
+
+  const h2Links = h2Texts.map(({ id, text }) => (
+    <li key={id} className="tol__li"><a href={`#${id}`}>{text}</a></li>
+  ));
 
   
 
@@ -98,6 +139,12 @@ export default function BlogPost({ data }) {
                 </div>
               </div>
               <div className="post__content p60">
+                <div className="toc">
+                  <h2>Table of contents</h2>
+                  <ul className="toc__ul">
+                    {h2Links}
+                  </ul>
+                </div>
                 <div
                   className="blog-post-content"
                 >
@@ -105,6 +152,7 @@ export default function BlogPost({ data }) {
                 </div>
               </div>
             </div>
+              {faqData.length > 0 ? <FAQ faqData={faqData}/> : ''}
               <Subscribe buttonId="ud-postform"/>
               <div className="post__about">
                 <div className="post__grid-bottom p60">
@@ -158,9 +206,34 @@ export default function BlogPost({ data }) {
   )
 }
 
-export const Head = ({data}) => (
-  <Seo title={data.wpPost.title} seo={data.wpPost.seo} author={data.wpPost.author} dateModified={data.wpPost.seo.opengraphModifiedTime} datePublished={data.wpPost.seo.opengraphPublishedTime} category={data.wpPost.categories.nodes.slice(-1)[0].name}/>
-)
+export const Head = ({ data }) => {
+  const faqData = [];
+  for (let i = 1; i <= 10; i++) {
+    const questionKey = `question${i}`;
+    const answerKey = `answer${i}`;
+
+    // Check if both question and answer are non-empty before adding to faqData
+    if (data.wpPost.faq[questionKey] && data.wpPost.faq[answerKey]) {
+      faqData.push({
+        question: data.wpPost.faq[questionKey],
+        answer: data.wpPost.faq[answerKey],
+      });
+    }
+  }
+
+  return (
+    <Seo 
+      title={data.wpPost.title} 
+      seo={data.wpPost.seo} 
+      author={data.wpPost.author} 
+      dateModified={data.wpPost.seo.opengraphModifiedTime} 
+      datePublished={data.wpPost.seo.opengraphPublishedTime} 
+      category={data.wpPost.categories.nodes.slice(-1)[0].name} 
+      faqData={faqData} 
+    />
+  );
+};
+
 
 export const query = graphql`
   query($slug: String) {
@@ -193,6 +266,28 @@ export const query = graphql`
         opengraphImage {
           sourceUrl
         }
+      }
+      faq{
+        question1
+        answer1
+        question2
+        answer2
+        question3
+        answer3
+        question4
+        answer4
+        question5
+        answer5
+        question6
+        answer6
+        question7
+        answer7
+        question8
+        answer8
+        question9
+        answer9
+        question10
+        answer10
       }
       tags{
         nodes{

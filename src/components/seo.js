@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { useLocation } from '@reach/router';
 
-function SEO({ title, seo, robots, metaDesciption, amp, author, datePublished, dateModified, category }) {
+function SEO({ title, seo, robots, metaDesciption, amp, author, datePublished, dateModified, category, faqData = [] }) {
   const {
     site: { siteMetadata },
   } = useStaticQuery(graphql`
@@ -63,6 +63,22 @@ function SEO({ title, seo, robots, metaDesciption, amp, author, datePublished, d
 
   const schemaAsString = JSON.stringify(schema, null, 2);
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData?.map(({ question, answer }) => ({
+      "@type": "Question",
+      "name": question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": answer
+      }
+    }))
+  };
+
+  const structuredDataScript = JSON.stringify(structuredData, null, 2);
+
+
   return (
     <>
       <html lang="en" />
@@ -94,6 +110,11 @@ function SEO({ title, seo, robots, metaDesciption, amp, author, datePublished, d
       {author &&
         <script type="application/ld+json">{schemaAsString}</script>
       }
+      {faqData &&<script 
+        type="application/ld+json" 
+        dangerouslySetInnerHTML={{ __html: structuredDataScript }} 
+      />}
+      
     </>
   );
 }
