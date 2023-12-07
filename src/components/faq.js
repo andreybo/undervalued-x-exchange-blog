@@ -1,18 +1,11 @@
 import * as React from "react";
-import { useTypingText } from "./typing";
 
 export default function FAQ({ faqData }) {
-  
-  const { word, stop, start } = useTypingText(
-    ["Frequently Asked Questions", "Frequently Asked Questions"],
-    130,
-    20
-  );
 
   return (
     <div className="faq">
       <div className="faq_inner">
-        <h3 className="p60">{word}</h3>
+        <h3 className="p60">Frequently Asked Questions</h3>
         {faqData.map(({ question, answer }) => (
           question && answer && (
             <Accordion key={question} question={question} answer={answer} />

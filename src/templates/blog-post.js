@@ -49,7 +49,7 @@ export default function BlogPost({ data }) {
   
   const transformedContent = parse(post.content, {
     replace: domNode => {
-      if (domNode.children && domNode.children.some(child => child.type === 'text' && child.data.includes('Subway Surfers: Endlessly Fun'))) {
+      if (domNode.children && domNode.children.some(child => child.type === 'text' && child.data.includes('<--PROMO-->'))) {
         return <Promo />;
       }
 
@@ -140,7 +140,7 @@ export default function BlogPost({ data }) {
               </div>
               <div className="post__content p60">
                 <div className="toc">
-                  <h2>Table of content</h2>
+                  <h2>Table of contents</h2>
                   <ul className="toc__ul">
                     {h2Links}
                   </ul>
