@@ -62,13 +62,11 @@ function SEO({ title, seo, robots, metaDesciption, amp, author, datePublished, d
   };
 
   const schemaAsString = JSON.stringify(schema, null, 2);
-  
-  console.log("faq" + faqData);
 
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqData.map(({ question, answer }) => ({
+    "mainEntity": faqData?.map(({ question, answer }) => ({
       "@type": "Question",
       "name": question,
       "acceptedAnswer": {
