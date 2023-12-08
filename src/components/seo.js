@@ -112,7 +112,7 @@ function SEO({ title, seo, robots, metaDesciption, amp, author, datePublished, d
       {author &&
         <script type="application/ld+json">{schemaAsString}</script>
       }
-      {faqData[0] &&<script 
+      {faqData && faqData[0] &&<script 
         type="application/ld+json" 
         dangerouslySetInnerHTML={{ __html: structuredDataScript }} 
       />}
