@@ -74,20 +74,24 @@ export default function BlogPost({ data }) {
           );
   
           case 'h2':
-            if (domNode.children && domNode.children[0] && domNode.children[0].data) {
-              const text = domNode.children[0].data.trim();
-              if (text !== '') {
-                const id = `h2-${h2Texts.length}`;
-                h2Texts.push({ id, text });
-          
-                return (
-                  <h2 id={id}>
-                    {text}
-                  </h2>
-                );
-              }
+            let innerHTML = '';
+            if (domNode.children) {
+              domNode.children.forEach(child => {
+                if (child.type === 'text') {
+                  innerHTML += child.data;
+                } else if (child.type === 'tag') {
+                  innerHTML += `<${child.name}>${child.children.map(c => c.data).join('')}</${child.name}>`;
+                }
+                // Add more conditions if there are other types of children you expect
+              });
             }
-            return null; // Return null to avoid creating an empty h2
+            const id = `h2-${h2Texts.length}`;
+            h2Texts.push({ id, innerHTML });
+          
+            return (
+              <h2 id={id} dangerouslySetInnerHTML={{ __html: innerHTML }}>
+              </h2>
+            );
   
         default:
           // If you want to handle other tags differently, add more cases here.
@@ -96,8 +100,8 @@ export default function BlogPost({ data }) {
     }
   });
 
-  const h2Links = h2Texts.map(({ id, text }) => (
-    <li key={id} className="tol__li"><a href={`#${id}`}>{text}</a></li>
+  const h2Links = h2Texts.map(({ id, innerHTML }) => (
+    <li key={id} className="tol__li"><a href={`#${id}`} dangerouslySetInnerHTML={{ __html: innerHTML }}></a></li>
   ));
 
   
