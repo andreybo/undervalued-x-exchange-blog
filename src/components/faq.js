@@ -34,9 +34,7 @@ function Accordion({ question, answer }) {
         </div>
       </button>
       {isOpen && answer && (
-        <div className="accordion__content">
-          <p>{answer}</p>
-        </div>
+        <div dangerouslySetInnerHTML = {{ __html: answer }} className="accordion__content"></div>
       )}
     </div>
   );
