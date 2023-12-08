@@ -74,6 +74,9 @@ export default function BlogPost({ data }) {
           );
   
         case 'h2':
+          if (!domNode.children[0].data.trim()) {
+            return null;
+          }
           const text = domNode.children[0].data;
           const id = `h2-${h2Texts.length}`;
           h2Texts.push({ id, text });
