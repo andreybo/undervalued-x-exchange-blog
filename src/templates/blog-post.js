@@ -73,19 +73,19 @@ export default function BlogPost({ data }) {
             </div>
           );
   
-        case 'h2':
-          if (!domNode.children[0].data.trim()) {
-            return null;
-          }
-          const text = domNode.children[0].data;
-          const id = `h2-${h2Texts.length}`;
-          h2Texts.push({ id, text });
-  
-          return (
-            <h2 id={id}>
-              {text}
-            </h2>
-          );
+          case 'h2':
+            if (domNode.children && domNode.children[0] && domNode.children[0].data.trim() !== '') {
+              const text = domNode.children[0].data;
+              const id = `h2-${h2Texts.length}`;
+              h2Texts.push({ id, text });
+    
+              return (
+                <h2 id={id}>
+                  {text}
+                </h2>
+              );
+            }
+            return null; // Return null to avoid creating an empty h2
   
         default:
           // If you want to handle other tags differently, add more cases here.
