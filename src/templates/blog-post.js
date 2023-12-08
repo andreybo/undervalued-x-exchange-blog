@@ -74,16 +74,18 @@ export default function BlogPost({ data }) {
           );
   
           case 'h2':
-            if (domNode.children && domNode.children[0] && domNode.children[0].data.trim() !== '') {
-              const text = domNode.children[0].data;
-              const id = `h2-${h2Texts.length}`;
-              h2Texts.push({ id, text });
-    
-              return (
-                <h2 id={id}>
-                  {text}
-                </h2>
-              );
+            if (domNode.children && domNode.children[0] && domNode.children[0].data) {
+              const text = domNode.children[0].data.trim();
+              if (text !== '') {
+                const id = `h2-${h2Texts.length}`;
+                h2Texts.push({ id, text });
+          
+                return (
+                  <h2 id={id}>
+                    {text}
+                  </h2>
+                );
+              }
             }
             return null; // Return null to avoid creating an empty h2
   
