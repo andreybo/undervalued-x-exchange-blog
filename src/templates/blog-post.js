@@ -7,6 +7,7 @@ import Comments from "../components/comments";
 import Subscribe from "../components/subscribe";
 import Trends from "../components/trends";
 import FAQ from "../components/faq";
+import PostWidjet from "../components/postWidjet";
 import Categories from "../components/categories";
 import Related from "../components/related";
 import Ads from "../components/ads";
@@ -46,11 +47,45 @@ export default function BlogPost({ data }) {
   const onCloseModal = () => setOpen(false);
   const currentDomain = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://www.blog.udonis.co';
   const h2Texts = [];
+
+  const triggerBase = '201';
+  let triggers = [];
+  if (post.relatedPostsWidjet && post.relatedPostsWidjet.innerPost) {
+    for (let i = 0; i < post.relatedPostsWidjet.innerPost.length; i++) {
+      console.log("triggerStart: " + triggerBase + (i + 1));
+      triggers.push(triggerBase + (i + 1));
+    }
+  }
+
   
   const transformedContent = parse(post.content, {
     replace: domNode => {
-      if (domNode.children && domNode.children.some(child => child.type === 'text' && child.data.includes('<--PROMO-->'))) {
-        return <Promo />;
+      let foundTrigger = false;
+      let triggerIndex = -1; // Initialize with -1, indicating no trigger found
+  
+      if (domNode.children) {
+        domNode.children.forEach((child) => {
+          if (
+            child.type === 'text' &&
+            triggers.some((trigger, index) => {
+              if (child.data.includes(trigger)) {
+                foundTrigger = true;
+                triggerIndex = index; // Set the index when trigger is found
+                return true; // Stop further searching
+              }
+              return false;
+            })
+          ) {
+            // Found a trigger, no need to continue searching
+            return;
+          }
+        });
+      }
+  
+      // If a trigger is found, replace the content with the PostWidjet component
+      if (foundTrigger) {
+        console.log("triggerIndex: " + triggerIndex);
+        return <PostWidjet postData={post.relatedPostsWidjet.innerPost[triggerIndex]} />;
       }
 
       switch (domNode.name) {
@@ -344,6 +379,32 @@ export const query = graphql`
           seo{
             title
             metaDesc
+          }
+        }
+      }
+      
+      relatedPostsWidjet {
+        innerPost {
+          ... on WpPost {
+            id
+            title
+            uri
+            excerpt
+            tags {
+              nodes {
+                uri
+                name
+              }
+            }
+            featuredImage {
+              node {
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
+                  }
+                }
+              }
+            }
           }
         }
       }
