@@ -1579,7 +1579,7 @@
     status = 301
 
 [[redirects]]
-    from = "/mobile-marketing/mobile-games/project-makeover-monetization "
+    from = "/mobile-marketing/mobile-games/project-makeover-monetization"
     to = "/mobile-marketing/mobile-games/project-makeover-advertising"
     status = 301
 
@@ -1699,7 +1699,21 @@
     status = 301
 
 [[redirects]]
-    from = "/mobile-marketing/mobile-games/mobile-game-conferences-asia "
+    from = "/mobile-marketing/mobile-games/mobile-game-conferences-asia"
+    to = "/mobile-marketing/mobile-app-conferences-2020"
+    status = 301
+
+    
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/mobile-game-conferences-south-north-america"
+    to = "/mobile-marketing/mobile-app-conferences-2020"
+    status = 301
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/mobile-game-conferences-europe"
+    to = "/mobile-marketing/mobile-app-conferences-2020"
+    status = 301
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/online-mobile-game-conferences"
     to = "/mobile-marketing/mobile-app-conferences-2020"
     status = 301
 
