@@ -48,20 +48,23 @@ export default function BlogPost({ data }) {
   const currentDomain = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://www.blog.udonis.co';
   const h2Texts = [];
 
-  const triggerBase = '201';
-  let triggers = [];
-  if (post.relatedPostsWidjet && post.relatedPostsWidjet.innerPost) {
-    for (let i = 0; i < post.relatedPostsWidjet.innerPost.length; i++) {
-      console.log("triggerStart: " + triggerBase + (i + 1));
-      triggers.push(triggerBase + (i + 1));
-    }
-  }
-
-  
   const transformedContent = parse(post.content, {
     replace: domNode => {
       let foundTrigger = false;
       let triggerIndex = -1; // Initialize with -1, indicating no trigger found
+
+      const triggerBase = '<!-- POST:';
+      const triggers = [
+        "Subway Surfers: Endlessly Fun",
+        "<!-- Start Highlight Blue -->",
+        "Breaking Records"
+      ];
+      if (post.relatedPostsWidjet && post.relatedPostsWidjet.innerPost) {
+        for (let i = 0; i < post.relatedPostsWidjet.innerPost.length; i++) {
+          console.log("triggerStart: " + triggerBase + (i + 1));
+          triggers.push(triggerBase + (i + 1)+" -->");
+        }
+      }
   
       if (domNode.children) {
         domNode.children.forEach((child) => {
@@ -81,11 +84,19 @@ export default function BlogPost({ data }) {
           }
         });
       }
-  
-      // If a trigger is found, replace the content with the PostWidjet component
+
       if (foundTrigger) {
         console.log("triggerIndex: " + triggerIndex);
-        return <PostWidjet postData={post.relatedPostsWidjet.innerPost[triggerIndex]} />;
+        switch (triggerIndex) {
+          case 0: // Yellow Highlight
+            return <div dangerouslySetInnerHTML={{ __html: "<div className='hgh hgh--yellow'>" }}></div>;
+          case 1: // Blue Highlight
+          return <div dangerouslySetInnerHTML={{ __html: "<div className='hgh hgh--blue'>" }}></div>;
+          case 2: // End Highlight
+          return <div dangerouslySetInnerHTML={{ __html: "</div>" }}></div>;
+          default:
+            return <PostWidjet postData={post.relatedPostsWidjet.innerPost[triggerIndex]} />;
+        }
       }
 
       switch (domNode.name) {

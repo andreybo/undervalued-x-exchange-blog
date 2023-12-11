@@ -3663,3 +3663,16 @@ div#disqus_thread iframe[sandbox] {
     }
   }
 }
+
+.hgh{
+  padding: 20px;
+  border-radius: 20px;
+  &--yellow{
+    background-color: $yellow;
+    color: #000;
+  }
+  &--blue{
+    background-color: $dark;
+    color: #fff;
+  }
+}
