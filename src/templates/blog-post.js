@@ -50,13 +50,15 @@ export default function BlogPost({ data }) {
 
   const transformedContent = parse(post.content, {
     replace: domNode => {
-      let foundTrigger = false;
-      let triggerIndex = -1; // Initialize with -1, indicating no trigger found
-
+      let isCapturing = false;
+      let capturedContent = "";
+      let triggerIndex = -1;
+  
       const triggerBase = '<!-- POST:';
       const triggers = [
-        "Subway Surfers: Endlessly Fun",
-        "<!-- Start Highlight Blue -->",
+        "To achieve the goal",
+        "Unlike previous",
+        "significantly",
         "Breaking Records"
       ];
       if (post.relatedPostsWidjet && post.relatedPostsWidjet.innerPost) {
@@ -65,38 +67,38 @@ export default function BlogPost({ data }) {
           triggers.push(triggerBase + (i + 1)+" -->");
         }
       }
-  
+
       if (domNode.children) {
         domNode.children.forEach((child) => {
           if (
             child.type === 'text' &&
             triggers.some((trigger, index) => {
               if (child.data.includes(trigger)) {
-                foundTrigger = true;
-                triggerIndex = index; // Set the index when trigger is found
-                return true; // Stop further searching
+                if (index === 0 || index === 1) { // Start triggers (case 0 or 1)
+                  isCapturing = true;
+                  triggerIndex = index;
+                } else if (index === 2) { // End trigger (case 3)
+                  isCapturing = false;
+                  triggerIndex = index;
+                }
+                return true;
               }
               return false;
             })
           ) {
-            // Found a trigger, no need to continue searching
             return;
+          }
+  
+          // Capture content when between start and end triggers
+          if (isCapturing) {
+            capturedContent += child.data;
           }
         });
       }
 
-      if (foundTrigger) {
-        console.log("triggerIndex: " + triggerIndex);
-        switch (triggerIndex) {
-          case 0: // Yellow Highlight
-            return <div dangerouslySetInnerHTML={{ __html: "<div className='hgh hgh--yellow'>" }}></div>;
-          case 1: // Blue Highlight
-          return <div dangerouslySetInnerHTML={{ __html: "<div className='hgh hgh--blue'>" }}></div>;
-          case 2: // End Highlight
-          return <div dangerouslySetInnerHTML={{ __html: "</div>" }}></div>;
-          default:
-            return <PostWidjet postData={post.relatedPostsWidjet.innerPost[triggerIndex]} />;
-        }
+      if (isCapturing === false && capturedContent) {
+        // Return the content wrapped in a div
+        return <div className="out" dangerouslySetInnerHTML={{ __html: capturedContent }} />;
       }
 
       switch (domNode.name) {
