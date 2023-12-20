@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from 'react';
 import CardMain from "../components/cards/cardTemplateMain";
 import CardLong from "../components/cards/cardTemplateMainLong";
 import Layout from  "../components/layout";
@@ -13,6 +13,12 @@ const BlogList = ({ pageContext, data:{postdata} }) => {
   const isLast = currentPage === numPages
   const prevPage = currentPage - 1 === 1 ? cat : cat + "/" + (currentPage - 1).toString()
   const nextPage = cat + "/" + (currentPage + 1).toString()
+  useEffect(() => {
+    let windowScrollTimeout = setTimeout(() => {
+      window.scrollTo(0, 0)
+      clearTimeout(windowScrollTimeout)
+    }, 1)
+  }, [])
   return (
       <Layout title={name}>
       <div className="hp-yellow">

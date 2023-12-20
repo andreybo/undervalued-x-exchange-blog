@@ -88,7 +88,7 @@ function IndexPage({
                 ))}
               </div>
           <div className="hp__more">
-            <a className="hp__more--link" href="/latest">
+            <a className="hp__more--link" href="/topics/mobile-game-dissections">
               View More
             </a>
           </div>

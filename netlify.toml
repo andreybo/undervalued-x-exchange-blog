@@ -1538,3 +1538,196 @@
     from = "/blockchain/governance-tokens"
     to = "/"
     status = 301
+
+
+
+    
+
+[[redirects]]
+    from = "/mobile-marketing/winning-mobile-marketing-strategy"
+    to = "/mobile-marketing/types-of-mobile-marketing-strategies-2020"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-marketing-strategies-2019"
+    to = "/mobile-marketing/types-of-mobile-marketing-strategies-2020"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/lords-mobile-advertising"
+    to = "/mobile-marketing/mobile-games/lords-mobile-monetization"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/hay-day-advertising"
+    to = "/mobile-marketing/mobile-games/hay-day-monetization"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/genshin-impact-monetization"
+    to = "/mobile-marketing/mobile-games/genshin-impact-advertising"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/hogwarts-mystery-monetization"
+    to = "/mobile-marketing/mobile-games/hogwarts-mystery-advertising"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/archero-monetization"
+    to = "/mobile-marketing/mobile-games/archero-advertising"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/project-makeover-monetization"
+    to = "/mobile-marketing/mobile-games/project-makeover-advertising"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/rise-of-kingdoms-analysis"
+    to = "/mobile-marketing/mobile-games/rise-of-kingdoms-monetization"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/afk-arena-monetization"
+    to = "/mobile-marketing/mobile-games/afk-arena-analysis"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/call-of-duty-mobile-monetization"
+    to = "/mobile-marketing/mobile-games/call-of-duty-analysis"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/clockmaker-monetization"
+    to = "/mobile-marketing/mobile-games/clockmaker-analysis"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/wild-rift-analysis"
+    to = "/mobile-marketing/mobile-games/wild-rift-monetization"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/slotomania-analysis"
+    to = "/mobile-marketing/mobile-games/slotomania-monetization"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/design-home-monetization"
+    to = "/mobile-marketing/mobile-games/design-home-analysis"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/evermerge-monetization"
+    to = "/mobile-marketing/mobile-games/evermerge-analysis"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/cash-frenzy-analysis"
+    to = "/mobile-marketing/mobile-games/cash-frenzy-monetization"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/junes-journey-analysis"
+    to = "/mobile-marketing/mobile-games/junes-journey-monetization"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/choices-stories-you-play-analysis"
+    to = "/mobile-marketing/mobile-games/choices-stories-you-play-monetization"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/merge-mansion-advertising-analysis"
+    to = "/mobile-marketing/mobile-games/merge-mansion-monetization"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/switchcraft-advertising-analysis"
+    to = "/mobile-marketing/mobile-games/switchcraft-monetization"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/lilys-garden-monetization"
+    to = "/mobile-marketing/mobile-games/lilys-garden-ads"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/family-island-advertising"
+    to = "/mobile-marketing/mobile-games/family-island-monetization"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/ad-mediation-benefits"
+    to = "/mobile-marketing/top-ad-mediation-platforms-mobile-apps-games"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/ad-mediation-tips"
+    to = "/mobile-marketing/top-ad-mediation-platforms-mobile-apps-games"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/video-ad-networks"
+    to = "/mobile-marketing/mobile-games/video-ad-social-media"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/script-video-ads-ad-networks"
+    to = "/mobile-marketing/mobile-games/video-ad-social-media"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/promo-video-script"
+    to = "/mobile-marketing/mobile-games/app-promo-video"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/get-game-featured-app-store"
+    to = "/mobile-marketing/mobile-games/get-your-game-featured-google-play"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/creating-hybrid-casual"
+    to = "/mobile-marketing/mobile-games/hybrid-casual-games"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/transition-hyper-to-hybrid-casual-games"
+    to = "/mobile-marketing/mobile-games/hybrid-casual-games"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/mobile-game-conferences-asia"
+    to = "/mobile-marketing/mobile-app-conferences-2020"
+    status = 301
+
+    
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/mobile-game-conferences-south-north-america"
+    to = "/mobile-marketing/mobile-app-conferences-2020"
+    status = 301
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/mobile-game-conferences-europe"
+    to = "/mobile-marketing/mobile-app-conferences-2020"
+    status = 301
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/online-mobile-game-conferences"
+    to = "/mobile-marketing/mobile-app-conferences-2020"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/top-15-ad-networks"
+    to = "/mobile-marketing/mobile-games/top-15-game-ad-networks"
+    status = 301
+
+[[redirects]]
+    from = "/digital-marketing/use-social-media-for-growing-your-mobile-app-or-game"
+    to = "/mobile-marketing/mobile-games/promote-game-social-media"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/7-ways-to-attract-new-users"
+    to = "/mobile-marketing/mobile-games/user-acquisition-strategy-mobile-games"
+    status = 301
