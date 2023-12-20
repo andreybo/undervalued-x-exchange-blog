@@ -1721,3 +1721,13 @@
     from = "/mobile-marketing/mobile-games/top-15-ad-networks"
     to = "/mobile-marketing/mobile-games/top-15-game-ad-networks"
     status = 301
+
+[[redirects]]
+    from = "/digital-marketing/use-social-media-for-growing-your-mobile-app-or-game"
+    to = "/mobile-marketing/mobile-games/promote-game-social-media"
+    status = 301
+
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/7-ways-to-attract-new-users"
+    to = "/mobile-marketing/mobile-games/user-acquisition-strategy-mobile-games"
+    status = 301
