@@ -58,16 +58,19 @@ export default function BlogPost({ data }) {
           const w = domNode.attribs && domNode.attribs.width;
           const h = domNode.attribs && domNode.attribs.height;
           const attr = w && h ? `&w=${w}&h=${h}` : '';
-          const src = currentDomain + "/.netlify/images?url=" + domNode.attribs.src;
+          let imageUrl = domNode.attribs.src;
 
-          src = src.replace(/^http:/, 'https:');
+          // Ensure the image URL uses https
+          imageUrl = imageUrl.replace(/^http:/, 'https:');
+      
+          let src = currentDomain + "/.netlify/images?url=" + imageUrl;
   
           return (
             <div>
               <img
                 src={src + attr}
                 alt={domNode.attribs.altText || post.title}
-                onClick={() => onOpenModal(src, domNode.attribs.src)}
+                onClick={() => onOpenModal(src, imageUrl)}
                 width={w}
                 height={h}
                 style={{ cursor: 'pointer'}}
