@@ -59,6 +59,8 @@ export default function BlogPost({ data }) {
           const h = domNode.attribs && domNode.attribs.height;
           const attr = w && h ? `&w=${w}&h=${h}` : '';
           const src = currentDomain + "/.netlify/images?url=" + domNode.attribs.src;
+
+          src = src.replace(/^http:/, 'https:');
   
           return (
             <div>
