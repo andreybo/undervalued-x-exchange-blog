@@ -68,7 +68,7 @@ export default function BlogPost({ data }) {
           return (
             <div>
               <img
-                src={src + attr}
+                src={src}
                 alt={domNode.attribs.altText || post.title}
                 onClick={() => onOpenModal(src, imageUrl)}
                 width={w}
