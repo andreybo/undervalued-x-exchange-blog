@@ -69,12 +69,12 @@ export default function BlogPost({ data }) {
 
           imageUrl = imageUrl.replace(/^http:/, 'https:');
       
-          let src = currentDomain + "/.netlify/images?url=" + imageUrl;
+          let src = currentDomain + "/.netlify/images?url=" + imageUrl + attr;
   
           return (
             <div>
               <img
-                src={src + attr}
+                src={src}
                 alt={domNode.attribs.altText || post.title}
                 onClick={() => onOpenModal(src, imageUrl)}
                 width={w}
