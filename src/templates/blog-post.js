@@ -58,6 +58,7 @@ export default function BlogPost({ data }) {
           const w = domNode.attribs && domNode.attribs.width;
           const h = domNode.attribs && domNode.attribs.height;
           const width = w === '100%' ? 800 : w;
+          let imageUrl = domNode.attribs.src;
           let attr = '';
 
           if (width && h && h !== 'auto') {
