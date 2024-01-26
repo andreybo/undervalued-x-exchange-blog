@@ -57,7 +57,12 @@ export default function BlogPost({ data }) {
         case 'img':
           const w = domNode.attribs && domNode.attribs.width;
           const h = domNode.attribs && domNode.attribs.height;
-          const attr = w && h ? `?w=${w}&h=${h}` : '';
+          let attr = '';
+          if (w && h && h !== 'auto') {
+            attr = `?w=${w}&h=${h}`;
+          } else if (w) {
+              attr = `?w=${w}&h=`;
+          }
           let imageUrl = domNode.attribs.src;
 
           // Ensure the image URL uses https
