@@ -57,7 +57,7 @@ export default function BlogPost({ data }) {
         case 'img':
           const w = domNode.attribs && domNode.attribs.width;
           const h = domNode.attribs && domNode.attribs.height;
-          const attr = w && h ? `&w=${w}&h=${h}` : '';
+          const attr = w && h ? `?w=${w}&h=${h}` : '';
           let imageUrl = domNode.attribs.src;
 
           // Ensure the image URL uses https
@@ -68,7 +68,7 @@ export default function BlogPost({ data }) {
           return (
             <div>
               <img
-                src={src}
+                src={src + attr}
                 alt={domNode.attribs.altText || post.title}
                 onClick={() => onOpenModal(src, imageUrl)}
                 width={w}
