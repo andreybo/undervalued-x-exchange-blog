@@ -111,7 +111,7 @@ export default function BlogPost({ data }) {
 
   
 
-  const [height, setHeight] = useState('auto');
+  const [height, setHeight] = useState('400px');
   const imageRef = useRef(null);
 
   useEffect(() => {
