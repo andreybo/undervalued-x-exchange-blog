@@ -57,15 +57,14 @@ export default function BlogPost({ data }) {
         case 'img':
           const w = domNode.attribs && domNode.attribs.width;
           const h = domNode.attribs && domNode.attribs.height;
-          let attr = '';
-          if (w && h && h !== 'auto') {
-            attr = `?w=${w}&h=${h}`;
-          } else if (w) {
-              attr = `?w=${w}&h=`;
-          }
-          let imageUrl = domNode.attribs.src;
+          const width = w === '100%' ? 800 : w;
 
-          // Ensure the image URL uses https
+          if (width && h && h !== 'auto') {
+              attr = `?w=${width}&h=${h}`;
+          } else if (width) {
+              attr = `?w=${width}&h=`;
+          }
+
           imageUrl = imageUrl.replace(/^http:/, 'https:');
       
           let src = currentDomain + "/.netlify/images?url=" + imageUrl;
