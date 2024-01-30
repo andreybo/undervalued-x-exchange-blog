@@ -49,10 +49,6 @@ export default function BlogPost({ data }) {
   
   const transformedContent = parse(post.content, {
     replace: domNode => {
-      if (domNode.children && domNode.children.some(child => child.type === 'text' && child.data.includes('<--PROMO-->'))) {
-        return <Promo />;
-      }
-
       switch (domNode.name) {
   
           case 'h2':
