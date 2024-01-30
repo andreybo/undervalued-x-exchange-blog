@@ -54,35 +54,6 @@ export default function BlogPost({ data }) {
       }
 
       switch (domNode.name) {
-        case 'img':
-          const w = domNode.attribs && domNode.attribs.width;
-          const h = domNode.attribs && domNode.attribs.height;
-          const width = w === '100%' ? 800 : w;
-          let imageUrl = domNode.attribs.src;
-          let attr = '';
-
-          if (width && h && h !== 'auto') {
-              attr = `?w=${width}&h=${h}`;
-          } else if (width) {
-              attr = `?w=${width}&h=`;
-          }
-
-          imageUrl = imageUrl.replace(/^http:/, 'https:');
-      
-          let src = currentDomain + "/.netlify/images?url=" + imageUrl + attr;
-  
-          return (
-            <div>
-              <img
-                src={src}
-                alt={domNode.attribs.altText || post.title}
-                onClick={() => onOpenModal(src, imageUrl)}
-                width={w}
-                height={h}
-                style={{ cursor: 'pointer'}}
-              />
-            </div>
-          );
   
           case 'h2':
             let innerHTML = '';

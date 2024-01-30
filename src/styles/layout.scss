@@ -3690,3 +3690,13 @@ div#disqus_thread iframe[sandbox] {
     padding: 15px;
     border-radius: 12px;
 }
+
+.quotes{
+  padding-left: 40px;
+  border-left: 2px solid #fbdc00;
+  margin: 50px 0;
+  p{
+    font-size: 32px;
+    line-height: 1.2;
+  }
+}

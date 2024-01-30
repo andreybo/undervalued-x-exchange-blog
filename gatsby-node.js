@@ -1,9 +1,9 @@
 const path = require("path");
 
-exports.createPages = function ({ actions, graphql }) {
+exports.createPages = async function ({ actions, graphql }) {
   const { createPage } = actions
 
-    const result = graphql(`
+    const result = await graphql(`
       {
         posts: allWpPost(filter: {status: {eq: "publish"}}) {
           edges {
