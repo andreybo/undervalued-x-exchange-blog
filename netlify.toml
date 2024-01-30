@@ -6,6 +6,9 @@
     command = "gatsby develop"
     targetPort = 8000
 
+[[plugins]]
+    package = "netlify-plugin-image-optim"
+
 [images]
 	remote_images = ["https://cms.udonis.co/.*"]
 

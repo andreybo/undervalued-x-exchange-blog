@@ -7,7 +7,6 @@ import Comments from "../components/comments";
 import Subscribe from "../components/subscribe";
 import Trends from "../components/trends";
 import FAQ from "../components/faq";
-import PostWidjet from "../components/postWidjet";
 import Categories from "../components/categories";
 import Related from "../components/related";
 import Ads from "../components/ads";
@@ -47,73 +46,37 @@ export default function BlogPost({ data }) {
   const onCloseModal = () => setOpen(false);
   const currentDomain = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://www.blog.udonis.co';
   const h2Texts = [];
-
+  
   const transformedContent = parse(post.content, {
     replace: domNode => {
-      let isCapturing = false;
-      let capturedContent = "";
-      let triggerIndex = -1;
-  
-      const triggerBase = '<!-- POST:';
-      const triggers = [
-        "To achieve the goal",
-        "Unlike previous",
-        "significantly",
-        "Breaking Records"
-      ];
-      if (post.relatedPostsWidjet && post.relatedPostsWidjet.innerPost) {
-        for (let i = 0; i < post.relatedPostsWidjet.innerPost.length; i++) {
-          console.log("triggerStart: " + triggerBase + (i + 1));
-          triggers.push(triggerBase + (i + 1)+" -->");
-        }
-      }
-
-      if (domNode.children) {
-        domNode.children.forEach((child) => {
-          if (
-            child.type === 'text' &&
-            triggers.some((trigger, index) => {
-              if (child.data.includes(trigger)) {
-                if (index === 0 || index === 1) { // Start triggers (case 0 or 1)
-                  isCapturing = true;
-                  triggerIndex = index;
-                } else if (index === 2) { // End trigger (case 3)
-                  isCapturing = false;
-                  triggerIndex = index;
-                }
-                return true;
-              }
-              return false;
-            })
-          ) {
-            return;
-          }
-  
-          // Capture content when between start and end triggers
-          if (isCapturing) {
-            capturedContent += child.data;
-          }
-        });
-      }
-
-      if (isCapturing === false && capturedContent) {
-        // Return the content wrapped in a div
-        return <div className="out" dangerouslySetInnerHTML={{ __html: capturedContent }} />;
+      if (domNode.children && domNode.children.some(child => child.type === 'text' && child.data.includes('<--PROMO-->'))) {
+        return <Promo />;
       }
 
       switch (domNode.name) {
         case 'img':
           const w = domNode.attribs && domNode.attribs.width;
           const h = domNode.attribs && domNode.attribs.height;
-          const attr = w && h ? `&w=${w}&h=${h}` : '';
-          const src = currentDomain + "/.netlify/images?url=" + domNode.attribs.src;
+          const width = w === '100%' ? 800 : w;
+          let imageUrl = domNode.attribs.src;
+          let attr = '';
+
+          if (width && h && h !== 'auto') {
+              attr = `?w=${width}&h=${h}`;
+          } else if (width) {
+              attr = `?w=${width}&h=`;
+          }
+
+          imageUrl = imageUrl.replace(/^http:/, 'https:');
+      
+          let src = currentDomain + "/.netlify/images?url=" + imageUrl + attr;
   
           return (
             <div>
               <img
-                src={src + attr}
+                src={src}
                 alt={domNode.attribs.altText || post.title}
-                onClick={() => onOpenModal(src, domNode.attribs.src)}
+                onClick={() => onOpenModal(src, imageUrl)}
                 width={w}
                 height={h}
                 style={{ cursor: 'pointer'}}
@@ -154,7 +117,7 @@ export default function BlogPost({ data }) {
 
   
 
-  const [height, setHeight] = useState('auto');
+  const [height, setHeight] = useState('400px');
   const imageRef = useRef(null);
 
   useEffect(() => {
@@ -392,32 +355,6 @@ export const query = graphql`
           seo{
             title
             metaDesc
-          }
-        }
-      }
-      
-      relatedPostsWidjet {
-        innerPost {
-          ... on WpPost {
-            id
-            title
-            uri
-            excerpt
-            tags {
-              nodes {
-                uri
-                name
-              }
-            }
-            featuredImage {
-              node {
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
-                  }
-                }
-              }
-            }
           }
         }
       }
