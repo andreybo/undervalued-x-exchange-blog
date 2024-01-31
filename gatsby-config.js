@@ -117,19 +117,16 @@ module.exports = {
     resolve: `gatsby-source-wordpress`,
     options: {
       url: process.env.WPGRAPHQL_URL || `https://staging11.cms.udonis.co/graphql`,
+      html: {
+        useGatsbyImage: true,
+      },
       schema: {
         timeout: 5000000,
         perPage: 20,
       },
-      html: {
-        useGatsbyImage: true,
-        createStaticFiles: true,
-      },
-      production: {
-        hardCacheMediaFiles: true,
-      },
       develop: {
         hardCacheMediaFiles: true,
+        hardCacheData: true,
       },
       type: {
         Post: {
@@ -168,7 +165,7 @@ module.exports = {
             showCaptions: true,
             quality: 80,
             loading: 'auto',
-            linkImagesToOriginal: false
+            linkImagesToOriginal: true
           },
         },
         `gatsby-remark-lazy-load`
