@@ -186,7 +186,6 @@ module.exports = {
     resolve: `gatsby-plugin-sharp`,
     options: {
       defaultQuality: 90,
-      failOnError: false,
       failOn: `none`,
     },
   },
@@ -227,17 +226,6 @@ module.exports = {
         },
     },
 },
-  {
-    resolve: `gatsby-plugin-gdpr-cookies`,
-    options: {
-      googleTagManager: {
-        trackingId: process.env.GTM, // leave empty if you want to disable the tracker
-        cookieName: 'gatsby-gdpr-google-tagmanager', // default
-        dataLayerName: 'dataLayer', // default
-      },
-      environments: ["production", "development"],
-    }
-  },
   {
       resolve: `gatsby-plugin-disqus`,
       options: {

@@ -27,7 +27,6 @@
     "gatsby-plugin-canonical-urls": "^5.13.1",
     "gatsby-plugin-disqus": "^1.2.6",
     "gatsby-plugin-feed": "^5.13.1",
-    "gatsby-plugin-gdpr-cookies": "^2.0.9",
     "gatsby-plugin-google-gtag": "^5.13.1",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-local-search": "^2.0.1",
