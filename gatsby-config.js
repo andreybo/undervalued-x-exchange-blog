@@ -120,6 +120,14 @@ module.exports = {
       html: {
         useGatsbyImage: true,
       },
+      schema: {
+        timeout: 5000000,
+        perPage: 20,
+      },
+      develop: {
+        hardCacheMediaFiles: true,
+        hardCacheData: true,
+      },
       type: {
         Post: {
           limit:
