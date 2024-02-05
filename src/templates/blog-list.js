@@ -57,6 +57,7 @@ const BlogList = ({ pageContext, data:{postdata} }) => {
                   </li>
                 );
               }
+              return null; // Return null for indices that do not correspond to valid pages
             })}
             {!isLast && numPages > 1  && (
               <Link to={nextPage} rel="next" className="next">

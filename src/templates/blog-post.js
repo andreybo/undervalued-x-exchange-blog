@@ -135,7 +135,7 @@ export default function BlogPost({ data }) {
                 <div
                   className="blog-post-content"
                 >
-                  {transformedContent}
+                  <div dangerouslySetInnerHTML={{ __html:  post.content}}></div>
                 </div>
               </div>
             </div>

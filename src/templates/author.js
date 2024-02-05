@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import CardMain from "../components/cards/cardTemplateMain";
