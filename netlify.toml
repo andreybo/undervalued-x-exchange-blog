@@ -1730,7 +1730,7 @@
     status = 301
 
 [build.environment]
-NETLIFY_IMAGE_CDN = "true"
+NETLIFY_IMAGE_CDN = "false"
 
 [images]
 remote_images = [
