@@ -3597,3 +3597,48 @@ div#disqus_thread iframe[sandbox] {
     }
   }
 }
+
+
+
+.hgh{
+  padding: 20px;
+  border-radius: 20px;
+  &--yellow{
+    background-color: $yellow;
+    color: #000;
+  }
+  &--blue{
+    background-color: $dark;
+    color: #fff;
+  }
+}
+
+.blue-div{
+  background: #122331;
+    color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    p{
+      margin: 0;
+    }
+}
+
+.yellow-div{
+  background: #FFDE37;
+    color: #122331;
+    padding: 15px;
+    border-radius: 12px;
+    p{
+      margin: 0;
+    }
+}
+
+.quotes{
+  padding-left: 40px;
+  border-left: 2px solid #fbdc00;
+  margin: 50px 0;
+  p{
+    font-size: 32px;
+    line-height: 1.2;
+  }
+}
