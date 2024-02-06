@@ -135,7 +135,7 @@ module.exports = {
               ? // Lets just pull 50 posts in development to make it easy on ourselves (aka. faster).
                 50
               : // and we don't actually need more than 5000 in production for this particular site
-                50,
+                5000,
         },
       },
     },
@@ -198,6 +198,18 @@ module.exports = {
     },
   },
   "gatsby-plugin-sass",
+  {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: `udonis-website`,
+      short_name: `udonis`,
+      start_url: `/`,
+      background_color: `#fff`,
+      theme_color: `#fff`,
+      display: `minimal-ui`,
+      icon: `src/images/udonis-icon.png`
+    },
+  },
   {
       resolve: `gatsby-plugin-disqus`,
       options: {
