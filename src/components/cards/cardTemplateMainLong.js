@@ -16,6 +16,8 @@ const CardLong = ({ post, classmain = "hp__col"}) => {
   }, []);
 
   return (
+    <>
+    {post && (
         <div className={classmain}>
             <div className="news news__layout-long">
               <Link to={post.uri}
@@ -52,6 +54,8 @@ const CardLong = ({ post, classmain = "hp__col"}) => {
             </div>
 
           </div>
+    )}
+    </>
   );
 };
 

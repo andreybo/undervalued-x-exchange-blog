@@ -16,14 +16,6 @@ const Header = ({title = "Udonis"}) => {
     
   }, []);
 
-  const scrollMenu = (direction) => {
-    if (direction === 'left') {
-      menuRef.current.scrollLeft -= 200;
-    } else {
-      menuRef.current.scrollLeft += 200;
-    }
-  };
-
   
   const [isSearch, setSearch] = useState(false);
 
@@ -68,7 +60,6 @@ const Header = ({title = "Udonis"}) => {
 `)
 
 
-const [pathname, setPathname] = useState(null);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
 
@@ -81,7 +72,6 @@ const [pathname, setPathname] = useState(null);
   useEffect(() => {
     if (typeof window !== "undefined") {
       const currentPath = window.location.pathname;
-      setPathname(currentPath);
 
       const matchedCategory = categories.find(node => normalizeUri(node.uri) === normalizeUri(currentPath));
 
@@ -95,8 +85,6 @@ const [pathname, setPathname] = useState(null);
       console.log('Pathname:', currentPath);
     }
   }, [categories]);
-
-  console.log('Selected Category:', selectedCategory);
 
 
   
