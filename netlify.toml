@@ -1739,3 +1739,6 @@ remote_images = [
   'https://cms.udonis.co/.*',
   'https://staging11.cms.udonis.co/.*'
 ]
+
+[[plugins]]
+package = "@netlify/plugin-gatsby"

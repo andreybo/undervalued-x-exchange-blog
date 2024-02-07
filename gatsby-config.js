@@ -126,8 +126,8 @@ module.exports = {
         perPage: 20,
       },
       develop: {
-        hardCacheMediaFiles: true,
-        hardCacheData: true,
+        hardCacheMediaFiles: false,
+        hardCacheData: false,
       },
       type: {
         Post: {
@@ -172,16 +172,6 @@ module.exports = {
         `gatsby-remark-lazy-load`
       ],
     },
-  },
-  {
-    resolve: 'gatsby-remark-audio',
-    options: {
-      preload: 'auto',
-      loop: false,
-      controls: true,
-      muted: false,
-      autoplay: false
-    }
   },
   {
     resolve: `gatsby-plugin-sharp`,
