@@ -2,7 +2,7 @@ import { graphql } from "gatsby";
 import React, { useEffect, useState, useRef } from 'react';
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import Comments from "../components/comments";
 import Subscribe from "../components/subscribe";
 import Trends from "../components/trends";
@@ -141,21 +141,34 @@ export default function BlogPost({ data }) {
             </div>
               {faqData.length > 0 ? <FAQ faqData={faqData}/> : ''}
               <Subscribe buttonId="ud-postform"/>
-              <div className="post__about">
-                <div className="post__grid-bottom p60">
-                  <div className="left">
-                    <h3>
-                      About Udonis
-                    </h3>
-                    <p>
-                      Udonis is an independent full-service mobile marketing agency that acquired more than 300,000,000 users for mobile games since 2018.
-                      <a href="https://www.udonis.co/" className="main_cta main_cta--u">
-                          <span>Visit udonis.co</span>
-                      </a>
-                    </p>
+              <div className="post__about-out">
+                <div className="post__about">
+                  <div className="post__about-plus">
+                  <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.024 15.392H5.728V9.248H0V6.144H5.728V0H9.024V6.144H14.752V9.248H9.024V15.392Z" fill="black"/>
+                  </svg>
                   </div>
-                  <div className="right fixright">
-                      <img className="imgsvg imgu" src="/svg/short.svg" alt="Udonis" width="150" height="164"/>
+                  <div className="post__about-back">
+                    <StaticImage
+                        src="../images/about-back.jpg"
+                        quality={95}
+                        formats={["auto", "webp", "avif"]}
+                        placeholder="none"
+                        alt="Udonis"
+                    />
+                  </div>
+                  <div className="post__about-grid">
+                    <div className="left">
+                      <h3>
+                        About Udonis
+                      </h3>
+                      <div>
+                        <p>Udonis is an independent full-service mobile marketing agency that acquired more than 300,000,000 users for mobile games since 2018.</p>
+                        <a href="https://www.udonis.co/" className="main_cta main_cta--u">
+                            <span>Visit udonis.co</span>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

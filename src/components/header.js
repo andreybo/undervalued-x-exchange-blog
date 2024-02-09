@@ -113,8 +113,8 @@ const Header = ({title = "Udonis"}) => {
           class: "nav__mbd"
         },
         {
-          path: "https://www.udonis.co/reporting-development",
-          name: "reporting development",
+          path: "https://www.udonis.co/marketing-dashboard",
+          name: "marketing dashboards",
           submenu: [],
           class: "nav__reporting"
         },
