@@ -158,6 +158,13 @@ module.exports = {
     }
   },
   {
+    resolve: `gatsby-plugin-sharp`,
+    options: {
+      defaultQuality: 90,
+      failOn: `none`,
+    },
+  },
+  {
     resolve: 'gatsby-transformer-remark',
     options: {
       plugins: [
@@ -173,13 +180,6 @@ module.exports = {
         },
         `gatsby-remark-lazy-load`
       ],
-    },
-  },
-  {
-    resolve: `gatsby-plugin-sharp`,
-    options: {
-      defaultQuality: 90,
-      failOn: `none`,
     },
   },
   `gatsby-transformer-sharp`,
