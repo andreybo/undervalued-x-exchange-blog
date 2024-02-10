@@ -204,6 +204,33 @@ module.exports = {
     },
   },
   {
+    resolve: 'gatsby-plugin-google-gtag',
+    options: {
+        trackingIds: [
+            process.env.GA_MEASUREMENT_ID || "G-0QZQZQZQZQ",
+        ],
+        gtagConfig: {
+            anonymize_ip: true,
+            cookie_expires: 0,
+        },
+        pluginConfig: {
+            head: true,
+            respectDNT: false,
+        },
+    },
+  },
+  {
+    resolve: `gatsby-plugin-gdpr-cookies`,
+    options: {
+      googleTagManager: {
+        trackingId: process.env.GTM, // leave empty if you want to disable the tracker
+        cookieName: 'gatsby-gdpr-google-tagmanager', // default
+        dataLayerName: 'dataLayer', // default
+      },
+      environments: ["production", "development"],
+    }
+  },
+  {
       resolve: `gatsby-plugin-disqus`,
       options: {
           shortname: `udonis-blog`
