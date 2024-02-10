@@ -2470,8 +2470,8 @@ img {
   overflow: hidden;
   display: grid;
   min-height: 400px;
-  grid-template-rows: 30px 1fr 30px;
-  margin-bottom: 40px;
+  grid-template-rows: 30px 1fr;
+  margin-bottom: 20px;
 
   .news__tag{
     margin-top: 12px;

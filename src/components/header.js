@@ -190,7 +190,7 @@ const Header = ({title = "Udonis"}) => {
             ))}
               </ul>
               <div className="header__toggle-block">
-                <button className={`${isActive ? "app header__menu toggle active" : " app header__menu toggle"}`} onClick={handleToggle}>
+                <button aria-label='Header menu' className={`${isActive ? "app header__menu toggle active" : " app header__menu toggle"}`} onClick={handleToggle}>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -229,6 +229,7 @@ const Header = ({title = "Udonis"}) => {
               <div className="catm__search--buttons">
                 <button
                   className='header__msearch'
+                  aria-label='Search'
                   onClick={searchToggle}
                 >
                   <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -237,6 +238,7 @@ const Header = ({title = "Udonis"}) => {
                 </button>
                 <button
                   className='header__msearch-close'
+                  aria-label='Close Search'
                   onClick={searchToggle}
                 >
                   <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">

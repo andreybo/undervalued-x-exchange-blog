@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby";
 
 const Categories = () => {
@@ -16,23 +16,7 @@ const Categories = () => {
     }
   }
 }`)
-
-const [list, setList] = useState(false) 
-const [i, setI] = useState(5) 
-
-const handleLoadMore = () => {
-  setList(!list)
-}
 const max = data.allWpCategory.nodes.lenth
-
-  useEffect(() => {
-    if(list){
-      setI(max)
-    }
-    else{
-      setI(5)
-    }
-  },[setI,list,max])
 
   return (
     <div className='categories'>
@@ -40,7 +24,7 @@ const max = data.allWpCategory.nodes.lenth
         Categories
       </h3>
       <div className="categories__item-container">
-        {data.allWpCategory.nodes.slice(0,i).map((cat, index) => (
+        {data.allWpCategory.nodes.slice(0,max).map((cat, index) => (
           <div className='categories__item' key={index}>
               <p className="categories__item--title">{cat.name}</p>
               <Link
@@ -50,13 +34,6 @@ const max = data.allWpCategory.nodes.lenth
           </div>
         ))}
       </div>
-        <div className="categories__more">
-          <button onClick={handleLoadMore}><span className="hidden">Show More</span>
-            <svg className={list?'acti':'nn'} width="23" height="13" viewBox="0 0 23 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1L11.5 11.5L22 1" stroke="#C4C9CA" strokeOpacity="1"/>
-            </svg>
-          </button>
-        </div>
     </div>
   );
 };

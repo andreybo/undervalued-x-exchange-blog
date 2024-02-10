@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby";
 
 const Trends = () => {
@@ -22,22 +22,6 @@ const Trends = () => {
     totalCount
   }
 }`)
-const [list, setList] = useState(false) 
-const [i, setI] = useState(3) 
-
-const handleLoadMore = () => {
-  setList(!list)
-}
-const max = data.trends.nodes.lenth
-
-  useEffect(() => {
-    if(list){
-      setI(max)
-    }
-    else{
-      setI(3)
-    }
-  },[setI,list,max])
 
   return (
     <div className='trends'>
@@ -46,7 +30,7 @@ const max = data.trends.nodes.lenth
         <span className="trends__title--number">{data.trends.totalCount}</span>
       </div>
       <div className="trends__item-container">
-        {data.trends.nodes.slice(0,i).map((post, index) => (
+        {data.trends.nodes.slice(0,3).map((post, index) => (
           <div className='trends__item' key={index}>
             <Link
                 to={post.uri}
@@ -65,13 +49,6 @@ const max = data.trends.nodes.lenth
           </div>
         ))}
       </div>
-        <div className="categories__more">
-          <button onClick={handleLoadMore}><span className="hidden">Show More</span>
-            <svg className={list?'acti':'nn'} width="23" height="13" viewBox="0 0 23 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1L11.5 11.5L22 1" stroke="white" strokeOpacity="0.19"/>
-            </svg>
-          </button>
-        </div>
     </div>
   );
 };

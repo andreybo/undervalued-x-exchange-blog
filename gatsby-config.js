@@ -117,7 +117,7 @@ module.exports = {
   {
     resolve: `gatsby-source-wordpress`,
     options: {
-      url: process.env.WPGRAPHQL_URL || `https://staging11.cms.udonis.co/graphql`,
+      url: process.env.WPGRAPHQL_URL || `https://cms.udonis.co/graphql`,
       html: {
         useGatsbyImage: true,
       },
@@ -125,16 +125,18 @@ module.exports = {
         timeout: 5000000,
         perPage: 20,
       },
+      production: {
+        hardCacheMediaFiles: true,
+      },
       develop: {
-        hardCacheMediaFiles: false,
-        hardCacheData: false,
+        hardCacheMediaFiles: true,
       },
       type: {
         Post: {
           limit:
             process.env.NODE_ENV === `development`
               ? // Lets just pull 50 posts in development to make it easy on ourselves (aka. faster).
-                50
+                500
               : // and we don't actually need more than 5000 in production for this particular site
                 5000,
         },

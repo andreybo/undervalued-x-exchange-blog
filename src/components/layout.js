@@ -4,15 +4,10 @@ import Footer from "./footer";
 import Header from "./header";
 import "../styles/boot.scss";
 import "../styles/layout.scss";
-import { useLocation } from "@reach/router"
 import CustomCursor from "./custom-cursor"
 
 function Layout({ children, classmain = "page", title="Udonis" }) {
-  const location = useLocation()
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [isZoom, setIsZoom] = useState(false);
-  const [isDisplay, setIsDisplay] = useState(false);
-
   useEffect(() => {
       const handleMouseMove = (e) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
@@ -54,7 +49,7 @@ function Layout({ children, classmain = "page", title="Udonis" }) {
         <main className="overflow main">{children}</main>
         <Footer />
       </div>
-      <CustomCursor isDisplay={isDisplay} position={cursorPosition} />
+      <CustomCursor position={cursorPosition} />
     </React.Fragment>
   );
 }

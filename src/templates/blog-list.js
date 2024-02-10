@@ -8,7 +8,7 @@ import Subscribe from "../components/subscribe";
 // Components
 import { graphql } from "gatsby"
 const BlogList = ({ pageContext, data:{postdata} }) => {
-  const { cat, currentPage, numPages,  name, numPosts } = pageContext
+  const { cat, currentPage, numPages,  name } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
   const prevPage = currentPage - 1 === 1 ? cat : cat + "/" + (currentPage - 1).toString()
