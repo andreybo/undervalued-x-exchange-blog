@@ -6,22 +6,18 @@ import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import Comments from "../components/comments";
 import Subscribe from "../components/subscribe";
 import Trends from "../components/trends";
-import FAQ from "../components/faq";
+import Faq from "../components/faq";
 import Categories from "../components/categories";
 import Related from "../components/related";
-import Ads from "../components/ads";
-import Promo from "../components/promo";
 import Moment from 'moment';
 
 import parse from 'html-react-parser';
 import 'react-responsive-modal/styles.css';
-import { Modal } from 'react-responsive-modal';
 
 
 export default function BlogPost({ data }) {
   const post = data.wpPost
   const postDate = post.modified ? post.modified : post.date
-  const [open, setOpen] = useState(false);
 
   const faqData = [];
   for (let i = 1; i <= 10; i++) {
@@ -36,53 +32,11 @@ export default function BlogPost({ data }) {
       });
     }
   }
-
-  const [imageSrc, setImageSrc] = useState("");
-  const [imageAlt, setImageAlt] = useState("");
-  const onOpenModal = (src) => {
-    setOpen(true);
-    return setImageSrc(src);
-  };
-  const onCloseModal = () => setOpen(false);
-  const currentDomain = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://www.blog.udonis.co';
   const h2Texts = [];
   
   const transformedContent = parse(post.content, {
     replace: domNode => {
-      if (domNode.children && domNode.children.some(child => child.type === 'text' && child.data.includes('<--PROMO-->'))) {
-        return <Promo />;
-      }
-
       switch (domNode.name) {
-        case 'img':
-          const w = domNode.attribs && domNode.attribs.width;
-          const h = domNode.attribs && domNode.attribs.height;
-          const width = w === '100%' ? 800 : w;
-          let imageUrl = domNode.attribs.src;
-          let attr = '';
-
-          if (width && h && h !== 'auto') {
-              attr = `?w=${width}&h=${h}`;
-          } else if (width) {
-              attr = `?w=${width}&h=`;
-          }
-
-          imageUrl = imageUrl.replace(/^http:/, 'https:');
-      
-          let src = currentDomain + "/.netlify/images?url=" + imageUrl + attr;
-  
-          return (
-            <div>
-              <img
-                src={src}
-                alt={domNode.attribs.altText || post.title}
-                onClick={() => onOpenModal(src, imageUrl)}
-                width={w}
-                height={h}
-                style={{ cursor: 'pointer'}}
-              />
-            </div>
-          );
   
           case 'h2':
             let innerHTML = '';
@@ -93,7 +47,6 @@ export default function BlogPost({ data }) {
                 } else if (child.type === 'tag') {
                   innerHTML += `<${child.name}>${child.children.map(c => c.data).join('')}</${child.name}>`;
                 }
-                // Add more conditions if there are other types of children you expect
               });
             }
             const id = `h2-${h2Texts.length}`;
@@ -111,8 +64,10 @@ export default function BlogPost({ data }) {
     }
   });
 
-  const h2Links = h2Texts.map(({ id, innerHTML }) => (
-    <li key={id} className="tol__li"><a href={`#${id}`} dangerouslySetInnerHTML={{ __html: innerHTML }}></a></li>
+  const h2Links = h2Texts.map(({ id, innerHTML, ariaLabel }) => (
+    <li key={id} className="tol__li">
+      <a href={`#${id}`} aria-label={ariaLabel || "Table of contents"} dangerouslySetInnerHTML={{ __html: innerHTML }}></a>
+    </li>
   ));
 
   
@@ -172,7 +127,7 @@ export default function BlogPost({ data }) {
                 </div>
               </div>
             </div>
-              {faqData.length > 0 ? <FAQ faqData={faqData}/> : ''}
+              {faqData.length > 0 ? <Faq faqData={faqData}/> : ''}
               <Subscribe buttonId="ud-postform"/>
               <div className="post__about-out">
                 <div className="post__about">
@@ -210,7 +165,6 @@ export default function BlogPost({ data }) {
               <Trends/>
               <div className="maxww">
                 <Categories/>
-                <Ads/>
                 <Related posts={post.relatedPosts} limit={4} classmain="postcard" layoutHorizontal={true} titleh3={true}/>
               </div>
           </div>
@@ -232,9 +186,6 @@ export default function BlogPost({ data }) {
           </div>
         </div>
       </div>
-        <Modal open={open} onClose={onCloseModal} center>
-          <img src={imageSrc} alt={imageAlt} />
-        </Modal>
     </Layout>
   )
 }

@@ -236,13 +236,14 @@ exports.createSchemaCustomization = ({ actions }) => {
 
 
 exports.createResolvers = ({ actions, createResolvers }) => {
-  const fetch = require('node-fetch')
 
   createResolvers({
     WpPost: {
       related_posts: {
         resolve: async (source, args, context, info) => {
           const { databaseId } = source
+
+          const fetch = (await import('node-fetch')).default;
 
           const response = await fetch(
             `https://cms.udonis.co/wp-json/yarpp/v1/related/${databaseId}`

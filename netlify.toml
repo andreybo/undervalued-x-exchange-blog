@@ -6,9 +6,6 @@
     command = "gatsby develop"
     targetPort = 8000
 
-[images]
-	remote_images = ["https://cms.udonis.co/.*"]
-
 [[redirects]]
     from = "/tiktok-updates/optimization-preference"
     to = "/404"
@@ -1731,3 +1728,17 @@
     from = "/mobile-marketing/mobile-games/7-ways-to-attract-new-users"
     to = "/mobile-marketing/mobile-games/user-acquisition-strategy-mobile-games"
     status = 301
+
+[build.environment]
+NETLIFY_IMAGE_CDN = "true"
+
+[images]
+remote_images = [
+  'https://exquisite-ganache-74bc52.netlify.app/.*',
+  'https://www.blog.udonis.co/.*',
+  'https://cms.udonis.co/.*',
+  'https://staging11.cms.udonis.co/.*'
+]
+
+[[plugins]]
+package = "@netlify/plugin-gatsby"

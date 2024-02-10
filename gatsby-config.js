@@ -8,6 +8,7 @@ module.exports = {
     keywords: "Digital, Ads"
   },
   plugins: [
+    'gatsby-plugin-netlify',
   {
     resolve: `gatsby-plugin-feed`,
     options: {
@@ -117,13 +118,12 @@ module.exports = {
     resolve: `gatsby-source-wordpress`,
     options: {
       url: process.env.WPGRAPHQL_URL || `https://cms.udonis.co/graphql`,
+      html: {
+        useGatsbyImage: true,
+      },
       schema: {
         timeout: 5000000,
         perPage: 20,
-      },
-      html: {
-        useGatsbyImage: false,
-        createStaticFiles: false,
       },
       production: {
         hardCacheMediaFiles: true,
@@ -158,6 +158,13 @@ module.exports = {
     }
   },
   {
+    resolve: `gatsby-plugin-sharp`,
+    options: {
+      defaultQuality: 90,
+      failOn: `none`,
+    },
+  },
+  {
     resolve: 'gatsby-transformer-remark',
     options: {
       plugins: [
@@ -168,29 +175,11 @@ module.exports = {
             showCaptions: true,
             quality: 80,
             loading: 'auto',
-            linkImagesToOriginal: false
+            linkImagesToOriginal: true
           },
         },
         `gatsby-remark-lazy-load`
       ],
-    },
-  },
-  {
-    resolve: 'gatsby-remark-audio',
-    options: {
-      preload: 'auto',
-      loop: false,
-      controls: true,
-      muted: false,
-      autoplay: false
-    }
-  },
-  {
-    resolve: `gatsby-plugin-sharp`,
-    options: {
-      defaultQuality: 90,
-      failOnError: false,
-      failOn: `none`,
     },
   },
   `gatsby-transformer-sharp`,
@@ -213,33 +202,6 @@ module.exports = {
       display: `minimal-ui`,
       icon: `src/images/udonis-icon.png`
     },
-  },
-  {
-    resolve: 'gatsby-plugin-google-gtag',
-    options: {
-        trackingIds: [
-            process.env.GA_MEASUREMENT_ID || "G-0QZQZQZQZQ",
-        ],
-        gtagConfig: {
-            anonymize_ip: true,
-            cookie_expires: 0,
-        },
-        pluginConfig: {
-            head: true,
-            respectDNT: false,
-        },
-    },
-},
-  {
-    resolve: `gatsby-plugin-gdpr-cookies`,
-    options: {
-      googleTagManager: {
-        trackingId: process.env.GTM, // leave empty if you want to disable the tracker
-        cookieName: 'gatsby-gdpr-google-tagmanager', // default
-        dataLayerName: 'dataLayer', // default
-      },
-      environments: ["production", "development"],
-    }
   },
   {
       resolve: `gatsby-plugin-disqus`,

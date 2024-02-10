@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Search from "./search";
 
 const Header = ({title = "Udonis"}) => {
@@ -15,14 +15,6 @@ const Header = ({title = "Udonis"}) => {
   useEffect(() => {
     
   }, []);
-
-  const scrollMenu = (direction) => {
-    if (direction === 'left') {
-      menuRef.current.scrollLeft -= 200;
-    } else {
-      menuRef.current.scrollLeft += 200;
-    }
-  };
 
   
   const [isSearch, setSearch] = useState(false);
@@ -68,7 +60,6 @@ const Header = ({title = "Udonis"}) => {
 `)
 
 
-const [pathname, setPathname] = useState(null);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
 
@@ -81,7 +72,6 @@ const [pathname, setPathname] = useState(null);
   useEffect(() => {
     if (typeof window !== "undefined") {
       const currentPath = window.location.pathname;
-      setPathname(currentPath);
 
       const matchedCategory = categories.find(node => normalizeUri(node.uri) === normalizeUri(currentPath));
 
@@ -95,8 +85,6 @@ const [pathname, setPathname] = useState(null);
       console.log('Pathname:', currentPath);
     }
   }, [categories]);
-
-  console.log('Selected Category:', selectedCategory);
 
 
   
@@ -202,7 +190,7 @@ const [pathname, setPathname] = useState(null);
             ))}
               </ul>
               <div className="header__toggle-block">
-                <button className={`${isActive ? "app header__menu toggle active" : " app header__menu toggle"}`} onClick={handleToggle}>
+                <button aria-label='Header menu' className={`${isActive ? "app header__menu toggle active" : " app header__menu toggle"}`} onClick={handleToggle}>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -241,6 +229,7 @@ const [pathname, setPathname] = useState(null);
               <div className="catm__search--buttons">
                 <button
                   className='header__msearch'
+                  aria-label='Search'
                   onClick={searchToggle}
                 >
                   <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -249,6 +238,7 @@ const [pathname, setPathname] = useState(null);
                 </button>
                 <button
                   className='header__msearch-close'
+                  aria-label='Close Search'
                   onClick={searchToggle}
                 >
                   <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">

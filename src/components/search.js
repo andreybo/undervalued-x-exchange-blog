@@ -23,11 +23,7 @@ const SearchPage = () => {
     setInputActive(true);
   };
 
-  const handleBlur = () => {
-    setInputActive(false);
-  };
-
-  const searchInputRef = useRef(null);           
+  const searchInputRef = useRef(null);
 
   const handleClickOutside = (event) => {
       if (searchInputRef.current && !searchInputRef.current.contains(event.target)) {

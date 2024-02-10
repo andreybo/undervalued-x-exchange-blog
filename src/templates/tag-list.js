@@ -10,7 +10,7 @@ import { graphql } from "gatsby"
 
 
 const TagList = ({ pageContext, data:{postdata} }) => {
-  const { tag, currentPage, numPages,  name, numPosts } = pageContext
+  const { tag, currentPage, numPages } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
   const prevPage = currentPage - 1 === 1 ? tag : tag + "/" + (currentPage - 1).toString()
@@ -53,6 +53,7 @@ const TagList = ({ pageContext, data:{postdata} }) => {
                   </li>
                 );
               }
+              return null; // Return null for indices that do not correspond to valid pages
             })}
             {!isLast && numPages > 1  && (
               <Link to={nextPage} rel="next" className="next">

@@ -7,7 +7,6 @@ import CardLong from "../components/cards/cardTemplateMainLong";
 import CardSmall from "../components/cards/cardTemplateMainSmall";
 import Layout from  "../components/layout";
 import Seo from "../components/seo"
-import Ads from "../components/ads";
 import Subscribe from "../components/subscribe";
 
 function IndexPage({
