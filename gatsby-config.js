@@ -120,13 +120,14 @@ module.exports = {
       url: process.env.WPGRAPHQL_URL || `https://cms.udonis.co/graphql`,
       html: {
         useGatsbyImage: true,
+        createStaticFiles: false,
       },
       schema: {
         timeout: 5000000,
         perPage: 20,
       },
       production: {
-        hardCacheMediaFiles: true,
+        hardCacheMediaFiles: false,
       },
       develop: {
         hardCacheMediaFiles: true,
