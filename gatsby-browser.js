@@ -8,10 +8,13 @@
 //import 'lazysizes'
 exports.onRouteUpdate = ({ location, prevLocation }) => {
     if (prevLocation !== null) {
-      const iframes = document.querySelectorAll('iframe');
-      iframes.forEach(iframe => {
-        iframe.src = iframe.src;
-      });
+      setTimeout(() => {
+        const iframes = document.querySelectorAll('iframe');
+        iframes.forEach(iframe => {
+          const src = iframe.src;
+          iframe.src = '';
+          iframe.src = src;
+        });
+      }, 100); // Adjust the delay as necessary
     }
   };
-  
