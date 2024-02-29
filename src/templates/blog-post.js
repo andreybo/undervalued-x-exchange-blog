@@ -56,17 +56,6 @@ export default function BlogPost({ data }) {
               <h2 id={id} dangerouslySetInnerHTML={{ __html: innerHTML }}>
               </h2>
             );
-
-          case 'iframe':
-            // Preserve existing attributes and add a new class
-            const attributes = domNode.attribs;
-            const existingClass = attributes.class ? attributes.class + " " : "";
-            const newClass = `${existingClass} custom-iframe-class`; // Your additional class
-    
-            // Create a new iframe element with preserved attributes and the added class
-            return (
-              <iframe {...attributes} className={newClass}></iframe>
-            );
   
         default:
           // If you want to handle other tags differently, add more cases here.
