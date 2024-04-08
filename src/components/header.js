@@ -118,6 +118,12 @@ const Header = ({title = "Udonis"}) => {
           submenu: [],
           class: "nav__reporting"
         },
+        {
+          path: "https://www.udonis.co/mobile-game-marketing-agency",
+          name: "mobile game marketing agency",
+          submenu: [],
+          class: "nav__game"
+        },
       ]
     },
     {
