@@ -1734,6 +1734,11 @@
     to = "/mobile-marketing/mobile-games/mobile-game-market-trends"
     status = 301
 
+[[redirects]]
+    from = "/mobile-marketing/mobile-games/gaming-market-top-games"
+    to = "/mobile-marketing/mobile-games/mobile-game-market-trends"
+    status = 301
+
 [build.environment]
 NETLIFY_IMAGE_CDN = "true"
 
