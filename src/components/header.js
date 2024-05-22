@@ -107,22 +107,73 @@ const Header = ({title = "Udonis"}) => {
           class: "nav__portfolio"
         },
         {
+          path: "https://www.udonis.co/mobile-game-marketing-agency",
+          name: "mobile game marketing",
+          submenu: [],
+          class: "nav__mgm"
+        },
+        {
+          path: "https://udonis.co/mobile-app-marketing-agency",
+          name: "mobile app marketing",
+          submenu: [],
+          class: "nav__mam"
+        },
+        {
+          path: "https://udonis.co/mobile-marketing-agency",
+          name: "mobile marketing",
+          submenu: [],
+          class: "nav__mm"
+        },
+
+
+
+        {
+          path: "https://www.udonis.co/marketing-dashboard",
+          name: "marketing dashboards",
+          submenu: [],
+          class: "nav__md"
+        },
+        {
+          path: "https://udonis.co/media-buying-agency",
+          name: "media buying",
+          submenu: [],
+          class: "nav__mb"
+        },
+        {
           path: "https://www.udonis.co/mobile-business-development",
           name: "mobile business development",
           submenu: [],
           class: "nav__mbd"
         },
         {
-          path: "https://www.udonis.co/marketing-dashboard",
-          name: "marketing dashboards",
+          path: "https://udonis.co/google-ads-agency",
+          name: "Google Ads",
           submenu: [],
-          class: "nav__reporting"
+          class: "nav__google"
         },
         {
-          path: "https://www.udonis.co/mobile-game-marketing-agency",
-          name: "mobile game marketing agency",
+          path: "https://udonis.co/tiktok-ads-agency",
+          name: "TikTok Ads",
           submenu: [],
-          class: "nav__game"
+          class: "nav__tiktok"
+        },
+        {
+          path: "https://udonis.co/youtube-marketing-agency",
+          name: "YouTube marketing",
+          submenu: [],
+          class: "nav__youtube"
+        },
+        {
+          path: "https://udonis.co/instagram-marketing-agency",
+          name: "Instagram marketing",
+          submenu: [],
+          class: "nav__instagram"
+        },
+        {
+          path: "https://udonis.co/digital-marketing-agency",
+          name: "digital marketing",
+          submenu: [],
+          class: "nav__digital"
         },
       ]
     },
@@ -152,6 +203,12 @@ const Header = ({title = "Udonis"}) => {
     }
   ]
 
+  const [isOpen, setIsOpen] = useState(true);
+
+  const toggleSubmenu = () => {
+    setIsOpen(!isOpen);
+  };
+
 
   return (
     <>
@@ -171,15 +228,16 @@ const Header = ({title = "Udonis"}) => {
                 }
                 key={link.name}
               >
-                <a
-                  className={"header__nav-link nav-link headm " + link.class}
-                  href={link.path}
-                  bec={link.name}
-                >
+                  <a
+                    className={`header__nav-link nav-link headm ${link.class}`}
+                    href={link.path}
+                    bec={link.name}
+                    onClick={link.submenu && link.submenu.length > 0 ? toggleSubmenu : undefined}
+                  >
                   {link.name}
                 </a>
                 {link.submenu && link.submenu.length > 0 ? (
-                  <ul className="header__submenu">
+                  <ul className={`header__submenu ${isOpen ? 'open' : ''}`}>
                     {link.submenu.map((sublink) => (
                       <li className="header__submenu-item" key={sublink.name}>
                         <a

@@ -507,18 +507,34 @@ img {
       }
       &-link{
         @include media-breakpoint-down(md){
-          padding: 10px 15px;
+          padding: 0;
           display: block;
           width: 100%;
+        }
+        &.headm{
+          position: relative;
+          &:after{
+            position: absolute;
+            content: '';
+            display: none;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7L10 13L16 7" stroke="white" stroke-width="3"/></svg>');
+            @include media-breakpoint-down(md){
+              display: block;
+            }
+          }
         }
       }
       @include media-breakpoint-down(md){
           position: fixed;
           background: $gold;
-          width: 80%;
+          width: 90%;
           flex-direction: column;
-          padding-top: 0px;
-          padding-bottom: 20px;
+          padding-bottom: 0px;
           //padding-left: 15px;
           //padding-right: 15px;
           display: block;
@@ -537,7 +553,7 @@ img {
 
           &-li{
               margin-left: 0px;
-              padding: 10px 0;
+              padding: 5px 0;
               a{
                   color: #fff;
                   opacity: 1;
@@ -573,6 +589,11 @@ img {
     visibility: hidden;
     z-index: 1;
     padding: 0;
+    &.open{
+      @include media-breakpoint-down(md){
+        display: none;
+      }
+    }
     @include media-breakpoint-up(md){
       background-color: $dark;
       border-radius: $border-m;
@@ -663,7 +684,7 @@ img {
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       background: rgba(0, 0, 0, 0.17);
       @include media-breakpoint-down(md){
-        padding: 10px 25px;
+        padding: 0px 10px 0 15px;
         display: flex;
         &:before{
           content: '-';
