@@ -113,13 +113,13 @@ const Header = ({title = "Udonis"}) => {
           class: "nav__mgm"
         },
         {
-          path: "https://udonis.co/mobile-app-marketing-agency",
+          path: "https://www.udonis.co/mobile-app-marketing-agency",
           name: "mobile app marketing",
           submenu: [],
           class: "nav__mam"
         },
         {
-          path: "https://udonis.co/mobile-marketing-agency",
+          path: "https://www.udonis.co/mobile-marketing-agency",
           name: "mobile marketing",
           submenu: [],
           class: "nav__mm"
@@ -134,7 +134,7 @@ const Header = ({title = "Udonis"}) => {
           class: "nav__md"
         },
         {
-          path: "https://udonis.co/media-buying-agency",
+          path: "https://www.udonis.co/media-buying-agency",
           name: "media buying",
           submenu: [],
           class: "nav__mb"
@@ -146,31 +146,31 @@ const Header = ({title = "Udonis"}) => {
           class: "nav__mbd"
         },
         {
-          path: "https://udonis.co/google-ads-agency",
+          path: "https://www.udonis.co/google-ads-agency",
           name: "Google Ads",
           submenu: [],
           class: "nav__google"
         },
         {
-          path: "https://udonis.co/tiktok-ads-agency",
+          path: "https://www.udonis.co/tiktok-ads-agency",
           name: "TikTok Ads",
           submenu: [],
           class: "nav__tiktok"
         },
         {
-          path: "https://udonis.co/youtube-marketing-agency",
+          path: "https://www.udonis.co/youtube-marketing-agency",
           name: "YouTube marketing",
           submenu: [],
           class: "nav__youtube"
         },
         {
-          path: "https://udonis.co/instagram-marketing-agency",
+          path: "https://www.udonis.co/instagram-marketing-agency",
           name: "Instagram marketing",
           submenu: [],
           class: "nav__instagram"
         },
         {
-          path: "https://udonis.co/digital-marketing-agency",
+          path: "https://www.udonis.co/digital-marketing-agency",
           name: "digital marketing",
           submenu: [],
           class: "nav__digital"

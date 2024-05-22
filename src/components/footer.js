@@ -11,17 +11,17 @@ const Footer = () => (
           <li><a href="https://www.udonis.co/acquisition">user acquisition</a></li>
           <li><a href="https://www.udonis.co/creative-production">creative production</a></li>
           <li><a href="https://www.udonis.co/mobile-game-marketing-agency">mobile game marketing</a></li>
-          <li><a href="https://udonis.co/mobile-app-marketing-agency">mobile app marketing</a></li>
-          <li><a href="https://udonis.co/mobile-marketing-agency">mobile marketing</a></li>
+          <li><a href="https://www.udonis.co/mobile-app-marketing-agency">mobile app marketing</a></li>
+          <li><a href="https://www.udonis.co/mobile-marketing-agency">mobile marketing</a></li>
           <li><a href="https://www.udonis.co/marketing-dashboard">marketing dashboards</a></li>
-          <li><a href="https://udonis.co/media-buying-agency">media buying</a></li>
-          <li><a href="https://udonis.co/digital-marketing-agency">digital marketing</a></li>
+          <li><a href="https://www.udonis.co/media-buying-agency">media buying</a></li>
+          <li><a href="https://www.udonis.co/digital-marketing-agency">digital marketing</a></li>
           <li><a href="https://www.udonis.co/mobile-business-development">mobile business development</a></li>
-          <li><a href="https://udonis.co/google-ads-agency">Google Ads</a></li>
-          <li><a href="https://udonis.co/tiktok-ads-agency">TikTok Ads</a></li>
-          <li><a href="https://udonis.co/youtube-marketing-agency">YouTube marketing</a></li>
-          <li><a href="https://udonis.co/instagram-marketing-agency">Instagram marketing</a></li>
-          <li><a href="https://udonis.co/mobile-advertising-agency">mobile advertising</a></li>
+          <li><a href="https://www.udonis.co/google-ads-agency">Google Ads</a></li>
+          <li><a href="https://www.udonis.co/tiktok-ads-agency">TikTok Ads</a></li>
+          <li><a href="https://www.udonis.co/youtube-marketing-agency">YouTube marketing</a></li>
+          <li><a href="https://www.udonis.co/instagram-marketing-agency">Instagram marketing</a></li>
+          <li><a href="https://www.udonis.co/mobile-advertising-agency">mobile advertising</a></li>
           </ul>
         </div>
 
