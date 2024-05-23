@@ -108,6 +108,9 @@ export const query = graphql`
       }
       title
       uri
+      seo {
+        metaDesc
+      }
       categories {
         nodes {
           name

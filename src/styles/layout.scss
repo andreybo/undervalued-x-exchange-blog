@@ -513,7 +513,7 @@ img {
         }
         &.headm{
           position: relative;
-          &:after{
+          &:before{
             @include media-breakpoint-down(md){
               position: absolute;
               content: '';
