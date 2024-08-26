@@ -74,7 +74,7 @@ class TheFormComponent extends React.Component {
 
 render() {
   return(
-    <div className="post__subscribe">
+    <div className="post__subscribe" id="subscribe">
       <div className="post__grid-bottom p60">
         <div className="left">
           <h3>Get the insider’s edge in mobile gaming</h3>
