@@ -3801,3 +3801,42 @@ div#disqus_thread iframe[sandbox] {
     line-height: 1.2;
   }
 }
+
+
+
+
+.notification-banner {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: top 0.3s ease; /* Плавный переход при изменении позиции */
+}
+
+.notification-banner__link {
+  font-size: 14px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.notification-banner__close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Медиа-запрос для экранов с шириной до 768px */
+@media (max-width: 768px) {
+  .notification-banner {
+    top: 50px; /* Изменение top на 50px для мобильных устройств */
+  }
+}
