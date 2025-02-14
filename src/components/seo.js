@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { useLocation } from '@reach/router';
 
-function SEO({ title, seo, robots, metaDesciption, amp, author, datePublished, dateModified, category, faqData }) {
+function SEO({ title, seo, robots, metaDesciption, amp, author, datePublished, dateModified, category, faqData, noindex = false }) {
   const {
     site: { siteMetadata },
   } = useStaticQuery(graphql`
@@ -96,7 +96,7 @@ function SEO({ title, seo, robots, metaDesciption, amp, author, datePublished, d
       <meta property="og:site_name" content={defaultTitle} />
       {seo?.opengraphImage ? <meta property="og:image" content={seo.opengraphImage.sourceUrl} /> : <meta property="og:image" content="https://www.blog.udonis.co/og/og.jpg" />}
       <meta name="og:type" content="website" />
-      
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta name="twitter:site" content="@UdonisMarketing" />
       <meta name="twitter:title" content={pageTitle} />
