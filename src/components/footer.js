@@ -1,5 +1,5 @@
 import * as React from "react"
-import logoLight from "../static/uploads/logo-light.png"
+import logoLight from "../../static/uploads/logo-light.png"
 
 const Footer = () => (
   <footer className="footer bg-primary text-white">
