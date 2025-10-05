@@ -24,26 +24,44 @@ export default function BlogPost({ data }) {
   const transformedContent = parse(post.content, {
     replace: domNode => {
       switch (domNode.name) {
-  
-          case 'h2':
-            let innerHTML = '';
-            if (domNode.children) {
-              domNode.children.forEach(child => {
-                if (child.type === 'text') {
-                  innerHTML += child.data;
-                } else if (child.type === 'tag') {
-                  innerHTML += `<${child.name}>${child.children.map(c => c.data).join('')}</${child.name}>`;
-                }
-              });
+        case 'img':
+          // Handle lazy loading images
+          if (domNode.attribs) {
+            const attrs = { ...domNode.attribs };
+            
+            // If image has data-src but no src, copy data-src to src for immediate loading
+            if (attrs['data-src'] && !attrs.src) {
+              attrs.src = attrs['data-src'];
             }
-            const id = `h2-${h2Texts.length}`;
-            h2Texts.push({ id, innerHTML });
-          
-            return (
-              <h2 id={id} dangerouslySetInnerHTML={{ __html: innerHTML }}>
-              </h2>
-            );
+            
+            // Ensure lazyload class is present for lazysizes
+            if (attrs['data-src']) {
+              attrs.className = attrs.className ? `${attrs.className} lazyload` : 'lazyload';
+            }
+            
+            return <img {...attrs} />;
+          }
+          break;
   
+        case 'h2':
+          let innerHTML = '';
+          if (domNode.children) {
+            domNode.children.forEach(child => {
+              if (child.type === 'text') {
+                innerHTML += child.data;
+              } else if (child.type === 'tag') {
+                innerHTML += `<${child.name}>${child.children.map(c => c.data).join('')}</${child.name}>`;
+              }
+            });
+          }
+          const id = `h2-${h2Texts.length}`;
+          h2Texts.push({ id, innerHTML });
+        
+          return (
+            <h2 id={id} dangerouslySetInnerHTML={{ __html: innerHTML }}>
+            </h2>
+          );
+
         default:
           // If you want to handle other tags differently, add more cases here.
           break;

@@ -1,4 +1,5 @@
 import * as React from "react"
+import logoLight from "../static/uploads/logo-light.png"
 
 const Footer = () => (
   <footer className="footer bg-primary text-white">
@@ -7,7 +8,7 @@ const Footer = () => (
         {/* Company Info */}
         <div className="footer-company">
           <img
-            src="/uploads/logo-light.png"
+            src={logoLight}
             alt="UndervaluedX Realty Exchange"
             className="footer-logo h-10 w-auto mb-4"
           />
