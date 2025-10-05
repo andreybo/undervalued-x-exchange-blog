@@ -18,7 +18,7 @@ export default function FAQ({ postData }) {
           </div>
         </div>
         <div className="postWidjet__image">
-         <img class="imgsvg imgu" src="/svg/short.svg" alt="Udonis" width="150" height="164"/>
+         <img class="imgsvg imgu" src="/svg/short.svg" alt="undervalued-x-exchange" width="150" height="164"/>
         </div>
       </div>
     </Link>

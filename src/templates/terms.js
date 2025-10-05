@@ -10,11 +10,11 @@ const Terms = () => {
         <h1 className="tp__inner-title">Terms and Conditions</h1>
         <p>
           These terms and conditions outline the rules and regulations for the
-          use of <strong>Udonis’s</strong> websites.
+          use of <strong>undervalued-x-exchange’s</strong> websites.
           <br />
           By accessing this website we assume you accept these terms and
           conditions in full. Do not continue to use <strong>
-            Udonis’s
+            undervalued-x-exchange’s
           </strong>{" "}
           website if you do not accept all of the terms and conditions stated on
           this page.
@@ -43,10 +43,10 @@ const Terms = () => {
         <br />
         <h2>Cookies</h2>
         <p>
-          We employ the use of cookies. By using Udonis’s website you consent to
-          the use of cookies in accordance with Udonis’s defined{" "}
+          We employ the use of cookies. By using undervalued-x-exchange’s website you consent to
+          the use of cookies in accordance with undervalued-x-exchange’s defined{" "}
           <strong>privacy policy</strong>. (
-          <a href="/privacy">https://www.udonis.co/privacy</a>)
+          <a href="/privacy">https://www.undervalued-x-exchange.co/privacy</a>)
           <br />
           Most of the modern day interactive web sites use cookies to enable us
           to retrieve user details for each visit. Cookies are used in some
@@ -57,35 +57,35 @@ const Terms = () => {
         <br />
         <h2>License</h2>
         <p>
-          Unless otherwise stated, <strong>Udonis</strong> and/or it’s licensors
+          Unless otherwise stated, <strong>undervalued-x-exchange</strong> and/or it’s licensors
           own the intellectual property rights for all material on{" "}
-          <strong>Udonis</strong>. All intellectual property rights are
+          <strong>undervalued-x-exchange</strong>. All intellectual property rights are
           reserved. You may view and/or print pages from{" "}
-          <a href="https://www.udonis.co">https://www.udonis.co</a> and{" "}
-          <a href="https://www.blog.udonis.co">https://www.blog.udonis.co</a> or
+          <a href="https://www.undervalued-x-exchange.co">https://www.undervalued-x-exchange.co</a> and{" "}
+          <a href="https://www.blog.undervalued-x-exchange.co">https://www.blog.undervalued-x-exchange.co</a> or
           any other subdomain related to{" "}
-          <a href="https://www.udonis.co">https://www.udonis.co</a> for your own
+          <a href="https://www.undervalued-x-exchange.co">https://www.undervalued-x-exchange.co</a> for your own
           personal use subject to restrictions set in these terms and
           conditions.
           <br />
           You must not:
           <br />- Republish material from{" "}
-          <a href="https://www.udonis.co">https://www.udonis.co</a> and{" "}
-          <a href="https://www.blog.udonis.co">https://www.blog.udonis.co</a> or
+          <a href="https://www.undervalued-x-exchange.co">https://www.undervalued-x-exchange.co</a> and{" "}
+          <a href="https://www.blog.undervalued-x-exchange.co">https://www.blog.undervalued-x-exchange.co</a> or
           any other subdomain related to{" "}
-          <a href="https://www.udonis.co">https://www.udonis.co</a>
+          <a href="https://www.undervalued-x-exchange.co">https://www.undervalued-x-exchange.co</a>
           <br />- Sell, rent or sub-license material from{" "}
-          <a href="https://www.udonis.co">https://www.udonis.co</a> and{" "}
-          <a href="https://www.blog.udonis.co">https://www.blog.udonis.co</a> or
+          <a href="https://www.undervalued-x-exchange.co">https://www.undervalued-x-exchange.co</a> and{" "}
+          <a href="https://www.blog.undervalued-x-exchange.co">https://www.blog.undervalued-x-exchange.co</a> or
           any other subdomain related to{" "}
-          <a href="https://www.udonis.co">https://www.udonis.co</a>
+          <a href="https://www.undervalued-x-exchange.co">https://www.undervalued-x-exchange.co</a>
           <br />- Reproduce, duplicate or copy material from{" "}
-          <a href="https://www.udonis.co">https://www.udonis.co</a> and{" "}
-          <a href="https://www.blog.udonis.co">https://www.blog.udonis.co</a> or
+          <a href="https://www.undervalued-x-exchange.co">https://www.undervalued-x-exchange.co</a> and{" "}
+          <a href="https://www.blog.undervalued-x-exchange.co">https://www.blog.undervalued-x-exchange.co</a> or
           any other subdomain related to{" "}
-          <a href="https://www.udonis.co">https://www.udonis.co</a>
+          <a href="https://www.undervalued-x-exchange.co">https://www.undervalued-x-exchange.co</a>
           <br />
-          Redistribute content from <strong>Udonis</strong>. (Unless content is
+          Redistribute content from <strong>undervalued-x-exchange</strong>. (Unless content is
           specifically made for redistribution).
         </p>
         <br />
@@ -95,18 +95,18 @@ const Terms = () => {
           <br />
           Certain parts of this website offer the opportunity for users to post
           and exchange opinions, information, material and data ('Comments') in
-          areas of the website. <strong>Udonis</strong> does not screen, edit,
+          areas of the website. <strong>undervalued-x-exchange</strong> does not screen, edit,
           publish or review Comments prior to their appearance on the website
           and Comments do not reflect the views or opinions of{" "}
-          <strong>Udonis</strong>, its agents or affiliates. Comments reflect
+          <strong>undervalued-x-exchange</strong>, its agents or affiliates. Comments reflect
           the view and opinion of the person who posts such view or opinion. To
-          the extent permitted by applicable laws <strong>Udonis</strong> shall
+          the extent permitted by applicable laws <strong>undervalued-x-exchange</strong> shall
           not be responsible or liable for the Comments or for any loss cost,
           liability, damages or expenses caused and or suffered as a result of
           any use of and/or posting of and/or appearance of the Comments on this
           website.
           <br />
-          <strong>Udonis</strong> reserves the right to monitor all Comments and
+          <strong>undervalued-x-exchange</strong> reserves the right to monitor all Comments and
           to remove any Comments which it considers in its absolute discretion
           to be inappropriate, offensive or otherwise in breach of these Terms
           and Conditions.
@@ -126,7 +126,7 @@ const Terms = () => {
           promote business or custom or present commercial activities or
           unlawful activity.
           <br />
-          You hereby grant to <strong>Udonis</strong> a non-exclusive
+          You hereby grant to <strong>undervalued-x-exchange</strong> a non-exclusive
           royalty-free license to use, reproduce, edit and authorize others to
           use, reproduce and edit any of your Comments in any and all forms,
           formats or media.
@@ -190,7 +190,7 @@ const Terms = () => {
           (b)the organization does not have an unsatisfactory record with us;{" "}
           <br />
           (c) the benefit to us from the visibility associated with the
-          hyperlink outweighs the absence of <strong>Udonis</strong>;<br />
+          hyperlink outweighs the absence of <strong>undervalued-x-exchange</strong>;<br />
           (d) where the link is in the context of general resource information
           or is otherwise consistent with editorial content in a newsletter or
           similar product furthering the mission of the organization.
@@ -207,7 +207,7 @@ const Terms = () => {
           <br />
           If you are among the organizations listed in paragraph 2 above and are
           interested in linking to our website, you must notify us by sending an
-          e-mail to <a href="mailto:hello@udonis.co">hello@udonis.co</a>. Please
+          e-mail to <a href="mailto:hello@undervalued-x-exchange.co">hello@undervalued-x-exchange.co</a>. Please
           include your name, your organization name, contact information (such
           as a phone number and/or e-mail address) as well as the URL of your
           site, a list of any URLs from which you intend to link to our Web
@@ -306,10 +306,10 @@ const Terms = () => {
         <p>
           If you have any questions about our Terms &amp; Conditions, the
           practices of this site, or your dealings with this site, please
-          contact us at: <a href="mailto:hello@udonis.co">hello@udonis.co</a>.
+          contact us at: <a href="mailto:hello@undervalued-x-exchange.co">hello@undervalued-x-exchange.co</a>.
           <br />
           <strong>
-            Udonis Ltd.,
+            undervalued-x-exchange Ltd.,
             <br />
             Ribarska 4 ,<br />
             Osijek, Osjecko-Baranjska County 31000,
@@ -327,6 +327,6 @@ export default Terms;
 export const Head = () => (
   <Seo
     title="Terms and Conditions"
-    metaDesciption="Udonis Terms and Conditions for your reading pleasure."
+    metaDesciption="undervalued-x-exchange Terms and Conditions for your reading pleasure."
   />
 )

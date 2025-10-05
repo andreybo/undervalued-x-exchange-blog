@@ -1745,9 +1745,8 @@ NETLIFY_IMAGE_CDN = "true"
 [images]
 remote_images = [
   'https://exquisite-ganache-74bc52.netlify.app/.*',
-  'https://www.blog.udonis.co/.*',
-  'https://cms.udonis.co/.*',
-  'https://staging11.cms.udonis.co/.*'
+  'https://www.blog.undervalued-x-exchange.co/.*',
+  'https://mihovilg1.sg-host.com/.*',
 ]
 
 [[plugins]]

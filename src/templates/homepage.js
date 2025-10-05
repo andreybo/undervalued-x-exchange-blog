@@ -55,7 +55,7 @@ function IndexPage({
           </div>
         </div>
 
-        <div className="hp__container">
+        <div className="hp__container hidden">
           <div className="hp__title">
             <h3 className="hp__title--text">Recently Updated</h3>
           </div>
@@ -74,7 +74,7 @@ function IndexPage({
           </div>
         </div>
 
-        <div className="hp__container">
+        <div className="hp__container hidden">
           <div className="hp__title">
             <h3 className="hp__title--text">Mobile Game Dissections</h3>
           </div>
@@ -88,63 +88,6 @@ function IndexPage({
               </div>
           <div className="hp__more">
             <a className="hp__more--link" href="/topics/mobile-game-dissections">
-              View More
-            </a>
-          </div>
-        </div>
-
-        <div className="hp__container">
-          <div className="hp__title">
-            <h3 className="hp__title--text">Mobile Game Market</h3>
-          </div>
-              <div className="hp__row row mb40">
-                <CardLong post={mgm.nodes[0]} classmain="card-long imin"/>
-              </div>
-              <div className="row grid2">
-                {mgm.nodes.map((post, index) => (
-                  index !== 0 && <CardMain post={post} classmain="col-md-4 col-12" key={index}/>
-                ))}
-              </div>
-          <div className="hp__more">
-            <a className="hp__more--link" href="/topics/mobile-game-market">
-              View More
-            </a>
-          </div>
-        </div>
-
-        <div className="hp__container">
-          <div className="hp__title">
-            <h3 className="hp__title--text">User Acquisition</h3>
-          </div>
-              <div className="hp__row row mb40">
-                <CardLong post={ua.nodes[0]} classmain="card-long imin"/>
-              </div>
-              <div className="row grid2">
-                {ua.nodes.map((post, index) => (
-                  index !== 0 && <CardMain post={post} classmain="col-md-4 col-12" key={index}/>
-                ))}
-              </div>
-          <div className="hp__more">
-            <a className="hp__more--link" href="/topics/user-acquisition">
-              View More
-            </a>
-          </div>
-        </div>
-
-        <div className="hp__container">
-          <div className="hp__title">
-            <h3 className="hp__title--text">Monetization</h3>
-          </div>
-              <div className="hp__row row mb40">
-                <CardLong post={monetization.nodes[0]} classmain="card-long imin"/>
-              </div>
-              <div className="row grid2">
-                {monetization.nodes.map((post, index) => (
-                  index !== 0 && <CardMain post={post} classmain="col-md-4 col-12" key={index}/>
-                ))}
-              </div>
-          <div className="hp__more">
-            <a className="hp__more--link" href="/topics/monetization">
               View More
             </a>
           </div>
@@ -323,7 +266,7 @@ export default IndexPage;
 
 export const Head = () => (
   <Seo
-  title='Blog | Udonis Mobile Marketing Agency'
+  title='Blog | undervalued-x-exchange Mobile Marketing Agency'
   metaDesciption='Dive deep into the mobile games industry: from user acquisition to monetization. Discover the latest trends, insights, and expert analyses all in one place.'
   />
 )

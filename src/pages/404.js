@@ -17,7 +17,7 @@ const NotFoundPage = ({ pageContext: { page } }) => {
                 </h1>
                 <p className='none__hero-descr'>This webpage disappeared and there&#39;s no reasonable explanation for it.</p>
                 <div className='none__hero-buttons'>
-                    <a className="main_cta main_cta--white" href="https://www.blog.udonis.co">
+                    <a className="main_cta main_cta--white" href="https://www.blog.undervalued-x-exchange.co">
                         <span>Blog</span>
                     </a>
                     <a className="main_cta main_cta--white" href="/">

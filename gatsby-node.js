@@ -246,7 +246,7 @@ exports.createResolvers = ({ actions, createResolvers }) => {
           const fetch = (await import('node-fetch')).default;
 
           const response = await fetch(
-            `https://cms.udonis.co/wp-json/yarpp/v1/related/${databaseId}`
+            `https://mihovilg1.sg-host.com/wp-json/yarpp/v1/related/${databaseId}`
           ).then(res => res.json())
 
           if (response && response.length) {

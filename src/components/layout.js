@@ -9,7 +9,7 @@ import { useLocation } from "@reach/router"
 import CustomCursor from "./custom-cursor"
 import { initializeAndTrack } from 'gatsby-plugin-gdpr-cookies'
 
-function Layout({ children, classmain = "page", title="Udonis" }) {
+function Layout({ children, classmain = "page", title="undervalued-x-exchange" }) {
   const location = useLocation()
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   useEffect(() => {

@@ -1,9 +1,9 @@
 {
-  "name": "udonis-website",
+  "name": "undervalued-x-exchange-website",
   "version": "2.0.0",
   "private": true,
-  "description": "Udonis Website",
-  "author": "@udonis",
+  "description": "undervalued-x-exchange Website",
+  "author": "@undervalued-x-exchange",
   "keywords": [
     "gatsby"
   ],
@@ -19,6 +19,7 @@
     "@mdx-js/mdx": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@netlify/gatsby-runner": "^1.1.14",
+    "ajv": "^8.17.1",
     "deepmerge": "^4.3.1",
     "dotenv": "^16.0.3",
     "flexsearch": "^0.7.31",
@@ -28,10 +29,12 @@
     "gatsby-plugin-disqus": "^1.2.6",
     "gatsby-plugin-feed": "^5.13.1",
     "gatsby-plugin-gdpr-cookies": "^2.0.9",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-google-gtag": "^5.13.1",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-local-search": "^2.0.1",
     "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-postcss": "^6.15.0",
     "gatsby-plugin-sass": "^6.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-plugin-sitemap": "^6.13.1",
@@ -55,10 +58,17 @@
     "sass": "^1.62.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
     "gatsby-plugin-netlify": "^5.1.1",
-    "prettier": "^2.5.1"
+    "postcss": "^8.5.6",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^4.1.14"
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "resolutions": {
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0"
   }
 }

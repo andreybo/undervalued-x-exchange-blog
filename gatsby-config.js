@@ -1,14 +1,24 @@
 module.exports = {
   trailingSlash: `never`,
   siteMetadata: {
-    title: `Udonis Mobile Marketing Agency`,
-    description: `Udonis offers all the mobile marketing services you need. Creative production, user acquisition, monetization, growth consulting, and more.!`,
-    siteUrl: `https://www.blog.udonis.co`,
-    author: `@UdonisMarketing`,
+    title: `undervalued-x-exchange Mobile Marketing Agency`,
+    description: `undervalued-x-exchange offers all the mobile marketing services you need. Creative production, user acquisition, monetization, growth consulting, and more.!`,
+    siteUrl: `https://www.blog.undervalued-x-exchange.co`,
+    author: `@undervalued-x-exchangeMarketing`,
     keywords: "Digital, Ads"
   },
   plugins: [
     'gatsby-plugin-netlify',
+  {
+    resolve: `gatsby-plugin-google-fonts`,
+    options: {
+      fonts: [
+        `Spectral\:300,400,500,600,700`,
+        `Open Sans\:300,400,500,600,700`
+      ],
+      display: 'swap'
+    }
+  },
   {
     resolve: `gatsby-plugin-feed`,
     options: {
@@ -117,7 +127,7 @@ module.exports = {
   {
     resolve: `gatsby-source-wordpress`,
     options: {
-      url: process.env.WPGRAPHQL_URL || `https://cms.udonis.co/graphql`,
+      url: process.env.WPGRAPHQL_URL || `https://mihovilg1.sg-host.com/graphql`,
       html: {
         useGatsbyImage: true,
         createStaticFiles: false,
@@ -195,8 +205,8 @@ module.exports = {
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
-      name: `udonis-website`,
-      short_name: `udonis`,
+      name: `undervalued-x-exchange-website`,
+      short_name: `undervalued-x-exchange`,
       start_url: `/`,
       background_color: `#fff`,
       theme_color: `#fff`,
@@ -234,13 +244,13 @@ module.exports = {
   {
       resolve: `gatsby-plugin-disqus`,
       options: {
-          shortname: `udonis-blog`
+          shortname: `undervalued-x-exchange-blog`
       }
   },
   {
     resolve: `gatsby-plugin-canonical-urls`,
     options: {
-      siteUrl: `https://www.blog.udonis.co`,
+      siteUrl: `https://www.blog.undervalued-x-exchange.co`,
       stripQueryString: true,
     },
   },

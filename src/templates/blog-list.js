@@ -123,7 +123,7 @@ export const query = graphql`
 
 
 export const Head = ({ pageContext }) => (
-  <Seo title={`${pageContext.name} ${pageContext.currentPage === 1 ? "" : `| Page ${pageContext.currentPage} `}| Udonis`} metaDesciption={`${pageContext.numPosts} post${
+  <Seo title={`${pageContext.name} ${pageContext.currentPage === 1 ? "" : `| Page ${pageContext.currentPage} `}| undervalued-x-exchange`} metaDesciption={`${pageContext.numPosts} post${
     pageContext.numPosts === 1 ? "" : "s"
   } in "${pageContext.name}"`} />
 )

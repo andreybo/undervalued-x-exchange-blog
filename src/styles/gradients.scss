@@ -1,0 +1,98 @@
+/* Gradient Utilities - Extracted from old-website design system */
+
+/* CSS Custom Properties for Gradients */
+:root {
+  /* Hero Gradient - Navy to Teal */
+  --hero-gradient: linear-gradient(135deg, hsl(209 100% 14%) 0%, hsl(195 100% 25%) 100%);
+  
+  /* Stats Gradient - Lighter Navy to Teal */
+  --stats-gradient: linear-gradient(135deg, hsl(209 90% 24%) 0%, hsl(195 90% 35%) 100%);
+  
+  /* Gold Gradient - Legacy */
+  --gold-gradient: linear-gradient(134.39deg, #D89719 1.54%, #D89C1E 39.88%, #FCE474 53.83%, #D89C1E 85.2%);
+}
+
+.dark {
+  /* Dark mode gradients */
+  --hero-gradient: linear-gradient(135deg, hsl(209 90% 24%) 0%, hsl(195 90% 35%) 100%);
+  --stats-gradient: linear-gradient(135deg, hsl(209 80% 34%) 0%, hsl(195 80% 45%) 100%);
+}
+
+/* Gradient Utility Classes */
+.bg-hero-gradient {
+  background: var(--hero-gradient);
+}
+
+.bg-stats-gradient {
+  background: var(--stats-gradient);
+}
+
+.bg-gold-gradient {
+  background: var(--gold-gradient);
+}
+
+/* SCSS Mixins for Gradients */
+@mixin hero-gradient {
+  background: linear-gradient(135deg, hsl(209, 100%, 14%) 0%, hsl(195, 100%, 25%) 100%);
+}
+
+@mixin stats-gradient {
+  background: linear-gradient(135deg, hsl(209, 90%, 24%) 0%, hsl(195, 90%, 35%) 100%);
+}
+
+@mixin gold-gradient {
+  background: linear-gradient(134.39deg, #D89719 1.54%, #D89C1E 39.88%, #FCE474 53.83%, #D89C1E 85.2%);
+}
+
+/* Text Gradients */
+@mixin text-gradient($gradient) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-hero-gradient {
+  @include text-gradient(var(--hero-gradient));
+}
+
+.text-stats-gradient {
+  @include text-gradient(var(--stats-gradient));
+}
+
+.text-gold-gradient {
+  @include text-gradient(var(--gold-gradient));
+}
+
+/* Animated Gradients */
+@keyframes animateGradient {
+  0% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+.gradient-animated {
+  background-size: 200% 200%;
+  animation: animateGradient 4s ease-in-out infinite alternate;
+}
+
+/* Glow Effects with Gradients */
+.shadow-hero-glow {
+  box-shadow: 0 0 20px -5px hsl(209 100% 14% / 0.3);
+}
+
+.shadow-stats-glow {
+  box-shadow: 0 0 20px -5px hsl(209 90% 24% / 0.3);
+}
+
+.shadow-accent-glow {
+  box-shadow: 0 0 20px -5px hsl(42 44% 60% / 0.3);
+}
+
+/* Strong Glow Effects */
+.shadow-strong-glow {
+  box-shadow: 0px 0px 10px #ffffff, 0px 0px 50px #ffffff, inset 0px 0px 28px hsl(42 44% 60%);
+}

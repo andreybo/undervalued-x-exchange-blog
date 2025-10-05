@@ -2,9 +2,10 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useStaticQuery, graphql } from "gatsby"
 import Search from "./search";
 
-const Header = ({title = "Udonis"}) => {
+const Header = ({title = "undervalued-x-exchange"}) => {
 
   const [isActive, setActive] = useState(false);
+  const [isOnDark, setIsOnDark] = useState(true); // Start with dark since hero is dark
 
   const handleToggle = () => {
     setActive(!isActive);
@@ -13,7 +14,35 @@ const Header = ({title = "Udonis"}) => {
   const menuRef = useRef(null);
 
   useEffect(() => {
+    const handleScroll = () => {
+      if (typeof window === 'undefined') return;
+      
+      // Check if header overlaps with dark sections (hp-yellow, hp-yellow2, hero, etc.)
+      const darkSections = document.querySelectorAll('.hp-yellow, .hp-yellow2, .gold, .hero-overlay, [data-section="dark"]');
+      const headerHeight = 64;
+      const scrollY = window.scrollY;
+      
+      let onDarkSection = false;
+      
+      darkSections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const sectionTop = rect.top + scrollY;
+        const sectionBottom = sectionTop + rect.height;
+        
+        // Check if header overlaps with this dark section
+        if (scrollY < sectionBottom && scrollY + headerHeight > sectionTop) {
+          onDarkSection = true;
+        }
+      });
+      
+      setIsOnDark(onDarkSection);
+    };
+
+    // Check initial state
+    handleScroll();
     
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   
@@ -90,98 +119,10 @@ const Header = ({title = "Udonis"}) => {
   
   let menu = [
     {
-      path: "#",
-      name: "Services",
-      class: "nav__services",
-      submenu: [
-        {
-          path: "https://www.udonis.co/acquisition",
-          name: "user acquisition",
-          submenu: [],
-          class: "nav__acquisition"
-        },
-        {
-          path: "https://www.udonis.co/creative-production",
-          name: "creative production",
-          submenu: [],
-          class: "nav__portfolio"
-        },
-        {
-          path: "https://www.udonis.co/mobile-game-marketing-agency",
-          name: "mobile game marketing",
-          submenu: [],
-          class: "nav__mgm"
-        },
-        {
-          path: "https://www.udonis.co/mobile-app-marketing-agency",
-          name: "mobile app marketing",
-          submenu: [],
-          class: "nav__mam"
-        },
-        {
-          path: "https://www.udonis.co/mobile-marketing-agency",
-          name: "mobile marketing",
-          submenu: [],
-          class: "nav__mm"
-        },
-
-
-
-        {
-          path: "https://www.udonis.co/marketing-dashboard",
-          name: "marketing dashboards",
-          submenu: [],
-          class: "nav__md"
-        },
-        {
-          path: "https://www.udonis.co/media-buying-agency",
-          name: "media buying",
-          submenu: [],
-          class: "nav__mb"
-        },
-        {
-          path: "https://www.udonis.co/mobile-business-development",
-          name: "mobile business development",
-          submenu: [],
-          class: "nav__mbd"
-        },
-        {
-          path: "https://www.udonis.co/google-ads-agency",
-          name: "Google Ads",
-          submenu: [],
-          class: "nav__google"
-        },
-        {
-          path: "https://www.udonis.co/tiktok-ads-agency",
-          name: "TikTok Ads",
-          submenu: [],
-          class: "nav__tiktok"
-        },
-        {
-          path: "https://www.udonis.co/youtube-marketing-agency",
-          name: "YouTube marketing",
-          submenu: [],
-          class: "nav__youtube"
-        },
-        {
-          path: "https://www.udonis.co/instagram-marketing-agency",
-          name: "Instagram marketing",
-          submenu: [],
-          class: "nav__instagram"
-        },
-        {
-          path: "https://www.udonis.co/digital-marketing-agency",
-          name: "digital marketing",
-          submenu: [],
-          class: "nav__digital"
-        },
-      ]
-    },
-    {
-      path: "https://www.udonis.co/about",
-      name: "About",
+      path: "https://www.undervalued-x-exchange.co/how-it-works",
+      name: "How It Works",
       submenu: [],
-      class: "nav__about bec"
+      class: "nav__how bec"
     },
     {
       path: "/",
@@ -190,14 +131,14 @@ const Header = ({title = "Udonis"}) => {
       class: "nav__blog bec"
     },
     {
-      path: "https://www.udonis.co/careers",
-      name: "Careers",
+      path: "https://www.undervalued-x-exchange.co/success-stories",
+      name: "Success Stories",
       submenu: [],
-      class: "nav__career bec"
+      class: "nav__success bec"
     },
     {
-      path: "https://www.udonis.co/contact",
-      name: "Contact us",
+      path: "https://www.undervalued-x-exchange.co/contact",
+      name: "Contact",
       submenu: [],
       class: "nav__contact bec"
     }
@@ -212,10 +153,15 @@ const Header = ({title = "Udonis"}) => {
 
   return (
     <>
-      <header className="header liquid">
+      <header className={`header liquid ${isOnDark ? 'header--dark' : ''}`}>
           <div className="header__container container">
-              <a className="header__leftside header__leftside-logo navbar-brand" href="https://www.udonis.co">
-                  <img src={`/svg/logo.svg`} alt="Udonis" width="150" height="40"/>
+              <a className="header__leftside header__leftside-logo navbar-brand" href="/">
+                  <img 
+                    src={isOnDark ? `/uploads/logo-light.png` : `/uploads/logo-dark.png`} 
+                    alt="UndervaluedX Realty Exchange" 
+                    width="150" 
+                    height="40"
+                  />
               </a>
               <ul className={`${isActive ? "header__nav toggle nav active" : "header__nav toggle nav"}`}>
                   
@@ -253,6 +199,10 @@ const Header = ({title = "Udonis"}) => {
               </li>
             ))}
               </ul>
+              <div className="header__auth">
+                <a href="https://www.undervalued-x-exchange.co/signin" className="header__signin">Sign In</a>
+                <a href="https://www.undervalued-x-exchange.co/signup" className="header__get-started">Get Started</a>
+              </div>
               <div className="header__toggle-block">
                 <button aria-label='Header menu' className={`${isActive ? "app header__menu toggle active" : " app header__menu toggle"}`} onClick={handleToggle}>
                     <span></span>

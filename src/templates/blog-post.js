@@ -19,19 +19,6 @@ export default function BlogPost({ data }) {
   const post = data.wpPost
   const postDate = post.modified ? post.modified : post.date
 
-  const faqData = [];
-  for (let i = 1; i <= 10; i++) {
-    const questionKey = `question${i}`;
-    const answerKey = `answer${i}`;
-
-    // Check if both question and answer are non-empty before adding to faqData
-    if (post.faq[questionKey] && post.faq[answerKey]) {
-      faqData.push({
-        question: post.faq[questionKey],
-        answer: post.faq[answerKey],
-      });
-    }
-  }
   const h2Texts = [];
   
   const transformedContent = parse(post.content, {
@@ -100,7 +87,7 @@ export default function BlogPost({ data }) {
                   <h1 className="post__head--title">{post.title}</h1>
                   <div className="news__tag-container">
                     <p className="post__head--author">
-                      by <a href={"/authors/" + post.author.node.slug}><b>{post.author ? post.author.node.name : 'Udonis'}</b></a>,&nbsp; 
+                      by <a href={"/authors/" + post.author.node.slug}><b>{post.author ? post.author.node.name : 'undervalued-x-exchange'}</b></a>,&nbsp; 
                       <time dateTime={postDate}>{Moment(postDate).format('MMMM D, YYYY')}</time>
                     </p>
                     {post.tags.nodes.map((tag, index) => (
@@ -127,7 +114,6 @@ export default function BlogPost({ data }) {
                 </div>
               </div>
             </div>
-              {faqData.length > 0 ? <Faq faqData={faqData}/> : ''}
               <Subscribe buttonId="ud-postform"/>
               <div className="post__about-out">
                 <div className="post__about">
@@ -142,18 +128,18 @@ export default function BlogPost({ data }) {
                         quality={95}
                         formats={["auto", "webp", "avif"]}
                         placeholder="none"
-                        alt="Udonis"
+                        alt="undervalued-x-exchange"
                     />
                   </div>
                   <div className="post__about-grid">
                     <div className="left">
                       <h3>
-                        About Udonis
+                        About undervalued-x-exchange
                       </h3>
                       <div>
-                        <p>Udonis is an independent full-service mobile marketing agency that acquired more than 300,000,000 users for mobile games since 2018.</p>
-                        <a href="https://www.udonis.co/" className="main_cta main_cta--u">
-                            <span>Visit udonis.co</span>
+                        <p>undervalued-x-exchange is an independent full-service mobile marketing agency that acquired more than 300,000,000 users for mobile games since 2018.</p>
+                        <a href="https://www.undervalued-x-exchange.co/" className="main_cta main_cta--u">
+                            <span>Visit</span>
                         </a>
                       </div>
                     </div>
@@ -191,20 +177,6 @@ export default function BlogPost({ data }) {
 }
 
 export const Head = ({ data }) => {
-  const faqData = [];
-  for (let i = 1; i <= 10; i++) {
-    const questionKey = `question${i}`;
-    const answerKey = `answer${i}`;
-
-    // Check if both question and answer are non-empty before adding to faqData
-    if (data.wpPost.faq[questionKey] && data.wpPost.faq[answerKey]) {
-      faqData.push({
-        question: data.wpPost.faq[questionKey],
-        answer: data.wpPost.faq[answerKey],
-      });
-    }
-  }
-
   return (
     <Seo 
       title={data.wpPost.title} 
@@ -213,7 +185,6 @@ export const Head = ({ data }) => {
       dateModified={data.wpPost.seo.opengraphModifiedTime} 
       datePublished={data.wpPost.seo.opengraphPublishedTime} 
       category={data.wpPost.categories.nodes.slice(-1)[0].name} 
-      faqData={faqData} 
     />
   );
 };
@@ -250,28 +221,6 @@ export const query = graphql`
         opengraphImage {
           sourceUrl
         }
-      }
-      faq{
-        question1
-        answer1
-        question2
-        answer2
-        question3
-        answer3
-        question4
-        answer4
-        question5
-        answer5
-        question6
-        answer6
-        question7
-        answer7
-        question8
-        answer8
-        question9
-        answer9
-        question10
-        answer10
       }
       tags{
         nodes{

@@ -77,7 +77,7 @@ render() {
     <div className="post__subscribe" id="subscribe">
       <div className="post__grid-bottom p60">
         <div className="left">
-          <h3>Get the insider’s edge in mobile gaming</h3>
+          <h3>Get the insider’s edge in real estate investing</h3>
           
           {this.state.submitSuccess &&
             <p className="post__success">Thank you for subscribing</p>
@@ -126,7 +126,7 @@ render() {
                 quality={95}
                 formats={["auto", "webp", "avif"]}
                 placeholder="none"
-                alt="Udonis"
+                alt="UndervaluedX Realty Exchange"
             />
         </div>
       </div>

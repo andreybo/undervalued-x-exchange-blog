@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /.netlify/*
-Sitemap: https://www.blog.udonis.co/sitemap-index.xml
-Host: https://wwww.blog.udonis.co
+Sitemap: https://www.blog.undervalued-x-exchange.co/sitemap-index.xml
+Host: https://wwww.blog.undervalued-x-exchange.co

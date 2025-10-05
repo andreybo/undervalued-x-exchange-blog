@@ -10,24 +10,24 @@ const Privacy = () => {
         <h1 className="tp__inner-title">Privacy Policy</h1>
         <p>
           This Privacy Policy governs the manner in which{" "}
-          <strong>Udonis</strong> collects, uses, maintains and discloses
+          <strong>undervalued-x-exchange</strong> collects, uses, maintains and discloses
           information collected from users (each, a <strong>“User”</strong>) of
-          the <strong>“https://www.udonis.co”</strong> website (
+          the <strong>“https://www.undervalued-x-exchange.co”</strong> website (
           <strong>“Site”</strong>) and{" "}
-          <a href="https://www.blog.udonis.co">https://www.blog.udonis.co</a> or
+          <a href="https://www.blog.undervalued-x-exchange.co">https://www.blog.undervalued-x-exchange.co</a> or
           any other subdomain related to{" "}
-          <a href="https://www.udonis.co.">https://www.udonis.co.</a>
+          <a href="https://www.undervalued-x-exchange.co.">https://www.undervalued-x-exchange.co.</a>
           <br />
           <br />
           In this Privacy Policy, <strong>“We”</strong>, <strong>“Us”</strong>,{" "}
           <strong>“Our”</strong> and other similar references mean{" "}
-          <strong>Udonis</strong> and <strong>“You”</strong> and{" "}
+          <strong>undervalued-x-exchange</strong> and <strong>“You”</strong> and{" "}
           <strong>“Your”</strong> and other similar references mean a specific{" "}
           <strong>“User”</strong> of the service.
           <br />
           <br />
           This privacy policy applies to the Site and all products and services
-          offered by <strong>Udonis</strong>.<br />
+          offered by <strong>undervalued-x-exchange</strong>.<br />
           <br />
         </p>
         <h2>Personal identification information</h2>
@@ -73,7 +73,7 @@ const Privacy = () => {
         <h2>How we use collected information</h2>
         <br />
         <p>
-          <strong>Udonis</strong> may collect and use Users personal information
+          <strong>undervalued-x-exchange</strong> may collect and use Users personal information
           for the following purposes:
           <br />
           <br />– To improve our Site. We may use feedback you provide to
@@ -120,7 +120,7 @@ const Privacy = () => {
         <h2>Changes to this privacy policy</h2>
         <br />
         <p>
-          <strong>Udonis</strong> has the discretion to update this privacy
+          <strong>undervalued-x-exchange</strong> has the discretion to update this privacy
           policy at any time. When we do, we will send you an email. We
           encourage Users to frequently check this page for any changes to stay
           informed about how we are helping to protect the personal information
@@ -150,11 +150,11 @@ const Privacy = () => {
         <p>
           If you have any questions about this Privacy Policy, the practices of
           this site, or your dealings with this site, please contact us at:{" "}
-          <a href="mailto:hello@udonis.co">hello@udonis.co</a>.
+          <a href="mailto:hello@undervalued-x-exchange.co">hello@undervalued-x-exchange.co</a>.
           <br />
           <br />
           <strong>
-            Udonis Ltd.,
+            undervalued-x-exchange Ltd.,
             <br />
             <br />
             Ribarska 4,
@@ -174,6 +174,6 @@ export default Privacy;
 export const Head = () => (
   <Seo
     title="Privacy Policy"
-    metaDesciption="Udonis Privacy Policy for your reading pleasure."
+    metaDesciption="undervalued-x-exchange Privacy Policy for your reading pleasure."
   />
 )

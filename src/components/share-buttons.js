@@ -62,7 +62,7 @@ return (
         </button>
         {visible &&
         <div className="share__soc">
-            <EmailShareButton url={url} subject={title + " | Udonis"} body={description}>
+            <EmailShareButton url={url} subject={title + " | undervalued-x-exchange"} body={description}>
                 <EmailIcon />
             </EmailShareButton>
 

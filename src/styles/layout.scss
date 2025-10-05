@@ -27,13 +27,23 @@
   }
 }
 
-/*colors*/
-$dark: #171F26;
-$white: #fff;
-$grey: #F2F8F9;
-$gold: #b6b6b6;
-$yellow: #FFDD00;
+/*colors - Updated with new design system */
+/* Import the new design system */
+@import url('./design-system.css');
+
+/* Legacy color variables mapped to new design system - EXACT from old-website */
+$dark: hsl(209, 100%, 14%); /* Navy primary - SOLID color */
+$white: hsl(0, 0%, 100%);
+$grey: hsl(0, 0%, 96%); /* Secondary background */
+$gold: hsl(42, 44%, 60%); /* Gold accent - MAIN accent color */
+$yellow: hsl(209, 100%, 14%); /* BLUE same as dark - NO MORE YELLOW! */
 $gr-gold: linear-gradient(134.39deg, #D89719 1.54%, #D89C1E 39.88%, #FCE474 53.83%, #D89C1E 85.2%);
+
+/* New CSS variables for compatibility */
+$primary: hsl(209, 100%, 14%);
+$primary-glow: hsl(209, 90%, 24%);
+$accent: hsl(42, 44%, 60%); /* Gold accent */
+$accent-glow: hsl(42, 54%, 70%);
 
 /*borders*/
 $border-m: 6px;
@@ -45,6 +55,10 @@ $cardV: 170px;
 $cardH-m: 400px;
 $cardV-m: 170px;
 
+/* Import new fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+/* Legacy font import - keeping for compatibility */
 @import url("https://use.typekit.net/trr8gsx.css");
 
 :root {
@@ -67,7 +81,7 @@ $cardV-m: 170px;
 body {
   background-color: $white;
   color: $dark;
-  font-family: "elza", sans-serif;
+  font-family: 'Open Sans', sans-serif; /* Open Sans для body текста */
   font-weight:200;
   font-size: 20px;
   height: 100%;
@@ -82,13 +96,40 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "elza", sans-serif;
+  font-family: 'Spectral', serif; /* Spectral для заголовков */
   line-height: 1.2;
   font-weight: 500;
 }
 
 h2{
   font-weight: 600;
+}
+
+// Специфичные правила для шрифтов
+// Заголовки разделов (Highlighted, Latest, All Categories) - Spectral
+.hp__title--text,
+.hp__title h3,
+.categories__title {
+  font-family: 'Spectral', serif !important;
+}
+
+// ВСЕ заголовки карточек новостей - Open Sans
+.news__top--title,
+.news__layout-hor .news__top--title,
+.news__layout-small .news__top--title,
+.news__layout-image .news__top--title,
+.news__layout-long .news__top--title {
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 600;
+}
+
+// Весь остальной текст в карточках - Open Sans
+.news,
+.news__date,
+.news__tag,
+.news__padfix,
+.news__padfix p {
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 b, strong{
@@ -168,7 +209,7 @@ img {
     cursor: pointer;
     span{
       color: $dark;
-      font-family: "elza", sans-serif;
+      font-family: 'Open Sans', sans-serif;
       font-weight:200;
       font-size: 20px;
     }
@@ -202,7 +243,7 @@ img {
 
 .gifBack{
   color: $gold;
-  text-transform: lowercase;
+  /* Убрал text-transform: lowercase - оставляем заглавные */
   display: inline-block;
   &--v1{
     background: url('/1.gif') 0 0 / cover no-repeat;
@@ -269,20 +310,95 @@ img {
 
 .header{
   margin: 0 auto;
-  position: relative;
+  position: sticky;
   top: 0;
   width: 100%;
-  background-color: $yellow;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  z-index: 14;
-  .liquid-alt &{
-    background-color: $white;
-      @include media-breakpoint-up(md){
-            box-shadow: -4px -2px 16px #9abdff;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  z-index: 50;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  
+  &.header--dark {
+    background-color: hsla(209, 100%, 14%, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    
+    .header__nav-link {
+      color: rgba(255, 255, 255, 0.9);
+      
+      &:hover {
+        color: $gold;
       }
+    }
+    
+    /* Золотая подчеркивающая линия при hover в темной теме */
+    .header__nav-li a.bec:after {
+      background-color: $gold !important;
+    }
+    
+    .header__signin {
+      color: $white;
+      border-color: rgba(255, 255, 255, 0.3);
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+    
+    .header__get-started {
+      background: $gold;
+      color: $dark;
+      
+      &:hover {
+        background: hsl(42, 54%, 70%);
+        box-shadow: 0 0 20px rgba(188, 156, 94, 0.3);
+      }
+    }
   }
-  .liquid-alt.stopstick &{
-    position: fixed;
+  
+  &__auth {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+  
+  &__signin {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Обводка как в оригинале */
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: $dark;
+      background: rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  &__get-started {
+    background: $dark;
+    color: $white;
+    padding: 9px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: hsl(209, 90%, 24%);
+      /* УБРАЛ тени и transform - в оригинале их нет */
+      color: $white;
+    }
   }
   &__search{
     transition: all 0.4s ease-out;
@@ -483,7 +599,7 @@ img {
             }
               color: $dark;
               font-size: var(--font-s);
-              text-transform: lowercase;
+              /* Убрал text-transform: lowercase - оставляем заглавные */
               font-weight: 500;
               position: relative;
               @include media-breakpoint-down(md){
@@ -1248,7 +1364,19 @@ img {
 }
 
 .gold{
-  background-color: $yellow;
+  background-color: hsl(209, 100%, 14%); /* Solid Navy blue */
+  color: white;
+  
+  h2, h3, h4, p, .hp__title--text {
+    color: white;
+  }
+  
+  a {
+    color: hsl(42, 44%, 60%);
+    &:hover {
+      color: hsl(42, 54%, 70%);
+    }
+  }
 }
 
 .slatest{
@@ -1392,10 +1520,34 @@ img {
             left: -15px;
             width: calc(100% + 30px);
             height: calc(100% + 30px);
-            background-color: $yellow;
+            background-color: hsl(209, 100%, 14%); /* Темно-синий фон при hover */
             z-index: -1;
             border-radius: 12px;
           }
+          
+          /* Белый текст при hover для ВСЕХ элементов */
+          .news__top--title,
+          .news__padfix,
+          .news__padfix p,
+          .news__padfix *,
+          .news__hover,
+          .news__hover *,
+          .news__tag,
+          .news__date,
+          .news__date time,
+          .news__datetag,
+          .news__datetag *,
+          .news__withtag,
+          .news__withtag *,
+          p, span, a, time, div {
+            color: white !important;
+          }
+          
+          /* Для тегов тоже белый цвет */
+          .news__tag-container a {
+            color: white !important;
+          }
+          
           .news__hover {
             opacity: 1;
           }
@@ -1568,7 +1720,7 @@ img {
         border: 1px solid $yellow;
         border-radius: 8px;
         height: 100%;
-        font-size: 16px;
+        font-size: 14px; /* Уменьшил с 16px до 14px */
         transition: transform .3s ease-in-out;
         .news__padfix{
           height: 100%;
@@ -1576,7 +1728,7 @@ img {
           align-items: center;
           p{
             padding-top: 0;
-            font-size: 16px;
+            font-size: 14px; /* Уменьшил с 16px до 14px */
             display: -webkit-box;
             -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
@@ -1696,7 +1848,7 @@ img {
     }
     &--title {
       padding: 5px 0px 0 0px;
-      font-size: 18px;
+      font-size: 21px;
       margin: 0;
       @include media-breakpoint-up(md) {
         min-height: 50px;
@@ -1782,7 +1934,7 @@ img {
     font-size: 10px !important;
     text-transform: uppercase;
     font-weight: 500;
-    text-transform: lowercase;
+    /* Убрал дублирующий text-transform: lowercase */
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -2149,7 +2301,7 @@ img {
     }
     #sib-form{
       .oout{
-        border: 1px solid rgba(0, 0, 0, 0.19);
+        border: 1px solid rgba(255, 255, 255, 0.19);
         display: flex;
         flex-direction: row;
         gap: 12px;
@@ -2517,6 +2669,7 @@ img {
       font-size: 18px;
       line-height: 1.2;
       font-weight: 500;
+      font-family: 'Open Sans', sans-serif !important;
     }
     &--link {
       position: absolute;
@@ -2761,7 +2914,7 @@ img {
     padding-left: 10px;
     &::placeholder {
       color: $dark;
-      font-family: "elza", sans-serif;
+      font-family: 'Open Sans', sans-serif;
       font-size: var(--font-s);
     }
     &-container {
@@ -3042,17 +3195,17 @@ img {
     input {
       background: unset;
       border: unset;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
       padding: 5px;
       padding-left: 10px;
       width: 100%;
       font-size: 16px;
       height: 100%;
-      font-family: "elza", sans-serif;
+      font-family: 'Open Sans', sans-serif;
       font-weight: 200;
       &::placeholder {
-        color: #000;
-        font-family: "elza", sans-serif;
+        color: #ffffff;
+        font-family: 'Open Sans', sans-serif;
         line-height: 1;
         padding: 0;
         margin: 0;
@@ -3134,10 +3287,10 @@ div.CookieConsent{
     background: #ffdd00!important;
     background-image: #ffdd00!important;
     color: #000!important;
-    text-transform: lowercase!important;
+    /* Убрал text-transform: lowercase */
     padding: 10px 25px!important;
     border-radius: $border-m!important;
-    font-family: "elza", sans-serif!important;
+    font-family: 'Open Sans', sans-serif!important;
     font-weight: 600!important;
     &:hover{
       transform: scale(1.2);
@@ -3145,88 +3298,230 @@ div.CookieConsent{
   }
 }
 
+// Footer styles from original design
 .footer{
-  background-color: #132332;
+  background-color: hsl(209, 100%, 14%); /* Navy primary */
   color: $white;
-  padding: 50px 0 20px 0;
-  position: relative;
-  &-logo .fl{
-    height: 45px;
+  padding: 64px 0;
+  
+  // Container
+  .container {
+    max-width: 1200px;
+  }
+  
+  // Grid layout
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 48px;
+    
+    @include media-breakpoint-down(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  // Company info
+  .footer-logo {
+    height: 40px;
     width: auto;
-    max-width: 100%;
+    margin-bottom: 16px;
   }
-  &-title2{
-    color: #FFF;
-font-size: 13px;
-font-style: normal;
-font-weight: 500;
-line-height: 24px; /* 184.615% */
-letter-spacing: 0.91px;
-text-transform: uppercase;
-opacity: .5;
+  
+  .footer-description {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 24px;
+    line-height: 1.6;
+    font-size: 14px;
   }
-  .soc{
+  
+  .footer-contact {
     display: flex;
-    gap: 20px;
-    li{
-      &:hover{
-        transform: scale(1.2);
+    flex-direction: column;
+    gap: 12px;
+    
+    svg {
+      color: $gold;
+    }
+    
+    span {
+      font-size: 14px;
+      color: $white;
+    }
+  }
+  
+  // Titles
+  .footer-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: $white;
+  }
+  
+  // Lists
+  ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    
+    li {
+      list-style: none;
+      
+      a {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        
+        &:hover {
+          color: hsl(42, 54%, 70%); /* Gold accent glow */
+        }
       }
     }
-    img{
-      max-width: 40px;
+  }
+  
+  // CTA Button
+  .footer-button {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background: $gold;
+    color: $dark;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: hsl(42, 54%, 70%);
+      color: $dark;
+      transform: translateY(-2px);
     }
   }
-  .footerhr{
-    border-bottom: 1px solid $grey;
-    margin: 0 auto;
-    margin-top: 5px;
-    margin-bottom: 25px;
-    width: calc(100% - 30px);
-    display: block;
-    opacity: .5;
-    padding-top: 20px;
-  }
-  .hor ul{
+  
+  // Bottom bar
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 32px;
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    li{
-      margin-right: 10px;
+    align-items: center;
+    
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .font-sans {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: $white;
+      }
     }
   }
-  &_certifications_image{
+  
+  // Utility classes
+  .text-white\/80 {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .text-white\/60 {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .text-accent {
+    color: $gold;
+  }
+  
+  // Icon sizes
+  .h-4 {
+    height: 16px;
+  }
+  
+  .w-4 {
+    width: 16px;
+  }
+  
+  .h-10 {
+    height: 40px;
+  }
+  
+  .w-auto {
+    width: auto;
+  }
+  
+  // Text sizes
+  .text-xs {
+    font-size: 12px;
+  }
+  
+  .text-sm {
+    font-size: 14px;
+  }
+  
+  // Spacing utilities
+  .space-x-3 > * + * {
+    margin-left: 12px;
+  }
+  
+  .space-x-6 > * + * {
+    margin-left: 24px;
+  }
+  
+  .space-y-3 > * + * {
+    margin-top: 12px;
+  }
+  
+  .space-y-4 > * + * {
+    margin-top: 16px;
+  }
+  
+  .mb-4 {
+    margin-bottom: 16px;
+  }
+  
+  .mb-6 {
+    margin-bottom: 24px;
+  }
+  
+  // Flexbox utilities
+  .flex {
     display: flex;
-    justify-content: center;
-    &--container{
-      max-width: 100%;
-      width: 50px;
-      margin: 0 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
   }
-  li{
-    list-style: none;
-    color: $grey;
-    font-size: var(--font-s);
+  
+  .items-center {
+    align-items: center;
   }
-  ul{
-    padding: 0;
-    line-height: 1.8;
+  
+  .flex-col {
+    flex-direction: column;
   }
-  a, p{
-    color: $white;
-    font-size: var(--font-s);
-    &:hover{
-      color: $yellow;
-    }
+  
+  .flex-row {
+    flex-direction: row;
   }
-  a{
-    text-transform: lowercase;
-  }
-  .allrights{
-    opacity: .5;
+  
+  .justify-between {
+    justify-content: space-between;
   }
 }
 
@@ -3236,11 +3531,37 @@ div#disqus_thread iframe[sandbox] {
 
 .catmenu{
   &-out{
-    background-color: $yellow;
+    background-color: hsl(209, 100%, 14%); /* Solid Navy blue */
     //position: sticky;
     top: 0;
     z-index: 10;
     padding: 20px 0;
+    color: white;
+    
+    // Make text white
+    .hp__title--text, p, label {
+      color: white;
+    }
+    
+    // Gold accent for links
+    a {
+      color: hsl(42, 44%, 60%);
+      &:hover {
+        color: hsl(42, 54%, 70%);
+      }
+    }
+    
+    // Style select dropdown
+    select {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-color: rgba(255, 255, 255, 0.3);
+      
+      option {
+        background: hsl(209, 100%, 14%);
+        color: white;
+      }
+    }
   }
 }
 
@@ -3347,16 +3668,193 @@ div#disqus_thread iframe[sandbox] {
   margin: 0 auto;
 }
 
-.home{
-  .post__grid-bottom{
+// Subscribe section dark theme
+.post__subscribe {
+  background-color: hsl(209, 100%, 14%);
+  padding: 80px 0;
+  
+  h3 {
+    color: white !important;
+    font-family: 'Spectral', serif !important;
+  }
+  
+  p {
+    color: white !important;
+  }
+  
+  .left {
+    h3, p {
+      color: white !important;
+    }
+  }
+  
+  // Form styles with white theme
+  .cform {
+    &__label {
+      label {
+        color: white !important;
+      }
+      
+      input {
+        color: white !important;
+        border: none !important;
+        
+        &::placeholder {
+          color: white !important;
+          opacity: 0.6 !important;
+        }
+        
+        &:focus,
+        &:not(:placeholder-shown),
+        &:-webkit-autofill {
+          & + label {
+            color: white !important;
+            opacity: 0.8 !important;
+          }
+        }
+      }
+      
+      &-checkbox {
+        label {
+          color: white !important;
+        }
+      }
+    }
     
+    &__input {
+      color: white !important;
+      border: none !important;
+      
+      &::placeholder {
+        color: white !important;
+        opacity: 0.6 !important;
+      }
+    }
+    
+    &__checkbox {
+      border: 1px solid white !important;
+      accent-color: hsl(42, 44%, 60%);
+      
+      &--span {
+        color: white !important;
+      }
+      
+      &--link {
+        color: hsl(42, 44%, 60%) !important;
+      }
+    }
+    
+    a {
+      color: white !important;
+      opacity: 0.8;
+      
+      &:hover {
+        color: hsl(42, 44%, 60%) !important;
+        opacity: 1;
+      }
+    }
+  }
+  
+  // Button stays gold
+  .main_cta {
+    background: hsl(42, 44%, 60%);
+    
+    span {
+      color: hsl(209, 100%, 14%) !important;
+    }
+    
+    &:hover {
+      background: white;
+      
+      span {
+        color: hsl(209, 100%, 14%) !important;
+      }
+    }
+  }
+  
+  button {
+    span {
+      background-color: hsl(42, 44%, 60%) !important;
+      color: hsl(209, 100%, 14%) !important;
+    }
+  }
+}
+
+// Highlighted section with navy blue background (SOLID, like in original)
+.hp-yellow{
+  position: relative;
+  background-color: hsl(209, 100%, 14%); 
+  color: white;
+  
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  // Весь текст белый на синем фоне
+  h2, h3, h4, p, .news__top--title, .news__date, time, span {
+    color: white !important;
+  }
+  
+  // Теги белые
+  .news__tag {
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+  }
+  
+  // При hover на карточки текст остается белым
+  .news__layout-small--hover {
+    background-color: hsl(209, 100%, 14%) !important;
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    
+    .news__padfix,
+    .news__padfix p,
+    .news__padfix * {
+      font-size: 15px;
+      color: white !important;
+    }
+  }
+  
+  // Для больших карточек (CardHot)
+  .news__layout-hot,
+  .news__layout-image,
+  .news-out,
+  .imin {
+    .news__top--title,
+    .news__padfix,
+    .news__date,
+    time,
+    p, span {
+      color: white !important;
+    }
+  }
+  
+  a {
+    color: hsl(42, 44%, 60%); // gold accent
+    &:hover {
+      color: hsl(42, 54%, 70%); // lighter gold
+    }
   }
 }
 
 .hp-yellow2{
-  background-color: $yellow;
+  background-color: hsl(209, 100%, 14%); /* Solid Navy blue */
   padding-top: 50px;
   padding-bottom: 50px;
+  color: white;
+  
+  h2, h3, h4, p {
+    color: white;
+  }
+  
+  a {
+    color: hsl(42, 44%, 60%);
+    &:hover {
+      color: hsl(42, 54%, 70%);
+    }
+  }
+  
   .post__subscribe{
     margin-bottom: 0;
   }
@@ -3418,21 +3916,18 @@ div#disqus_thread iframe[sandbox] {
       outline: none;
       font-size: 16px;
       font-weight: 200;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
       padding: 5px;
       height: 30px;
       width: 100%;
-      font-family: "elza", sans-serif;
-    }
+      font-family: 'Open Sans', sans-serif;
+      }
   }
 }
 .blogpost{
   background-color: #F4FAFB;
   .catmenu-out{
     display: none;
-  }
-  .header{
-    background-color: unset;
   }
   .share{
     display: none;
@@ -3719,7 +4214,7 @@ div#disqus_thread iframe[sandbox] {
     font-size: 10px !important;
     text-transform: uppercase;
     font-weight: 500 !important;
-    text-transform: lowercase;
+    /* Убрал дублирующий text-transform: lowercase */
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
