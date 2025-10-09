@@ -10,6 +10,7 @@ import Faq from "../components/faq";
 import Categories from "../components/categories";
 import Related from "../components/related";
 import Moment from 'moment';
+import "../styles/subscribe.css";
 
 import parse from 'html-react-parser';
 import 'react-responsive-modal/styles.css';
@@ -133,35 +134,17 @@ export default function BlogPost({ data }) {
               </div>
             </div>
               <Subscribe buttonId="ud-postform"/>
-              <div className="post__about-out">
-                <div className="post__about">
-                  <div className="post__about-plus">
-                  <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9.024 15.392H5.728V9.248H0V6.144H5.728V0H9.024V6.144H14.752V9.248H9.024V15.392Z" fill="black"/>
-                  </svg>
-                  </div>
-                  <div className="post__about-back">
-                    <StaticImage
-                        src="../images/about-back.jpg"
-                        quality={95}
-                        formats={["auto", "webp", "avif"]}
-                        placeholder="none"
-                        alt="undervalued-x-exchange"
-                    />
-                  </div>
-                  <div className="post__about-grid">
-                    <div className="left">
-                      <h3>
-                        About undervalued-x-exchange
-                      </h3>
-                      <div>
-                        <p>undervalued-x-exchange is an independent full-service mobile marketing agency that acquired more than 300,000,000 users for mobile games since 2018.</p>
-                        <a href="https://www.undervalued-x-exchange.co/" className="main_cta main_cta--u">
-                            <span>Visit</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+              <div className="about-container">
+                <div className="about-content">
+                  <h3 className="about-title">
+                    Ready to Get Started?
+                  </h3>
+                  <p className="about-description">
+                    Connect with motivated sellers and start building your real estate portfolio today.
+                  </p>
+                  <a href="https://www.undervalued-x-exchange.co/" className="about-button">
+                    <span>Get Your Leads Now</span>
+                  </a>
                 </div>
               </div>
           </div>
@@ -182,7 +165,7 @@ export default function BlogPost({ data }) {
               <Related posts={post.relatedPosts} limit={4} classmain="postcard" layoutHorizontal={true} titleh3={true}/>
           </div>
 
-          <div className="post__comments">
+          <div className="post__comments hidden">
                 <h3>
                   Comments
                 </h3>

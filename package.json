@@ -63,6 +63,9 @@
     "prettier": "^2.5.1",
     "tailwindcss": "^4.1.14"
   },
+  "resolutions": {
+    "babel-loader/schema-utils": "2.7.1"
+  },
   "engines": {
     "node": ">=18.0.0"
   }

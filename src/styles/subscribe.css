@@ -1,0 +1,179 @@
+/* Subscribe component styles */
+.subscribe-container {
+    background-color: #f3f4f6;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.subscribe-content {
+    text-align: center;
+}
+
+.subscribe-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.subscribe-description {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.subscribe-success {
+    color: #059669;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-container {
+    position: relative;
+}
+
+.subscribe-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.subscribe-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.subscribe-button {
+    width: 100%;
+    background-color: #1e3a8a;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 1rem;
+}
+
+.subscribe-button:hover {
+    background-color: #1e40af;
+}
+
+.subscribe-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.privacy-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    text-align: left;
+}
+
+.privacy-checkbox {
+    margin-top: 0.125rem;
+    flex-shrink: 0;
+}
+
+.privacy-label {
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.privacy-link {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.privacy-link:hover {
+    color: #1d4ed8;
+}
+
+/* About section styles */
+.about-container {
+    background-color: #f3f4f6;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.about-description {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.about-button {
+    display: inline-block;
+    background-color: #1e3a8a;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 1rem;
+}
+
+.about-button span {
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.about-button:hover {
+    background-color: #1e40af;
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .subscribe-container,
+    .about-container {
+        margin: 0 1rem;
+        padding: 1.5rem;
+    }
+    
+    .subscribe-title,
+    .about-title {
+        font-size: 1.25rem;
+    }
+    
+    .subscribe-description,
+    .about-description {
+        font-size: 0.875rem;
+    }
+}
