@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "gatsby"
 import logoLight from "../../static/uploads/logo-light.png"
 
 const Footer = () => (
@@ -16,14 +17,14 @@ const Footer = () => (
             Connecting motivated property sellers with qualified real estate investors 
             through premium lead generation services.
           </p>
-          <div className="footer-contact space-y-3">
-            <div className="flex items-center space-x-3">
+          <div className="footer-contact">
+            <div className="flex items-center space-x-3 mb-0">
               <svg className="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               <span className="font-sans text-sm">(555) 123-LEADS</span>
             </div>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 mb-0">
               <svg className="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
@@ -42,39 +43,36 @@ const Footer = () => (
         {/* Services */}
         <div className="footer-services">
           <h3 className="footer-title font-sans font-semibold text-lg mb-6">Services</h3>
-          <ul className="space-y-3 font-sans text-white/80">
-            <li><a href="https://www.undervalued-x-exchange.co/motivated-seller-leads" className="hover:text-accent transition-colors">Motivated Seller Leads</a></li>
-            <li><a href="https://www.undervalued-x-exchange.co/investor-matching" className="hover:text-accent transition-colors">Investor Matching</a></li>
-            <li><a href="https://www.undervalued-x-exchange.co/market-analytics" className="hover:text-accent transition-colors">Market Analytics</a></li>
-            <li><a href="https://www.undervalued-x-exchange.co/lead-nurturing" className="hover:text-accent transition-colors">Lead Nurturing</a></li>
-            <li><a href="https://www.undervalued-x-exchange.co/crm-integration" className="hover:text-accent transition-colors">CRM Integration</a></li>
+          <ul className="font-sans text-white/80 !gap-1 flex">
+            <li className="mb-0"><Link to="/lead-generation" className="hover:text-accent transition-colors">Real Estate Lead Generation</Link></li>
+            <li className="mb-0"><a href="https://www.undervalued-x-exchange.co/real-estate-marketing" className="hover:text-accent transition-colors">Real Estate Marketing</a></li>
+            <li className="mb-0"><a href="https://www.undervalued-x-exchange.co/lead-nurturing" className="hover:text-accent transition-colors">Lead Nurturing</a></li>
+            <li className="mb-0"><a href="https://www.undervalued-x-exchange.co/market-analytics" className="hover:text-accent transition-colors">Market Analytics</a></li>
           </ul>
         </div>
 
         {/* Resources */}
         <div className="footer-resources">
           <h3 className="footer-title font-sans font-semibold text-lg mb-6">Resources</h3>
-          <ul className="space-y-3 font-sans text-white/80">
-            <li><a href="https://www.undervalued-x-exchange.co/success-stories" className="hover:text-accent transition-colors">Success Stories</a></li>
-            <li><a href="https://www.undervalued-x-exchange.co/market-reports" className="hover:text-accent transition-colors">Market Reports</a></li>
-            <li><a href="/" className="hover:text-accent transition-colors">Blog</a></li>
-            <li><a href="https://www.undervalued-x-exchange.co/best-practices" className="hover:text-accent transition-colors">Best Practices</a></li>
-            <li><a href="https://www.undervalued-x-exchange.co/faq" className="hover:text-accent transition-colors">FAQ</a></li>
+          <ul className="font-sans text-white/80 !gap-1">
+            <li className="mb-0"><Link to="/" className="hover:text-accent transition-colors">Blog</Link></li>
+            <li className="mb-0"><Link to="/about" className="hover:text-accent transition-colors">About</Link></li>
+            <li className="mb-0"><Link to="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
           </ul>
         </div>
 
         {/* CTA */}
         <div className="footer-cta">
           <h3 className="footer-title font-sans font-semibold text-lg mb-6">Ready to Get Started?</h3>
-          <p className="font-sans text-white/80 mb-6">
+          <p className="font-sans text-white/80 mb-6 text-sm">
             Join hundreds of successful real estate professionals already using our platform.
           </p>
-          <a 
-            href="https://www.undervalued-x-exchange.co/signup" 
+          <Link 
+            to="/contact" 
             className="footer-button btn-accent w-full mb-4 inline-block text-center bg-accent text-primary px-6 py-3 rounded-md font-semibold hover:bg-accent-glow transition-colors"
           >
             Start Free Trial
-          </a>
+          </Link>
           <p className="font-sans text-xs text-white/60">
             No setup fees. Cancel anytime.
           </p>
@@ -88,8 +86,8 @@ const Footer = () => (
             © {new Date().getFullYear()} UndervaluedX Realty Exchange. All rights reserved.
           </div>
           <div className="flex space-x-6 font-sans text-white/60 text-sm">
-            <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
             <a href="https://www.undervalued-x-exchange.co/data-usage" className="hover:text-white transition-colors">Data Usage</a>
           </div>
         </div>

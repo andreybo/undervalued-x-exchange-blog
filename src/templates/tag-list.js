@@ -64,10 +64,12 @@ const TagList = ({ pageContext, data:{postdata} }) => {
             )}
             </ul>
       </div>
-      <div className="hp-yellow2">
+      <div className="container">
         <div className="home_sub">
           <Subscribe/>
         </div>
+      </div>
+      <div className="hp-yellow2">
       </div>
     </Layout>
   )

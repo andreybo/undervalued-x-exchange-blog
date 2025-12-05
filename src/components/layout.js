@@ -2,6 +2,7 @@ import React from "react"
 
 import Footer from "./footer";
 import Header from "./header";
+import "../styles/tailwind.css";
 import "../styles/boot.scss";
 import "../styles/layout.scss";
 import CookieConsent from "react-cookie-consent";

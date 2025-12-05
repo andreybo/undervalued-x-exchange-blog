@@ -1,10 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import CardHot from "../components/cards/cardTemplateMainHot";
 import CardMain from "../components/cards/cardTemplateMain";
 import CardLong from "../components/cards/cardTemplateMainLong";
-import CardSmall from "../components/cards/cardTemplateMainSmall";
 import Layout from  "../components/layout";
 import Seo from "../components/seo"
 import Subscribe from "../components/subscribe";
@@ -12,14 +10,8 @@ import HeroSection from "../components/hero-section";
 
 function IndexPage({
   data: {
-    hot1,
-    hot2,
     latest,
-    mgm,
     mgdissections,
-    monetization,
-    recent,
-    ua,
     allWpCategory
   },
 }) {
@@ -50,25 +42,6 @@ function IndexPage({
 
         <div className="hp__container hidden">
           <div className="hp__title">
-            <h3 className="hp__title--text">Recently Updated</h3>
-          </div>
-              <div className="hp__row row mb40">
-                <CardLong post={recent.nodes[0]} classmain="card-long imin"/>
-              </div>
-              <div className="row grid2">
-                {recent.nodes.map((post, index) => (
-                  index !== 0 && <CardMain post={post} classmain="col-md-4 col-12" key={index}/>
-                ))}
-              </div>
-          <div className="hp__more">
-            <a className="hp__more--link" href="/topics/recently-updated">
-              View More
-            </a>
-          </div>
-        </div>
-
-        <div className="hp__container hidden">
-          <div className="hp__title">
             <h3 className="hp__title--text">Mobile Game Dissections</h3>
           </div>
               <div className="hp__row row mb40">
@@ -87,10 +60,12 @@ function IndexPage({
         </div>
 
       </div>
-      <div className="hp-yellow2">
+      <div className="container">
         <div className="home_sub">
           <Subscribe/>
         </div>
+      </div>
+      <div className="hp-yellow2">
       </div>
     </Layout>
   );
@@ -131,59 +106,7 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
 }
 
 {
-  hot1: allWpPost(
-    filter: {categories: {nodes: {elemMatch: {name: {eq: "Highlighted1"}}}}}
-    sort: {date: DESC}
-    limit: 1
-  ) {
-    nodes {
-      ...postData
-    }
-  }
-  hot2: allWpPost(
-    filter: {
-      categories: {
-        nodes: {
-          elemMatch: {
-            name: { in: ["Highlighted2", "Highlighted3", "Highlighted3-2", "Highlighted4"] }
-          }
-        }
-      }
-    }
-    sort: { date: DESC }
-    limit: 4
-  ) {
-    nodes {
-      ...postData
-    }
-  }
-  recent: allWpPost(
-    filter: {
-      categories: {
-        nodes: {
-          elemMatch: {
-            name: { in: ["Recently updated"] }
-          }
-        }
-      }
-    }
-    sort: { modified: DESC }
-    limit: 4
-  ) {
-    nodes {
-      ...postData
-    }
-  }
   latest: allWpPost(sort: {date: DESC}, limit: 4) {
-    nodes {
-      ...postData
-    }
-  }
-  blockchain: allWpPost(
-    filter: {categories: {nodes: {elemMatch: {name: {eq: "Blockchain Game Dissections"}}}}}
-    sort: {date: DESC}
-    limit: 4
-  ) {
     nodes {
       ...postData
     }
@@ -197,37 +120,6 @@ export const indexPageQuery = graphql`fragment postData on WpPost {
       ...postData
     }
   }
-  
-  mgm: allWpPost(
-    filter: {categories: {nodes: {elemMatch: {name: {eq: "Mobile Game Market"}}}}}
-    sort: {date: DESC}
-    limit: 4
-  ) {
-    nodes {
-      ...postData
-    }
-  }
-  
-  monetization: allWpPost(
-    filter: {categories: {nodes: {elemMatch: {name: {eq: "Monetization"}}}}}
-    sort: {date: DESC}
-    limit: 4
-  ) {
-    nodes {
-      ...postData
-    }
-  }
-  
-  ua: allWpPost(
-    filter: {categories: {nodes: {elemMatch: {name: {eq: "User Acquisition"}}}}}
-    sort: {date: DESC}
-    limit: 4
-  ) {
-    nodes {
-      ...postData
-    }
-  }
-  
 
 allWpCategory(
   sort: {count: DESC}
