@@ -147,7 +147,7 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <a href="https://www.undervalued-x-exchange.co/signin" className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+          <a href="/signin" className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
             isOnDark 
               ? 'bg-accent text-primary hover:opacity-90' 
               : 'bg-primary !text-white hover:opacity-90'
