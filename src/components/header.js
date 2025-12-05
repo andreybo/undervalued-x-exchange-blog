@@ -1,24 +1,12 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { useStaticQuery, graphql } from "gatsby"
-import Search from "./search";
+import React, { useEffect, useState } from 'react';
 
-const Header = ({title = "undervalued-x-exchange"}) => {
-
-  const [isActive, setActive] = useState(false);
-  const [isOnDark, setIsOnDark] = useState(true); // Start with dark since hero is dark
-
-  const handleToggle = () => {
-    setActive(!isActive);
-  };
-
-  const menuRef = useRef(null);
+const Header = () => {
+  const [isOnDark, setIsOnDark] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (typeof window === 'undefined') return;
-      
-      // Check if header overlaps with dark sections (hp-yellow, hp-yellow2, hero, etc.)
-      const darkSections = document.querySelectorAll('.hp-yellow, .hp-yellow2, .gold, .hero-overlay, [data-section="dark"]');
+      const darkSections = document.querySelectorAll('[data-section="dark"]');
       const headerHeight = 64;
       const scrollY = window.scrollY;
       
@@ -29,7 +17,6 @@ const Header = ({title = "undervalued-x-exchange"}) => {
         const sectionTop = rect.top + scrollY;
         const sectionBottom = sectionTop + rect.height;
         
-        // Check if header overlaps with this dark section
         if (scrollY < sectionBottom && scrollY + headerHeight > sectionTop) {
           onDarkSection = true;
         }
@@ -38,235 +25,114 @@ const Header = ({title = "undervalued-x-exchange"}) => {
       setIsOnDark(onDarkSection);
     };
 
-    // Check initial state
     handleScroll();
-    
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  
-  const [isSearch, setSearch] = useState(false);
-
-  const searchToggle = () => {
-    setSearch(!isSearch);
-    setActive(false);
-  };
-
-  
-
-  
-  const data = useStaticQuery(graphql`
-  query {
-    allWpCategory(
-      sort: { count: DESC }
-      filter: {
-        name: {
-          nin: [
-            "Highlighted1"
-            "Highlighted3"
-            "Highlighted2"
-            "Highlighted4"
-            "Highlighted3-2"
-            "Uncategorized"
-            "News"
-            "Analytics"
-            "Google Ads"
-            "TikTok Updates"
-            "Gaming Talks"
-          ]
-        }
-        count: { gte: 1 }
-      }
-    ) {
-      nodes {
-        name
-        uri
-        count
-      }
-    }
-  }
-`)
-
-
-
-  const [selectedCategory, setSelectedCategory] = useState(null);
-
-  const categories = data.allWpCategory.nodes;
-
-  const normalizeUri = (uri) => {
-    return uri.endsWith('/') ? uri : `${uri}/`;
-  };
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const currentPath = window.location.pathname;
-
-      const matchedCategory = categories.find(node => normalizeUri(node.uri) === normalizeUri(currentPath));
-
-      if (matchedCategory) {
-        console.log('Matched Category:', matchedCategory);
-        setSelectedCategory(matchedCategory.uri);
-      } else {
-        setSelectedCategory('/');
-      }
-
-      console.log('Pathname:', currentPath);
-    }
-  }, [categories]);
-
-
-  
-  let menu = [
-    {
-      path: "https://www.undervalued-x-exchange.co/how-it-works",
-      name: "How It Works",
-      submenu: [],
-      class: "nav__how bec"
-    },
-    {
-      path: "/",
-      name: "Blog",
-      submenu: [],
-      class: "nav__blog bec"
-    },
-    {
-      path: "https://www.undervalued-x-exchange.co/success-stories",
-      name: "Success Stories",
-      submenu: [],
-      class: "nav__success bec"
-    },
-    {
-      path: "https://www.undervalued-x-exchange.co/contact",
-      name: "Contact",
-      submenu: [],
-      class: "nav__contact bec"
-    }
-  ]
-
-  const [isOpen, setIsOpen] = useState(true);
-
-  const toggleSubmenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-
   return (
-    <>
-      <header className={`header liquid ${isOnDark ? 'header--dark' : ''}`}>
-          <div className="header__container container">
-              <a className="header__leftside header__leftside-logo navbar-brand" href="/">
-                  <img 
-                    src={isOnDark ? `/uploads/logo-light.png` : `/uploads/logo-dark.png`} 
-                    alt="UndervaluedX Realty Exchange" 
-                    width="150" 
-                    height="40"
-                  />
-              </a>
-              <ul className={`${isActive ? "header__nav toggle nav active" : "header__nav toggle nav"}`}>
-                  
-            {menu.map((link) => (
-              <li
-                className={
-                  link.submenu && link.submenu.length > 0
-                    ? "header__nav-li nav-item header__submenu-parent"
-                    : "header__nav-li nav-item"
-                }
-                key={link.name}
-              >
-                  <a
-                    className={`header__nav-link nav-link headm ${link.class}`}
-                    href={link.path}
-                    bec={link.name}
-                    onClick={link.submenu && link.submenu.length > 0 ? toggleSubmenu : undefined}
-                  >
-                  {link.name}
-                </a>
-                {link.submenu && link.submenu.length > 0 ? (
-                  <ul className={`header__submenu ${isOpen ? 'open' : ''}`}>
-                    {link.submenu.map((sublink) => (
-                      <li className="header__submenu-item" key={sublink.name}>
-                        <a
-                          className={"header__nav-link nav-link " + sublink.class}
-                          href={sublink.path}
-                        >
-                          {sublink.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </li>
-            ))}
-              </ul>
-              <div className="header__auth">
-                <a href="https://www.undervalued-x-exchange.co/signin" className="header__signin">Sign In</a>
-                <a href="https://www.undervalued-x-exchange.co/signup" className="header__get-started">Get Started</a>
-              </div>
-              <div className="header__toggle-block">
-                <button aria-label='Header menu' className={`${isActive ? "app header__menu toggle active" : " app header__menu toggle"}`} onClick={handleToggle}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-              </div>
-          </div>
-    </header>
-    <div className='catmenu-out'>
-      <div className="container">
-        <div className='catm'>
-        <p className='hp__title--text'>{title}</p>
-        <div className='catm-in'>
-            <div className="catm__selector">
-              <select
-                  className="selector"
-                  ref={menuRef}
-                  value={selectedCategory}
-                  onChange={(e) => (window.location.href = e.target.value)}
-                >
-                  <option value="/" className='All Categories'>All Categories</option>
-                  {categories.map((item, index) => (
-                    <option
-                      value={item.uri}
-                      key={`menu-item-${index}`}
-                      className="nav__sub"
-                    >
-                      {item.name}
-                    </option>
-                  ))}
-                </select>
-            </div>
-            <div className="catm__search">
-              <div className="catm__search--input">
-                <Search/>
-              </div>
-              <div className="catm__search--buttons">
-                <button
-                  className='header__msearch'
-                  aria-label='Search'
-                  onClick={searchToggle}
-                >
-                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10.8504 9.5102L8.70825 7.36842C8.61157 7.27175 8.4805 7.21805 8.34299 7.21805H7.99277C8.58578 6.45972 8.93815 5.50591 8.93815 4.46831C8.93815 2 6.93781 0 4.46908 0C2.00034 0 0 2 0 4.46831C0 6.93663 2.00034 8.93663 4.46908 8.93663C5.50685 8.93663 6.46082 8.58432 7.21928 7.99141V8.34157C7.21928 8.47905 7.27299 8.6101 7.36968 8.70677L9.51183 10.8485C9.7138 11.0505 10.0404 11.0505 10.2402 10.8485L10.8483 10.2406C11.0502 10.0387 11.0502 9.71214 10.8504 9.5102ZM4.46908 7.21805C2.95002 7.21805 1.71888 5.98926 1.71888 4.46831C1.71888 2.94952 2.94787 1.71858 4.46908 1.71858C5.98813 1.71858 7.21928 2.94737 7.21928 4.46831C7.21928 5.98711 5.99028 7.21805 4.46908 7.21805Z" fill="#171F26"/>
-                  </svg>
-                </button>
-                <button
-                  className='header__msearch-close'
-                  aria-label='Close Search'
-                  onClick={searchToggle}
-                >
-                  <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M4.10358 4.81068L7.5 8.20711L8.20711 7.5L4.81068 4.10358L8.20711 0.707153L7.5 4.64022e-05L4.10358 3.39647L0.707107 0L0 0.707107L3.39647 4.10358L0 7.50005L0.707107 8.20715L4.10358 4.81068Z" fill="#171F26"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
+    <header className={`backdrop-blur-sm border-b sticky top-0 z-50 shadow-sm transition-all duration-300 ${
+      isOnDark 
+        ? 'bg-primary/95 border-white/20 text-white' 
+        : 'bg-white/98 border-border/20 text-foreground'
+    }`}>
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <div className="flex items-center space-x-2">
+          <a href="/">
+            <img
+              src={isOnDark
+                ? "/uploads/logo-light.png"
+                : "/uploads/logo-dark.png"
+              }
+              alt="UndervaluedX Realty Exchange"
+              className="h-10 w-auto transition-all duration-300"
+            />
+          </a>
         </div>
-      </div>
-    </div>
-    </>
-  )
-}
+        
+        <nav className="hidden md:flex items-center space-x-10">
+          <a href="/marketplace" className={`transition-colors font-sans text-sm font-medium tracking-wide ${
+            isOnDark ? 'text-white/90 hover:text-accent' : 'text-foreground/80 hover:text-primary'
+          }`}>
+            Marketplace
+          </a>
+          
+          <a href="/leads" className={`transition-colors font-sans text-sm font-medium tracking-wide ${
+            isOnDark ? 'text-white/90 hover:text-accent' : 'text-foreground/80 hover:text-primary'
+          }`}>
+            Leads
+          </a>
+          
+          <a href="/how-it-works" className={`transition-colors font-sans text-sm font-medium tracking-wide ${
+            isOnDark ? 'text-white/90 hover:text-accent' : 'text-foreground/80 hover:text-primary'
+          }`}>
+            How It Works
+          </a>
 
-export default Header
+          <a href="/success-stories" className={`transition-colors font-sans text-sm font-medium tracking-wide ${
+            isOnDark ? 'text-white/90 hover:text-accent' : 'text-foreground/80 hover:text-primary'
+          }`}>
+            Success Stories
+          </a>
+
+          <a href="/" className={`transition-colors font-sans text-sm font-medium tracking-wide ${
+            isOnDark ? 'text-white/90 hover:text-accent' : 'text-foreground/80 hover:text-primary'
+          }`}>
+            Blog
+          </a>
+
+          <a href="/about" className={`transition-colors font-sans text-sm font-medium tracking-wide ${
+            isOnDark ? 'text-white/90 hover:text-accent' : 'text-foreground/80 hover:text-primary'
+          }`}>
+            About
+          </a>
+
+          <a href="/contact" className={`transition-colors font-sans text-sm font-medium tracking-wide ${
+            isOnDark ? 'text-white/90 hover:text-accent' : 'text-foreground/80 hover:text-primary'
+          }`}>
+            Contact
+          </a>
+        </nav>
+
+        <div className="flex items-center space-x-4">
+          <a href="https://www.undervalued-x-exchange.co/signin" className={`px-6 py-2 rounded-lg font-medium text-sm transition-all duration-300 ${
+            isOnDark 
+              ? 'bg-white/20 text-white hover:bg-white/30' 
+              : 'bg-primary text-white hover:bg-primary/90'
+          }`}>
+            Sign In
+          </a>
+        </div>
+
+        {/* Mobile menu button */}
+        <button 
+          className="md:hidden p-2"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <nav className="md:hidden border-t border-white/20 bg-primary/95">
+          <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
+            <a href="/marketplace" className="text-white/90 hover:text-accent py-2">Marketplace</a>
+            <a href="/leads" className="text-white/90 hover:text-accent py-2">Leads</a>
+            <a href="/how-it-works" className="text-white/90 hover:text-accent py-2">How It Works</a>
+            <a href="/success-stories" className="text-white/90 hover:text-accent py-2">Success Stories</a>
+            <a href="/" className="text-white/90 hover:text-accent py-2">Blog</a>
+            <a href="/about" className="text-white/90 hover:text-accent py-2">About</a>
+            <a href="/contact" className="text-white/90 hover:text-accent py-2">Contact</a>
+            <a href="https://www.undervalued-x-exchange.co/signin" className="text-white/90 hover:text-accent py-2">Sign In</a>
+          </div>
+        </nav>
+      )}
+    </header>
+  );
+};
+
+export default Header;

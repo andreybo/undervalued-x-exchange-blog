@@ -8,6 +8,7 @@ import CardSmall from "../components/cards/cardTemplateMainSmall";
 import Layout from  "../components/layout";
 import Seo from "../components/seo"
 import Subscribe from "../components/subscribe";
+import HeroSection from "../components/hero-section";
 
 function IndexPage({
   data: {
@@ -24,21 +25,13 @@ function IndexPage({
 }) {
   return (
     <Layout classmain="home" title="Highlighted">
-    <div className="hp-yellow">
-        <div className="hp__container hp__container--hot container mt0">
-          {hot1.nodes[0] && <CardHot post={hot1.nodes[0]} classmain=" imin"/>}
-              <div className="hero">
-                {hot2.nodes.map((post, index) => (
-                  <CardSmall post={post} classmain="news__layout-small--out" key={index}/>
-                ))}
-              </div>
-        </div>
-    </div>
+      <HeroSection categories={allWpCategory.nodes} />
+      
       <div className="hp container slatest">
 
         <div className="hp__container">
           <div className="hp__title">
-            <h3 className="hp__title--text">Latest</h3>
+            <h3 className="hp__title--text">Latest Articles</h3>
           </div>
               <div className="hp__row row mb40">
                 <CardLong post={latest.nodes[0]} classmain="card-long imin"/>
@@ -90,20 +83,6 @@ function IndexPage({
             <a className="hp__more--link" href="/topics/mobile-game-dissections">
               View More
             </a>
-          </div>
-        </div>
-
-        <div className="hp__container">
-          <div className="hp__title">
-            <h3 className="hp__title--text">All Categories</h3>
-          </div>
-
-          <div className="cats">
-            <ul>
-              {allWpCategory.nodes.map((category, index) => (
-                <li key={index}><a href={category.uri}>{category.name}</a></li>
-              ))}
-            </ul>
           </div>
         </div>
 
