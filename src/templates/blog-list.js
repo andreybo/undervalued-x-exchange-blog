@@ -69,7 +69,7 @@ const BlogList = ({ pageContext, data:{postdata} }) => {
             </ul>
       </div>
       <div className="container">
-        <div className="home_sub">
+        <div className="home_sub !mb-20">
           <Subscribe/>
         </div>
       </div>
