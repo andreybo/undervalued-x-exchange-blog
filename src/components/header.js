@@ -51,7 +51,7 @@ const Header = () => {
           </a>
         </div>
         
-        <nav className="flex items-center space-x-10">
+        <nav className="hidden md:!flex items-center space-x-10">
           <a href="/marketplace" className={`transition-colors font-sans text-sm font-medium tracking-wide ${
             isOnDark ? 'text-white/90 hover:text-accent' : 'text-foreground/80 hover:text-primary'
           }`}>
